@@ -1,0 +1,246 @@
+{
+  "slug": "nabo",
+  "name": "Nabo",
+  "website": "https://nabo.se/",
+  "region": null,
+  "checked": "2026-10-27",
+  "summary": "Ekonomisk förvaltning i hela Sverige och teknisk förvaltning i fyra städer. Anger inget eget pris, men publicerar allmänna prisintervall för ekonomisk förvaltning.",
+  "group": {
+    "text": "Nabo ingår i Odevo. Sidan anger inte vem som äger Odevo.",
+    "source": "g1"
+  },
+  "customers": {
+    "text": "4 000 bostadsrättsföreningar enligt Nabo.",
+    "source": "g1"
+  },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "ekonomisk": {
+    "summary": "Anger inget eget pris men skriver att priset beror på bland annat om föreningen är momsregistrerad. Publicerar allmänna prisintervall. Listar grundtjänst och exempel på tillägg.",
+    "source": "e1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget eget pris anges. Priset beror på föreningens storlek, om föreningen är momsregistrerad och antal parkeringsplatser.",
+      "source": "e1",
+      "notes": [
+        "Nabos sidor om pris skriver att en förening med 20 lägenheter ungefär betalar 26 000 till 30 500 kr per år exklusive moms, det vill säga 1 300 till 1 525 kr per lägenhet och år, och att 100 lägenheter kostar ungefär 64 000 till 77 000 kr per år exklusive moms, 640 till 770 kr per lägenhet och år. Texten gäller ekonomisk förvaltning i allmänhet och sägs inte vara Nabos prislista, så vi räknar inte med den i prisräknaren.",
+        "Sidorna skriver att priset består av ett fast arvode plus rörliga avgifter, och att större föreningar får lägre pris per lägenhet."
+      ]
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen uppsägningstid för Nabos eget avtal. Den uppmanar föreningen att ha koll på uppsägningstiden hos nuvarande förvaltare."
+      ]
+    },
+    "included": [
+      "Daglig löpande ekonomisk förvaltning",
+      "Bokföring",
+      "Avisering av avgifter och hyror",
+      "Betalning av leverantörsfakturor",
+      "Budget och bokslut",
+      "Årsredovisning och rapportering",
+      "Skatte- och myndighetsärenden",
+      "Lägenhetsförteckning och överlåtelser",
+      "Personlig ekonomisk förvaltare"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Fastighetsdeklaration"
+      },
+      {
+        "label": "Ekonomiska analyser"
+      },
+      {
+        "label": "Flerårsprognoser"
+      },
+      {
+        "label": "Låneupphandling Plus"
+      }
+    ],
+    "digital": [
+      "Digital styrelseportal",
+      "Kundportal",
+      "Digital brevlåda",
+      "Inloggning med BankID",
+      "Integrerat bankkonto"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "national",
+      "text": "Ekonomisk förvaltning och juridiska tjänster i hela Sverige enligt Nabo. Kontor i Stockholm, Göteborg, Malmö, Uppsala och Söderhamn.",
+      "places": [
+        "Stockholm",
+        "Göteborg",
+        "Malmö",
+        "Uppsala",
+        "Söderhamn"
+      ],
+      "source": "g2"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "lan": "optional",
+      "flerars": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "partial",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "partial",
+      "portal": "published",
+      "customers": "published"
+    },
+    "notes": [
+      "Sidan är inte konsekvent om fastighetsdeklaration: vanliga frågor säger att Nabo tar fram deklarationer, medan tillvalslistan nämner fastighetsdeklaration som tillägg.",
+      "Tilläggstjänsterna anges som exempel och utan pris."
+    ],
+    "moreSources": [
+      "e2",
+      "e3"
+    ]
+  },
+  "teknisk": {
+    "summary": "Listar 18 tekniska tjänster och paketet Komplett teknisk förvaltning. Anger inget pris, bara prisindikation och offert, och ingen avtalstid.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges. Sidan hänvisar till prisindikation och offert.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning."
+      ]
+    },
+    "included": [
+      "Fastighetsskötsel",
+      "Drift och optimering",
+      "Driftkontroll av värmecentral",
+      "Systematiskt brandskyddsarbete (SBA)",
+      "Serviceavtal tvättstuga",
+      "Periodisk kontroll av elsäkerhet",
+      "Fastighetsförvaltare",
+      "Teknisk förvaltning i styrelseportalen",
+      "Underhållsplan",
+      "OVK",
+      "Energiutredning",
+      "Energideklaration",
+      "Projektledning",
+      "Stambyte",
+      "Relining",
+      "Fönsterbyte",
+      "Fasadrenovering",
+      "Besiktning och kontroll åt brf vid renovering"
+    ],
+    "levels": [
+      {
+        "name": "Komplett teknisk förvaltning",
+        "text": "Egen kontaktperson, fastighetsskötsel med rondering, planerat underhåll, skadehantering och stöd vid myndighetsbesiktningar och upphandlingar."
+      }
+    ],
+    "extras": [],
+    "digital": [
+      "Teknisk förvaltning i styrelseportalen",
+      "Digital underhållsplan för 50 år med årlig licens"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Teknisk förvaltning i Stockholm, Göteborg, Malmö och Uppsala.",
+      "places": [
+        "Stockholm",
+        "Göteborg",
+        "Malmö",
+        "Uppsala"
+      ],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "level",
+      "underhallsplan": "listed",
+      "besiktning": "listed",
+      "ovk": "listed",
+      "sba": "listed",
+      "energi": "listed",
+      "projekt": "listed",
+      "renovering": "listed",
+      "skotsel": "level",
+      "upphandling": "level"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "partial",
+      "extras": "notfound",
+      "emergency": "notfound"
+    },
+    "notes": [
+      "Sidan skiljer inte på vad som ingår och vad som tillkommer. Den beskriver bara paketet Komplett som en nivå."
+    ]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
+      "checked": "2026-10-26",
+      "pageDate": "Sidan ändrad 2026-10-23",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/brf-pris/",
+      "title": "Vad kostar ekonomisk förvaltning för brf",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-23",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e3",
+      "url": "https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/",
+      "title": "Vad kostar ekonomisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-23",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://nabo.se/vara-tjanster/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-23",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://nabo.se/om-nabo/",
+      "title": "Om Nabo",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-19",
+      "scope": "general"
+    },
+    {
+      "id": "g2",
+      "url": "https://nabo.se/har-finns-vi/",
+      "title": "Här finns vi",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-05-22",
+      "scope": "general"
+    }
+  ]
+}

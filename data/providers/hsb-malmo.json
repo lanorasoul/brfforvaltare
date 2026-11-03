@@ -1,0 +1,217 @@
+{
+  "slug": "hsb-malmo",
+  "name": "HSB Malmö",
+  "website": "https://www.hsb.se/malmo/",
+  "region": "Malmö",
+  "checked": "2026-10-27",
+  "summary": "Regional HSB-förening i Malmö med ekonomisk förvaltning (Ekonomi Bas), teknisk förvaltning och fastighetsskötsel. Anger inget pris.",
+  "group": {
+    "text": "En av 23 regionala HSB-föreningar. Föreningarna är fristående och bildar en kooperativ federation. Hela HSB har cirka 4 150 bostadsrättsföreningar och nära 680 000 medlemmar enligt HSB.",
+    "source": "g0"
+  },
+  "customers": null,
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "ekonomisk": {
+    "summary": "Beskriver paketet Ekonomi Bas med 14 delar och sex tillval. Anger inget pris och ingen avtalstid.",
+    "source": "e2",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidorna för ekonomisk förvaltning.",
+      "source": "e2"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidorna anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [
+      "Mitt HSB med BankID",
+      "Arvoden en gång per år",
+      "Budget och likviditetsbudget",
+      "Årsredovisning",
+      "Digital attest",
+      "Löpande bokföring",
+      "Inkomstdeklaration",
+      "Avisering via e-faktura eller autogiro",
+      "Överlåtelser och panter",
+      "Skatter och arbetsgivaravgifter",
+      "Avräkningskonto",
+      "Låneöversikt",
+      "Lägenhetsförteckning",
+      "Andrahandsuthyrning"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Ekonomisk rådgivning"
+      },
+      {
+        "label": "Nyckeltalsanalys"
+      },
+      {
+        "label": "Momshantering"
+      },
+      {
+        "label": "Digital köhantering"
+      },
+      {
+        "label": "Utbildning"
+      },
+      {
+        "label": "Finansieringslösningar"
+      }
+    ],
+    "digital": [
+      "Mitt HSB (inloggning med BankID)"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Verksamhetsområde Malmö, Burlöv, Lomma, Svedala, Vellinge och Trelleborg. Kontor i Malmö, Trelleborg och Svedala.",
+      "places": [
+        "Malmö",
+        "Burlöv",
+        "Lomma",
+        "Svedala",
+        "Vellinge",
+        "Trelleborg"
+      ],
+      "source": "e1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "listed",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "radgivning": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "published",
+      "portal": "published",
+      "customers": "notfound"
+    }
+  },
+  "teknisk": {
+    "summary": "Listar fastighetsförvaltare, underhållsplan, projekt- och byggledning, myndighetsbesiktning, SBA och energioptimering. Tjänsterna kan väljas i delar eller som paket. Anger inget pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [
+      "Fastighetsförvaltare",
+      "Underhållsplan",
+      "Projekt- och byggledning",
+      "Myndighetsbesiktning",
+      "Systematiskt brandskyddsarbete (SBA)",
+      "Energioptimering och drift",
+      "Stambyte och relining",
+      "Bygg- och anläggningsarbeten",
+      "Kontroll av leverantörsavtal"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": [
+      "Mitt HSB"
+    ],
+    "reporting": [
+      "Felanmälan kan göras utan inloggning på webbplatsen.",
+      "Telefon måndag till fredag 10 till 12 och 13 till 15. Sidan anger ingen jour."
+    ],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kontor i Malmö. Samarbetar med HSB Göteborg enligt sidan.",
+      "places": [
+        "Malmö"
+      ],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "listed",
+      "underhallsplan": "listed",
+      "besiktning": "listed",
+      "sba": "listed",
+      "energi": "listed",
+      "projekt": "listed",
+      "renovering": "listed",
+      "upphandling": "listed",
+      "felanmalan": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "notfound",
+      "extras": "notfound",
+      "emergency": "partial"
+    },
+    "notes": [
+      "Sidan skriver att tjänsterna kan väljas i delar eller som paket. Den skiljer inte på vad som ingår och vad som tillkommer."
+    ]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.hsb.se/malmo/fastighetsforvaltning/ekonomiska-tjanster/",
+      "title": "Ekonomiska tjänster",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-15",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://www.hsb.se/malmo/fastighetsforvaltning/ekonomiska-tjanster/ekonomi-bas/",
+      "title": "Ekonomi Bas",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-09-24",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.hsb.se/malmo/fastighetsforvaltning/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-09-24",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.hsb.se/malmo/fastighetsforvaltning/",
+      "title": "Fastighetsförvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-09-29",
+      "scope": "general"
+    },
+    {
+      "id": "g0",
+      "url": "https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/",
+      "title": "HSB:s organisation och ägarinformation",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-05-27",
+      "scope": "general"
+    }
+  ],
+  "moreSources": [
+    "g1"
+  ]
+}

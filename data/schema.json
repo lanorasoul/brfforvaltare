@@ -1,0 +1,70 @@
+{
+  "categories": {
+    "ekonomisk": {
+      "label": "Ekonomisk förvaltning",
+      "short": "Ekonomisk",
+      "path": "/ekonomisk-forvaltning",
+      "what": "Bokföring, avisering, fakturor, budget, bokslut och årsredovisning."
+    },
+    "teknisk": {
+      "label": "Teknisk förvaltning",
+      "short": "Teknisk",
+      "path": "/teknisk-forvaltning",
+      "what": "Tillsyn, underhållsplan, besiktningar, upphandling av entreprenörer och kontakt med myndigheter."
+    }
+  },
+  "featureStates": {
+    "included": { "label": "Ingår", "help": "Sidan säger att det ingår." },
+    "level": { "label": "Ingår i vissa nivåer", "help": "Ingår i vissa nivåer eller paket, inte i alla." },
+    "optional": { "label": "Tillval", "help": "Sidan listar det som tillval eller tilläggstjänst." },
+    "listed": { "label": "Nämns", "help": "Sidan nämner det som en del av utbudet, men säger inte om det ingår eller kostar extra." }
+  },
+  "features": {
+    "ekonomisk": [
+      { "key": "bokforing", "label": "Löpande bokföring", "help": "Löpande bokföring eller redovisning." },
+      { "key": "leverantorsfakturor", "label": "Leverantörsfakturor", "help": "Hantering eller betalning av leverantörsfakturor." },
+      { "key": "avisering", "label": "Avisering", "help": "Avisering av avgifter och hyror, eller hyres- och avgiftshantering." },
+      { "key": "budget", "label": "Budget", "help": "Budget och ekonomisk uppföljning." },
+      { "key": "arsredovisning", "label": "Årsredovisning", "help": "Bokslut eller årsredovisning." },
+      { "key": "skatt", "label": "Skatt och deklaration", "help": "Moms, skatt eller deklaration." },
+      { "key": "overlatelser", "label": "Överlåtelser", "help": "Hantering av överlåtelser och pantsättningar." },
+      { "key": "lan", "label": "Lån", "help": "Lånehantering, låneförvaltning eller låneupphandling. En förteckning över lån räknas inte." },
+      { "key": "radgivning", "label": "Ekonomisk rådgivning", "help": "Ekonomisk rådgivning till styrelsen." },
+      { "key": "flerars", "label": "Flerårsbudget", "help": "Flerårsbudget eller flerårsprognos." },
+      { "key": "inkasso", "label": "Inkasso", "help": "Inkasso eller kravhantering." },
+      { "key": "imd", "label": "IMD", "help": "Individuell mätning och debitering." }
+    ],
+    "teknisk": [
+      { "key": "forvaltare", "label": "Förvaltare", "help": "Fast kontaktperson eller teknisk förvaltare." },
+      { "key": "underhallsplan", "label": "Underhållsplan", "help": "Upprättande, uppdatering eller uppföljning av underhållsplan." },
+      { "key": "besiktning", "label": "Besiktning", "help": "Besiktning, statuskontroll eller tillsyn." },
+      { "key": "ovk", "label": "OVK", "help": "Obligatorisk ventilationskontroll." },
+      { "key": "sba", "label": "SBA", "help": "Systematiskt brandskyddsarbete." },
+      { "key": "energi", "label": "Energi", "help": "Energiutredning, energideklaration eller energioptimering." },
+      { "key": "projekt", "label": "Projektledning", "help": "Projekt- och byggledning." },
+      { "key": "renovering", "label": "Stambyte och renovering", "help": "Stambyte, relining eller annan större renovering." },
+      { "key": "skotsel", "label": "Skötsel", "help": "Fastighetsskötsel eller fastighetsservice." },
+      { "key": "upphandling", "label": "Upphandling", "help": "Upphandling, avtalskontroll eller samordning av entreprenörer." },
+      { "key": "felanmalan", "label": "Felanmälan", "help": "Felanmälan för de boende." },
+      { "key": "jour", "label": "Jour", "help": "Jour eller beredskap utanför kontorstid." }
+    ]
+  },
+  "disclosure": {
+    "ekonomisk": [
+      { "key": "price", "label": "Pris", "help": "Pris, prislista eller prisexempel för ekonomisk förvaltning." },
+      { "key": "notice", "label": "Uppsägningstid", "help": "Uppsägningstid eller avtalstid för förvaltarens eget avtal." },
+      { "key": "included", "label": "Vad som ingår", "help": "Tydlig lista över vad grundtjänsten omfattar." },
+      { "key": "extras", "label": "Tillval", "help": "Lista över tilläggstjänster, helst med pris." },
+      { "key": "portal", "label": "Kundportal", "help": "Namngiven portal eller app för styrelsen." },
+      { "key": "customers", "label": "Antal kunder", "help": "Antal föreningar eller kunder förvaltaren själv anger." }
+    ],
+    "teknisk": [
+      { "key": "price", "label": "Pris", "help": "Pris, prislista eller prisexempel för teknisk förvaltning." },
+      { "key": "notice", "label": "Uppsägningstid", "help": "Uppsägningstid eller avtalstid för förvaltarens eget avtal." },
+      { "key": "included", "label": "Vad som ingår", "help": "Tydlig lista över vad grundtjänsten omfattar." },
+      { "key": "levels", "label": "Nivåer", "help": "Namngivna nivåer eller paket med beskrivet innehåll." },
+      { "key": "extras", "label": "Tillval", "help": "Lista över tilläggstjänster, helst med pris." },
+      { "key": "emergency", "label": "Felanmälan och jour", "help": "Hur felanmälan och jour fungerar, helst med tider." }
+    ]
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "slug": "hsb-molndal",
+  "name": "HSB Mölndal",
+  "website": "https://www.hsb.se/molndal/",
+  "region": "Mölndal",
+  "checked": "2026-10-27",
+  "summary": "Regional HSB-förening i Mölndal, Kållered och Lindome. Listar Ekonomi Bas med 14 delar och två avtalsnivåer för teknisk förvaltning. Anger inget pris.",
+  "group": {
+    "text": "En av 23 regionala HSB-föreningar. Föreningarna är fristående och bildar en kooperativ federation. Hela HSB har cirka 4 150 bostadsrättsföreningar och nära 680 000 medlemmar enligt HSB.",
+    "source": "g0"
+  },
+  "customers": null,
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "ekonomisk": {
+    "summary": "Listar paketet HSB Ekonomi Bas med 14 delar och 19 tilläggstjänster, bland annat HSB Låneförvaltning och nyckeltalsanalys. Anger inget pris.",
+    "source": "e2",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidorna för ekonomisk förvaltning.",
+      "source": "e2"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidorna anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [
+      "Andrahandsuthyrning",
+      "Arvoden",
+      "Avisering",
+      "Betalningar",
+      "Budget och årsredovisning",
+      "Digital kundportal",
+      "Leverantörsfakturahantering",
+      "Inkomstdeklaration",
+      "Låneförteckning",
+      "Lägenhetsförteckning",
+      "Löpande redovisning",
+      "Posthantering",
+      "Skatter",
+      "Överlåtelser och panter"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Bokningssystem"
+      },
+      {
+        "label": "Deklaration fastighetstaxering"
+      },
+      {
+        "label": "Digital köhantering"
+      },
+      {
+        "label": "Digitalt styrelsestöd"
+      },
+      {
+        "label": "Ekonomisk rådgivning"
+      },
+      {
+        "label": "Flerårsbudget"
+      },
+      {
+        "label": "Inre fond"
+      },
+      {
+        "label": "Kontorstjänster"
+      },
+      {
+        "label": "Kundfakturor"
+      },
+      {
+        "label": "Delårsrapport och prognoser"
+      },
+      {
+        "label": "Lönehantering"
+      },
+      {
+        "label": "Momshantering"
+      },
+      {
+        "label": "Tilläggsdebitering"
+      },
+      {
+        "label": "Uppgifter personal"
+      },
+      {
+        "label": "Uppgifter till myndigheter"
+      },
+      {
+        "label": "Utökat anläggningsregister"
+      },
+      {
+        "label": "Utökad betalningstjänst"
+      },
+      {
+        "label": "HSB Låneförvaltning"
+      },
+      {
+        "label": "Nyckeltalsanalys"
+      }
+    ],
+    "digital": [
+      "Mitt HSB (inloggning med BankID)"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "HSB Mölndal. Sidorna om ekonomisk förvaltning anger inga orter.",
+      "places": [
+        "Mölndal"
+      ],
+      "source": "e1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "lan": "optional",
+      "radgivning": "optional",
+      "flerars": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "published",
+      "portal": "published",
+      "customers": "notfound"
+    }
+  },
+  "teknisk": {
+    "summary": "Beskriver två avtal: Fastighetsförvaltare (heltäckande) och Förvaltare Bas. En bild med tjänstenivåer gick inte att läsa. Anger inget pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [
+      "Fastighetsförvaltare, heltäckande avtal"
+    ],
+    "levels": [
+      {
+        "name": "Fastighetsförvaltare",
+        "text": "Heltäckande avtal."
+      },
+      {
+        "name": "Förvaltare Bas",
+        "text": "Egenkontroller, fastighetsägaransvar och dokumentation samt åtta timmars utökat stöd."
+      }
+    ],
+    "extras": [],
+    "digital": [],
+    "reporting": [
+      "Fastighetsskötsel är en annan tjänst. Den anges ha felanmälan med digital uppföljning och återkoppling samt fastighetsjour. Jourtider anges inte."
+    ],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kontor i Mölndal. Sidan nämner också Kållered och Lindome.",
+      "places": [
+        "Mölndal",
+        "Kållered",
+        "Lindome"
+      ],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "level"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "partial",
+      "extras": "notfound",
+      "emergency": "partial"
+    },
+    "notes": [
+      "Sidan visar en bild med tjänstenivåer som vi inte kunde läsa.",
+      "Förvaltare Bas har åtta timmars utökat stöd här. HSB Skånes Förvaltare Bas har fem timmars extra stöd. Nivåerna skiljer sig alltså mellan HSB-föreningar."
+    ]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.hsb.se/molndal/tjanster/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för brf i Mölndal",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-06-26",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://www.hsb.se/molndal/tjanster/ekonomisk-forvaltning/hsb-ekonomi-bas/",
+      "title": "HSB Ekonomi Bas",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-06-26",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.hsb.se/molndal/tjanster/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-06-26",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.hsb.se/molndal/tjanster/fastighetsskotsel/",
+      "title": "Fastighetsskötsel och fastighetsservice",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-06-26",
+      "scope": "general"
+    },
+    {
+      "id": "g0",
+      "url": "https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/",
+      "title": "HSB:s organisation och ägarinformation",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-05-27",
+      "scope": "general"
+    }
+  ],
+  "moreSources": [
+    "g1"
+  ]
+}

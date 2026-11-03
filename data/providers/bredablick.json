@@ -1,0 +1,379 @@
+{
+  "slug": "bredablick",
+  "name": "Bredablick Förvaltning",
+  "legalName": "Bredablick Förvaltning i Sverige AB",
+  "website": "https://bredablickforvaltning.se/",
+  "region": null,
+  "checked": "2026-10-28",
+  "summary": "Ekonomisk och teknisk förvaltning samt fastighetsskötsel. Startade 2009 i Limhamn och ingår sedan 2023 i PHM Group. Anger över 1 000 kunder. Anger inget pris, ingen avtalstid och ingen uppsägningstid för någon av tjänsterna.",
+  "group": {
+    "text": "Bredablick Förvaltning ingår i Bredablickgruppen, som sedan 2023 är en del av PHM Group.",
+    "source": "g1"
+  },
+  "customers": {
+    "text": "Över 1 000 kunder, varav en stor del bostadsrättsföreningar, enligt Bredablick. Föreningarna är från ett tiotal lägenheter upp till 900.",
+    "source": "g1"
+  },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "ekonomisk": {
+    "summary": "Ekonomisk förvaltning till kunder i hela Sverige, med lokala ekonomer i Stockholm, Göteborg, Malmö och Helsingborg. Anger inget pris, ingen avtalstid och ingen uppsägningstid. Listar åtta punkter som ingår i grundavtalet och tre tillägg utan pris.",
+    "source": "e1",
+    "moreSources": [
+      "e2",
+      "e3",
+      "g3"
+    ],
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges. Sidan skriver att priset beror framför allt på föreningens storlek och hur komplex ekonomin är, och att offert lämnas på förfrågan.",
+      "source": "g3"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidorna anger ingen avtalstid, uppsägningstid eller bindningstid för förvaltningsavtalet."
+      ]
+    },
+    "included": [
+      "Bokföring och redovisning",
+      "Budgetering och ekonomisk planering",
+      "Intäktsanalys och prognoser",
+      "Avgiftsavier och betalningsuppföljning",
+      "Egen kundansvarig ekonomisk förvaltare",
+      "Löpande rådgivning",
+      "Årlig 5-årsbudget kopplad till underhållsplanen",
+      "Årligt budgetmöte med genomgång av föreningens ekonomi",
+      "Komponentavskrivning enligt K3",
+      "Upphandling och analys av fastighetsförsäkring",
+      "Enklare juridisk rådgivning",
+      "Tillgång till Bredablicks ramavtal"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Styrelseutbildning"
+      },
+      {
+        "label": "Deltagande på stämma"
+      },
+      {
+        "label": "IMD, individuell mätning och debitering"
+      }
+    ],
+    "digital": [
+      "PHM Digital, kundportal på webben och som app",
+      "Inloggning med BankID",
+      "Digital hantering av avier och fakturor",
+      "Digital signering",
+      "Digitala möten",
+      "Mäklarportal för överlåtelser och mäklarbilder"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "national",
+      "text": "Ekonomisk förvaltning till kunder i hela Sverige enligt Bredablick, även där det inte finns lokala ekonomer. Lokala ekonomer finns i Stockholm, Göteborg, Malmö och Helsingborg. I Malmöregionen nämns Lund, Höör, Ystad och Eslöv.",
+      "places": [
+        "Stockholm",
+        "Göteborg",
+        "Malmö",
+        "Helsingborg",
+        "Lund",
+        "Höör",
+        "Ystad",
+        "Eslöv"
+      ],
+      "source": "g2"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "listed",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "listed",
+      "overlatelser": "listed",
+      "radgivning": "included",
+      "flerars": "included",
+      "inkasso": "listed",
+      "imd": "optional"
+    },
+    "claims": [
+      {
+        "text": "Grundavtalet omfattar tjänster som hos andra ofta är dyra tilläggstjänster.",
+        "source": "e1",
+        "by": "förvaltaren"
+      },
+      {
+        "text": "Transparenta priser utan dolda avgifter.",
+        "source": "g3",
+        "by": "förvaltaren"
+      },
+      {
+        "text": "En av Sveriges största aktörer inom förvaltning och fastighetsskötsel.",
+        "source": "g1",
+        "by": "förvaltaren"
+      }
+    ],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "partial",
+      "portal": "published",
+      "customers": "published"
+    },
+    "notes": [
+      "Sidan skriver fakturahantering men säger inte om det gäller leverantörsfakturor. Offertsidan nämner leverantörsbetalningar som en del av ekonomisk förvaltning i allmänhet.",
+      "Tilläggstjänsterna anges som exempel och utan pris.",
+      "Vanliga frågor nämner en uppsägningstid bara för parkering och garage, inte för förvaltningsavtalet."
+    ]
+  },
+  "teknisk": {
+    "summary": "Teknisk förvaltning i Göteborg, Stockholm, Malmö, Helsingborg, Uppsala och Karlstad med kringområden. Styrelsen väljer omfattning, från full teknisk förvaltning till bara fastighetsskötsel. Anger inget pris och ingen avtalstid. Akuta ärenden anmäls per telefon dygnet runt.",
+    "source": "t1",
+    "moreSources": [
+      "t2",
+      "t3",
+      "g3"
+    ],
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges. Sidan skriver att kostnaden varierar med vilka tjänster som ingår, typ av fastighet och fastighetens storlek, ålder och skick, och att offert lämnas efter en kostnadsfri genomgång.",
+      "source": "t1",
+      "notes": [
+        "För energiförvaltning skriver Bredablick att arvodet grundar sig på inbesparingen. Inget belopp anges."
+      ]
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning.",
+        "Bredablick skriver att avtalen är flexibla och att styrelsen väljer omfattning."
+      ]
+    },
+    "included": [
+      "Personlig teknisk förvaltare, ytterst ansvarig för fastighetsskötare, lokalvårdare och annan personal i uppdraget",
+      "Rådgivning och underlag inför styrelsens beslut, och att besluten genomförs",
+      "Samordning av drift och fastighetsskötsel",
+      "Att fel och brister åtgärdas",
+      "Planering och genomförande av projekt",
+      "Att myndighetskrav följs och lagstadgade kontroller utförs",
+      "Kontakter med myndigheter och entreprenörer",
+      "Upphandling av entreprenörer",
+      "Fastighetsskötsel med ronderingar och tillsyn",
+      "Lokalvård och städning av gemensamma utrymmen",
+      "Skötsel av utemiljö och trädgård",
+      "Projektledning vid ROT-projekt och underhållsåtgärder, via samarbetspartnern Sustend"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Systematiskt brandskyddsarbete (SBA) med årlig brandsäkerhetsbesiktning"
+      },
+      {
+        "label": "Energi- och miljöanalyser och energieffektivisering"
+      },
+      {
+        "label": "Energideklaration och OVK"
+      },
+      {
+        "label": "Underhållsplan för 50 år via Sustend, till förmånligare pris för kunder inom teknisk förvaltning"
+      }
+    ],
+    "digital": [
+      "PHM Digital, kundportal på webben och som app",
+      "Felanmälan i portalen, med eller utan BankID",
+      "Ärendehantering och digital signering",
+      "Bokning av tvättstuga och gemensamma utrymmen",
+      "Underhållsplanen kan uppdateras i Planima"
+    ],
+    "reporting": [
+      "Akuta ärenden, till exempel en pågående vattenläcka, anmäls per telefon dygnet runt.",
+      "Icke akuta ärenden anmäls i första hand online i PHM Digital, inloggad med BankID eller utan inloggning.",
+      "Kundtjänst svarar i telefon vardagar 07.00 till 16.00."
+    ],
+    "coverage": {
+      "scope": "regional",
+      "text": "Teknisk förvaltning i Göteborg, Stockholm, Malmö, Helsingborg, Uppsala och Karlstad, med kringområden. Orterna anges som exempel (med flera). I Skåne nämns också Ystad, Höör och Eslöv.",
+      "places": [
+        "Göteborg",
+        "Stockholm",
+        "Malmö",
+        "Helsingborg",
+        "Uppsala",
+        "Karlstad",
+        "Kungsbacka",
+        "Billdal",
+        "Lindome",
+        "Mölndal",
+        "Partille",
+        "Mölnlycke",
+        "Landvetter",
+        "Härryda",
+        "Solna",
+        "Sundbyberg",
+        "Nacka",
+        "Lidingö",
+        "Täby",
+        "Danderyd",
+        "Sollentuna",
+        "Järfälla",
+        "Huddinge",
+        "Botkyrka",
+        "Haninge",
+        "Tyresö",
+        "Knivsta",
+        "Sigtuna",
+        "Märsta",
+        "Bålsta",
+        "Enköping",
+        "Tierp",
+        "Östhammar",
+        "Heby",
+        "Hammarö",
+        "Kil",
+        "Lund",
+        "Vellinge",
+        "Staffanstorp",
+        "Burlöv",
+        "Lomma",
+        "Svedala",
+        "Kävlinge",
+        "Ystad",
+        "Höör",
+        "Eslöv",
+        "Höganäs",
+        "Ängelholm",
+        "Landskrona",
+        "Bjuv",
+        "Åstorp",
+        "Klippan",
+        "Perstorp",
+        "Svalöv"
+      ],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "included",
+      "underhallsplan": "optional",
+      "besiktning": "listed",
+      "ovk": "optional",
+      "sba": "optional",
+      "energi": "optional",
+      "projekt": "listed",
+      "renovering": "listed",
+      "skotsel": "listed",
+      "upphandling": "listed",
+      "felanmalan": "listed",
+      "jour": "listed"
+    },
+    "claims": [
+      {
+        "text": "Energiförvaltning: sänker Bredablick inte kostnaderna tar de inte heller betalt.",
+        "source": "t1",
+        "by": "förvaltaren"
+      }
+    ],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "notfound",
+      "extras": "partial",
+      "emergency": "published"
+    },
+    "notes": [
+      "Omfattningen väljs av styrelsen, från full teknisk förvaltning till bara fastighetsskötsel. Sidan anger vad en teknisk förvaltare kan göra som exempel och inte vad ett visst avtal innehåller.",
+      "Sidan nämner projektledning vid stambyte, takmålning, fasadrenovering och lokalomvandling via Sustend. Den säger inte att Bredablick utför renoveringarna själva.",
+      "Underhållsplan och byggprojektledning erbjuds via samarbetspartnern Sustend. Inget pris anges."
+    ]
+  },
+  "moreSources": [
+    "g4"
+  ],
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för brf och fastighetsbolag",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-06-30",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/malmo/",
+      "title": "Ekonomisk förvaltning i Malmö",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-10-27",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e3",
+      "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/faq-ekonomisk/",
+      "title": "FAQ, ekonomisk förvaltning",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2025-08-27",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://bredablickforvaltning.se/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning för brf och fastighetsbolag",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-10-27",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t2",
+      "url": "https://bredablickforvaltning.se/teknisk-forvaltning/malmo/",
+      "title": "Teknisk förvaltning i Malmö",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-01-21",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t3",
+      "url": "https://bredablickforvaltning.se/teknisk-forvaltning/felanmalan/",
+      "title": "Felanmälan",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-05-20",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://bredablickforvaltning.se/om-oss/",
+      "title": "Om Bredablick Förvaltning",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-09-01",
+      "scope": "general"
+    },
+    {
+      "id": "g2",
+      "url": "https://bredablickforvaltning.se/har-finns-vi/",
+      "title": "Här finns vi",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-10-21",
+      "scope": "general"
+    },
+    {
+      "id": "g3",
+      "url": "https://bredablickforvaltning.se/offert-forvaltning-brf/",
+      "title": "Få en offert på förvaltning",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2026-09-03",
+      "scope": "general"
+    },
+    {
+      "id": "g4",
+      "url": "https://bredablickforvaltning.se/cookieinformation/",
+      "title": "Cookieinformation",
+      "checked": "2026-10-28",
+      "pageDate": "Sidan ändrad 2025-08-25",
+      "scope": "general"
+    }
+  ]
+}

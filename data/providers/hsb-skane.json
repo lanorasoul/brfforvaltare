@@ -1,0 +1,333 @@
+{
+  "slug": "hsb-skane",
+  "name": "HSB Skåne",
+  "website": "https://www.hsb.se/skane/",
+  "region": "Skåne",
+  "checked": "2026-10-27",
+  "summary": "Regional HSB-förening. Listar paketet Ekonomi Bas med 14 delar, tre nivåer av teknisk förvaltare och 16 specialisttjänster. Anger inget pris.",
+  "group": {
+    "text": "En av 23 regionala HSB-föreningar. Föreningarna är fristående och bildar en kooperativ federation. Hela HSB har cirka 4 150 bostadsrättsföreningar och nära 680 000 medlemmar enligt HSB.",
+    "source": "g0"
+  },
+  "customers": null,
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "ekonomisk": {
+    "summary": "Listar paketet Ekonomi Bas med 14 delar och 14 tilläggstjänster. Anger inget pris för ekonomisk förvaltning.",
+    "source": "e2",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidorna för ekonomisk förvaltning.",
+      "source": "e2"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidorna anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [
+      "Arvoden",
+      "Avisering",
+      "Betalningar",
+      "Budget och årsredovisning",
+      "Inkomstdeklaration",
+      "Leverantörsfakturahantering",
+      "Låneförteckning",
+      "Lägenhetsförteckning",
+      "Lönehantering",
+      "Löpande redovisning",
+      "Posthantering",
+      "Skatter",
+      "Uppgifter personal",
+      "Överlåtelser och panter"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Andrahandsuthyrning"
+      },
+      {
+        "label": "Deklaration fastighetstaxering"
+      },
+      {
+        "label": "Digitalt styrelsestöd"
+      },
+      {
+        "label": "Ekonomisk rådgivning"
+      },
+      {
+        "label": "Flerårsbudget"
+      },
+      {
+        "label": "Hantering av IMD (individuell mätning och debitering)"
+      },
+      {
+        "label": "Inre fond"
+      },
+      {
+        "label": "Kontorstjänster"
+      },
+      {
+        "label": "Kundfakturor"
+      },
+      {
+        "label": "Momshantering"
+      },
+      {
+        "label": "Tilläggsdebitering"
+      },
+      {
+        "label": "Uppgifter till myndigheter"
+      },
+      {
+        "label": "Utökat anläggningsregister"
+      },
+      {
+        "label": "Utökad betalningstjänst"
+      }
+    ],
+    "digital": [
+      "Mitt HSB (inloggning där föreningen kan följa sina ärenden)",
+      "Digitalt styrelsestöd, som sidan skriver ingår för HSB-medlemmar med ekonomisk förvaltning"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Ekonomisk förvaltning i Lund, Kristianstad, Ystad och andra orter i Skåne.",
+      "places": [
+        "Lund",
+        "Kristianstad",
+        "Ystad"
+      ],
+      "source": "e1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "radgivning": "optional",
+      "flerars": "optional",
+      "imd": "optional"
+    },
+    "claims": [
+      {
+        "text": "96 procent kundnöjdhet inom ekonomisk förvaltning enligt förvaltarens senaste NKI-undersökning.",
+        "source": "e1",
+        "by": "förvaltaren"
+      }
+    ],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "published",
+      "portal": "partial",
+      "customers": "notfound"
+    },
+    "notes": [
+      "Sidan om Ekonomi Bas kallar paketet prisvärt men visar inget pris."
+    ]
+  },
+  "teknisk": {
+    "summary": "Beskriver tre nivåer av förvaltare: Förvaltare Bas, HSB Förvaltartjänst och Förvaltare Komplett. Listar 16 specialisttjänster utan pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning eller specialisttjänsterna.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidorna anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [],
+    "levels": [
+      {
+        "name": "Förvaltare Bas",
+        "text": "Egenkontroll och fastighetsägaransvar, dokumentation och rådgivning vid myndighetskontakter, samt fem timmars extra stöd."
+      },
+      {
+        "name": "HSB Förvaltartjänst",
+        "text": "Personlig förvaltare. Myndighetskrav, försäkringsärenden, störningar, styrelsemöten och stämmor samt upphandlingar och avtal."
+      },
+      {
+        "name": "Förvaltare Komplett",
+        "text": "Allt i Förvaltartjänst plus verksamhetsplan och budget, drift och underhåll, verksamhetsledningsmöten och utemiljö."
+      }
+    ],
+    "extras": [
+      {
+        "label": "Status- och elsäkerhetskontroll"
+      },
+      {
+        "label": "Statusbesiktning av fastighetens elanläggning"
+      },
+      {
+        "label": "Utredning av inomhusmiljö (fukt och mögel)"
+      },
+      {
+        "label": "Fasadrenovering"
+      },
+      {
+        "label": "Balkong"
+      },
+      {
+        "label": "Fuktskadeutredning"
+      },
+      {
+        "label": "Systematiskt brandskyddsarbete (SBA)"
+      },
+      {
+        "label": "Underhålls- och investeringsplan"
+      },
+      {
+        "label": "Lekplatsbesiktning"
+      },
+      {
+        "label": "Drönarfotografering"
+      },
+      {
+        "label": "OVK"
+      },
+      {
+        "label": "Projektledning och byggledning"
+      },
+      {
+        "label": "Energitjänster"
+      },
+      {
+        "label": "Juridisk hjälp"
+      },
+      {
+        "label": "Stambyte"
+      },
+      {
+        "label": "Relining"
+      }
+    ],
+    "digital": [
+      "Mitt HSB",
+      "Felanmälan online"
+    ],
+    "reporting": [
+      "Felanmälan online via webbplatsen. Sidan anger inga tider och ingen jour."
+    ],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kontor i Lund, Ystad, Kristianstad, Eslöv och Hässleholm. Sidan nämner sexton kommuner i Skåne.",
+      "places": [
+        "Lund",
+        "Ystad",
+        "Kristianstad",
+        "Eslöv",
+        "Hässleholm",
+        "Bromölla",
+        "Hörby",
+        "Höör",
+        "Kävlinge",
+        "Osby",
+        "Perstorp",
+        "Simrishamn",
+        "Sjöbo",
+        "Skurup",
+        "Staffanstorp",
+        "Tomelilla",
+        "Östra Göinge"
+      ],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "level",
+      "underhallsplan": "optional",
+      "besiktning": "optional",
+      "ovk": "optional",
+      "sba": "optional",
+      "energi": "optional",
+      "projekt": "optional",
+      "renovering": "optional",
+      "upphandling": "level",
+      "felanmalan": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "published",
+      "extras": "published",
+      "emergency": "partial"
+    },
+    "notes": [
+      "Specialisttjänsterna listas på en egen sida, utan beskrivning och utan pris."
+    ],
+    "moreSources": [
+      "t2"
+    ]
+  },
+  "notes": [
+    "HSB består av regionala föreningar. Uppgifterna gäller HSB Skåne, som på sin sida beskriver sig som en av fyra regionala HSB-föreningar i Skåne."
+  ],
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.hsb.se/skane/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning i Lund, Kristianstad, Ystad och andra orter i Skåne",
+      "checked": "2026-10-26",
+      "pageDate": "Sidan ändrad 2026-07-10",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://www.hsb.se/skane/fastighetsforvaltning/ekonomisk-forvaltning/ekonomi-baspaket/",
+      "title": "Ekonomi bas, prisvärt paket för brf",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-02-14",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.hsb.se/skane/fastighetsforvaltning/forvaltartjanst/",
+      "title": "Förvaltartjänst",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-22",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t2",
+      "url": "https://www.hsb.se/skane/fastighetsforvaltning/specialisttjanster/",
+      "title": "Specialisttjänster",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-22",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.hsb.se/skane/fastighetsforvaltning/",
+      "title": "Fastighetsförvaltning i Lund, Kristianstad, Ystad och övriga Skåne",
+      "checked": "2026-10-26",
+      "pageDate": "Sidan ändrad 2026-03-11",
+      "scope": "general"
+    },
+    {
+      "id": "g0",
+      "url": "https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/",
+      "title": "HSB:s organisation och ägarinformation",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-05-27",
+      "scope": "general"
+    }
+  ],
+  "moreSources": [
+    "g1"
+  ]
+}

@@ -1,0 +1,141 @@
+.nav-wrap {
+  position: fixed;
+  inset: 14px 0 auto 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding-inline: 12px;
+  pointer-events: none;
+}
+
+.nav {
+  position: relative;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min(1040px, 100%);
+  height: var(--nav-h);
+  padding: 8px 8px 8px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  box-shadow: 0 0 0 1px rgba(18, 21, 28, 0.06), 0 14px 40px -14px rgba(18, 21, 28, 0.28);
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  margin-right: auto;
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-2);
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+  background: var(--panel);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--ink);
+  background: var(--panel);
+}
+
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-cta {
+  height: 40px;
+  padding: 0 6px 0 16px;
+  gap: 10px;
+  border-radius: 11px;
+  font-size: 15px;
+}
+
+.nav-cta .btn-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* På smal skärm räcker ordet Hitta. Knappens namn för skärmläsare är hela uttrycket. */
+@media (max-width: 520px) {
+  .nav-cta-more {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.nav-toggle:hover {
+  background: var(--panel);
+}
+
+.nav-sheet {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  padding: 8px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 0 0 1px rgba(18, 21, 28, 0.06), 0 24px 60px -20px rgba(18, 21, 28, 0.35);
+}
+
+.nav-sheet[hidden] {
+  display: none;
+}
+
+.nav-sheet-link {
+  display: block;
+  padding: 14px 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-sheet-link:hover,
+.nav-sheet-link[aria-current="page"] {
+  background: var(--panel);
+}
+
+@media (min-width: 1000px) {
+  .nav-links {
+    display: flex;
+  }
+  .nav-toggle,
+  .nav-sheet {
+    display: none;
+  }
+}

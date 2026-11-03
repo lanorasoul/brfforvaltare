@@ -1,0 +1,162 @@
+{
+  "slug": "hsb-ostergotland",
+  "name": "HSB Östergötland",
+  "website": "https://www.hsb.se/ostergotland/",
+  "region": "Östergötland",
+  "checked": "2026-10-27",
+  "summary": "Regional HSB-förening i Östergötland. Listar Ekonomi Bas med 14 delar och 18 tilläggstjänster. Teknisk förvaltning beskrivs som skötsel, felanmälan, jour och förvaltare. Anger inget pris.",
+  "group": {
+    "text": "En av 23 regionala HSB-föreningar. Föreningarna är fristående och bildar en kooperativ federation. Hela HSB har cirka 4 150 bostadsrättsföreningar och nära 680 000 medlemmar enligt HSB.",
+    "source": "g0"
+  },
+  "customers": null,
+  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "ekonomisk": {
+    "summary": "Listar paketet Ekonomi Bas med 14 delar och 18 tilläggstjänster, bland annat HSB Låneförvaltning. Anger inget pris.",
+    "source": "e1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidan.",
+      "source": "e1"
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "included": [
+      "Andrahandsuthyrning",
+      "Arvoden",
+      "Avisering",
+      "Betalningar",
+      "Budget och årsredovisning",
+      "Digital kundportal",
+      "Hantering av leverantörsfakturor",
+      "Inkomstdeklaration",
+      "Låneförteckning",
+      "Lägenhetsförteckning",
+      "Löpande redovisning",
+      "Posthantering",
+      "Skatter",
+      "Överlåtelser och panter"
+    ],
+    "levels": [],
+    "extras": [
+      { "label": "Bokningssystem" },
+      { "label": "Deklaration fastighetstaxering" },
+      { "label": "Delårsrapport och prognoser" },
+      { "label": "Digital köhantering" },
+      { "label": "Digitalt styrelsestöd" },
+      { "label": "Ekonomisk rådgivning" },
+      { "label": "Flerårsbudget" },
+      { "label": "Inre fond" },
+      { "label": "Kontorstjänster" },
+      { "label": "Kundfakturor" },
+      { "label": "Lönehantering" },
+      { "label": "Momshantering" },
+      { "label": "Tilläggsdebitering" },
+      { "label": "Uppgifter personal" },
+      { "label": "Uppgifter till myndigheter" },
+      { "label": "Utökat anläggningsregister" },
+      { "label": "Utökad betalningstjänst" },
+      { "label": "HSB Låneförvaltning" }
+    ],
+    "digital": ["Digital kundportal (sidan anger inte portalens namn)"],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Linköping, Motala, Mjölby, Vadstena, Boxholm, Åtvidaberg och Ödeshög.",
+      "places": ["Linköping", "Motala", "Mjölby", "Vadstena", "Boxholm", "Åtvidaberg", "Ödeshög"],
+      "source": "e1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "lan": "optional",
+      "radgivning": "optional",
+      "flerars": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "published",
+      "portal": "partial",
+      "customers": "notfound"
+    },
+    "notes": ["Sidan skriver att paketet kan användas även av föreningar som inte är HSB-medlemmar."]
+  },
+  "teknisk": {
+    "summary": "Beskriver teknisk förvaltning som fastighetsskötsel, felanmälan med avhjälpande underhåll, jour och vicevärd eller fastighetsförvaltare. Anger inget pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning.",
+      "source": "t1"
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "included": [
+      "Fastighetsskötsel",
+      "Felanmälan och avhjälpande underhåll",
+      "Jour",
+      "Vicevärd och fastighetsförvaltare",
+      "Lekplatsbesiktningar",
+      "Snöjour"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": [],
+    "reporting": ["Sidan nämner jour och snöjour men anger inga tider."],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kontor i Linköping, Mjölby och Motala. Sidan nämner också Vadstena.",
+      "places": ["Linköping", "Mjölby", "Motala", "Vadstena"],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "listed",
+      "besiktning": "listed",
+      "skotsel": "listed",
+      "felanmalan": "listed",
+      "jour": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "notfound",
+      "extras": "notfound",
+      "emergency": "partial"
+    },
+    "notes": ["Sidan beskriver främst fastighetsskötsel. Den skiljer inte på vad som ingår och vad som tillkommer."]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.hsb.se/ostergotland/fastighetsforvaltning/ekonomi-administration/",
+      "title": "Ekonomi och administration",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-02-27",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.hsb.se/ostergotland/fastighetsforvaltning/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-08-11",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g0",
+      "url": "https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/",
+      "title": "HSB:s organisation och ägarinformation",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-05-27",
+      "scope": "general"
+    }
+  ]
+}

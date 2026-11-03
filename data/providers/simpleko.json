@@ -1,0 +1,165 @@
+{
+  "slug": "simpleko",
+  "name": "Simpleko",
+  "website": "https://www.simpleko.se/",
+  "region": null,
+  "checked": "2026-10-27",
+  "summary": "Ekonomisk förvaltning i hela Sverige, helägt dotterbolag till Riksbyggen. Anger inget pris för förvaltningen men prissätter tillägget Digital underhållsplan. Vi hittade ingen teknisk förvaltning.",
+  "group": {
+    "text": "Grundat 2020 som helägt dotterbolag till Riksbyggen enligt Simpleko.",
+    "source": "g1"
+  },
+  "customers": {
+    "text": "Över 1 300 föreningar och fastighetsägare enligt Simpleko.",
+    "source": "g1"
+  },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "unknown",
+    "fastighetsskotsel": "unknown"
+  },
+  "ekonomisk": {
+    "summary": "Anger inget pris för förvaltningen. Listar grundtjänst, exempel på tilläggstjänster och kundportalen Portalen. Digital underhållsplan har ett pris.",
+    "source": "e1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges. Priset beror på föreningens storlek, behov och vilka tjänster som ingår.",
+      "source": "e1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen uppsägningstid för Simplekos eget avtal.",
+        "Digital underhållsplan: avtalet löper 12 månader och kan därefter sägas upp med en månads uppsägningstid enligt sidan om tjänsten."
+      ]
+    },
+    "included": [
+      "Löpande bokföring och ekonomihantering",
+      "Budget och ekonomisk uppföljning",
+      "Bokslut och årsredovisning",
+      "Avgifts- och hyresavisering",
+      "Leverantörsfakturor",
+      "Arvodesutbetalningar",
+      "Lån och leverantörsreskontra",
+      "Lägenhetsförteckning och medlemsadministration",
+      "Eget kundteam",
+      "Digitala verktyg för styrelsen"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Digital underhållsplan",
+        "price": "499 kr per månad exklusive moms, faktureras månadsvis. Avtalet löper 12 månader och kan därefter sägas upp med en månads varsel.",
+        "source": "e3"
+      },
+      {
+        "label": "Flerårsbudget"
+      },
+      {
+        "label": "Inkasso"
+      },
+      {
+        "label": "Köhantering"
+      },
+      {
+        "label": "Juridisk rådgivning"
+      }
+    ],
+    "digital": [
+      "Portalen: följa ekonomin, attestera fakturor och hantera dokument"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "national",
+      "text": "Tjänster i hela Sverige enligt Simpleko. Kontor i Uppsala och Östersund.",
+      "places": [
+        "Uppsala",
+        "Östersund"
+      ],
+      "source": "g1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "lan": "listed",
+      "flerars": "optional",
+      "inkasso": "optional"
+    },
+    "claims": [
+      {
+        "text": "Branschens nöjdaste kunder tredje året i rad, med NKI 78.",
+        "source": "e1",
+        "by": "förvaltaren"
+      },
+      {
+        "text": "Branschens nöjdaste kunder tre år i rad, mätt av Prognoscentret.",
+        "source": "g1",
+        "by": "förvaltaren"
+      }
+    ],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "partial",
+      "included": "published",
+      "extras": "partial",
+      "portal": "published",
+      "customers": "published"
+    },
+    "notes": [
+      "Tilläggstjänsterna anges som exempel. Bara Digital underhållsplan har pris.",
+      "Sidan om Digital underhållsplan skriver både att avtalet löper 12 månader och att prenumerationen är flexibel utan bindningstid. Den förklarar inte skillnaden."
+    ],
+    "moreSources": [
+      "e2",
+      "e3",
+      "e4"
+    ]
+  },
+  "teknisk": null,
+  "notes": [
+    "Simplekos vanliga frågor definierar teknisk förvaltning men beskriver ingen sådan tjänst. Digital underhållsplan nämns som tilläggstjänst inom ekonomisk förvaltning."
+  ],
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
+      "checked": "2026-10-26",
+      "pageDate": "© 2026 Simpleko",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/offert/",
+      "title": "Offert på ekonomisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "© 2026 Simpleko",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e3",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/digital-underhallsplan/",
+      "title": "Digital underhållsplan för bostadsrättsförening",
+      "checked": "2026-10-27",
+      "pageDate": "© 2026 Simpleko",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e4",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/faq/",
+      "title": "Vanliga frågor om ekonomisk förvaltning för Brf",
+      "checked": "2026-10-27",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.simpleko.se/om-oss/",
+      "title": "Om Simpleko",
+      "checked": "2026-10-27",
+      "scope": "general"
+    }
+  ]
+}

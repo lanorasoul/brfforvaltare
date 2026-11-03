@@ -1,0 +1,216 @@
+{
+  "slug": "hsb-stockholm",
+  "name": "HSB Stockholm",
+  "website": "https://www.hsb.se/stockholm/",
+  "region": "Stockholm",
+  "checked": "2026-10-27",
+  "summary": "Regional HSB-förening i Stockholmsområdet. Erbjuder ekonomisk förvaltning i tre paket (Bas, Plus och Komplett) och teknisk förvaltning. Anger inget pris.",
+  "group": {
+    "text": "En av 23 regionala HSB-föreningar. Föreningarna är fristående och bildar en kooperativ federation. Hela HSB har cirka 4 150 bostadsrättsföreningar och nära 680 000 medlemmar enligt HSB.",
+    "source": "g0"
+  },
+  "customers": null,
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "unknown"
+  },
+  "ekonomisk": {
+    "summary": "Beskriver tre paket: Ekonomi Bas, Ekonomi Plus och Ekonomi Komplett. Listar vad Ekonomi Bas innehåller. Pris lämnas på offert.",
+    "source": "e1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges. Sidan hänvisar till offert.",
+      "source": "e1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid.",
+        "Tillgång till underhållsplan krävs för samtliga paket. Den ingår om behov finns i föreningen.",
+        "Föreningen kan byta paket uppåt eller nedåt under avtalstiden."
+      ]
+    },
+    "included": [
+      "Arvoden",
+      "Budget och årsredovisning",
+      "Hantering av leverantörsfakturor",
+      "Löpande redovisning",
+      "Inkomstdeklaration",
+      "Avisering",
+      "Överlåtelser och panter",
+      "Digital kundportal (Mitt HSB)",
+      "Skatter",
+      "Betalningar",
+      "Låneförteckning",
+      "Lägenhetsförteckning",
+      "Hantering av andrahandsuthyrning"
+    ],
+    "levels": [
+      {
+        "name": "Ekonomi Bas",
+        "text": "Paketlösning för det grundläggande i den löpande ekonomin. Ingen personlig ekonom."
+      },
+      {
+        "name": "Ekonomi Plus",
+        "text": "För föreningar som vill fatta mer insiktsfulla beslut, enligt sidan. Inkluderar en personlig ekonom."
+      },
+      {
+        "name": "Ekonomi Komplett",
+        "text": "För föreningar som vill ha mer kontroll, analysstöd och en utsedd ekonom."
+      }
+    ],
+    "extras": [
+      {
+        "label": "Låneförvaltning"
+      },
+      {
+        "label": "Nyckeltalsanalys"
+      }
+    ],
+    "digital": [
+      "Mitt HSB (digital kundportal med ekonomiöversikt och dokumentlagring)"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "unknown",
+      "text": "Sidorna om ekonomisk förvaltning anger inget verksamhetsområde. Teknisk förvaltning nämner orter i Stockholmsområdet.",
+      "places": [
+        "Stockholm"
+      ],
+      "source": "e1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "lan": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "partial",
+      "portal": "published",
+      "customers": "notfound"
+    },
+    "notes": [
+      "Sidan jämför paketen i en bild som vi inte kunde läsa. Vad Plus och Komplett innehåller utöver personlig ekonom framgår därför inte här.",
+      "Sidorna om Ekonomi Bas nämner Låneförvaltning och Nyckeltalsanalys som exempel på tilläggstjänster."
+    ],
+    "moreSources": [
+      "e2"
+    ]
+  },
+  "teknisk": {
+    "summary": "Listar fastighetsförvaltare, underhållsplan, TryggEntreprenad (byggprojekt till fast pris) och energioptimering. Anger inget pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges. TryggEntreprenad beskrivs som byggprojekt till fast pris, utan belopp.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
+    "included": [
+      "Fastighetsförvaltare",
+      "Underhållsplan",
+      "TryggEntreprenad: byggprojekt till fast pris",
+      "Energioptimering och drift",
+      "Kontroller och besiktningar",
+      "Avtalskontroll",
+      "Underlag för stambyte och relining",
+      "Projektledning"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": [
+      "Mitt HSB"
+    ],
+    "reporting": [
+      "Sidan har en länk till felanmälan. Den anger inga tider och ingen jour."
+    ],
+    "coverage": {
+      "scope": "regional",
+      "text": "Sidan nämner Stockholm, Järfälla, Haninge, Täby, Tyresö, Solna, Upplands Väsby, Upplands-Bro, Sollentuna och Nacka.",
+      "places": [
+        "Stockholm",
+        "Järfälla",
+        "Haninge",
+        "Täby",
+        "Tyresö",
+        "Solna",
+        "Upplands Väsby",
+        "Upplands-Bro",
+        "Sollentuna",
+        "Nacka"
+      ],
+      "source": "t1"
+    },
+    "features": {
+      "forvaltare": "listed",
+      "underhallsplan": "listed",
+      "besiktning": "listed",
+      "energi": "listed",
+      "projekt": "listed",
+      "renovering": "listed",
+      "upphandling": "listed",
+      "felanmalan": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "notfound",
+      "extras": "notfound",
+      "emergency": "partial"
+    },
+    "notes": [
+      "Sidan skiljer inte på vad som ingår och vad som tillkommer."
+    ]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.hsb.se/stockholm/forvaltningstjanster/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-03-12",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://www.hsb.se/stockholm/forvaltningstjanster/ekonomisk-forvaltning/ekonomi-bas/",
+      "title": "Ekonomi Bas",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-10-22",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.hsb.se/stockholm/forvaltningstjanster/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2025-10-09",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g0",
+      "url": "https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/",
+      "title": "HSB:s organisation och ägarinformation",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-05-27",
+      "scope": "general"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "slug": "sbc",
+  "name": "SBC",
+  "website": "https://www.sbc.se/",
+  "region": null,
+  "checked": "2026-10-27",
+  "summary": "Förvaltare med kontor i nio orter. Anger prisexempel för ekonomisk förvaltning men inget pris för teknisk förvaltning.",
+  "group": null,
+  "customers": {
+    "text": "Över 5 000 föreningar i Sverige och över 800 föreningar i Malmö enligt SBC.",
+    "source": "e2"
+  },
+  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "ekonomisk": {
+    "summary": "Anger ett lägsta pris och tre prisexempel för ekonomisk förvaltning. Förvaltaren skriver att exemplen inte är fasta prisnivåer.",
+    "source": "e1",
+    "pricing": {
+      "model": "examples",
+      "vat": "unknown",
+      "fromPerYear": 22000,
+      "examples": [
+        { "lgh": 20, "perYear": 26000 },
+        { "lgh": 50, "perYear": 55000 },
+        { "lgh": 100, "perYear": 70000 }
+      ],
+      "disclaimer": "Priserna är exempel och inte fasta prisnivåer.",
+      "source": "e1",
+      "status": "verified",
+      "notes": [
+        "Exemplen är ungefärliga (ca 26 000, 55 000 och 70 000 kr per år). Sidan anger inte om priserna är exklusive eller inklusive moms.",
+        "Sidan skriver också att priset för mindre och medelstora föreningar vanligtvis ligger på 1 100 till 1 300 kr per lägenhet och år. Det är en allmän uppgift på sidan och inte SBC:s prislista.",
+        "SBC:s sida för Malmö anger inget pris och hänvisar till ett prisförslag."
+      ]
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen uppsägningstid för SBC:s eget avtal. Den uppmanar föreningen att kontrollera uppsägningstiden hos nuvarande förvaltare."
+      ]
+    },
+    "included": [
+      "Löpande bokföring och redovisning",
+      "Hantering av leverantörsfakturor",
+      "Avisering av månadsavgifter och hyror",
+      "Budget och löpande ekonomisk uppföljning",
+      "Bokslut och årsredovisning enligt K2 eller K3",
+      "Deklaration och rapportering till myndigheter",
+      "Medlems- och lägenhetsförteckning, pantsättningar och överlåtelser",
+      "Ekonomisk rådgivning till styrelsen",
+      "Låneupphandling Bas",
+      "Avisering för individuell mätning och debitering (IMD)"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": ["SBC Hemma (kundportal)"],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kontor i nio orter: Göteborg, Malmö, Stockholm, Sundsvall, Uppsala, Linköping, Norrköping, Jönköping och Örebro.",
+      "places": ["Göteborg", "Malmö", "Stockholm", "Sundsvall", "Uppsala", "Linköping", "Norrköping", "Jönköping", "Örebro"],
+      "source": "g1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "lan": "included",
+      "radgivning": "included",
+      "imd": "included"
+    },
+    "claims": [
+      {
+        "text": "Kundnöjdhet 80 procent och personalomsättning 7,8 procent, angivet för Malmö. SBC visar ingen källa eller mätmetod.",
+        "source": "g2",
+        "by": "förvaltaren"
+      }
+    ],
+    "disclosure": {
+      "price": "partial",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "partial",
+      "portal": "published",
+      "customers": "published"
+    },
+    "notes": ["Sidan säger att tillval finns och visas i ett paketval, men listar dem inte."]
+  },
+  "teknisk": {
+    "summary": "Listar teknisk förvaltare på avrop, underhållsplan, statusbedömning, SBA och elkontroll. Anger inget pris, inga nivåer och ingen avtalstid.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": ["Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning."]
+    },
+    "included": [
+      "Övergripande teknisk kontroll",
+      "Samordning och upphandling av externa tjänster",
+      "Rådgivning vid störningsärenden",
+      "Teknisk förvaltare på avrop",
+      "Underhållsplan",
+      "Årlig statusbedömning (ÅSB)",
+      "Statuskontroll av bostadsrätter",
+      "Elkontroll",
+      "Systematiskt brandskyddsarbete (SBA)",
+      "SBC Säkerhet",
+      "Fastighetsservice med skötsel, utemiljö och lokalvård",
+      "Drift och energi"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": ["SBC Hemma (kundportal)"],
+    "reporting": ["Sidan har en länk till felanmälan. Den anger inga tider och ingen jour."],
+    "coverage": {
+      "scope": "regional",
+      "text": "Egna sidor för teknisk förvaltning i Stockholm, Göteborg, Malmö, Uppsala och Sundsvall. Kontor i nio orter.",
+      "places": ["Göteborg", "Malmö", "Stockholm", "Sundsvall", "Uppsala", "Linköping", "Norrköping", "Jönköping", "Örebro"],
+      "source": "g1"
+    },
+    "features": {
+      "forvaltare": "optional",
+      "underhallsplan": "listed",
+      "besiktning": "listed",
+      "sba": "listed",
+      "energi": "listed",
+      "skotsel": "listed",
+      "upphandling": "listed",
+      "felanmalan": "listed"
+    },
+    "claims": [
+      {
+        "text": "De flesta bostadsrättsföreningar kan spara 25 procent genom aktivt driftarbete. SBC visar ingen källa för siffran.",
+        "source": "t1",
+        "by": "förvaltaren"
+      }
+    ],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "notfound",
+      "extras": "notfound",
+      "emergency": "partial"
+    },
+    "notes": ["Sidan skiljer inte på vad som ingår och vad som tillkommer. Teknisk förvaltare finns som tjänst på avrop."]
+  },
+  "notes": [
+    "SBC:s egna sidor anger olika antal. Sidan om fastighetsförvaltning i Malmö skriver fler än 500 föreningar i Malmö med omnejd och över 5 000 i resten av Sverige, och dess vanliga frågor skriver över 4 600 i Sverige. Sidan om ekonomisk förvaltning i Malmö skriver över 800 i Malmö och 5 000 runtom i Sverige."
+  ],
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
+      "checked": "2026-10-26",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e2",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/malmo/",
+      "title": "Ekonomisk förvaltning för bostadsrättsföreningar i Malmö",
+      "checked": "2026-10-26",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "© 2026",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.sbc.se/om-sbc/kontor/",
+      "title": "Kontor",
+      "checked": "2026-10-27",
+      "pageDate": "© 2026",
+      "scope": "general"
+    },
+    {
+      "id": "g2",
+      "url": "https://www.sbc.se/fastighetsforvaltning/malmo/",
+      "title": "Fastighetsförvaltning i Malmö",
+      "checked": "2026-10-27",
+      "scope": "general"
+    }
+  ]
+}

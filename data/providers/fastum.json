@@ -1,0 +1,204 @@
+{
+  "slug": "fastum",
+  "name": "Fastum",
+  "website": "https://fastum.se/",
+  "region": null,
+  "checked": "2026-10-27",
+  "summary": "Anger en tumregel för ekonomisk förvaltning och fem avtalsnivåer med innehåll för teknisk förvaltning, men inget pris för tekniken.",
+  "group": {
+    "text": "Grundat 1931 och familjeägt enligt Fastum.",
+    "source": "g1"
+  },
+  "customers": null,
+  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "ekonomisk": {
+    "summary": "Anger en tumregel på runt 1 000 kr per lägenhet, utan att säga per vilken period eller om moms ingår. Listar grundtjänst och tilläggstjänster.",
+    "source": "e1",
+    "pricing": {
+      "model": "rule_of_thumb",
+      "vat": "unknown",
+      "perLgh": 1000,
+      "periodStated": false,
+      "text": "En tumregel är att det brukar kosta runt 1000 kr per lägenhet.",
+      "source": "e1",
+      "status": "assumed",
+      "notes": [
+        "Sidan anger varken period eller moms. Vi räknar med per år, men det är vårt antagande.",
+        "Sidan skriver att det kan skilja sig vad som ingår och vad som kostar extra mellan olika förvaltare."
+      ]
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen uppsägningstid."] },
+    "included": [
+      "Ekonomisk rådgivning",
+      "Bokslut och årsredovisning",
+      "Löpande redovisning",
+      "Inkomstdeklaration",
+      "Momsredovisning",
+      "Avisering och påminnelsehantering",
+      "Betalning av leverantörsfakturor"
+    ],
+    "levels": [],
+    "extras": [
+      { "label": "K3-övergång" },
+      { "label": "Scenarioanalys eller flerårsbudget" },
+      { "label": "Hantering av individuellt kapitaltillskott" },
+      { "label": "Hantering av parkeringskö" },
+      { "label": "Hyresavtal och villkorsändringar" },
+      { "label": "Godkännande av medlemskap" },
+      { "label": "Digital brevlåda" }
+    ],
+    "digital": [
+      "Digital kundportal för styrelsearbetet",
+      "BankID-inloggning för medlemmar och hyresgäster",
+      "Digital föreningsbrevlåda (tilläggstjänst)"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "national",
+      "text": "Verksamheten finns i hela Sverige enligt Fastum. Kontor i Solna och Uppsala.",
+      "places": ["Solna", "Uppsala"],
+      "source": "g1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "radgivning": "included",
+      "flerars": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "partial",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "published",
+      "portal": "published",
+      "customers": "notfound"
+    },
+    "notes": ["Sidan anger inte vad tilläggstjänsterna kostar."]
+  },
+  "teknisk": {
+    "summary": "Beskriver fem avtalsnivåer för teknisk förvaltning, från Driftavtal till X-Large, med antal ronderingar per år. Anger inget pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning.",
+        "Fastum skriver att avtalen är flexibla och att föreningen kan välja fler eller färre ronderingar eller tillval."
+      ]
+    },
+    "included": [
+      "Regelbundna kontroller och tillsyn av tekniska system",
+      "Felsökning",
+      "Driftuppföljning",
+      "Stöd vid upphandling",
+      "Teknisk rådgivning",
+      "Långsiktig underhållsplanering",
+      "Bevakning av myndighetskrav",
+      "Hantering av renoveringsansökningar",
+      "Samordning"
+    ],
+    "levels": [
+      {
+        "name": "Driftavtal",
+        "text": "Felanmälan och personlig kundsupport. Rondering av driftutrymmen 4 gånger per år. Inga ronderingar av gemensamma utrymmen."
+      },
+      {
+        "name": "Small",
+        "text": "Felanmälan och personlig kundsupport. Förvaltare vid behov. Rondering av driftutrymmen 2 gånger per år och av gemensamma utrymmen 2 gånger per år."
+      },
+      {
+        "name": "Medium",
+        "text": "Felanmälan och personlig kundsupport. Förvaltare vid behov. Rondering av driftutrymmen 12 gånger per år och av gemensamma utrymmen 12 gånger per år."
+      },
+      {
+        "name": "Large",
+        "text": "Felanmälan och personlig kundsupport. Förvaltare vid behov. Årlig kontroll och statusbesiktning. Rondering av driftutrymmen 12 gånger per år och av gemensamma utrymmen 24 gånger per år."
+      },
+      {
+        "name": "X-Large",
+        "text": "Felanmälan och personlig kundsupport. Förvaltare vid behov. Årlig kontroll och statusbesiktning. Rondering av driftutrymmen 12 gånger per år och av gemensamma utrymmen 48 gånger per år."
+      }
+    ],
+    "extras": [
+      { "label": "Skadeservice" },
+      { "label": "Nyckelhantering" },
+      { "label": "Statuskontroll" },
+      { "label": "Underhållsplan" },
+      { "label": "Energideklaration (via samarbetspartner)" },
+      { "label": "Förvaltningskontor" },
+      { "label": "Energikartläggning" },
+      { "label": "Projekt- och byggledning" }
+    ],
+    "digital": ["Kundportalen"],
+    "reporting": [
+      "Felanmälan och personlig kundsupport ingår på alla nivåer. Felanmälan görs i ett webbformulär.",
+      "Vanliga frågor skriver att teknisk förvaltning omfattar felanmälan, jour och beredskap. Tider för jour anges inte.",
+      "Kundtjänst är öppen måndag till fredag 07:30 till 16:00."
+    ],
+    "coverage": {
+      "scope": "national",
+      "text": "Verksamheten finns i hela Sverige enligt Fastum. Kontor i Solna och Uppsala.",
+      "places": ["Solna", "Uppsala"],
+      "source": "g1"
+    },
+    "features": {
+      "forvaltare": "level",
+      "underhallsplan": "included",
+      "besiktning": "level",
+      "ovk": "listed",
+      "energi": "optional",
+      "projekt": "optional",
+      "skotsel": "listed",
+      "upphandling": "included",
+      "felanmalan": "included",
+      "jour": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "levels": "published",
+      "extras": "published",
+      "emergency": "partial"
+    },
+    "notes": [
+      "Sidan nämner Fastighetsservice, Underhållsplanering, Skadeservice och OVK som tjänster. Skadeservice och underhållsplan står också som tillval.",
+      "Energikartläggning och projekt- och byggledning är normalt tillval enligt sidan."
+    ]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://fastum.se/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
+      "checked": "2026-10-26",
+      "pageDate": "Sidan ändrad 2026-10-12",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://fastum.se/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-26, © 2025",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://fastum.se/om-oss/",
+      "title": "Om oss",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan ändrad 2026-10-13, © 2025",
+      "scope": "general"
+    }
+  ]
+}

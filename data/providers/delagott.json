@@ -1,0 +1,116 @@
+{
+  "slug": "delagott",
+  "name": "Delagott",
+  "legalName": "Delagott Real Estate AB",
+  "website": "https://www.delagott.se/",
+  "region": null,
+  "checked": "2026-10-27",
+  "summary": "Förvaltare med huvudkontor i Stockholm. Beskriver ekonomisk och teknisk förvaltning på en gemensam sida. Anger inget pris, inga kundantal och inga villkor.",
+  "group": null,
+  "customers": null,
+  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "unknown" },
+  "ekonomisk": {
+    "summary": "Listar bokföring, budget, bokslut, årsredovisning, deklaration och avisering. Anger inget pris.",
+    "source": "d1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidan.",
+      "source": "d1"
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "included": [
+      "Bokföring",
+      "Budget",
+      "Bokslut",
+      "Årsredovisning",
+      "Deklaration",
+      "Avisering",
+      "Betalningar",
+      "Medlems- och lägenhetsregister",
+      "Påminnelser",
+      "Frågeservice"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": [],
+    "reporting": [],
+    "coverage": {
+      "scope": "unknown",
+      "text": "Huvudkontor i Stockholm. Sidan skriver att lokal kapacitet bekräftas i offerten.",
+      "places": ["Stockholm"],
+      "source": "d1"
+    },
+    "features": {
+      "bokforing": "listed",
+      "avisering": "listed",
+      "budget": "listed",
+      "arsredovisning": "listed",
+      "skatt": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "extras": "notfound",
+      "portal": "notfound",
+      "customers": "notfound"
+    },
+    "notes": ["Sidan skiljer inte på vad som ingår och vad som tillkommer."]
+  },
+  "teknisk": {
+    "summary": "Listar underhålls- och verksamhetsplanering, driftuppföljning, kontroll av entreprenörer, stöd vid upphandlingar och energiuppföljning. Anger inget pris.",
+    "source": "d1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidan.",
+      "source": "d1"
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "included": [
+      "Underhålls- och verksamhetsplanering",
+      "Driftuppföljning",
+      "Beställning och kontroll av entreprenörer",
+      "Stöd vid upphandlingar och projekt",
+      "Hantering av skador och myndighetskrav",
+      "Energi- och kostnadsuppföljning",
+      "Tekniska beslutsunderlag"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": [],
+    "reporting": [],
+    "coverage": {
+      "scope": "unknown",
+      "text": "Huvudkontor i Stockholm. Sidan skriver att lokal kapacitet bekräftas i offerten.",
+      "places": ["Stockholm"],
+      "source": "d1"
+    },
+    "features": {
+      "underhallsplan": "listed",
+      "energi": "listed",
+      "projekt": "listed",
+      "upphandling": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "partial",
+      "levels": "notfound",
+      "extras": "notfound",
+      "emergency": "notfound"
+    },
+    "notes": ["Sidan skiljer inte på vad som ingår och vad som tillkommer."]
+  },
+  "sources": [
+    {
+      "id": "d1",
+      "url": "https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning",
+      "title": "Teknisk eller ekonomisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "Sidan uppdaterad 2026-08-23",
+      "scope": "general"
+    }
+  ]
+}

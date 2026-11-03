@@ -1,0 +1,148 @@
+{
+  "slug": "fastighetsagarna-service",
+  "name": "Fastighetsägarna Service",
+  "website": "https://www.fastighetsagarna.se/",
+  "region": "Stockholm, Uppsala och Gotland",
+  "checked": "2026-10-27",
+  "summary": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm. Erbjuder ekonomisk och teknisk förvaltning och anger inget pris för någon av dem.",
+  "group": {
+    "text": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm.",
+    "source": "g1"
+  },
+  "customers": { "text": "Tusentals kunder enligt Fastighetsägarna Service. Siffran gäller alla kunder, inte bara bostadsrättsföreningar.", "source": "g1" },
+  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "ekonomisk": {
+    "summary": "Beskriver ekonomisk förvaltning med egen ekonomisk förvaltare och egen hyres- och avgiftshandläggare. Anger inget pris.",
+    "source": "e1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidan.",
+      "source": "e1"
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen uppsägningstid."] },
+    "included": [
+      "Egen ekonomisk förvaltare och egen hyres- och avgiftshandläggare",
+      "Budget",
+      "Löpande bokföring och momsredovisning",
+      "Leverantörsfakturor",
+      "Bokslut och årsredovisning",
+      "Resultat- och balansräkning varje månad",
+      "Hyres- och avgiftsavisering",
+      "Obetalda hyror och avgifter",
+      "Lägenhetsförteckning",
+      "Betalning av löner, arvoden och arbetsgivaravgifter",
+      "Person- och företagsupplysningar samt soliditetsupplysningar"
+    ],
+    "levels": [],
+    "extras": [
+      { "label": "Bokföring" },
+      { "label": "Fastighetsdeklaration" },
+      { "label": "Flerårsbudget" },
+      { "label": "Investeringsanalys" },
+      { "label": "Låneupphandling" },
+      { "label": "Momsavdrag" },
+      { "label": "Villkorsändring" },
+      { "label": "Se över avgiften" }
+    ],
+    "digital": [],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kundområden Stockholm och Gotland. Fastighetsägarna Service Uppsala är en separat enhet. Sidan skriver att tjänsteutbudet skiljer sig åt i olika delar av landet.",
+      "places": ["Stockholm", "Gotland", "Uppsala"],
+      "source": "g1"
+    },
+    "features": {
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "lan": "listed",
+      "flerars": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "partial",
+      "portal": "notfound",
+      "customers": "partial"
+    },
+    "notes": [
+      "Sidan listar åtta tjänster under rubriken Våra tjänster inom ekonomisk förvaltning, utan att säga om de ingår eller tillkommer, och utan pris.",
+      "Bokföring står både bland det man får hjälp med och som en egen tjänst i listan."
+    ]
+  },
+  "teknisk": {
+    "summary": "Beskriver fastighetsförvaltare som tjänst med planering, samordning, löpande tillsyn och specialiststöd. Kunden väljer omfattning. Anger inget pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges på sidan.",
+      "source": "t1"
+    },
+    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "included": [
+      "Planering och uppföljning",
+      "Samordning och kontakt",
+      "Löpande tillsyn",
+      "Uppföljning av renoveringar och byggprojekt",
+      "Specialiststöd inom juridik, energi, ekonomi och projektledning"
+    ],
+    "levels": [],
+    "extras": [],
+    "digital": [],
+    "reporting": [],
+    "coverage": {
+      "scope": "regional",
+      "text": "Kundområden Stockholm och Gotland. Fastighetsägarna Service Uppsala är en separat enhet.",
+      "places": ["Stockholm", "Gotland", "Uppsala"],
+      "source": "g1"
+    },
+    "features": {
+      "forvaltare": "included",
+      "underhallsplan": "listed",
+      "energi": "listed",
+      "projekt": "listed",
+      "skotsel": "listed"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "levels": "notfound",
+      "extras": "notfound",
+      "emergency": "notfound"
+    },
+    "notes": [
+      "Sidan skriver att kunden väljer omfattning. Menyn nämner underhållsplan, fastighetsservice, byggprojekt, energi och drift, Boendeappen och inkasso som egna tjänster."
+    ]
+  },
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.fastighetsagarna.se/tjanster/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för BRF och fastighetsägare",
+      "checked": "2026-10-27",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/fastighetsforvaltare/",
+      "title": "Fastighetsförvaltare",
+      "checked": "2026-10-27",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.fastighetsagarna.se/om-oss/organisation/fastighetsagarna-service/",
+      "title": "Fastighetsägarna Service",
+      "checked": "2026-10-27",
+      "scope": "general"
+    }
+  ]
+}

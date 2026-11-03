@@ -1,0 +1,772 @@
+/* Jämförelsen: rubrik, filterrad, nyckeluppgifter, tjänstematris och kategorisidor. Varje selektor är en enda klass. */
+
+/* ---------- rubrik på startsidan ---------- */
+
+.top {
+  position: relative;
+  overflow: clip;
+  padding-top: calc(var(--nav-h) + 14px + clamp(44px, 6vw, 84px));
+  padding-bottom: clamp(24px, 3.4vw, 44px);
+}
+
+.top-inner {
+  position: relative;
+  text-align: center;
+}
+
+.top-lead {
+  margin: 22px auto 0;
+  max-width: 62ch;
+}
+
+/* ---------- filterrad ---------- */
+
+.hub-region {
+  position: relative;
+}
+
+.cbar-wrap {
+  position: sticky;
+  top: calc(var(--nav-h) + 14px + 10px);
+  z-index: 20;
+  padding-block: 8px;
+  pointer-events: none;
+}
+
+.cbar {
+  pointer-events: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 18px;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  box-shadow: 0 0 0 1px rgba(18, 21, 28, 0.07), 0 14px 40px -18px rgba(18, 21, 28, 0.3);
+}
+
+.cbar-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cbar-grow {
+  flex: 1 1 260px;
+  min-width: 200px;
+}
+
+.cbar-label {
+  font-size: 12.5px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.cbar-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cbar-text,
+.cbar-num {
+  height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 16px;
+}
+
+.cbar-text {
+  width: 100%;
+  padding: 0 74px 0 14px;
+}
+
+.cbar-num {
+  width: 88px;
+  padding: 0 10px;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.cbar-clear {
+  position: absolute;
+  right: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--panel);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cbar-clear:hover {
+  background: var(--panel-2);
+}
+
+.cbar .seg-btn {
+  height: 36px;
+}
+
+.cbar-count {
+  flex: 1 1 200px;
+  align-self: center;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* ---------- sektioner i jämförelsen ---------- */
+
+.hub {
+  padding-top: clamp(32px, 4.4vw, 56px);
+  padding-bottom: clamp(8px, 2vw, 24px);
+}
+
+.hub-last {
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+.hub-head {
+  margin-bottom: 24px;
+}
+
+.hub-lead {
+  margin-top: 10px;
+  max-width: 66ch;
+}
+
+/* ---------- nyckeluppgifter ---------- */
+
+.kf-scroll,
+.fm-scroll {
+  /* position: relative håller skärmläsartexten (sr-only) inne i rutan, annars växer sidan i sidled på mobil. */
+  position: relative;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  background: #fff;
+}
+
+.kf {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.kf th,
+.kf td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Bredare kolumner där texten annars bryts på många rader, så att raderna inte blir onödigt höga på smal skärm. */
+.kf td:nth-child(2) {
+  min-width: 210px;
+}
+
+.kf td:nth-child(3) {
+  min-width: 220px;
+}
+
+.kf td:nth-child(5) {
+  min-width: 190px;
+}
+
+.kf thead th {
+  padding-block: 13px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  white-space: nowrap;
+  background: var(--panel);
+}
+
+.kf tbody tr:last-child th,
+.kf tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.kf-corner,
+.kf-name {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 190px;
+  background: #fff;
+  box-shadow: 1px 0 0 var(--line);
+}
+
+.kf thead .kf-corner {
+  z-index: 2;
+  background: var(--panel);
+}
+
+.kf-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.kf-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--line-strong);
+}
+
+.kf-region {
+  display: block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+
+.kf tbody tr:hover th,
+.kf tbody tr:hover td {
+  background: #fafbfb;
+}
+
+.kf-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kf-price strong {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.kf-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-3);
+}
+
+.kf-none {
+  color: var(--ink-3);
+}
+
+.kf-scope {
+  display: block;
+  font-weight: 600;
+}
+
+.kf-match {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.kf-match-maybe {
+  border-style: dashed;
+  background: #fff;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.kf-src {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 14px;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.kf-src:hover {
+  text-decoration-color: currentColor;
+}
+
+.kf-empty {
+  padding: 40px 18px;
+  text-align: center;
+  color: var(--ink-2);
+}
+
+.cnotes {
+  display: grid;
+  gap: 8px;
+  max-width: 84ch;
+  margin-top: 18px;
+}
+
+.cnotes-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--line-strong);
+}
+
+.cnotes-btn:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ---------- tjänstematris ---------- */
+
+.fm {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;
+}
+
+.fm th,
+.fm td {
+  border-bottom: 1px solid var(--line);
+}
+
+.fm-corner,
+.fm-row {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 180px;
+  padding: 12px 18px;
+  background: #fff;
+  text-align: left;
+  font-weight: 600;
+  box-shadow: 1px 0 0 var(--line);
+}
+
+.fm thead .fm-corner {
+  z-index: 2;
+  vertical-align: bottom;
+  background: var(--panel);
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.fm thead .fm-col {
+  height: 204px;
+  padding: 0 2px 12px;
+  vertical-align: bottom;
+  text-align: center;
+  background: var(--panel);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.fm-col-text {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.fm-row a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--line-strong);
+}
+
+.fm-cell {
+  min-width: 52px;
+  padding: 11px 4px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.fm-optional,
+.fm-listed {
+  color: var(--ink-2);
+}
+
+.fm-none {
+  color: var(--ink-3);
+}
+
+.fm tbody tr:hover th,
+.fm tbody tr:hover td {
+  background: #fafbfb;
+}
+
+.fm tbody tr:last-child th,
+.fm tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.fm tfoot th,
+.fm tfoot td {
+  border-top: 1px solid var(--line);
+  border-bottom: 0;
+  background: var(--panel);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.fm tfoot .fm-row {
+  background: var(--panel);
+}
+
+.fm-total {
+  padding: 11px 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.fm-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.fm-key li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fm-key .mark {
+  color: var(--ink);
+}
+
+.fm-help {
+  max-width: 84ch;
+  margin-top: 12px;
+}
+
+.matrix-empty {
+  padding: 40px 18px;
+  text-align: center;
+  color: var(--night-ink-2);
+}
+
+/* ---------- räknaren längre ner ---------- */
+
+.calc-section {
+  padding-top: clamp(56px, 7vw, 96px);
+}
+
+.calc-after {
+  margin-top: 28px;
+}
+
+.calc-nopr {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--panel);
+  line-height: 1.5;
+}
+
+/* ---------- smal skärm ---------- */
+
+@media (max-width: 720px) {
+  .cbar-wrap {
+    position: static;
+  }
+  .cbar {
+    gap: 10px 14px;
+    padding: 12px;
+  }
+  .cbar-count {
+    flex-basis: 100%;
+    text-align: left;
+  }
+}
+
+/* ---------- aktörsprofil: en sektion per del av förvaltningen ---------- */
+
+.pcat {
+  padding-block: 52px;
+  border-top: 1px solid var(--line);
+}
+
+.pcat:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.pcat-title {
+  margin-bottom: 16px;
+}
+
+.pcat-lead {
+  max-width: 62ch;
+}
+
+.pcat-src {
+  margin-top: 10px;
+}
+
+.psub {
+  margin-top: 40px;
+}
+
+.psub-head {
+  margin-bottom: 14px;
+}
+
+.psub-sub {
+  margin: 26px 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.flist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+  max-width: 780px;
+}
+
+.flist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.flist-label {
+  font-weight: 500;
+}
+
+.flist-state {
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--ink-2);
+  text-align: right;
+}
+
+.flist-item[data-state="none"] {
+  color: var(--ink-3);
+}
+
+.flist-item[data-state="none"] .flist-state {
+  color: var(--ink-3);
+}
+
+.levels {
+  display: grid;
+  gap: 10px;
+  max-width: 68ch;
+}
+
+.level {
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.level-name {
+  font-weight: 600;
+}
+
+.level-text {
+  margin: 4px 0 0;
+  color: var(--ink-2);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  max-width: 68ch;
+}
+
+.jump-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .pcat {
+    padding-block: 40px;
+  }
+  .flist {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- förvaltarlistan ---------- */
+
+.list-head {
+  margin-bottom: 18px;
+}
+
+.list-head-gap {
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+.prov-group {
+  max-width: 54ch;
+  color: var(--ink);
+}
+
+.prov-openrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 1060px) {
+  .prov-openrow {
+    justify-content: flex-start;
+  }
+}
+
+/* ---------- jämför sida vid sida ---------- */
+
+.cp-cat {
+  grid-column: 1 / -1;
+}
+
+.cp-feat {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+}
+
+.cp-feat[data-state="optional"],
+.cp-feat[data-state="listed"] {
+  color: var(--ink-2);
+}
+
+.cp-feat[data-state="none"] {
+  color: var(--ink-3);
+}
+
+.cp-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-3);
+}
+
+/* ---------- frågor att ställa, på kategorisidorna ---------- */
+
+.ask-lead {
+  margin-top: 12px;
+  max-width: 62ch;
+}
+
+.ask-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+  padding-left: 1.4em;
+  list-style: decimal;
+  max-width: 68ch;
+}
+
+.ask-list li {
+  padding-left: 6px;
+}
+
+.ask-list li::marker {
+  color: var(--ink-3);
+  font-weight: 600;
+}
+
+.ask-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+  margin-top: 32px;
+}
+
+/* ---------- källa för tillägg som ligger på en annan sida ---------- */
+
+.kf-src-extra {
+  display: block;
+  margin-top: 6px;
+}
+
+.extra-src {
+  display: block;
+  margin-top: 6px;
+}
+
+.cp-extra-src {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.cp-extra-src:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ---------- offertmall med flik ---------- */
+
+.offers {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  justify-items: start;
+}
+
+.offers .offer {
+  width: 100%;
+}
+
+/* ---------- uppsägningstid per förvaltare och kategori ---------- */
+
+.nt-text {
+  display: block;
+}
+
+.nt-src {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.nt-missing {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+  max-width: 84ch;
+}
+
+/* ---------- rad om att tabellen går att rulla ---------- */
+
+.scroll-hint {
+  margin: 0 0 8px;
+}

@@ -1,0 +1,247 @@
+{
+  "slug": "riksbyggen",
+  "name": "Riksbyggen",
+  "website": "https://www.riksbyggen.se/",
+  "region": null,
+  "checked": "2026-10-27",
+  "summary": "Stor aktör med kontor över hela landet. Anger inget pris för ekonomisk eller teknisk förvaltning, men prissätter tillägget Digital underhållsplan.",
+  "group": null,
+  "customers": {
+    "text": "178 972 bostadsrätter i 4 204 bostadsrättsföreningar. Siffrorna gäller all förvaltning, inte bara ekonomisk.",
+    "source": "g1"
+  },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "ekonomisk": {
+    "summary": "Anger inget pris för ekonomisk förvaltning och lämnar prisförslag på förfrågan. Listar både grundtjänst och tilläggstjänster.",
+    "source": "e1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Pris lämnas på förfrågan. Riksbyggen återkommer med ett prisförslag anpassat efter fastigheten.",
+      "source": "e1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen uppsägningstid."
+      ]
+    },
+    "included": [
+      "Ekonomiadministration",
+      "Hyres- och avgiftsadministration",
+      "Andrahandsuthyrning",
+      "Arvoden (gäller föreningar)",
+      "Överlåtelsehantering (gäller föreningar)",
+      "Skatt, moms och deklaration",
+      "Bokslut och årsredovisning",
+      "Budget, prognos och uppföljning",
+      "Likviditetsplacering",
+      "Lånehantering",
+      "Ekonomisk rådgivning"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Bredband och tv"
+      },
+      {
+        "label": "Egen anställd personal"
+      },
+      {
+        "label": "Flerårsbudget"
+      },
+      {
+        "label": "Individuell mätning och debitering"
+      },
+      {
+        "label": "Inkasso"
+      },
+      {
+        "label": "Kontraktshantering och uthyrning"
+      },
+      {
+        "label": "K3-redovisning"
+      },
+      {
+        "label": "Oäkta förening (gäller bostadsrättsföreningar)"
+      }
+    ],
+    "digital": [
+      "Mitt Riksbyggen (inloggning, sidan beskriver inte tjänsten)",
+      "Överlåtelsehandlingar och medlemsansökan hanteras digitalt"
+    ],
+    "reporting": [],
+    "coverage": {
+      "scope": "national",
+      "text": "60 kontor över hela landet enligt Riksbyggen.",
+      "places": [],
+      "source": "g1"
+    },
+    "features": {
+      "bokforing": "listed",
+      "leverantorsfakturor": "listed",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "lan": "included",
+      "radgivning": "included",
+      "flerars": "optional",
+      "inkasso": "optional",
+      "imd": "optional"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "notfound",
+      "notice": "notfound",
+      "included": "published",
+      "extras": "published",
+      "portal": "partial",
+      "customers": "published"
+    },
+    "notes": [
+      "Sidan anger inte vad tilläggstjänsterna kostar.",
+      "Bokföring och leverantörsfakturor nämns i löptexten som exempel på vad ekonomisk förvaltning handlar om, inte i listan över grundtjänsten."
+    ]
+  },
+  "teknisk": {
+    "summary": "Listar vad teknisk förvaltning omfattar och åtta tilläggstjänster. Anger inget pris för tjänsten. Digital underhållsplan säljs som prenumeration med pris.",
+    "source": "t1",
+    "pricing": {
+      "model": "on_request",
+      "text": "Inget pris anges för teknisk förvaltning. Det enda priset på sidorna gäller tillägget Digital underhållsplan.",
+      "source": "t1"
+    },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning.",
+        "Digital underhållsplan: 12 månaders bindningstid med en månads uppsägningstid enligt köpvillkoren."
+      ]
+    },
+    "included": [
+      "Administrera avtalsdokument",
+      "Bevaka myndighetskrav",
+      "Första kontakt vid störning",
+      "Försäkrings- och skadeadministration",
+      "Tekniskt stöd till fastighetsägaren",
+      "Upphandling av material och tjänster",
+      "Uppdatera underhållsplanen",
+      "Årsplanering",
+      "Övergripande tillsyn"
+    ],
+    "levels": [],
+    "extras": [
+      {
+        "label": "Avflyttningskontroll"
+      },
+      {
+        "label": "Inventering av skyddsrum"
+      },
+      {
+        "label": "Nyckel- och passageadministration"
+      },
+      {
+        "label": "Projekt- och underhållsadministration"
+      },
+      {
+        "label": "Systematiskt brandskyddsarbete (SBA)"
+      },
+      {
+        "label": "Teknisk rådgivning"
+      },
+      {
+        "label": "Upprättande av underhållsplan"
+      },
+      {
+        "label": "Inspektion och besiktning"
+      },
+      {
+        "label": "Digital underhållsplan (prenumeration)",
+        "price": "499 kr per månad exklusive moms. Avtalet löper 12 månader och kan därefter sägas upp med en månads varsel.",
+        "source": "t2"
+      },
+      {
+        "label": "Rådgivning kopplad till digital underhållsplan",
+        "price": "350 kr per tillfälle. Moms anges inte.",
+        "source": "t2"
+      }
+    ],
+    "digital": [
+      "Mitt Riksbyggen",
+      "Mitt Boende",
+      "Digital underhållsplan som prenumeration, för föreningar med en till två byggnader och upp till 50 år framåt"
+    ],
+    "reporting": [
+      "Första kontakt vid störning ingår i teknisk förvaltning. Sidan beskriver inte felanmälan för tjänsten.",
+      "Fastighetsdrift, som är en annan tjänst, anges ha felanmälan dygnet runt och funktionskontroll av värme, vatten, el och ventilation."
+    ],
+    "coverage": {
+      "scope": "national",
+      "text": "60 kontor över hela landet enligt Riksbyggen.",
+      "places": [],
+      "source": "g1"
+    },
+    "features": {
+      "underhallsplan": "included",
+      "besiktning": "optional",
+      "sba": "optional",
+      "projekt": "optional",
+      "upphandling": "included"
+    },
+    "claims": [],
+    "disclosure": {
+      "price": "partial",
+      "notice": "partial",
+      "included": "published",
+      "levels": "notfound",
+      "extras": "published",
+      "emergency": "partial"
+    },
+    "notes": [
+      "Uppgiften om felanmälan dygnet runt står under fastighetsdrift och gäller inte automatiskt den som bara köper teknisk förvaltning."
+    ],
+    "moreSources": [
+      "t2"
+    ]
+  },
+  "notes": [
+    "Simpleko, som också finns i jämförelsen, är ett helägt dotterbolag till Riksbyggen enligt Simplekos egen sida."
+  ],
+  "sources": [
+    {
+      "id": "e1",
+      "url": "https://www.riksbyggen.se/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "title": "Ekonomisk förvaltning för brf:er och fastighetsägare",
+      "checked": "2026-10-27",
+      "pageDate": "© Riksbyggen 2026",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.riksbyggen.se/fastighetsforvaltning/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-10-27",
+      "pageDate": "© Riksbyggen 2026",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t2",
+      "url": "https://www.riksbyggen.se/fastighetsforvaltning/teknisk-forvaltning/digital-underhallsplan/",
+      "title": "Digital underhållsplan",
+      "checked": "2026-10-27",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.riksbyggen.se/forvaltning-brf/",
+      "title": "Förvaltning för bostadsrättsföreningar",
+      "checked": "2026-10-27",
+      "scope": "general"
+    }
+  ]
+}
