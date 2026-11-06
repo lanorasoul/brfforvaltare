@@ -101,7 +101,7 @@ export default function PrisguidePage() {
   // Alla punkter i diagrammet, som tabell för den som inte kan eller vill läsa diagrammet.
   const points = eko.flatMap(({ p, b }) => {
     const pr = b.pricing;
-    if (pr.model === "list") return pr.anchors.map((a) => ({ key: `${p.slug}${a.lgh}`, name: p.name, basis: "Prislista", lgh: String(a.lgh), value: kr(a.perYear) }));
+    if (pr.model === "list") return pr.anchors.map((a) => ({ key: `${p.slug}${a.lgh}`, name: p.name, basis: pr.package ? `Prislista, paketet ${pr.package}` : "Prislista", lgh: String(a.lgh), value: kr(a.perYear) }));
     if (pr.model === "examples") {
       const base = pr.examples.map((a) => ({ key: `${p.slug}${a.lgh}`, name: p.name, basis: "Prisexempel", lgh: String(a.lgh), value: `ca ${kr(a.perYear)}` }));
       return typeof pr.fromPerYear === "number" ? [{ key: `${p.slug}fran`, name: p.name, basis: "Lägsta pris", lgh: "alla storlekar", value: `från ${kr(pr.fromPerYear)}` }, ...base] : base;
@@ -216,7 +216,7 @@ export default function PrisguidePage() {
                   .{" "}
                 </>
               )}
-              Se <Link className="link" href="/metod#priser">hur vi räknar</Link> eller <Link className="link" href="/#rakna">räkna för just er storlek</Link>.
+              Se <Link className="link" href="/metod#priser">hur vi räknar</Link> eller <Link className="link" href="/#forvaltare">se priset för just er storlek</Link>.
             </p>
           </section>
 

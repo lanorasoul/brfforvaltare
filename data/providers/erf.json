@@ -11,7 +11,7 @@
   },
   "region": null,
   "checked": "2026-11-06",
-  "summary": "Digital ekonomisk förvaltning i hela Sverige med publicerad prislista per föreningsstorlek, exklusive moms. Erbjuder inte teknisk förvaltning.",
+  "summary": "Digital ekonomisk förvaltning i hela Sverige, med kontor i Malmö. Publicerar en prislista per föreningsstorlek för paketet Enkel, exklusive moms. Erbjuder inte teknisk förvaltning.",
   "group": null,
   "customers": null,
   "services": {
@@ -50,11 +50,12 @@
     ]
   },
   "ekonomisk": {
-    "summary": "Publicerar en prislista för ekonomisk förvaltning per föreningsstorlek, exklusive moms. Teknisk förvaltning och fastighetsskötsel ingår inte.",
+    "summary": "Publicerar en prislista per föreningsstorlek för paketet Enkel, exklusive moms. I Enkel betalar föreningen för telefon, möten och rådgivning när de används. Paketet Komplett kostar från 995 kr per lägenhet och år. Teknisk förvaltning och fastighetsskötsel ingår inte.",
     "source": "e1",
     "pricing": {
       "model": "list",
       "vat": "excl",
+      "package": "Enkel",
       "priceDate": "2026-08-21",
       "anchors": [
         {
@@ -125,7 +126,7 @@
       "status": "verified",
       "notes": [
         "Mellanliggande storlekar är beräknade rakt mellan de publicerade gränserna. Metoden stämmer med ERF:s eget exempel: 35 lägenheter ger 28 469 kr.",
-        "ERF:s sida med vanliga frågor nämner paketen Enkel (från 645 kr) och Komplett (från 995 kr) per lägenhet och år. Prissidan visar ett baspris utan paket. Vi utgår från prissidan."
+        "Prislistan gäller paketet Enkel. Startsidans priskalkylator räknar på Enkel och ger samma belopp som prislistan, och båda börjar på 645 kr per lägenhet och år. Komplett kostar från 995 kr per lägenhet och år och har mer i det fasta priset."
       ]
     },
     "terms": {
@@ -139,13 +140,24 @@
       "Löpande bokföring",
       "Digital fakturahantering",
       "Avgiftshantering",
-      "Årsredovisning",
+      "Bokslut och årsredovisning enligt K3",
+      "Deklaration",
       "Budgetering",
-      "Underhållsplan",
-      "Digital plattform",
-      "Support"
+      "Verktyg för underhållsplan. Att ta fram själva planen ingår inte",
+      "Digital plattform och medlemsportal",
+      "AI-säkerhet som varnar vid avvikande fakturor",
+      "Support och fast kontaktperson via e-post"
     ],
-    "levels": [],
+    "levels": [
+      {
+        "name": "Enkel",
+        "text": "Bokföring, bokslut och årsredovisning, deklaration, avier, medlemsportal och verktyg för budget, underhållsplan och hemsida. Fast kontaktperson via e-post. Telefon, möten, rådgivning och ovanliga situationer faktureras när de används. Från 645 kr per lägenhet och år i större föreningar."
+      },
+      {
+        "name": "Komplett",
+        "text": "Mer i det fasta priset, bland annat juridisk rådgivning, 2 möten per år med ekonom, 4 med kundansvarig och kontakt även via telefon. Från 995 kr per lägenhet och år."
+      }
+    ],
     "extras": [
       {
         "label": "Individuell mätning och debitering (IMD)",
@@ -194,7 +206,10 @@
       "budget": "included",
       "arsredovisning": "included",
       "overlatelser": "optional",
-      "imd": "optional"
+      "imd": "optional",
+      "skatt": "included",
+      "radgivning": "level",
+      "flerars": "listed"
     },
     "claims": [
       {
@@ -225,7 +240,15 @@
       "extras": "published",
       "portal": "published",
       "customers": "notfound"
-    }
+    },
+    "moreSources": [
+      "e2",
+      "g1"
+    ],
+    "notes": [
+      "Påminnelser skickas vid utebliven betalning. Inkasso nämns inte.",
+      "Underhållsplanen: ERF:s vanliga frågor säger att det som ingår är visualisering och uppföljning av föreningens plan i plattformen, inte att ta fram planen."
+    ]
   },
   "teknisk": null,
   "notes": [

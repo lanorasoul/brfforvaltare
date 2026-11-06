@@ -8,9 +8,9 @@
     "width": 127.3,
     "height": 42.8
   },
-  "region": "Stockholm och Gotland",
+  "region": "Stockholm och Uppsala",
   "checked": "2026-11-06",
-  "summary": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm. Erbjuder ekonomisk och teknisk förvaltning och anger inget pris för någon av dem.",
+  "summary": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm. Erbjuder ekonomisk och teknisk förvaltning i Stockholms och Uppsala län och anger inget pris för någon av dem.",
   "group": {
     "text": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm.",
     "source": "g1"
@@ -97,17 +97,20 @@
         "label": "Se över avgiften"
       }
     ],
-    "digital": [],
+    "digital": [
+      "Boendeappen, där de boende betalar avgift eller hyra och gör felanmälan, och där styrelsen når de boende med information. Appen kräver att föreningen köper förvaltning eller fastighetsservice.",
+      "En kundportal, som sidan säger finns i en ny version."
+    ],
     "reporting": [],
     "coverage": {
       "scope": "regional",
-      "text": "Kundområden Stockholm och Gotland. Fastighetsägarna Service Uppsala är en separat enhet. Sidan skriver att tjänsteutbudet skiljer sig åt i olika delar av landet.",
+      "text": "Ekonomisk förvaltning erbjuds i Stockholms och Uppsala län enligt sidan. Enligt sidan om bolaget finns kunderna i Stockholm och på Gotland.",
       "places": [
         "Stockholm",
-        "Gotland",
-        "Uppsala"
+        "Uppsala",
+        "Gotland"
       ],
-      "source": "g1"
+      "source": "e1"
     },
     "features": {
       "bokforing": "included",
@@ -117,7 +120,9 @@
       "arsredovisning": "included",
       "skatt": "included",
       "lan": "listed",
-      "flerars": "listed"
+      "flerars": "listed",
+      "inkasso": "listed",
+      "radgivning": "listed"
     },
     "claims": [],
     "disclosure": {
@@ -125,12 +130,18 @@
       "notice": "notfound",
       "included": "published",
       "extras": "partial",
-      "portal": "notfound",
+      "portal": "partial",
       "customers": "partial"
     },
     "notes": [
       "Sidan listar åtta tjänster under rubriken Våra tjänster inom ekonomisk förvaltning, utan att säga om de ingår eller tillkommer, och utan pris.",
-      "Bokföring står både bland det man får hjälp med och som en egen tjänst i listan."
+      "Bokföring står både bland det man får hjälp med och som en egen tjänst i listan.",
+      "Inkasso är en egen tjänst med inkassokrav, betalningsföreläggande och avhysningar. Hantering av obetalda hyror och avgifter ingår i den ekonomiska förvaltningen."
+    ],
+    "moreSources": [
+      "g1",
+      "a1",
+      "i1"
     ]
   },
   "teknisk": {
@@ -155,25 +166,56 @@
       "Specialiststöd inom juridik, energi, ekonomi och projektledning"
     ],
     "levels": [],
-    "extras": [],
+    "extras": [
+      {
+        "label": "Underhållsplan i varianterna Start, Standard och Grön, framtagen i Planima. Standard och Grön börjar med en besiktning på plats.",
+        "price": "Licens för Planima från 2 700 kr per år. Priset för att ta fram planen anges inte.",
+        "source": "t2"
+      },
+      {
+        "label": "Fastighetsskötsel med regelbunden tillsyn"
+      },
+      {
+        "label": "Avfallshantering"
+      },
+      {
+        "label": "Lokalvård"
+      },
+      {
+        "label": "Brandskyddsarbete (SBA)"
+      },
+      {
+        "label": "Energi och drift, bland annat energikartläggning och OVK"
+      }
+    ],
     "digital": [],
-    "reporting": [],
+    "reporting": [
+      "Felanmälan och fastighetsjour finns inom fastighetsservice. Tider anges inte.",
+      "De boende kan göra felanmälan i Boendeappen."
+    ],
     "coverage": {
       "scope": "regional",
-      "text": "Kundområden Stockholm och Gotland. Fastighetsägarna Service Uppsala är en separat enhet.",
+      "text": "Teknisk förvaltning och fastighetsservice finns i Stockholms och Uppsala län enligt sidorna. Enligt sidan om bolaget finns kunderna i Stockholm och på Gotland.",
       "places": [
         "Stockholm",
-        "Gotland",
-        "Uppsala"
+        "Uppsala",
+        "Gotland"
       ],
-      "source": "g1"
+      "source": "t0"
     },
     "features": {
       "forvaltare": "included",
       "underhallsplan": "listed",
       "energi": "listed",
       "projekt": "listed",
-      "skotsel": "listed"
+      "skotsel": "listed",
+      "besiktning": "included",
+      "upphandling": "included",
+      "renovering": "listed",
+      "sba": "listed",
+      "ovk": "listed",
+      "felanmalan": "listed",
+      "jour": "listed"
     },
     "claims": [],
     "disclosure": {
@@ -181,11 +223,20 @@
       "notice": "notfound",
       "included": "published",
       "levels": "notfound",
-      "extras": "notfound",
-      "emergency": "notfound"
+      "extras": "partial",
+      "emergency": "partial"
     },
     "notes": [
-      "Sidan skriver att kunden väljer omfattning. Menyn nämner underhållsplan, fastighetsservice, byggprojekt, energi och drift, Boendeappen och inkasso som egna tjänster."
+      "Sidan skriver att kunden väljer omfattning. Menyn nämner underhållsplan, fastighetsservice, byggprojekt, energi och drift, Boendeappen och inkasso som egna tjänster.",
+      "Underhållsplanen finns i tre varianter. Grön har samma innehåll som Standard plus en energikartläggning."
+    ],
+    "moreSources": [
+      "t0",
+      "t2",
+      "t3",
+      "t4",
+      "a1",
+      "g1"
     ]
   },
   "sources": [
@@ -193,15 +244,57 @@
       "id": "e1",
       "url": "https://www.fastighetsagarna.se/tjanster/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för BRF och fastighetsägare",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "scope": "ekonomisk"
+    },
+    {
+      "id": "t0",
+      "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/",
+      "title": "Teknisk förvaltning",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
     },
     {
       "id": "t1",
       "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/fastighetsforvaltare/",
       "title": "Fastighetsförvaltare",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "scope": "teknisk"
+    },
+    {
+      "id": "t2",
+      "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/underhallsplan/",
+      "title": "Underhållsplan",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t3",
+      "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/fastighetsservice/",
+      "title": "Fastighetsservice",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t4",
+      "url": "https://www.fastighetsagarna.se/tjanster/energi-och-drift/",
+      "title": "Energi och drift",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
+    },
+    {
+      "id": "a1",
+      "url": "https://www.fastighetsagarna.se/tjanster/boendeappen/",
+      "title": "Boendeappen",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "i1",
+      "url": "https://www.fastighetsagarna.se/tjanster/inkasso/",
+      "title": "Inkasso",
+      "checked": "2026-11-06",
+      "scope": "ekonomisk"
     },
     {
       "id": "g1",

@@ -50,7 +50,7 @@
     ]
   },
   "ekonomisk": {
-    "summary": "Anger en tumregel på runt 1 000 kr per lägenhet, utan att säga per vilken period eller om moms ingår. Listar grundtjänst och tilläggstjänster.",
+    "summary": "Anger en tumregel på runt 1 000 kr per lägenhet, utan att säga per vilken period eller om moms ingår. Listar tolv punkter som ingår och åtta tilläggstjänster utan pris.",
     "source": "e1",
     "pricing": {
       "model": "rule_of_thumb",
@@ -76,12 +76,20 @@
       "Bokslut och årsredovisning",
       "Löpande redovisning",
       "Inkomstdeklaration",
-      "Momsredovisning",
+      "Budget, resultat- och likviditetsbudget",
+      "Betalning av leverantörsfakturor",
       "Avisering och påminnelsehantering",
-      "Betalning av leverantörsfakturor"
+      "Hyres- och avgiftsadministration",
+      "Utbetalning av styrelsearvode",
+      "Arbetsgivardeklarationer",
+      "Kontrolluppgifter",
+      "Momsredovisning"
     ],
     "levels": [],
     "extras": [
+      {
+        "label": "Bostadsrättsregistret och lägenhetsmatchning"
+      },
       {
         "label": "K3-övergång"
       },
@@ -126,7 +134,10 @@
       "arsredovisning": "included",
       "skatt": "included",
       "radgivning": "included",
-      "flerars": "optional"
+      "flerars": "optional",
+      "budget": "included",
+      "imd": "listed",
+      "overlatelser": "listed"
     },
     "claims": [],
     "disclosure": {
@@ -138,7 +149,10 @@
       "customers": "notfound"
     },
     "notes": [
-      "Sidan anger inte vad tilläggstjänsterna kostar."
+      "Sidan anger inte vad tilläggstjänsterna kostar.",
+      "IMD nämns som en egen tjänst i menyn. Sidan säger inte om den ingår.",
+      "Inkasso nämns inte. Påminnelsehantering ingår.",
+      "Överlåtelser: sidan nämner mäklarservice och godkännande av medlemskap som tjänster men inte överlåtelsehantering i listan över vad som ingår."
     ]
   },
   "teknisk": {
@@ -234,8 +248,8 @@
     },
     "features": {
       "forvaltare": "level",
-      "underhallsplan": "included",
-      "besiktning": "level",
+      "underhallsplan": "optional",
+      "besiktning": "included",
       "ovk": "listed",
       "energi": "optional",
       "projekt": "optional",
@@ -255,7 +269,9 @@
     },
     "notes": [
       "Sidan nämner Fastighetsservice, Underhållsplanering, Skadeservice och OVK som tjänster. Skadeservice och underhållsplan står också som tillval.",
-      "Energikartläggning och projekt- och byggledning är normalt tillval enligt sidan."
+      "Energikartläggning och projekt- och byggledning är normalt tillval enligt sidan.",
+      "Planering av långsiktigt underhåll med hjälp av en underhållsplan ingår. Att ta fram själva underhållsplanen är ett tillval.",
+      "Regelbundna kontroller och tillsyn ingår. Årlig kontroll och statusbesiktning ingår bara i Large och X-Large."
     ]
   },
   "sources": [
@@ -263,7 +279,7 @@
       "id": "e1",
       "url": "https://fastum.se/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-12",
       "scope": "ekonomisk"
     },
@@ -271,7 +287,7 @@
       "id": "t1",
       "url": "https://fastum.se/teknisk-forvaltning/",
       "title": "Teknisk förvaltning",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-26, © 2025",
       "scope": "teknisk"
     },

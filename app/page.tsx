@@ -40,7 +40,7 @@ export default function Home() {
   const faq = [
     {
       q: "Vad kostar ekonomisk förvaltning för en brf?",
-      a: "Det beror mest på antal lägenheter. Förvaltare som publicerar priser ligger på ungefär 700 till 1 300 kr per lägenhet och år, lägre per lägenhet ju större föreningen är. För 50 lägenheter är ERF:s listpris 37 375 kr per år exklusive moms och SBC:s exempel ungefär 55 000 kr. De flesta förvaltare lämnar pris bara på offert.",
+      a: "Det beror mest på antal lägenheter. Hos förvaltare som publicerar priser kostar det ungefär 670 till 1 300 kr per lägenhet och år för föreningar med 20 till 100 lägenheter. Mindre föreningar betalar mer per lägenhet. För 50 lägenheter är ERF:s listpris för paketet Enkel 37 375 kr per år exklusive moms, och SBC:s exempel är ungefär 55 000 kr. De flesta förvaltare lämnar pris bara på offert.",
     },
     {
       q: "Hur fungerar Hitta förvaltare?",

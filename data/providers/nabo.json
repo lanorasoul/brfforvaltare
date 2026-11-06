@@ -160,7 +160,9 @@
       "skatt": "included",
       "overlatelser": "included",
       "lan": "optional",
-      "flerars": "optional"
+      "flerars": "optional",
+      "radgivning": "included",
+      "inkasso": "listed"
     },
     "claims": [],
     "disclosure": {
@@ -225,7 +227,9 @@
       "Teknisk förvaltning i styrelseportalen",
       "Digital underhållsplan för 50 år med årlig licens"
     ],
-    "reporting": [],
+    "reporting": [
+      "Styrelsen får statusuppdateringar för felanmälningar från start till slut. Sidan anger inga tider och ingen jour."
+    ],
     "coverage": {
       "scope": "regional",
       "text": "Teknisk förvaltning i Stockholm, Göteborg, Malmö och Uppsala.",
@@ -247,7 +251,8 @@
       "projekt": "listed",
       "renovering": "listed",
       "skotsel": "level",
-      "upphandling": "level"
+      "upphandling": "level",
+      "felanmalan": "listed"
     },
     "claims": [],
     "disclosure": {
@@ -256,7 +261,7 @@
       "included": "partial",
       "levels": "partial",
       "extras": "notfound",
-      "emergency": "notfound"
+      "emergency": "partial"
     },
     "notes": [
       "Sidan skiljer inte på vad som ingår och vad som tillkommer. Den beskriver bara paketet Komplett som en nivå."
@@ -267,7 +272,7 @@
       "id": "e1",
       "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-23",
       "scope": "ekonomisk"
     },
@@ -275,7 +280,7 @@
       "id": "e2",
       "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/brf-pris/",
       "title": "Vad kostar ekonomisk förvaltning för brf",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-23",
       "scope": "ekonomisk"
     },
@@ -291,7 +296,7 @@
       "id": "t1",
       "url": "https://nabo.se/vara-tjanster/teknisk-forvaltning/",
       "title": "Teknisk förvaltning",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-23",
       "scope": "teknisk"
     },
@@ -307,7 +312,7 @@
       "id": "g2",
       "url": "https://nabo.se/har-finns-vi/",
       "title": "Här finns vi",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2025-05-22",
       "scope": "general"
     },

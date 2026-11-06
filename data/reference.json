@@ -1,9 +1,9 @@
 {
   "offerta": {
-    "title": "Vad kostar ekonomisk förvaltning för en brf?",
+    "title": "Vad kostar ekonomisk förvaltning för BRF?",
     "url": "https://offerta.se/guider/ekonomi-och-juridik/vad-kostar-ekonomisk-forvaltning-brf",
-    "checked": "2026-10-26",
-    "pageDate": "Publicerad 2026-09-25",
+    "checked": "2026-11-06",
+    "pageDate": "Sidan är daterad 2026-09-25",
     "note": "Offerta är en förmedlingstjänst för offerter och inte en förvaltare. Siffrorna är en allmän vägledning, inte någon förvaltares prislista.",
     "generalPerLghYear": { "low": 200, "high": 600 },
     "totalPerYear": { "low": 10000, "high": 100000 },

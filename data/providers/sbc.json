@@ -175,7 +175,8 @@
       "overlatelser": "included",
       "lan": "included",
       "radgivning": "included",
-      "imd": "included"
+      "imd": "included",
+      "flerars": "listed"
     },
     "claims": [
       {
@@ -249,14 +250,16 @@
       "source": "g1"
     },
     "features": {
-      "forvaltare": "optional",
+      "forvaltare": "included",
       "underhallsplan": "listed",
       "besiktning": "listed",
       "sba": "listed",
       "energi": "listed",
       "skotsel": "listed",
       "upphandling": "listed",
-      "felanmalan": "listed"
+      "felanmalan": "listed",
+      "projekt": "listed",
+      "renovering": "listed"
     },
     "claims": [
       {
@@ -274,7 +277,11 @@
       "emergency": "partial"
     },
     "notes": [
-      "Sidan skiljer inte på vad som ingår och vad som tillkommer. Teknisk förvaltare finns som tjänst på avrop."
+      "Sidan skiljer inte på vad som ingår och vad som tillkommer. Med teknisk förvaltning får föreningen en personlig teknisk förvaltare som huvudkontakt. Teknisk förvaltare finns också som tjänst på avrop utan fast avtal.",
+      "Projektledning vid ombyggnationer nämns i SBC:s pressinformation. Sidan säger inte att SBC utför renoveringarna själva."
+    ],
+    "moreSources": [
+      "f1"
     ]
   },
   "notes": [
@@ -292,14 +299,14 @@
       "id": "e2",
       "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/malmo/",
       "title": "Ekonomisk förvaltning för bostadsrättsföreningar i Malmö",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "scope": "ekonomisk"
     },
     {
       "id": "t1",
       "url": "https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/",
       "title": "Teknisk förvaltning",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© 2026",
       "scope": "teknisk"
     },
@@ -315,7 +322,7 @@
       "id": "g2",
       "url": "https://www.sbc.se/fastighetsforvaltning/malmo/",
       "title": "Fastighetsförvaltning i Malmö",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "scope": "general"
     },
     {

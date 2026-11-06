@@ -265,7 +265,8 @@ function PriceValue({ r, n, price }: { r: OverviewRow; n: number; price: PriceRo
     <>
       <span className="ov-big">{priceLabel(price, price.perYear, "year")}</span>
       <a className="ov-sub ov-src" href={r.priceUrl ?? r.website} target="_blank" rel="noopener noreferrer" title={price.note}>
-        {num(Math.round(perLgh))} kr per lägenhet och år. {BASIS[price.kind]}, {VAT_TEXT[price.vat]}.
+        {num(Math.round(perLgh))} kr per lägenhet och år. {BASIS[price.kind]}
+        {r.pricing?.model === "list" && r.pricing.package ? `, paketet ${r.pricing.package}` : ""}, {VAT_TEXT[price.vat]}.
       </a>
     </>
   );

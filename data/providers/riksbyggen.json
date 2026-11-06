@@ -12,8 +12,8 @@
   "checked": "2026-11-06",
   "summary": "Stor aktör med kontor över hela landet. Anger inget pris för ekonomisk eller teknisk förvaltning, men prissätter tillägget Digital underhållsplan.",
   "group": {
-    "text": "Kooperativt företag som ägs av bostadsrättsföreningar och organisationer inom byggsektorn. Simpleko är ett dotterbolag.",
-    "source": "f1"
+    "text": "Kooperativt företag som enligt Riksbyggen ägs av sina kunder. Simpleko är ett dotterbolag.",
+    "source": "o1"
   },
   "customers": {
     "text": "178 972 bostadsrätter i 4 204 bostadsrättsföreningar. Siffrorna gäller all förvaltning, inte bara ekonomisk.",
@@ -27,8 +27,8 @@
   "facts": {
     "founded": {
       "year": 1940,
-      "text": "Riksbyggen startade 1940.",
-      "source": "f1"
+      "text": "Riksbyggen startade 1940 enligt sidan om organisationen.",
+      "source": "o1"
     },
     "clients": {
       "value": 4204,
@@ -115,7 +115,8 @@
       }
     ],
     "digital": [
-      "Mitt Riksbyggen (inloggning, sidan beskriver inte tjänsten)",
+      "Mitt Riksbyggen, kundportal med information om bostad, förening eller lokal",
+      "Styrelserummet, ett digitalt verktyg för styrelsemöten med bokning, dagordning, justering av protokoll och signering",
       "Överlåtelsehandlingar och medlemsansökan hanteras digitalt"
     ],
     "reporting": [],
@@ -145,12 +146,15 @@
       "notice": "notfound",
       "included": "published",
       "extras": "published",
-      "portal": "partial",
+      "portal": "published",
       "customers": "published"
     },
     "notes": [
       "Sidan anger inte vad tilläggstjänsterna kostar.",
       "Bokföring och leverantörsfakturor nämns i löptexten som exempel på vad ekonomisk förvaltning handlar om, inte i listan över grundtjänsten."
+    ],
+    "moreSources": [
+      "g1"
     ]
   },
   "teknisk": {
@@ -233,10 +237,16 @@
     },
     "features": {
       "underhallsplan": "included",
-      "besiktning": "optional",
+      "besiktning": "included",
       "sba": "optional",
       "projekt": "optional",
-      "upphandling": "included"
+      "upphandling": "included",
+      "energi": "listed",
+      "skotsel": "listed",
+      "felanmalan": "listed",
+      "jour": "listed",
+      "renovering": "listed",
+      "forvaltare": "listed"
     },
     "claims": [],
     "disclosure": {
@@ -248,10 +258,13 @@
       "emergency": "partial"
     },
     "notes": [
-      "Uppgiften om felanmälan dygnet runt står under fastighetsdrift och gäller inte automatiskt den som bara köper teknisk förvaltning."
+      "Uppgiften om felanmälan dygnet runt står under fastighetsdrift och gäller inte automatiskt den som bara köper teknisk förvaltning.",
+      "Årlig övergripande tillsyn och underhållsbesiktning ingår i grundtjänsten. Inspektion och besiktning i övrigt är tillägg.",
+      "Energitjänster, fastighetsdrift, lokalvård, utemiljö och ombyggnader är egna tjänster enligt sidan om förvaltning för bostadsrättsföreningar."
     ],
     "moreSources": [
-      "t2"
+      "t2",
+      "g1"
     ]
   },
   "notes": [
@@ -262,7 +275,7 @@
       "id": "e1",
       "url": "https://www.riksbyggen.se/fastighetsforvaltning/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för brf:er och fastighetsägare",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© Riksbyggen 2026",
       "scope": "ekonomisk"
     },
@@ -270,7 +283,7 @@
       "id": "t1",
       "url": "https://www.riksbyggen.se/fastighetsforvaltning/teknisk-forvaltning/",
       "title": "Teknisk förvaltning",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© Riksbyggen 2026",
       "scope": "teknisk"
     },
@@ -278,20 +291,13 @@
       "id": "t2",
       "url": "https://www.riksbyggen.se/fastighetsforvaltning/teknisk-forvaltning/digital-underhallsplan/",
       "title": "Digital underhållsplan",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "scope": "teknisk"
     },
     {
       "id": "g1",
       "url": "https://www.riksbyggen.se/forvaltning-brf/",
       "title": "Förvaltning för bostadsrättsföreningar",
-      "checked": "2026-11-06",
-      "scope": "general"
-    },
-    {
-      "id": "f1",
-      "url": "https://www.riksbyggen.se/om-riksbyggen/",
-      "title": "Om Riksbyggen",
       "checked": "2026-11-06",
       "scope": "general"
     },
@@ -306,6 +312,13 @@
       "id": "l1",
       "url": "https://www.riksbyggen.se/",
       "title": "Startsida",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "o1",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/organisation/",
+      "title": "Vår organisation",
       "checked": "2026-11-06",
       "scope": "general"
     }

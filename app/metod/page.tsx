@@ -347,9 +347,7 @@ export default function MetodPage() {
                 <li>
                   Vi matchar ortens namn utan hänsyn till versaler eller å, ä och ö, och från tre bokstäver. Skriver ni Hels hittar ni de som nämner Helsingborg.
                 </li>
-                <li>
-                  <Link className="link" href="/hitta-forvaltare">Guiden</Link> använder samma regler. Där anger ni också vad ni vill ha hjälp med, och vi visar alla förvaltare som har den förvaltningen på sina sidor. Önskemål om tjänster döljer ingen, de visas som märken i en egen tabell. Orter som minst två förvaltare nämner på sina egna sidor har en egen sida under adressen /forvaltare-i.
-                </li>
+                <li>Orter som minst två förvaltare nämner på sina egna sidor har en egen sida under adressen /forvaltare-i.</li>
               </ul>
             </section>
 
@@ -380,9 +378,9 @@ export default function MetodPage() {
                 </h2>
               </div>
               <ul className="bullets">
-                <li>Förvaltarlistan, nyckeluppgifterna, tjänstematrisen, guiden och ortssidorna står i namnordning.</li>
+                <li>Översikten på startsidan, förvaltarlistan, tjänstematrisen och ortssidorna står i namnordning.</li>
                 <li>
-                  Prisräknaren sorterar efter pris för den storlek ni anger: de som anger pris först, lägst pris först, och därefter de utan pris i namnordning. I jämförelsen ligger kolumnerna i den ordning ni valde förvaltarna. Det är de enda ordningarna vi använder.
+                  På startsidan kan ni själva sortera efter pris för den storlek ni anger, efter kundnöjdhet eller efter antal kunder. Förvaltare som har värdet kommer först, lägst pris eller högst värde först, och därefter de utan värde i namnordning. I jämförelsen ligger kolumnerna i den ordning ni valde förvaltarna. Andra ordningar använder vi inte.
                 </li>
                 <li>Ingen förvaltare har betalat för att synas eller för sin plats. Sajten har i dag inga annonser och inga intäkter från förvaltare.</li>
                 <li>
@@ -404,9 +402,11 @@ export default function MetodPage() {
                   Vi planerar att ta betalt av förvaltare för varje offertförfrågan de svarar på. Pris och villkor är inte bestämda, och ingen faktura skickas innan förvaltaren skriftligen har godkänt villkoren.
                 </li>
                 <li>
-                  Betalning påverkar aldrig vilka förvaltare som visas, i vilken ordning, vilka märken de får eller vilka uppgifter som visas. Guiden visar alla förvaltare som passar styrelsens svar, oavsett om de betalar.
+                  Betalning påverkar aldrig vilka förvaltare som visas, i vilken ordning, vilka märken de får eller vilka uppgifter som visas.
                 </li>
-                <li>En offertförfrågan går bara till de förvaltare styrelsen själv har valt. Vi säljer inte kontaktuppgifter till andra.</li>
+                <li>
+                  En förfrågan via Hitta förvaltare går till högst tre förvaltare som passar föreningens svar. Väljer styrelsen själv förvaltare går förfrågan bara till dem. Vi säljer inte kontaktuppgifter till andra.
+                </li>
                 <li>{SITE.operator ? `Sajten drivs av ${SITE.operator.name}.` : "Uppgift om vem som driver sajten läggs till innan sajten öppnas."}</li>
                 {SITE.conflicts.map((c) => (
                   <li key={c}>{c}</li>

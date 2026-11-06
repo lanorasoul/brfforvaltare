@@ -11,18 +11,26 @@
   },
   "region": null,
   "checked": "2026-11-06",
-  "summary": "Förvaltare med huvudkontor i Stockholm. Beskriver ekonomisk och teknisk förvaltning på en gemensam sida. Anger inget pris, inga kundantal och inga villkor.",
+  "summary": "Ekonomisk och teknisk förvaltning samt fastighetsskötsel, med centrala tjänster på Kungsholmen i Stockholm och lokala kontor som drivs av franchisetagare. Anger över 330 kunder. Anger inget pris, ingen avtalstid och ingen uppsägningstid.",
   "group": {
     "text": "Franchisekedja: 16 franchisetagare med totalt 21 lokala förvaltningskontor enligt Delagott.",
     "source": "f1"
   },
-  "customers": null,
+  "customers": {
+    "text": "Över 330 kunder och över 20 000 lägenheter enligt Delagott.",
+    "source": "f1"
+  },
   "services": {
     "ekonomisk": "yes",
     "teknisk": "yes",
-    "fastighetsskotsel": "unknown"
+    "fastighetsskotsel": "yes"
   },
   "facts": {
+    "founded": {
+      "year": 2009,
+      "text": "Startade 2009 enligt Delagott.",
+      "source": "g6"
+    },
     "clients": {
       "value": 330,
       "text": "Över 330 kunder och över 20 000 lägenheter enligt Delagott.",
@@ -58,124 +66,328 @@
     ]
   },
   "ekonomisk": {
-    "summary": "Listar bokföring, budget, bokslut, årsredovisning, deklaration och avisering. Anger inget pris.",
-    "source": "d1",
+    "summary": "Listar 16 punkter som ingår, bland annat löpande bokföring, kvartalsrapporter med kommentarer, budgetförslag, bokslut och årsredovisning, avisering, betalning av leverantörsfakturor och deklaration. Nio tillägg anges utan pris. Anger inget pris.",
+    "source": "e1",
+    "moreSources": [
+      "g1",
+      "g2",
+      "g3",
+      "g4",
+      "g5"
+    ],
     "pricing": {
       "model": "on_request",
-      "text": "Inget pris anges på sidan.",
-      "source": "d1"
+      "text": "Inget pris anges. Sidan råder styrelsen att be om en sammanställning av total årskostnad och att kontrollera vad som ingår i arvodet, vilka tillägg som kan uppstå och hur uppstarten debiteras.",
+      "source": "e1"
     },
     "terms": {
       "notice": null,
       "other": [
-        "Sidan anger ingen avtalstid eller uppsägningstid."
+        "Sidorna anger ingen avtalstid eller uppsägningstid."
       ]
     },
     "included": [
-      "Bokföring",
-      "Budget",
-      "Bokslut",
-      "Årsredovisning",
-      "Deklaration",
-      "Avisering",
-      "Betalningar",
-      "Medlems- och lägenhetsregister",
-      "Påminnelser",
-      "Frågeservice"
+      "Löpande bokföring",
+      "Kvartalsrapporter med kommentarer",
+      "Budgetförslag",
+      "Bokslut och årsredovisning",
+      "Löpande uppdatering av medlems- och lägenhetsförteckningen, inklusive överlåtelser och pantsättningar",
+      "Kvartalsvis avisering av hyror och avgifter",
+      "Påminnelsehantering",
+      "Avisering av tillägg och vidarefakturering",
+      "Kontering av leverantörsfakturor med digital attest för styrelsen",
+      "Veckovis betalning av leverantörsfakturor",
+      "Årligt utskick av kontrolluppgifter",
+      "Inkomstdeklaration och skattebetalningar",
+      "Medlemsservice och kundtjänst",
+      "Utbetalning av löner och arvoden",
+      "Portal för medlemmar, hyresgäster och styrelse",
+      "Ekonomisk frågeservice för styrelsen"
     ],
     "levels": [],
-    "extras": [],
-    "digital": [],
+    "extras": [
+      {
+        "label": "Debitering av IMD-avläsning"
+      },
+      {
+        "label": "Avisering, registrering, kontrakt och köhantering av parkeringsplatser"
+      },
+      {
+        "label": "Momsregistrering"
+      },
+      {
+        "label": "Månadsrapporter i stället för kvartalsrapporter"
+      },
+      {
+        "label": "Arkivering av pärmar"
+      },
+      {
+        "label": "Kreditupplysningar"
+      },
+      {
+        "label": "Hyresförhandlingar för hyresrätter"
+      },
+      {
+        "label": "Långtidsprognos"
+      },
+      {
+        "label": "Delagott-appen"
+      }
+    ],
+    "digital": [
+      "Kundportal där styrelsen ser obetalda avier, tar ut listor över medlemmar och hyresgäster, tar fram röstlängder, sparar dokument och skickar in utlägg",
+      "Digital attest av leverantörsfakturor"
+    ],
     "reporting": [],
     "coverage": {
-      "scope": "unknown",
-      "text": "Huvudkontor i Stockholm. Sidan skriver att lokal kapacitet bekräftas i offerten.",
+      "scope": "regional",
+      "text": "Centrala tjänster på Kungsholmen i Stockholm. Lokala kontor i Stockholmsområdet, Malmö, Uppsala, Göteborg och Uddevalla enligt Delagotts sidor om kontoren.",
       "places": [
-        "Stockholm"
+        "Stockholm",
+        "Solna",
+        "Nacka",
+        "Danderyd",
+        "Lidingö",
+        "Haninge",
+        "Tyresö",
+        "Huddinge",
+        "Botkyrka",
+        "Nynäshamn",
+        "Sollentuna",
+        "Järfälla",
+        "Södertälje",
+        "Täby",
+        "Åkersberga",
+        "Upplands Väsby",
+        "Norrtälje",
+        "Sigtuna",
+        "Värmdö",
+        "Malmö",
+        "Uppsala",
+        "Göteborg",
+        "Uddevalla"
       ],
-      "source": "d1"
+      "source": "g1"
     },
     "features": {
-      "bokforing": "listed",
-      "avisering": "listed",
-      "budget": "listed",
-      "arsredovisning": "listed",
-      "skatt": "listed"
+      "bokforing": "included",
+      "leverantorsfakturor": "included",
+      "avisering": "included",
+      "budget": "included",
+      "arsredovisning": "included",
+      "skatt": "included",
+      "overlatelser": "included",
+      "radgivning": "included",
+      "flerars": "optional",
+      "imd": "optional",
+      "lan": "listed"
     },
     "claims": [],
     "disclosure": {
       "price": "notfound",
       "notice": "notfound",
-      "included": "partial",
-      "extras": "notfound",
-      "portal": "notfound",
-      "customers": "notfound"
+      "included": "published",
+      "extras": "published",
+      "portal": "published",
+      "customers": "published"
     },
     "notes": [
-      "Sidan skiljer inte på vad som ingår och vad som tillkommer."
+      "Tilläggen anges utan pris.",
+      "Inkasso nämns inte. Påminnelsehantering ingår.",
+      "Lån: sidan skriver att Delagott kan hjälpa till att förhandla lånens räntor. Den säger inte om det ingår."
     ]
   },
   "teknisk": {
-    "summary": "Listar underhålls- och verksamhetsplanering, driftuppföljning, kontroll av entreprenörer, stöd vid upphandlingar och energiuppföljning. Anger inget pris.",
-    "source": "d1",
+    "summary": "Fyra punkter ingår alltid: deltagande på styrelsemöten, förvaltarrapporter, rådgivning vid underhållsfrågor och en årlig fastighetssyn. Nio tjänster kan läggas till, bland annat upphandling av entreprenad, projektledning, SBA och uppdatering av underhållsplan. Fastighetsskötsel är en egen tjänst. Anger inget pris.",
+    "source": "t1",
+    "moreSources": [
+      "t2",
+      "t3",
+      "g1",
+      "g2",
+      "g3",
+      "g4",
+      "g5"
+    ],
     "pricing": {
       "model": "on_request",
       "text": "Inget pris anges på sidan.",
-      "source": "d1"
+      "source": "t1"
     },
     "terms": {
       "notice": null,
       "other": [
-        "Sidan anger ingen avtalstid eller uppsägningstid."
+        "Sidorna anger ingen avtalstid eller uppsägningstid.",
+        "Delagott skriver att uppdraget kan vara allt från några timmar i veckan till mer omfattande uppdrag."
       ]
     },
     "included": [
-      "Underhålls- och verksamhetsplanering",
-      "Driftuppföljning",
-      "Beställning och kontroll av entreprenörer",
-      "Stöd vid upphandlingar och projekt",
-      "Hantering av skador och myndighetskrav",
-      "Energi- och kostnadsuppföljning",
-      "Tekniska beslutsunderlag"
+      "Deltagande på styrelsemöten enligt överenskommen frekvens",
+      "Förvaltarrapporter till styrelsen i samband med styrelsemötena",
+      "Rådgivning vid underhållsfrågor",
+      "Årlig fastighetssyn"
     ],
     "levels": [],
-    "extras": [],
+    "extras": [
+      {
+        "label": "Utflyttningssyn vid överlåtelse"
+      },
+      {
+        "label": "Försäkringsskadehantering"
+      },
+      {
+        "label": "Upphandling av entreprenad"
+      },
+      {
+        "label": "Hantering av störningar med påföljande rättelseanmodan"
+      },
+      {
+        "label": "Ombud i avhysningsärenden"
+      },
+      {
+        "label": "Projektledning och projektassistans"
+      },
+      {
+        "label": "SBA-dokumentation och protokoll"
+      },
+      {
+        "label": "Uppdatering av underhållsplan"
+      },
+      {
+        "label": "Bollplank till styrelsen"
+      }
+    ],
     "digital": [],
-    "reporting": [],
+    "reporting": [
+      "Felanmälan görs via hemsidan, ett digitalt formulär, QR-kod i trapphuset, mejl eller telefon. Felanmälan ingår i fastighetsskötseln.",
+      "Styrelsen har behörighet till alla felanmälningar i en ärendelista.",
+      "Delagott skriver att de som teknisk förvaltare ansvarar för tillsyn, reparationer och jourberedskap. Tider för jouren anges inte."
+    ],
     "coverage": {
-      "scope": "unknown",
-      "text": "Huvudkontor i Stockholm. Sidan skriver att lokal kapacitet bekräftas i offerten.",
+      "scope": "regional",
+      "text": "Centrala tjänster på Kungsholmen i Stockholm. Lokala kontor i Stockholmsområdet, Malmö, Uppsala, Göteborg och Uddevalla enligt Delagotts sidor om kontoren. Den tekniska förvaltningen drivs av lokala kontor som ägs av franchisetagare.",
       "places": [
-        "Stockholm"
+        "Stockholm",
+        "Solna",
+        "Nacka",
+        "Danderyd",
+        "Lidingö",
+        "Haninge",
+        "Tyresö",
+        "Huddinge",
+        "Botkyrka",
+        "Nynäshamn",
+        "Sollentuna",
+        "Järfälla",
+        "Södertälje",
+        "Täby",
+        "Åkersberga",
+        "Upplands Väsby",
+        "Norrtälje",
+        "Sigtuna",
+        "Värmdö",
+        "Malmö",
+        "Uppsala",
+        "Göteborg",
+        "Uddevalla"
       ],
-      "source": "d1"
+      "source": "g1"
     },
     "features": {
-      "underhallsplan": "listed",
+      "forvaltare": "included",
+      "underhallsplan": "optional",
+      "besiktning": "included",
+      "sba": "optional",
       "energi": "listed",
-      "projekt": "listed",
-      "upphandling": "listed"
+      "projekt": "optional",
+      "skotsel": "listed",
+      "upphandling": "optional",
+      "felanmalan": "listed",
+      "jour": "listed"
     },
     "claims": [],
     "disclosure": {
       "price": "notfound",
       "notice": "notfound",
-      "included": "partial",
+      "included": "published",
       "levels": "notfound",
-      "extras": "notfound",
-      "emergency": "notfound"
+      "extras": "published",
+      "emergency": "partial"
     },
     "notes": [
-      "Sidan skiljer inte på vad som ingår och vad som tillkommer."
+      "Tilläggen anges utan pris.",
+      "Fastighetsskötsel är en egen tjänst. Där ingår bland annat felanmälan, tillsyn av driftutrymmen och byte av trasiga ljuskällor i allmänna utrymmen."
     ]
   },
   "sources": [
     {
-      "id": "d1",
-      "url": "https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning",
-      "title": "Teknisk eller ekonomisk förvaltning",
-      "checked": "2026-10-27",
-      "pageDate": "Sidan uppdaterad 2026-08-23",
+      "id": "e1",
+      "url": "https://www.delagott.se/ekonomisk-forvaltning",
+      "title": "Ekonomisk förvaltning",
+      "checked": "2026-11-06",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "t1",
+      "url": "https://www.delagott.se/teknisk-forvaltare",
+      "title": "Teknisk förvaltare",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t2",
+      "url": "https://www.delagott.se/fastighetsskotsel",
+      "title": "Fastighetsskötsel",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
+    },
+    {
+      "id": "t3",
+      "url": "https://www.delagott.se/felanmalan",
+      "title": "Felanmälan",
+      "checked": "2026-11-06",
+      "scope": "teknisk"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.delagott.se/vara-kontor",
+      "title": "Våra kontor",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "g2",
+      "url": "https://www.delagott.se/stockholm",
+      "title": "Fastighetsförvaltning i Stockholm",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "g3",
+      "url": "https://www.delagott.se/malmoskane",
+      "title": "Fastighetsförvaltning i Skåne",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "g4",
+      "url": "https://www.delagott.se/uppland",
+      "title": "Fastighetsförvaltning i Uppland",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "g5",
+      "url": "https://www.delagott.se/vastragotaland",
+      "title": "Fastighetsförvaltning i Västra Götaland",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "g6",
+      "url": "https://www.delagott.se/historien",
+      "title": "Historien",
+      "checked": "2026-11-06",
       "scope": "general"
     },
     {
@@ -202,7 +414,7 @@
     {
       "id": "l1",
       "url": "https://www.delagott.se/",
-      "title": "Startsida",
+      "title": "Startsida (sidfoten anger bolagsnamnet)",
       "checked": "2026-11-06",
       "scope": "general"
     }

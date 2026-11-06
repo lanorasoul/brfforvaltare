@@ -15,7 +15,10 @@
     "text": "HSB består av 21 fristående regionala HSB-föreningar som samverkar i en kooperativ federation. Förvaltningen sköts av den regionala föreningen där er brf ligger, så paket och villkor kan skilja sig mellan regionerna.",
     "source": "g0"
   },
-  "customers": null,
+  "customers": {
+    "text": "4 160 bostadsrättsföreningar är medlemmar i HSB (2025). Alla köper inte förvaltning av HSB, och HSB anger inte hur många som gör det.",
+    "source": "g1"
+  },
   "services": {
     "ekonomisk": "yes",
     "teknisk": "yes",
@@ -25,11 +28,6 @@
     "founded": {
       "year": 1923,
       "text": "HSB grundades 1923 i Stockholm.",
-      "source": "g1"
-    },
-    "clients": {
-      "value": 4160,
-      "text": "4 160 bostadsrättsföreningar är medlemmar i HSB (2025). Alla köper inte förvaltning av HSB, och HSB anger inte hur många som gör det.",
       "source": "g1"
     },
     "offices": {
@@ -120,19 +118,23 @@
       "arsredovisning": "included",
       "skatt": "included",
       "overlatelser": "included",
-      "lan": "optional"
+      "lan": "optional",
+      "radgivning": "level",
+      "flerars": "optional"
     },
     "claims": [],
     "disclosure": {
       "price": "notfound",
-      "notice": "notfound",
+      "notice": "partial",
       "included": "published",
       "extras": "partial",
       "portal": "published",
       "customers": "notfound"
     },
     "notes": [
-      "Uppgifterna om innehåll och paket kommer från HSB Stockholm. Andra regioner kan ha andra paket och namn."
+      "Uppgifterna om innehåll och paket kommer från HSB Stockholm. Andra regioner kan ha andra paket och namn.",
+      "Rådgivning: hos HSB Stockholm ingår en personlig ekonom i Ekonomi Plus och Komplett, inte i Bas. HSB MälarDalarna skriver att en personlig ekonomisk förvaltare alltid ingår.",
+      "Flerårsprognos: HSB Stockholm gör en tioårig prognos inom tjänsten Verksamhetsanalys."
     ],
     "moreSources": [
       "e2",
@@ -185,7 +187,8 @@
       "projekt": "listed",
       "renovering": "listed",
       "upphandling": "listed",
-      "felanmalan": "listed"
+      "felanmalan": "listed",
+      "skotsel": "listed"
     },
     "claims": [],
     "disclosure": {

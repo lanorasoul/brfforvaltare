@@ -73,8 +73,8 @@
     ]
   },
   "ekonomisk": {
-    "summary": "Anger inget pris för förvaltningen. Listar grundtjänst, exempel på tilläggstjänster och kundportalen Portalen. Digital underhållsplan har ett pris.",
-    "source": "e1",
+    "summary": "Anger inget pris för förvaltningen. Listar åtta grundtjänster, ett eget kundteam och kundportalen Portalen, samt tilläggstjänster. Bara tillägget Digital underhållsplan har ett pris.",
+    "source": "e5",
     "pricing": {
       "model": "on_request",
       "text": "Inget pris anges. Priset beror på föreningens storlek, behov och vilka tjänster som ingår.",
@@ -91,13 +91,13 @@
       "Löpande bokföring och ekonomihantering",
       "Budget och ekonomisk uppföljning",
       "Bokslut och årsredovisning",
-      "Avgifts- och hyresavisering",
-      "Leverantörsfakturor",
-      "Arvodesutbetalningar",
-      "Lån och leverantörsreskontra",
-      "Lägenhetsförteckning och medlemsadministration",
-      "Eget kundteam",
-      "Digitala verktyg för styrelsen"
+      "Avgifts- och hyresavisering med uppföljning av obetalda avier",
+      "Leverantörsfakturor: hantering, kontering, bokföring och betalning efter styrelsens attest",
+      "Arvodesutbetalningar med skatteavdrag, arbetsgivaravgifter och rapportering till Skatteverket",
+      "Låneadministration: låneavier, räntor och amorteringar",
+      "Lägenhetsförteckning och medlemsadministration, med överlåtelser, pantnoteringar och mäklarbilder",
+      "Eget kundteam med specialister inom ekonomi, redovisning och lägenhetsförteckning",
+      "Portalen, kundportal för styrelsen"
     ],
     "levels": [],
     "extras": [
@@ -117,10 +117,13 @@
       },
       {
         "label": "Juridisk rådgivning"
+      },
+      {
+        "label": "Klientmedel"
       }
     ],
     "digital": [
-      "Portalen: följa ekonomin, attestera fakturor och hantera dokument"
+      "Portalen: följa ekonomin i realtid, attestera fakturor och arvoden, arbeta med budget och bokslut och hålla ordning på avtal, dokument och lägenhetsregister"
     ],
     "reporting": [],
     "coverage": {
@@ -138,9 +141,13 @@
       "avisering": "included",
       "budget": "included",
       "arsredovisning": "included",
-      "lan": "listed",
+      "lan": "included",
       "flerars": "optional",
-      "inkasso": "optional"
+      "inkasso": "optional",
+      "skatt": "included",
+      "overlatelser": "included",
+      "radgivning": "included",
+      "imd": "listed"
     },
     "claims": [
       {
@@ -164,9 +171,12 @@
     },
     "notes": [
       "Tilläggstjänsterna anges som exempel. Bara Digital underhållsplan har pris.",
-      "Sidan om Digital underhållsplan skriver både att avtalet löper 12 månader och att prenumerationen är flexibel utan bindningstid. Den förklarar inte skillnaden."
+      "Sidan om Digital underhållsplan skriver både att avtalet löper 12 månader och att prenumerationen är flexibel utan bindningstid. Den förklarar inte skillnaden.",
+      "IMD finns som val i offertformuläret. Sidorna säger inte om det ingår eller kostar extra."
     ],
     "moreSources": [
+      "e1",
+      "e6",
       "e2",
       "e3",
       "e4"
@@ -181,7 +191,7 @@
       "id": "e1",
       "url": "https://www.simpleko.se/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "pageDate": "© 2026 Simpleko",
       "scope": "ekonomisk"
     },
@@ -189,7 +199,7 @@
       "id": "e2",
       "url": "https://www.simpleko.se/ekonomisk-forvaltning/offert/",
       "title": "Offert på ekonomisk förvaltning",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© 2026 Simpleko",
       "scope": "ekonomisk"
     },
@@ -197,7 +207,7 @@
       "id": "e3",
       "url": "https://www.simpleko.se/ekonomisk-forvaltning/digital-underhallsplan/",
       "title": "Digital underhållsplan för bostadsrättsförening",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© 2026 Simpleko",
       "scope": "ekonomisk"
     },
@@ -235,6 +245,20 @@
       "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
+    },
+    {
+      "id": "e5",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/grundtjanster/",
+      "title": "Det här ingår i vår ekonomiska förvaltning",
+      "checked": "2026-11-06",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e6",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/brf/",
+      "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
+      "checked": "2026-11-06",
+      "scope": "ekonomisk"
     }
   ]
 }

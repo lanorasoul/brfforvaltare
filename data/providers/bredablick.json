@@ -39,12 +39,12 @@
     "offices": {
       "count": 12,
       "places": [],
-      "text": "12 kontor runt om i landet.",
+      "text": "12 kontor runt om i landet år 2022, enligt Bredablicks historik på sidan Om oss.",
       "source": "g1"
     },
     "employees": {
       "value": 750,
-      "text": "Över 750 medarbetare, med egen personal för städ och fastighetsskötsel i stället för underentreprenörer.",
+      "text": "Över 750 medarbetare år 2022, enligt Bredablicks historik. Bredablick har egen personal för städning och fastighetsskötsel i stället för underentreprenörer.",
       "source": "g1"
     },
     "terms": [],
@@ -139,7 +139,8 @@
       "radgivning": "included",
       "flerars": "included",
       "inkasso": "listed",
-      "imd": "optional"
+      "imd": "optional",
+      "skatt": "listed"
     },
     "claims": [
       {
@@ -169,7 +170,8 @@
     "notes": [
       "Sidan skriver fakturahantering men säger inte om det gäller leverantörsfakturor. Offertsidan nämner leverantörsbetalningar som en del av ekonomisk förvaltning i allmänhet.",
       "Tilläggstjänsterna anges som exempel och utan pris.",
-      "Vanliga frågor nämner en uppsägningstid bara för parkering och garage, inte för förvaltningsavtalet."
+      "Vanliga frågor nämner en uppsägningstid bara för parkering och garage, inte för förvaltningsavtalet.",
+      "Skatt: vanliga frågor beskriver att Bredablick skickar kontrolluppgifter (KU55) om överlåtelser till Skatteverket. Deklaration och moms nämns inte."
     ]
   },
   "teknisk": {
@@ -340,7 +342,7 @@
       "id": "e1",
       "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för brf och fastighetsbolag",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-06-30",
       "scope": "ekonomisk"
     },
@@ -348,7 +350,7 @@
       "id": "e2",
       "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/malmo/",
       "title": "Ekonomisk förvaltning i Malmö",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-27",
       "scope": "ekonomisk"
     },
@@ -356,7 +358,7 @@
       "id": "e3",
       "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/faq-ekonomisk/",
       "title": "FAQ, ekonomisk förvaltning",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2025-08-27",
       "scope": "ekonomisk"
     },
@@ -364,7 +366,7 @@
       "id": "t1",
       "url": "https://bredablickforvaltning.se/teknisk-forvaltning/",
       "title": "Teknisk förvaltning för brf och fastighetsbolag",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-27",
       "scope": "teknisk"
     },
@@ -372,7 +374,7 @@
       "id": "t2",
       "url": "https://bredablickforvaltning.se/teknisk-forvaltning/malmo/",
       "title": "Teknisk förvaltning i Malmö",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-01-21",
       "scope": "teknisk"
     },
@@ -380,7 +382,7 @@
       "id": "t3",
       "url": "https://bredablickforvaltning.se/teknisk-forvaltning/felanmalan/",
       "title": "Felanmälan",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-05-20",
       "scope": "teknisk"
     },
@@ -396,7 +398,7 @@
       "id": "g2",
       "url": "https://bredablickforvaltning.se/har-finns-vi/",
       "title": "Här finns vi",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-21",
       "scope": "general"
     },
@@ -404,7 +406,7 @@
       "id": "g3",
       "url": "https://bredablickforvaltning.se/offert-forvaltning-brf/",
       "title": "Få en offert på förvaltning",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-09-03",
       "scope": "general"
     },
@@ -412,7 +414,7 @@
       "id": "g4",
       "url": "https://bredablickforvaltning.se/cookieinformation/",
       "title": "Cookieinformation",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2025-08-25",
       "scope": "general"
     },

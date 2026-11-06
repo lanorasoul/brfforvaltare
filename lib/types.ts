@@ -44,6 +44,8 @@ export type Pricing =
   | {
       model: "list";
       vat: Vat;
+      /** Paketet som prislistan gäller, när förvaltaren har flera paket. */
+      package?: string;
       priceDate: string;
       anchors: Point[];
       openFrom?: Point;

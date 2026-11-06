@@ -47,13 +47,13 @@ export default function ForForvaltarePage() {
               </div>
               <ul className="bullets">
                 <li>
-                  Styrelser kan svara på några frågor om sin förening, se alla förvaltare som har rätt förvaltning och verkar där de finns, och välja högst tre att be om offert från.
+                  Styrelser beskriver i tre steg vad föreningen behöver, hur stor den är och hur de nås. Förfrågan går till högst tre förvaltare som passar svaren. Väljer en styrelse själv förvaltare går förfrågan bara till dem.
                 </li>
                 <li>
-                  En förfrågan går bara till de förvaltare styrelsen själv har valt. Den innehåller föreningens namn, ort och antal lägenheter, vad de vill ha hjälp med, kontaktuppgifter och ett eget meddelande. Vi redigerar den inte.
+                  En förfrågan innehåller föreningens namn, ort och antal lägenheter, vilken förvaltning de vill ha, vilka tjänster om de har valt sådana, vad som är viktigast för dem, kontaktuppgifter och ett eget meddelande. Vi redigerar den inte.
                 </li>
                 <li>I början skickar vi förfrågningarna vidare själva, via e-post. Ni svarar styrelsen direkt. Vi är inte part i något avtal mellan er och föreningen.</li>
-                <li>Vi lovar inga förfrågningar och inga svarstider åt någon. Vi vet inte i förväg hur många styrelser som kommer att använda guiden.</li>
+                <li>Vi lovar inga förfrågningar och inga svarstider åt någon. Vi vet inte i förväg hur många styrelser som kommer att använda Hitta förvaltare.</li>
               </ul>
             </section>
 
@@ -69,7 +69,7 @@ export default function ForForvaltarePage() {
                   Vi planerar att ta betalt av förvaltare för varje förfrågan ni svarar på. Pris och villkor är inte bestämda, och ingenting faktureras innan ni skriftligen har godkänt villkoren.
                 </li>
                 <li>
-                  Betalning påverkar aldrig vilka förvaltare som visas, i vilken ordning eller vilka märken och uppgifter de får. Alla förvaltare som passar en styrelses svar visas, oavsett om ni betalar eller inte.
+                  Betalning påverkar aldrig vilka förvaltare som visas på sajten, i vilken ordning eller vilka märken och uppgifter de får.
                 </li>
                 <li>Vi säljer inte styrelsernas kontaktuppgifter till andra, och vi visar inga omdömen eller betyg.</li>
               </ul>

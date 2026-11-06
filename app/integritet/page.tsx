@@ -58,7 +58,7 @@ export default function IntegritetPage() {
                 <li>
                   Bara det formuläret frågar efter: föreningens namn, ort och antal lägenheter, vad ni vill ha offert på, vilka tjänster ni vill ha och vad som är viktigast för er (valfritt), nuvarande förvaltare (valfritt), ert namn, er roll i föreningen (valfritt), e-postadress, telefonnummer (valfritt) och ett meddelande (valfritt).
                 </li>
-                <li>Skickar ni ingen förfrågan samlar vi inte in något om er. Guiden och jämförelsen kräver inga uppgifter.</li>
+                <li>Skickar ni ingen förfrågan samlar vi inte in något om er. Jämförelsen kräver inga uppgifter, och Hitta förvaltare skickar ingenting förrän ni skickar i sista steget.</li>
               </ul>
             </section>
 

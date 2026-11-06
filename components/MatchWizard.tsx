@@ -144,8 +144,11 @@ export function MatchWizard({ token, mode, initial }: Props) {
           Tack! Vi matchar er med lämpliga förvaltare.
         </h2>
         <p className="wz-text">
-          Vi går igenom det ni har skrivit och skickar er förfrågan till förvaltare som passar {v.forening}.{" "}
-          {upplagg === "kontakt" ? `De kontaktar er på ${v.epost} för att gå igenom vad ni behöver och lämnar sedan en offert.` : `De kontaktar er på ${v.epost} med en offert.`}
+          Vi går igenom det ni har skrivit och skickar er förfrågan till högst tre förvaltare som passar {v.forening}.{" "}
+          {upplagg === "kontakt"
+            ? `De svarar er på ${v.epost} och går igenom vad ni behöver innan de lämnar en offert.`
+            : `De svarar er på ${v.epost} med en offert.`}{" "}
+          Vi kan inte lova när de svarar.
         </p>
         <p className="wz-text">Ni är inte bundna till något. Det är gratis, och ni väljer själva om ni vill gå vidare med någon.</p>
         {done.mode === "preview" && (

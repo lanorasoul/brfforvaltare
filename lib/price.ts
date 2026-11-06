@@ -46,6 +46,7 @@ export function priceRow(provider: PriceInput, n: number): PriceRow {
   const base = { slug: provider.slug, name: provider.name, sourceId: pr.source };
 
   if (pr.model === "list") {
+    const pkg = pr.package ? `, paketet ${pr.package}` : "";
     const v = interpolate(pr.anchors, n);
     if (v !== null) {
       // Ett värde som står i prislistan är verifierat. Allt däremellan har vi räknat fram, så det är en uppskattning.
@@ -56,7 +57,7 @@ export function priceRow(provider: PriceInput, n: number): PriceRow {
         perYear: v,
         // ERF rundar ned i sin egen tabell (1 362,5 visas som 1 362), så vi gör likadant.
         perLgh: Math.floor(v / n),
-        basis: "Prislista",
+        basis: `Prislista${pkg}`,
         vat: pr.vat,
         status: published || pr.status !== "verified" ? pr.status : "estimated",
         note: published
@@ -71,7 +72,7 @@ export function priceRow(provider: PriceInput, n: number): PriceRow {
         kind: "from",
         perYear: pr.openFrom.perYear,
         perLgh: null,
-        basis: "Från-pris",
+        basis: `Från-pris${pkg}`,
         vat: pr.vat,
         status: pr.status,
         note: `Förvaltaren anger bara ett från-pris över ${max} lägenheter.`,
