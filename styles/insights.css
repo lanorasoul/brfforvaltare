@@ -2,8 +2,9 @@
 
 .ws {
   padding-block: clamp(56px, 8vw, 104px);
-  background: var(--night);
-  color: var(--night-ink);
+  background: var(--panel);
+  color: var(--ink);
+  border-block: 1px solid var(--line);
 }
 
 .ws-head {
@@ -14,7 +15,7 @@
 }
 
 .ws-head .lead {
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-kicker {
@@ -22,7 +23,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-on-night);
+  color: var(--accent);
 }
 
 .ws-src {
@@ -31,15 +32,15 @@
   gap: 3px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--night-ink-2);
+  color: var(--ink-3);
   text-decoration: underline;
-  text-decoration-color: #4b5163;
+  text-decoration-color: var(--line-strong);
   text-underline-offset: 3px;
   white-space: nowrap;
 }
 
 .ws-src:hover {
-  color: var(--night-ink);
+  color: var(--ink);
 }
 
 /* Stora siffror */
@@ -56,16 +57,16 @@
   align-content: start;
   gap: 10px;
   padding: 26px 24px;
-  border: 1px solid var(--night-line);
+  border: 1px solid var(--line);
   border-radius: var(--r-tile);
-  background: var(--night-2);
+  background: #fff;
 }
 
 .ws-stat p {
   margin: 0;
   font-size: 16px;
   line-height: 1.45;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-big {
@@ -76,19 +77,19 @@
   line-height: 1;
   letter-spacing: -0.04em;
   font-weight: 500;
-  color: #fff;
+  color: var(--ink);
 }
 
 .ws-big span {
   font-size: 0.45em;
-  color: var(--accent-on-night);
+  color: var(--accent);
 }
 
 .ws-big .ws-big-sep {
   margin: 0 8px;
   font-size: 0.32em;
   letter-spacing: 0;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 /* Kort */
@@ -105,9 +106,9 @@
   gap: 16px;
   margin: 0;
   padding: 26px 24px;
-  border: 1px solid var(--night-line);
+  border: 1px solid var(--line);
   border-radius: var(--r-tile);
-  background: var(--night-2);
+  background: #fff;
 }
 
 .ws-h {
@@ -115,25 +116,25 @@
   line-height: 1.25;
   letter-spacing: -0.015em;
   font-weight: 600;
-  color: #fff;
+  color: var(--ink);
 }
 
 .ws-p {
   margin: 6px 0 0;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-strong {
-  color: var(--night-ink);
+  color: var(--ink);
 }
 
 .ws-note {
   margin: 0;
   font-size: 13px;
   line-height: 1.5;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 /* NKI-staplar */
@@ -152,13 +153,13 @@
 }
 
 .ws-bar-label {
-  color: var(--night-ink);
+  color: var(--ink);
 }
 
 .ws-bar-track {
   height: 14px;
   border-radius: 7px;
-  background: var(--night-3);
+  background: var(--panel-2);
   overflow: hidden;
 }
 
@@ -166,22 +167,22 @@
   display: block;
   height: 100%;
   border-radius: 7px;
-  background: var(--accent-on-night);
+  background: var(--accent);
 }
 
 .ws-bar-value {
   font-weight: 700;
   text-align: right;
-  color: #fff;
+  color: var(--ink);
 }
 
 .ws-bar.is-avg .ws-bar-fill {
-  background: #6b7183;
+  background: var(--mark-est);
 }
 
 .ws-bar.is-avg .ws-bar-label,
 .ws-bar.is-avg .ws-bar-value {
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-scale {
@@ -190,7 +191,7 @@
   margin-left: 108px;
   margin-right: 44px;
   font-size: 11px;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 /* Arvodets andel */
@@ -205,11 +206,11 @@
 
 .ws-share-rest {
   flex: 1;
-  background: var(--night-3);
+  background: var(--panel-2);
 }
 
 .ws-share-fee {
-  background: var(--accent-on-night);
+  background: var(--accent);
 }
 
 .ws-share-legend {
@@ -217,7 +218,7 @@
   flex-wrap: wrap;
   gap: 6px 18px;
   font-size: 13px;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-share-legend span {
@@ -233,12 +234,12 @@
 }
 
 .ws-dot-rest {
-  background: var(--night-3);
-  outline: 1px solid var(--night-line);
+  background: var(--panel-2);
+  outline: 1px solid var(--line-strong);
 }
 
 .ws-dot-fee {
-  background: var(--accent-on-night);
+  background: var(--accent);
 }
 
 .ws-savings {
@@ -255,7 +256,7 @@
   align-items: center;
   gap: 12px;
   font-size: 15px;
-  color: var(--night-ink);
+  color: var(--ink);
 }
 
 .ws-savings strong {
@@ -263,19 +264,19 @@
   line-height: 1;
   letter-spacing: -0.03em;
   font-weight: 600;
-  color: #fff;
+  color: var(--ink);
 }
 
 .ws-savings strong span {
   font-size: 0.55em;
-  color: var(--accent-on-night);
+  color: var(--accent);
 }
 
 .ws-savings small {
   display: block;
   margin-top: 2px;
   font-size: 12px;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 /* Arvoden */
@@ -300,7 +301,7 @@
   position: relative;
   align-self: end;
   border-radius: 8px 8px 3px 3px;
-  background: linear-gradient(180deg, var(--accent-on-night), #c9372c);
+  background: linear-gradient(180deg, #e8564a, var(--accent));
 }
 
 .ws-fee:first-child .ws-fee-col {
@@ -315,27 +316,27 @@
   font-size: 13px;
   font-weight: 700;
   text-align: center;
-  color: #fff;
+  color: var(--ink);
   white-space: nowrap;
 }
 
 .ws-fee-name {
   font-size: 13px;
   text-align: center;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-callout {
   margin: 0;
   padding: 12px 14px;
   border-radius: 10px;
-  background: var(--night-3);
+  background: var(--panel-2);
   font-size: 15px;
-  color: var(--night-ink);
+  color: var(--ink);
 }
 
 .ws-callout strong {
-  color: #fff;
+  color: var(--ink);
 }
 
 /* Varningstecken */
@@ -354,7 +355,7 @@
   padding-left: 40px;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
   counter-increment: sign;
 }
 
@@ -368,13 +369,13 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(255, 107, 94, 0.15);
-  color: var(--accent-on-night);
+  background: var(--accent-soft);
+  color: var(--accent);
   font-weight: 800;
 }
 
 .ws-signs strong {
-  color: #fff;
+  color: var(--ink);
 }
 
 /* Tidslinje */
@@ -384,9 +385,9 @@
   gap: 18px;
   margin-top: 16px;
   padding: 26px 24px;
-  border: 1px solid var(--night-line);
+  border: 1px solid var(--line);
   border-radius: var(--r-tile);
-  background: var(--night-2);
+  background: #fff;
 }
 
 .ws-steps {
@@ -406,7 +407,7 @@
   left: 6px;
   right: 6px;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-on-night), #3b8f6b);
+  background: linear-gradient(90deg, var(--accent), #3b8f6b);
   opacity: 0.6;
 }
 
@@ -417,7 +418,7 @@
   padding-top: 34px;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--night-ink-2);
+  color: var(--ink-2);
 }
 
 .ws-steps li::before {
@@ -428,8 +429,8 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--night-2);
-  border: 3px solid var(--accent-on-night);
+  background: #fff;
+  border: 3px solid var(--accent);
 }
 
 .ws-steps li:last-child::before {
@@ -441,16 +442,16 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent-on-night);
+  color: var(--accent);
 }
 
 .ws-steps li:last-child .ws-when {
-  color: #5fbf93;
+  color: #2f7a59;
 }
 
 .ws-steps strong {
   font-size: 17px;
-  color: #fff;
+  color: var(--ink);
 }
 
 .ws-cta {
@@ -464,13 +465,10 @@
 .ws-cta p {
   margin: 0 8px 0 0;
   font-size: 18px;
-  color: var(--night-ink);
+  color: var(--ink);
 }
 
-.ws-cta .btn-quiet {
-  background: var(--night-3);
-  color: #fff;
-}
+
 
 @media (max-width: 900px) {
   .ws-stats,
@@ -513,4 +511,9 @@
     margin-left: 90px;
     margin-right: 36px;
   }
+}
+
+.ws-cta .btn-quiet {
+  background: #fff;
+  border: 1px solid var(--line-strong);
 }
