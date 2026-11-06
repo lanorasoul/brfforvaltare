@@ -30,8 +30,6 @@
 
 .cover-n {
   font-size: clamp(56px, 6.4vw, 84px);
-  font-weight: 900;
-  letter-spacing: 0.02em;
   color: var(--ink);
   margin-bottom: 10px;
 }

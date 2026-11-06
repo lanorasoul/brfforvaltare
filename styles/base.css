@@ -34,7 +34,6 @@
 
   --font-sans: "Geist Variable", "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-dot: "Doto Variable", ui-monospace, "SF Mono", Menlo, monospace;
 
   --r-panel: 26px;
   --r-tile: 18px;
@@ -278,11 +277,11 @@ svg {
   font-variant-numeric: tabular-nums;
 }
 
-.dotnum {
-  font-family: var(--font-dot);
-  font-variation-settings: "ROND" 100;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+/* Stora fristående siffror: solida och täta, så att de går att läsa direkt. */
+.bignum {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.045em;
   line-height: 1;
 }
 

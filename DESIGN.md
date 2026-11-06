@@ -27,10 +27,10 @@ Accenten betyder alltid "ni" eller "gör detta". Den används aldrig som status 
 
 ## Typ
 
-- Schibsted Grotesk (variabel, nordiskt ursprung) för allt. Rubriker vikt 500, tracking -0.04em, radavstånd 0,98. Brödtext 17 px/1,6, vikt 400.
-- Doto (prickmatristyp, ROND 100) bara för siffrorna i tre nyckeltalsrutor och räknarens lägenhetsantal. Aldrig för etiketter.
+- Geist (variabel) för allt. Rubriker vikt 600, tracking -0.035em till -0.05em. Brödtext vikt 400.
+- Geist Mono bara för små etiketter i versaler (`.mono-label`) och tabellhuvuden.
+- Stora fristående siffror (`.bignum`): Geist vikt 600, tracking -0.045em. Inga prick- eller pixeltypsnitt för siffror: de blir svåra att läsa.
 - Siffror i tabeller och axlar: tabulära. Stora fristående siffror: proportionella.
-- Inga versaler som etiketter, inga eyebrows, ingen mono för småetiketter.
 
 ## Form
 
@@ -62,7 +62,7 @@ Prickmatrisen från förlagan får en egen betydelse. En prick är en lägenhet 
   Tjänster                                            matris: 12 tjänster x förvaltare
   Löpande bokföring ... IMD   (bock, halv, plus, prick, streckad ring)   "Nämns av n av N"
 
-  17 förvaltare     3 anger pris          47/192 publicerat     Doto-siffror, tre rutor (läses ur datan)
+  17 förvaltare     3 anger pris          47/192 publicerat     stora siffror, tre rutor (läses ur datan)
 
  ================= MÖRK SEKTION (natt) ===============================
   Vad förvaltarna berättar öppet.

@@ -106,21 +106,21 @@
 .ws-big {
   display: flex;
   align-items: baseline;
-  gap: 2px;
-  font-size: clamp(64px, 8vw, 96px);
+  gap: 4px;
+  font-size: clamp(60px, 7vw, 84px);
   color: var(--ink);
 }
 
 .ws-big span {
   font-size: 0.5em;
-  color: var(--accent-bright);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--accent);
 }
 
 .ws-big .ws-big-sep {
-  margin: 0 10px;
-  font-family: var(--font-sans);
+  margin: 0 12px 0 10px;
   font-size: 0.24em;
-  font-weight: 500;
   color: var(--ink-3);
 }
 
@@ -276,8 +276,11 @@
 }
 
 .ws-savings strong span {
+  margin-left: 2px;
   font-size: 0.55em;
-  color: var(--accent-bright);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--accent);
 }
 
 .ws-savings small {

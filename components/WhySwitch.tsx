@@ -43,7 +43,7 @@ export function WhySwitch({ fees }: { fees: FeePoint[] }) {
         <div className="ws-stats">
           <div className="ws-stat">
             <span className="mono-label">Vill byta</span>
-            <strong className="ws-big dotnum">
+            <strong className="ws-big bignum">
               {SURVEY.wantToSwitch}
               <span>%</span>
             </strong>
@@ -52,7 +52,7 @@ export function WhySwitch({ fees }: { fees: FeePoint[] }) {
           </div>
           <div className="ws-stat">
             <span className="mono-label">Missnöjda</span>
-            <strong className="ws-big dotnum">
+            <strong className="ws-big bignum">
               {SURVEY.dissatisfied}
               <span>%</span>
             </strong>
@@ -61,7 +61,7 @@ export function WhySwitch({ fees }: { fees: FeePoint[] }) {
           </div>
           <div className="ws-stat">
             <span className="mono-label">Spridning i NKI</span>
-            <strong className="ws-big dotnum">
+            <strong className="ws-big bignum">
               {SURVEY.lowestNki}
               <span className="ws-big-sep">till</span>
               {NKI_2025.top[0].value}
@@ -130,7 +130,7 @@ export function WhySwitch({ fees }: { fees: FeePoint[] }) {
             <ul className="ws-savings">
               {SAVINGS.map((s) => (
                 <li key={s.what} className="ws-tile">
-                  <strong className="dotnum">
+                  <strong className="bignum">
                     {s.value}
                     <span>%</span>
                   </strong>

@@ -11,7 +11,7 @@ export interface CoverageData {
   checkedAt: string;
 }
 
-/** Tre nyckeltal, alla räknade ur datafilerna. Doto-siffror är det enda stället där prickmatrisen blir typ. */
+/** Tre nyckeltal, alla räknade ur datafilerna. */
 export function Coverage({ data }: { data: CoverageData }) {
   const items = [
     {
@@ -36,7 +36,7 @@ export function Coverage({ data }: { data: CoverageData }) {
         <ul className="cover-grid">
           {items.map((it) => (
             <li key={it.label} className="cover-tile panel">
-              <p className="cover-n dotnum" aria-hidden="true">
+              <p className="cover-n bignum" aria-hidden="true">
                 {it.n}
               </p>
               <p className="cover-label">

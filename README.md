@@ -2,7 +2,7 @@
 
 Jämförelsesajt för förvaltare av bostadsrättsföreningar i Sverige, för både ekonomisk och teknisk förvaltning. Sajten visar vad förvaltarna själva skriver på sina webbplatser, med källa och läsdatum vid varje uppgift. Jämförelsen kommer först: nyckeluppgifter, tjänstematris, var förvaltarna verkar och vad de berättar öppet. Priskalkylatorn är en del längre ned. Därtill finns en guide där en styrelse svarar på några frågor, ser alla förvaltare som passar och kan be om offert från högst tre. Arbetsnamn och domän ändras på ett ställe: `lib/site.ts`.
 
-Next.js 16 (App Router), React 19, TypeScript och vanlig CSS. Typsnitten Geist, Geist Mono och Doto ligger på sajten själv (fontsource), så inga anrop går till Google. Färger och byggstenar finns som variabler i `styles/base.css`. Ingen databas: all data ligger som JSON i `data/` och versionshanteras med git, så varje ändring har ett datum och en författare.
+Next.js 16 (App Router), React 19, TypeScript och vanlig CSS. Typsnitten Geist och Geist Mono ligger på sajten själv (fontsource), så inga anrop går till Google. Färger och byggstenar finns som variabler i `styles/base.css`. Ingen databas: all data ligger som JSON i `data/` och versionshanteras med git, så varje ändring har ett datum och en författare.
 
 ## Kom igång
 

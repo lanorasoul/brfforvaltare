@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
-import "@fontsource-variable/doto/full.css";
 import "../styles/base.css";
 import "../styles/nav.css";
 import "../styles/hero.css";
