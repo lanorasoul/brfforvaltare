@@ -7,8 +7,7 @@ import { HeroPreview } from "@/components/HeroPreview";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { JsonLd } from "@/components/JsonLd";
 import { ProviderOverview } from "@/components/ProviderOverview";
-import { WhySwitch, type FeePoint } from "@/components/WhySwitch";
-import { priceRow } from "@/lib/price";
+import { WhySwitch } from "@/components/WhySwitch";
 import { getProvider, getProviders, requireSource } from "@/lib/data";
 import { dateLong } from "@/lib/format";
 import { overviewRows } from "@/lib/overview";
@@ -36,14 +35,6 @@ export default function Home() {
     { cite: cite("nabo", "e3"), text: "En förening med 20 lägenheter betalar ungefär 26 000 till 30 500 kr per år exklusive moms, och en med 100 lägenheter ungefär 64 000 till 77 000 kr." },
     { cite: cite("sbc", "e1"), text: "För mindre och medelstora föreningar ligger priset vanligtvis på 1 100 till 1 300 kr per lägenhet och år. Ju fler lägenheter, desto lägre kostnad per lägenhet." },
   ];
-  // Publicerade priser för 50 lägenheter, till diagrammet om arvoden.
-  const fees: FeePoint[] = providers.flatMap((p) => {
-    if (!p.ekonomisk) return [];
-    const r = priceRow({ slug: p.slug, name: p.name, pricing: p.ekonomisk.pricing }, 50);
-    if (r.perYear === null || r.kind === "from") return [];
-    return [{ name: p.name, perYear: r.perYear, approx: r.kind !== "list", url: requireSource(p, p.ekonomisk.pricing.source).url }];
-  }).sort((a, b) => a.perYear - b.perYear);
-
 
   // Svaren är vanlig text så att samma text kan visas och läggas i den strukturerade datan.
   const faq = [
@@ -145,7 +136,7 @@ export default function Home() {
 
       <LogoMarquee items={rows.map((r) => ({ slug: r.slug, name: r.name, logo: r.logo }))} />
 
-      <WhySwitch fees={fees} />
+      <WhySwitch />
 
       <section className="ov-section" id="forvaltare" aria-labelledby="ov-title">
         <div className="container">
