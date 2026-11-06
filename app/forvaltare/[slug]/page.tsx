@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Fragment } from "react";
 import { ExternalIcon } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { MissingSection, ServiceSection } from "@/components/ServiceSection";
 import { SourceLink } from "@/components/SourceLink";
@@ -12,7 +13,7 @@ import { overviewRows } from "@/lib/overview";
 import { priceRow } from "@/lib/price";
 import { priceLabel, VAT_TEXT } from "@/lib/price-label";
 import { CATEGORIES, CATEGORY } from "@/lib/schema";
-import { NKI_AVERAGE } from "@/lib/site";
+import { NKI_AVERAGE, SITE } from "@/lib/site";
 import type { Category, Provider, Service } from "@/lib/types";
 
 type Params = { slug: string };
@@ -27,7 +28,17 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const p = getProvider(slug);
   if (!p) return {};
-  return { title: p.name, description: p.summary, alternates: { canonical: `/forvaltare/${p.slug}` } };
+  const services = [p.ekonomisk && "ekonomisk", p.teknisk && "teknisk"].filter(Boolean).join(" och ");
+  const nki = p.facts.ratings.find((r) => r.kind === "nki");
+  const bits = [
+    `${p.name} erbjuder ${services} förvaltning för bostadsrättsföreningar.`,
+    p.facts.clients ? `${p.facts.clients.value.toLocaleString("sv-SE")} kunder.` : "",
+    nki ? `NKI ${nki.value} (${nki.year}).` : "",
+    "Pris, kundnöjdhet, omdömen och avtalsvillkor med källa.",
+  ].filter(Boolean);
+  const title = `${p.name}: pris, omdömen och villkor för brf`;
+  const description = bits.join(" ").replace(/\u00a0/g, " ");
+  return { title, description, alternates: { canonical: `/forvaltare/${p.slug}` }, openGraph: { title, description, url: `/forvaltare/${p.slug}` } };
 }
 
 const SERVICE_LABEL = { ekonomisk: "Ekonomisk förvaltning", teknisk: "Teknisk förvaltning", fastighetsskotsel: "Fastighetsskötsel" } as const;
@@ -63,7 +74,7 @@ function QuickFacts({ p }: { p: Provider }) {
                     </span>
                   </>
                 ) : (
-                  <strong className="facts-big">Endast offert</strong>
+                  <strong className="facts-big">Pris på offert</strong>
                 )}
               </dd>
             </div>
@@ -117,8 +128,32 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
     { label: "Anställda", fact: ov.employees },
   ];
 
+  const ld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: p.legalName ?? p.name,
+        alternateName: p.legalName ? p.name : undefined,
+        url: p.website,
+        description: p.summary,
+        foundingDate: p.facts.founded ? String(p.facts.founded.year) : undefined,
+        numberOfEmployees: p.facts.employees ? { "@type": "QuantitativeValue", value: p.facts.employees.value } : undefined,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Start", item: SITE.url },
+          { "@type": "ListItem", position: 2, name: "Förvaltare", item: `${SITE.url}/forvaltare` },
+          { "@type": "ListItem", position: 3, name: p.name, item: `${SITE.url}/forvaltare/${p.slug}` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={ld} />
       <PageHead title={p.name} lead={p.summary} crumbs={[{ href: "/forvaltare", label: "Förvaltare" }]} />
 
       <div className="page-body">

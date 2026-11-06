@@ -17,11 +17,11 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Jämför förvaltare för er brf: ekonomisk och teknisk förvaltning",
+    default: "Jämför förvaltare för brf: pris, kundnöjdhet och villkor",
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Jämför förvaltare av bostadsrättsföreningar, för både ekonomisk och teknisk förvaltning. Tjänster, pris, uppsägningstid och var de verkar. Varje uppgift har källa och datum.",
+    "Jämför förvaltare av bostadsrättsföreningar: pris för er storlek, kundnöjdhet (NKI), omdömen, antal kunder och avtalsvillkor för ekonomisk och teknisk förvaltning. Gratis och oberoende, med källa till varje uppgift.",
   robots: SITE.indexable ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: {
     type: "website",

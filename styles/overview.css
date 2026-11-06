@@ -401,3 +401,187 @@
     white-space: nowrap;
   }
 }
+
+/* Kompakta kort: det viktigaste syns, resten fälls ut. */
+
+.ov-card {
+  gap: 14px;
+}
+
+.ov-price {
+  padding: 12px 14px;
+}
+
+.ov-big {
+  font-size: 26px;
+}
+
+.ov-big.ov-none {
+  font-size: 19px;
+}
+
+.ov-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ov-more {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.ov-more > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ov-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.ov-more > summary::before {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--panel);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ov-more > summary::before {
+  transition: transform 0.15s;
+}
+
+.ov-more[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.ov-more-body {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ov-more-body p {
+  margin: 0;
+}
+
+.ov-more-body .ov-reviews {
+  margin-top: 4px;
+}
+
+.ov-foot {
+  border-top: 0;
+  padding-top: 0;
+}
+
+@media (max-width: 520px) {
+  .ov-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .ov-v {
+    font-size: 17px;
+  }
+}
+
+/* Startsidans korta avsnitt under jämförelsen */
+
+.home-band {
+  padding-block: clamp(48px, 7vw, 88px);
+  border-top: 1px solid var(--line);
+}
+
+.home-band-last {
+  padding-bottom: clamp(64px, 9vw, 120px);
+}
+
+.home-band .h3 {
+  margin-bottom: 10px;
+}
+
+.home-band-lead {
+  max-width: 62ch;
+  margin: 0 0 20px;
+}
+
+.home-band .ov-market {
+  margin: 0 0 16px;
+}
+
+.home-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-steps li {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.home-step-n {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .home-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-steps li {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .home-steps li .muted {
+    grid-column: 2;
+  }
+}
+
+.home-band .faq-item {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.home-band .faq-icon {
+  background: var(--panel);
+}
+
+.home-band .faq-a {
+  color: var(--ink-2);
+}
+
+.home-band .faq-q {
+  font-size: 17px;
+}
+
+@media (max-width: 520px) {
+  .ov-controls .seg:has(> .seg-btn:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,142 +1,97 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Faq, type FaqItem } from "@/components/Faq";
+import { Faq } from "@/components/Faq";
 import { HeroFacade } from "@/components/HeroFacade";
 import { ArrowIcon, ExternalIcon } from "@/components/icons";
-import { LoopSection, type LoopData } from "@/components/LoopSection";
-import type { CalcProvider } from "@/components/PriceCalculator";
+import { JsonLd } from "@/components/JsonLd";
 import { ProviderOverview } from "@/components/ProviderOverview";
 import { getProvider, getProviders, requireSource } from "@/lib/data";
 import { dateLong } from "@/lib/format";
-import { pricedCount } from "@/lib/matrix";
 import { overviewRows } from "@/lib/overview";
-import { priceRows } from "@/lib/price";
-import { priceLabel, VAT_TEXT } from "@/lib/price-label";
-import { withBlock } from "@/lib/schema";
-import { HSB_REGIONALS_TOTAL, NKI_AVERAGE, SITE } from "@/lib/site";
+import { NKI_AVERAGE, SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
+};
 
 export default function Home() {
   const providers = getProviders();
   const rows = overviewRows(providers);
-
-  const eko = withBlock(providers, "ekonomisk");
-  const tek = withBlock(providers, "teknisk");
-
-  // Räknaren och diagrammen bygger bara på ekonomisk förvaltning. Ingen förvaltare anger ett pris för teknisk förvaltning.
-  const calc: CalcProvider[] = eko.map(({ provider: p, block: b }) => {
-    const src = requireSource(p, b.pricing.source);
-    return { slug: p.slug, name: p.name, pricing: b.pricing, sourceUrl: src.url, sourceTitle: src.title, sourceChecked: src.checked };
-  });
-  const rows50 = priceRows(calc, 50);
-
-  const ekoPriced = pricedCount(providers, "ekonomisk");
-  const tekPriced = pricedCount(providers, "teknisk");
   const withNki = rows.filter((r) => r.nki).length;
+
+  const cite = (slug: string, source: string) => {
+    const p = getProvider(slug);
+    if (!p) return null;
+    const s = requireSource(p, source);
+    return { name: p.name, url: s.url, checked: s.checked };
+  };
 
   // Vad förvaltare själva skriver om marknadens prisnivå. Det är inte deras egna priser.
   const market = [
-    { slug: "nabo", source: "e3", text: "En förening med 20 lägenheter betalar ungefär 26 000 till 30 500 kr per år exklusive moms, och en med 100 lägenheter ungefär 64 000 till 77 000 kr." },
-    { slug: "sbc", source: "e1", text: "För mindre och medelstora föreningar ligger priset vanligtvis på 1 100 till 1 300 kr per lägenhet och år. Ju fler lägenheter, desto lägre kostnad per lägenhet." },
-  ].flatMap((m) => {
-    const p = getProvider(m.slug);
-    if (!p) return [];
-    const s = requireSource(p, m.source);
-    return [{ name: p.name, text: m.text, url: s.url, checked: s.checked }];
-  });
+    { cite: cite("nabo", "e3"), text: "En förening med 20 lägenheter betalar ungefär 26 000 till 30 500 kr per år exklusive moms, och en med 100 lägenheter ungefär 64 000 till 77 000 kr." },
+    { cite: cite("sbc", "e1"), text: "För mindre och medelstora föreningar ligger priset vanligtvis på 1 100 till 1 300 kr per lägenhet och år. Ju fler lägenheter, desto lägre kostnad per lägenhet." },
+  ];
+  const noticeSrc = cite("nabo", "f1");
 
-  // Underlag till stegsektionen: allt är hämtat ur datafilerna.
-  const withNotice = eko.find((x) => x.block.terms.notice);
-  const noticeSrc = withNotice ? requireSource(withNotice.provider, withNotice.block.terms.noticeSource ?? withNotice.block.source) : null;
-  const loop: LoopData = {
-    today: SITE.dataCheckedAt,
-    defaultEnd: `${SITE.dataCheckedAt.slice(0, 4)}-12-31`,
-    noticeExample:
-      withNotice && noticeSrc
-        ? { provider: withNotice.provider.name, text: withNotice.block.terms.notice as string, url: noticeSrc.url, checked: noticeSrc.checked }
-        : null,
-    compare: rows50
-      .filter((r) => r.perYear !== null)
-      .slice(0, 3)
-      .map((r) => ({
-        slug: r.slug,
-        name: r.name,
-        value: priceLabel(r, r.perYear as number, "year"),
-        basis: r.basis,
-        vat: VAT_TEXT[r.vat],
-        status: r.status ?? "assumed",
-      })),
-    compareFor: 50,
-    claims: [...eko, ...tek].flatMap(({ provider: p, block: b }) =>
-      b.claims
-        .filter((c) => /byte|övergång/i.test(c.text))
-        .map((c) => {
-          const s = requireSource(p, c.source);
-          return { provider: p.name, text: c.text, url: s.url, checked: s.checked };
-        }),
-    ),
-  };
+  const steps = [
+    { t: "Läs ert avtal", d: "Hitta uppsägningstiden. Tre till tolv månader är vanligast, och avtalet förlängs ofta automatiskt om ni missar datumet." },
+    { t: "Be om offerter", d: "Skicka samma frågor till minst tre förvaltare, så att priserna går att jämföra." },
+    { t: "Jämför lika mot lika", d: "Pris med och utan moms, vad som ingår, tillval och hur priset räknas upp." },
+    { t: "Säg upp skriftligt", d: "Styrelsen beslutar och säger upp avtalet. Spara bekräftelsen med slutdatum." },
+    { t: "Låt den nya ta över", d: "Den nya förvaltaren hämtar underlag från den gamla. Hela bytet tar normalt fyra till tolv månader." },
+  ];
 
-  const faq: FaqItem[] = [
+  // Svaren är vanlig text så att samma text kan visas och läggas i den strukturerade datan.
+  const faq = [
     {
-      q: "Varifrån kommer uppgifterna?",
-      a: "Pris, villkor, antal kunder, grundår och kontor kommer från förvaltarnas egna webbplatser. Kundnöjdhet (NKI) kommer från analysföretaget Prognoscentrets årliga mätning bland bostadsrättsföreningar, och omdömen från Reco. Varje uppgift länkar till sidan vi läste.",
-    },
-    {
-      q: "Hur hittar jag förvaltare som passar vår brf?",
-      a: (
-        <>
-          Svara på några frågor i <Link className="link" href="/hitta-forvaltare">guiden</Link>. Den visar alla förvaltare som har rätt förvaltning på sina egna sidor och verkar där ni finns, i namnordning och utan poäng. Ni väljer själva vilka ni vill gå vidare med.
-        </>
-      ),
+      q: "Vad kostar ekonomisk förvaltning för en brf?",
+      a: "Det beror mest på antal lägenheter. Förvaltare som publicerar priser ligger på ungefär 700 till 1 300 kr per lägenhet och år, lägre per lägenhet ju större föreningen är. För 50 lägenheter är ERF:s listpris 37 375 kr per år exklusive moms och SBC:s exempel ungefär 55 000 kr. De flesta förvaltare lämnar pris bara på offert.",
     },
     {
       q: "Vad är skillnaden mellan ekonomisk och teknisk förvaltning?",
-      a: "Ekonomisk förvaltning är bokföring, avisering, fakturor, budget och årsredovisning. Teknisk förvaltning är tillsyn av fastigheten, underhållsplan, besiktningar och upphandling av entreprenörer. Det går att anlita olika förvaltare för de två delarna. ERF skriver till exempel att de bara erbjuder ekonomisk förvaltning och samarbetar med tekniska förvaltare vid behov.",
+      a: "Ekonomisk förvaltning är bokföring, avgiftsavier, leverantörsfakturor, budget och årsredovisning. Teknisk förvaltning är tillsyn av fastigheten, underhållsplan, besiktningar och upphandling av entreprenörer. Föreningen kan anlita olika förvaltare för de två delarna.",
     },
     {
-      q: "Varför saknas pris hos så många förvaltare?",
-      a: `${eko.length - ekoPriced} av ${eko.length} förvaltare anger inget pris för ekonomisk förvaltning på sin webbplats, och ${tek.length - tekPriced} av ${tek.length} anger inget pris för teknisk förvaltning. Då visar vi Endast offert i stället för att gissa. Rutorna under jämförelsen visar vad förvaltare själva säger att det brukar kosta.`,
+      q: "Hur byter man förvaltare?",
+      a: "Kontrollera uppsägningstiden i det nuvarande avtalet, be flera förvaltare om offert, fatta beslut i styrelsen och säg upp avtalet skriftligt. Den nya förvaltaren sköter sedan överlämningen. Räkna med fyra till tolv månader från beslut till färdigt byte.",
     },
     {
       q: "Vad är NKI?",
-      a: `Nöjd Kund-Index, ett mått från 0 till 100 som analysföretaget Prognoscentret tar fram varje år genom att fråga styrelser i omkring 6 500 bostadsrättsföreningar. Värden mellan 65 och 75 är medelgod nöjdhet. Branschsnittet ${NKI_AVERAGE.year} var ${NKI_AVERAGE.value}. Bara förvaltare med minst 20 svar får ett eget värde, och bara en del av dem publiceras. ${withNki} av ${providers.length} förvaltare här har ett offentligt värde.`,
+      a: `Nöjd Kund-Index, ett mått från 0 till 100 som analysföretaget Prognoscentret tar fram varje år genom att fråga styrelser i omkring 6 500 bostadsrättsföreningar. Värden mellan 65 och 75 är medelgod nöjdhet. Branschsnittet ${NKI_AVERAGE.year} var ${NKI_AVERAGE.value}. ${withNki} av ${providers.length} förvaltare här har ett offentligt värde.`,
     },
     {
-      q: "Varför är HSB bara en rad?",
-      a: `HSB består av ${HSB_REGIONALS_TOTAL} fristående regionala föreningar. Förvaltningen sköts av föreningen där er brf ligger, så paket och villkor kan skilja sig. Vi visar HSB som en förvaltare och skriver ut när en uppgift bara gäller en region.`,
+      q: "Varför saknas pris hos många förvaltare?",
+      a: "De flesta förvaltare publicerar inget pris utan lämnar offert. Då skriver vi Pris på offert i stället för att gissa. Rutorna om vad förvaltning brukar kosta hjälper er att bedöma en offert.",
     },
     {
-      q: "Går priserna att jämföra rakt av?",
-      a: "Inte alltid. Förvaltarna räknar olika: en anger en prislista exklusive moms, en annan en tumregel utan att säga om moms ingår. Vi visar underlag och moms vid varje siffra, och offertmallen hjälper er att få svar på samma frågor från alla.",
+      q: "Kan en förvaltare betala för att synas?",
+      a: "Nej. Listan står i namnordning om ni inte själva väljer en annan sortering, och ingen förvaltare har betalat för plats, ordning eller uppgifter. Sajten är gratis för styrelser.",
     },
     {
-      q: "Kan en förvaltare betala för att synas högre upp?",
-      a: (
-        <>
-          Nej. Listorna och guiden står i namnordning, och betalning påverkar aldrig ordning, märken eller vilka uppgifter som visas. Sajten har inga annonser i dag, och om vi inför dem märks de Annons och ligger i egna rutor. Läs mer under <Link className="link" href="/metod#finansiering">Så finansieras sajten</Link>.
-        </>
-      ),
-    },
-    {
-      q: "Vad kostar det att använda sajten?",
-      a: "Ingenting för styrelser. Vi planerar att ta betalt av förvaltare för offertförfrågningar de svarar på, men aldrig för plats, ordning eller märken.",
-    },
-    {
-      q: "Hur aktuella är uppgifterna?",
-      a: `Varje uppgift visar datum för när den senast lästes. Det senaste kontrolldatumet är ${dateLong(SITE.dataCheckedAt)}. Priser och villkor kan ändras, så fråga alltid förvaltaren innan ni bestämmer er.`,
-    },
-    {
-      q: "Jag arbetar hos en förvaltare och något stämmer inte",
-      a: (
-        <>
-          Skicka rättelsen tillsammans med en länk till sidan där det står. Är det ett fel hos oss rättar vi det och sätter nytt läsdatum. Ändrar ni uppgiften på er egen sida läser vi om den.{" "}
-          {SITE.contactEmail ? <a className="link" href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> : "Kontaktuppgift läggs till innan sajten öppnas."}
-        </>
-      ),
+      q: "Varifrån kommer uppgifterna?",
+      a: `Pris, villkor, antal kunder, grundår och kontor kommer från förvaltarnas egna webbplatser. Kundnöjdhet kommer från Prognoscentret och omdömen från Reco. Varje uppgift länkar till sin källa. Uppgifterna lästes senast ${dateLong(SITE.dataCheckedAt)}.`,
     },
   ];
 
+  const ld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ItemList",
+        name: "Förvaltare för bostadsrättsföreningar",
+        itemListElement: rows.map((r, i) => ({ "@type": "ListItem", position: i + 1, name: r.name, url: `${SITE.url}/forvaltare/${r.slug}` })),
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={ld} />
       <section className="top">
         <HeroFacade />
         <div className="container top-inner">
@@ -146,11 +101,11 @@ export default function Home() {
             för er brf
           </h1>
           <p className="lead top-lead">
-            Pris för er storlek, kundnöjdhet, antal kunder och avtalsvillkor för {providers.length} förvaltare. Varje uppgift länkar till sin källa.
+            Pris, kundnöjdhet och villkor för {providers.length} förvaltare av ekonomisk och teknisk förvaltning. Gratis, oberoende och med källa till varje uppgift.
           </p>
           <div className="hero-actions">
             <Link className="btn btn-accent" href="#forvaltare">
-              Se jämförelsen
+              Jämför förvaltare
               <span className="btn-icon">
                 <ArrowIcon />
               </span>
@@ -166,36 +121,74 @@ export default function Home() {
         <div className="container">
           <div className="ov-section-head">
             <h2 className="h3" id="ov-title">
-              {providers.length} förvaltare sida vid sida
+              Förvaltare för bostadsrättsföreningar
             </h2>
-            <p className="muted">
-              Ange hur många lägenheter föreningen har så räknas priset om. Ingen förvaltare har betalat för sin plats. Uppgifterna lästes senast {dateLong(SITE.dataCheckedAt)}.
-            </p>
+            <p className="muted">Ange antal lägenheter så räknas priset om. Tryck på Mer om för omdömen, kontor och avtalsvillkor.</p>
           </div>
           <ProviderOverview rows={rows} />
+        </div>
+      </section>
 
+      <section className="home-band" aria-labelledby="kostnad-title">
+        <div className="container">
+          <h2 className="h3" id="kostnad-title">
+            Vad brukar förvaltning kosta?
+          </h2>
+          <p className="muted home-band-lead">Bra att ha när ni får en offert från en förvaltare som inte publicerar pris. Siffrorna beskriver marknaden, inte förvaltarnas egna priser.</p>
           <div className="ov-market">
-            {market.map((m) => (
-              <div key={m.name} className="ov-market-item">
-                <span className="ov-k">Vad brukar det kosta? Enligt {m.name}</span>
-                <p>{m.text}</p>
-                <a className="fine link" href={m.url} target="_blank" rel="noopener noreferrer">
-                  Källa, läst {dateLong(m.checked)} <ExternalIcon />
-                </a>
-              </div>
-            ))}
+            {market.map((m) =>
+              m.cite ? (
+                <div key={m.cite.name} className="ov-market-item">
+                  <span className="ov-k">Enligt {m.cite.name}</span>
+                  <p>{m.text}</p>
+                  <a className="fine link" href={m.cite.url} target="_blank" rel="noopener noreferrer">
+                    Källa, läst {dateLong(m.cite.checked)} <ExternalIcon />
+                  </a>
+                </div>
+              ) : null,
+            )}
           </div>
-          <p className="fine" style={{ marginTop: 12 }}>
-            Rutorna ovan beskriver marknaden i stort och är inte förvaltarnas egna priser. Använd dem för att bedöma offerter från förvaltare som inte publicerar pris.
+          <p className="small">
+            <Link className="link" href="/prisguide">
+              Läs prisguiden
+            </Link>
           </p>
         </div>
       </section>
 
-      <LoopSection data={loop} />
+      <section className="home-band" aria-labelledby="byta-title">
+        <div className="container">
+          <h2 className="h3" id="byta-title">
+            Så byter ni förvaltare
+          </h2>
+          <ol className="home-steps">
+            {steps.map((s, i) => (
+              <li key={s.t}>
+                <span className="home-step-n">{i + 1}</span>
+                <strong>{s.t}</strong>
+                <span className="muted">{s.d}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="small">
+            <Link className="link" href="/byta-forvaltare">
+              Hela guiden med uppsägningskalender och offertmall
+            </Link>
+            {noticeSrc && (
+              <>
+                {" · "}
+                <a className="link" href={noticeSrc.url} target="_blank" rel="noopener noreferrer">
+                  Källa om uppsägningstider ({noticeSrc.name}) <ExternalIcon />
+                </a>
+              </>
+            )}
+          </p>
+        </div>
+      </section>
 
-      <section className="night faq-section" id="fragor" aria-labelledby="faq-title">
+      <section className="home-band home-band-last" id="fragor" aria-labelledby="faq-title">
         <div className="container-narrow">
-          <h2 className="h3 center" id="faq-title">
+          <h2 className="h3" id="faq-title">
             Vanliga frågor
           </h2>
           <Faq items={faq} />

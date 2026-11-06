@@ -125,8 +125,8 @@ export function ProviderOverview({ rows }: Props) {
       </div>
 
       <p className="ov-status small muted" aria-live="polite">
-        Visar {shown.length} förvaltare. {priced} av {rows.length} publicerar ett pris för ekonomisk förvaltning som går att räkna på för {n} lägenheter.
-        {sort !== "name" && " Förvaltare som saknar uppgiften ligger sist."}
+        {shown.length} förvaltare. {priced} publicerar ett pris för {n} lägenheter, övriga lämnar pris på offert.
+        {sort !== "name" && " De som saknar uppgiften ligger sist."}
       </p>
 
       <ol className="ov-list">
@@ -142,6 +142,7 @@ export function ProviderOverview({ rows }: Props) {
 
 function Card({ r, n, price }: { r: OverviewRow; n: number; price: PriceRow | null }) {
   const reviews = r.ratings.filter((x) => x.kind !== "nki");
+  const bestReview = reviews.filter((x) => !x.ownClaim && (x.count ?? 0) >= 20).sort((a, b) => (b.count ?? 0) - (a.count ?? 0))[0];
   return (
     <article className="ov-card" aria-labelledby={`ov-${r.slug}`}>
       <header className="ov-head">
@@ -149,14 +150,14 @@ function Card({ r, n, price }: { r: OverviewRow; n: number; price: PriceRow | nu
           <Link href={`/forvaltare/${r.slug}`}>{r.name}</Link>
         </h3>
         <ul className="ov-tags" aria-label="Erbjuder">
-          <li className={r.ekonomisk ? "ov-tag" : "ov-tag ov-tag-off"}>{r.ekonomisk ? "Ekonomisk" : "Ej ekonomisk"}</li>
-          <li className={r.teknisk ? "ov-tag" : "ov-tag ov-tag-off"}>{r.teknisk ? "Teknisk" : "Ej teknisk"}</li>
+          {r.ekonomisk && <li className="ov-tag">Ekonomisk</li>}
+          {r.teknisk && <li className="ov-tag">Teknisk</li>}
           {r.region && <li className="ov-tag ov-tag-region">Bara {r.region}</li>}
         </ul>
       </header>
 
       <div className="ov-price">
-        <span className="ov-k">Ekonomisk förvaltning, {n} lägenheter</span>
+        <span className="ov-k">Pris, ekonomisk förvaltning, {n} lgh</span>
         <PriceValue r={r} n={n} price={price} />
       </div>
 
@@ -169,54 +170,69 @@ function Card({ r, n, price }: { r: OverviewRow; n: number; price: PriceRow | nu
                 <a className="ov-v ov-src" href={r.nki.url} target="_blank" rel="noopener noreferrer" title={r.nki.text}>
                   NKI {r.nki.value}
                 </a>
+                <span className="ov-sub">Snitt {r.nki.average ?? "okänt"} ({r.nki.year})</span>
+              </>
+            ) : bestReview ? (
+              <>
+                <a className="ov-v ov-src" href={bestReview.url} target="_blank" rel="noopener noreferrer" title={bestReview.text}>
+                  {bestReview.value.toLocaleString("sv-SE")} av 5
+                </a>
                 <span className="ov-sub">
-                  Prognoscentret {r.nki.year}. Snitt {r.nki.average ?? "okänt"}.
+                  {num(bestReview.count ?? 0)} omdömen på {REVIEW_SITE[bestReview.kind]}
                 </span>
               </>
             ) : (
-              <>
-                <span className="ov-v ov-none">Ej publicerat</span>
-                <span className="ov-sub">Inget offentligt NKI-värde</span>
-              </>
+              <span className="ov-v ov-none">Inte mätt</span>
             )}
           </dd>
         </div>
-        <Stat label="Kunder" fact={r.clients} value={r.clients ? num(r.clients.value) : null} sub="enligt förvaltaren" />
+        <Stat label="Kunder" fact={r.clients} value={r.clients ? num(r.clients.value) : null} />
         <Stat label="Grundad" fact={r.founded} value={r.founded ? String(r.founded.year) : null} />
-        <Stat label="Kontor" fact={r.offices} value={r.offices ? num(r.offices.count) : null} sub={r.employees ? `${num(r.employees.value)} anställda` : undefined} />
       </dl>
 
-      {reviews.length > 0 && (
-        <ul className="ov-reviews" aria-label="Omdömen">
-          {reviews.map((x, i) => (
-            <li key={i}>
-              <Review x={x} />
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className="ov-terms">
-        <span className="ov-k">Avtal och byte</span>
-        {r.terms.length > 0 ? (
-          <ul>
-            {r.terms.map((t, i) => (
-              <li key={i}>
-                {t.text}{" "}
-                <a className="ov-srclink" href={t.url} target="_blank" rel="noopener noreferrer" aria-label={`Källa, läst ${dateLong(t.checked)}`}>
-                  <ExternalIcon size={10} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="ov-none">Inga villkor publicerade. Fråga efter avtalstid, uppsägningstid och uppstartsavgift.</p>
-        )}
-      </div>
+      <details className="ov-more">
+        <summary>Mer om {r.name}</summary>
+        <div className="ov-more-body">
+          {(r.offices || r.employees) && (
+            <p>
+              {[r.offices?.text, r.employees?.text].filter(Boolean).join(" ")}
+            </p>
+          )}
+          {reviews.length > 0 && (
+            <div>
+              <span className="ov-k">Omdömen</span>
+              <ul className="ov-reviews">
+                {reviews.map((x, i) => (
+                  <li key={i}>
+                    <Review x={x} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div className="ov-terms">
+            <span className="ov-k">Avtal och byte</span>
+            {r.terms.length > 0 ? (
+              <ul>
+                {r.terms.map((t, i) => (
+                  <li key={i}>
+                    {t.text}{" "}
+                    <a className="ov-srclink" href={t.url} target="_blank" rel="noopener noreferrer" aria-label={`Källa, läst ${dateLong(t.checked)}`}>
+                      <ExternalIcon size={10} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="ov-none">Inga villkor publicerade. Fråga efter avtalstid, uppsägningstid och uppstartsavgift.</p>
+            )}
+          </div>
+        </div>
+      </details>
 
       <footer className="ov-foot">
         <Link className="link ov-foot-link" href={`/forvaltare/${r.slug}`}>
-          Hela profilen <ArrowIcon size={12} />
+          Läs hela profilen <ArrowIcon size={12} />
         </Link>
         <a className="link" href={r.website} target="_blank" rel="noopener noreferrer">
           Webbplats <ExternalIcon />
@@ -231,7 +247,7 @@ function PriceValue({ r, n, price }: { r: OverviewRow; n: number; price: PriceRo
   if (!price || price.perYear === null) {
     return (
       <>
-        <span className="ov-big ov-none">Endast offert</span>
+        <span className="ov-big ov-none">Pris på offert</span>
         {r.priceUrl && (
           <a className="ov-sub ov-src" href={r.priceUrl} target="_blank" rel="noopener noreferrer">
             {price?.kind === "none" && r.pricing.model !== "on_request" ? price.note : "Inget pris på sidan"}

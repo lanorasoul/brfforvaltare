@@ -1105,7 +1105,7 @@
 /* ---------- sidfot (mörk) ---------- */
 
 .foot {
-  padding-top: clamp(72px, 9vw, 120px);
+  padding-top: 8px;
   border-top: 1px solid var(--night-line);
 }
 
@@ -1117,9 +1117,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 40px;
-  margin-top: clamp(64px, 8vw, 112px);
-  padding-block: 56px 28px;
-  border-top: 1px solid var(--night-line);
+  padding-block: 48px 28px;
 }
 
 .foot-brand .fine {

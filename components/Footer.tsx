@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowIcon, BrandMark } from "./icons";
+import { BrandMark } from "./icons";
 import { SITE } from "@/lib/site";
 import { dateLong } from "@/lib/format";
 
@@ -7,24 +7,13 @@ export function Footer() {
   return (
     <footer className="foot night">
       <div className="container">
-        <div className="foot-cta center">
-          <h2 className="h2">Hitta förvaltare för er brf</h2>
-          <p className="lead">Svara på några frågor om föreningen så visar vi alla förvaltare som passar, med pris, villkor och källa.</p>
-          <Link className="btn btn-accent" href="/hitta-forvaltare">
-            Hitta förvaltare
-            <span className="btn-icon">
-              <ArrowIcon />
-            </span>
-          </Link>
-        </div>
-
         <div className="foot-grid">
           <div className="foot-brand">
             <p className="foot-name">
               <BrandMark size={22} />
               {SITE.name}
             </p>
-            <p className="fine">Uppgifterna hämtas från förvaltarnas egna webbplatser. Senast kontrollerat {dateLong(SITE.dataCheckedAt)}.</p>
+            <p className="fine">Uppgifterna hämtas från förvaltarnas egna webbplatser, Prognoscentret och Reco. Senast kontrollerat {dateLong(SITE.dataCheckedAt)}.</p>
             {SITE.operator && <p className="fine">Drivs av {SITE.operator.name}.</p>}
           </div>
           <nav className="foot-col" aria-label="Sajten">
@@ -50,9 +39,6 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/jamfor">Jämför sida vid sida</Link>
-              </li>
-              <li>
-                <Link href="/#rakna">Räkna på er förening</Link>
               </li>
             </ul>
           </nav>

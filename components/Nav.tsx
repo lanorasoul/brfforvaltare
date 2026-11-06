@@ -8,8 +8,6 @@ import { SITE } from "@/lib/site";
 
 // short är texten i menyraden, där det är trångt. Resten av namnet läses upp för skärmläsare och syns i mobilmenyn.
 const LINKS: { href: string; label: string; short?: string }[] = [
-  { href: "/ekonomisk-forvaltning", label: "Ekonomisk förvaltning", short: "Ekonomisk" },
-  { href: "/teknisk-forvaltning", label: "Teknisk förvaltning", short: "Teknisk" },
   { href: "/forvaltare", label: "Förvaltare" },
   { href: "/prisguide", label: "Prisguide" },
   { href: "/byta-forvaltare", label: "Byta förvaltare" },
