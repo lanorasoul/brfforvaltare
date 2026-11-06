@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Fragment } from "react";
 import { ExternalIcon } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
+import { ProviderLogo } from "@/components/ProviderLogo";
 import { PageHead } from "@/components/PageHead";
 import { MissingSection, ServiceSection } from "@/components/ServiceSection";
 import { SourceLink } from "@/components/SourceLink";
@@ -136,6 +137,7 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
         name: p.legalName ?? p.name,
         alternateName: p.legalName ? p.name : undefined,
         url: p.website,
+        logo: p.logo ? `${SITE.url}${p.logo.file}` : undefined,
         description: p.summary,
         foundingDate: p.facts.founded ? String(p.facts.founded.year) : undefined,
         numberOfEmployees: p.facts.employees ? { "@type": "QuantitativeValue", value: p.facts.employees.value } : undefined,
@@ -154,7 +156,7 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
   return (
     <>
       <JsonLd data={ld} />
-      <PageHead title={p.name} lead={p.summary} crumbs={[{ href: "/forvaltare", label: "Förvaltare" }]} />
+      <PageHead logo={<ProviderLogo name={p.name} logo={p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null} size="lg" />} title={p.name} lead={p.summary} crumbs={[{ href: "/forvaltare", label: "Förvaltare" }]} />
 
       <div className="page-body">
         <div className="container profile">

@@ -2,6 +2,12 @@
   "slug": "nabo",
   "name": "Nabo",
   "website": "https://nabo.se/",
+  "logo": {
+    "file": "/logos/nabo.svg",
+    "source": "l1",
+    "width": 121.5,
+    "height": 31.9
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Ekonomisk förvaltning i hela Sverige och teknisk förvaltning i fyra städer. Anger inget eget pris, men publicerar allmänna prisintervall för ekonomisk förvaltning.",
@@ -323,6 +329,13 @@
       "id": "f3",
       "url": "https://press.prognoscentret.se/posts/pressreleases/forvaltningsbolaget-simpleko-har-branschens-n",
       "title": "Förvaltningsbolaget Simpleko har branschens nöjdaste kunder (Prognoscentret, NKI 2024)",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://nabo.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

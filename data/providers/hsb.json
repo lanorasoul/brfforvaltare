@@ -2,6 +2,12 @@
   "slug": "hsb",
   "name": "HSB",
   "website": "https://www.hsb.se/",
+  "logo": {
+    "file": "/logos/hsb.png",
+    "source": "l1",
+    "width": 159,
+    "height": 111
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Sveriges största bostadskooperation, med 21 regionala HSB-föreningar som erbjuder ekonomisk och teknisk förvaltning. Pris, paket och villkor bestäms av den regionala föreningen och lämnas på offert.",
@@ -237,6 +243,13 @@
       "id": "g1",
       "url": "https://www.hsb.se/omhsb/om-oss/",
       "title": "Om HSB",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://www.hsb.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

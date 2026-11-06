@@ -2,6 +2,12 @@
   "slug": "simpleko",
   "name": "Simpleko",
   "website": "https://www.simpleko.se/",
+  "logo": {
+    "file": "/logos/simpleko.svg",
+    "source": "l1",
+    "width": 181.7,
+    "height": 68.8
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Ekonomisk förvaltning i hela Sverige, helägt dotterbolag till Riksbyggen. Anger inget pris för förvaltningen men prissätter tillägget Digital underhållsplan. Vi hittade ingen teknisk förvaltning.",
@@ -222,6 +228,13 @@
       "title": "Byta ekonomisk förvaltare",
       "checked": "2026-11-06",
       "scope": "ekonomisk"
+    },
+    {
+      "id": "l1",
+      "url": "https://www.simpleko.se/",
+      "title": "Startsida",
+      "checked": "2026-11-06",
+      "scope": "general"
     }
   ]
 }

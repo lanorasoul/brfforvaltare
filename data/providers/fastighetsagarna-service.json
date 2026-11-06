@@ -2,6 +2,12 @@
   "slug": "fastighetsagarna-service",
   "name": "Fastighetsägarna Service",
   "website": "https://www.fastighetsagarna.se/",
+  "logo": {
+    "file": "/logos/fastighetsagarna-service.svg",
+    "source": "l1",
+    "width": 127.3,
+    "height": 42.8
+  },
   "region": "Stockholm och Gotland",
   "checked": "2026-11-06",
   "summary": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm. Erbjuder ekonomisk och teknisk förvaltning och anger inget pris för någon av dem.",
@@ -208,6 +214,13 @@
       "id": "f1",
       "url": "https://www.reco.se/fastighetsagarna-service",
       "title": "Fastighetsägarna Service på Reco.se",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://www.fastighetsagarna.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

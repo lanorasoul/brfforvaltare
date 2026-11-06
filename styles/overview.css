@@ -585,3 +585,58 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Loggor: samma ruta för alla, så att ingen tar mer plats än någon annan. */
+
+.plogo {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.plogo-md {
+  width: 96px;
+  height: 56px;
+}
+
+.plogo-lg {
+  width: 156px;
+  height: 88px;
+}
+
+.plogo img {
+  display: block;
+  object-fit: contain;
+}
+
+.plogo-initials {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+}
+
+.ov-id {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ov-id:hover .ov-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ov-head {
+  align-items: center;
+}
+
+.page-logo {
+  margin-bottom: 18px;
+}

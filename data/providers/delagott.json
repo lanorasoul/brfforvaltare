@@ -3,6 +3,12 @@
   "name": "Delagott",
   "legalName": "Delagott Real Estate AB",
   "website": "https://www.delagott.se/",
+  "logo": {
+    "file": "/logos/delagott.svg",
+    "source": "l1",
+    "width": 184.9,
+    "height": 55.5
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Förvaltare med huvudkontor i Stockholm. Beskriver ekonomisk och teknisk förvaltning på en gemensam sida. Anger inget pris, inga kundantal och inga villkor.",
@@ -190,6 +196,13 @@
       "id": "f3",
       "url": "https://www.reco.se/delagott",
       "title": "Delagott på Reco.se",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://www.delagott.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

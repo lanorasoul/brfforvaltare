@@ -6,7 +6,20 @@ interface Crumb {
 }
 
 /** Sidhuvud för undersidor. Vänsterställt, med valfri brödsmula. */
-export function PageHead({ title, lead, crumbs, children }: { title: string; lead?: React.ReactNode; crumbs?: Crumb[]; children?: React.ReactNode }) {
+export function PageHead({
+  title,
+  lead,
+  crumbs,
+  children,
+  logo,
+}: {
+  title: string;
+  lead?: React.ReactNode;
+  crumbs?: Crumb[];
+  children?: React.ReactNode;
+  /** Visas ovanför rubriken, till exempel en förvaltares logga. */
+  logo?: React.ReactNode;
+}) {
   return (
     <header className="page-head">
       <div className="container">
@@ -24,6 +37,7 @@ export function PageHead({ title, lead, crumbs, children }: { title: string; lea
             </ol>
           </nav>
         )}
+        {logo && <div className="page-logo">{logo}</div>}
         <h1 className="h1">{title}</h1>
         {lead && <p className="lead page-lead">{lead}</p>}
         {children}

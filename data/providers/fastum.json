@@ -2,6 +2,12 @@
   "slug": "fastum",
   "name": "Fastum",
   "website": "https://fastum.se/",
+  "logo": {
+    "file": "/logos/fastum.png",
+    "source": "l1",
+    "width": 503,
+    "height": 135
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Anger en tumregel för ekonomisk förvaltning och fem avtalsnivåer med innehåll för teknisk förvaltning, men inget pris för tekniken.",
@@ -281,6 +287,13 @@
       "id": "f1",
       "url": "https://www.reco.se/fastum",
       "title": "Fastum på Reco.se",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://fastum.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

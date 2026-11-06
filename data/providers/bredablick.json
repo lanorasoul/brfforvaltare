@@ -3,6 +3,12 @@
   "name": "Bredablick Förvaltning",
   "legalName": "Bredablick Förvaltning i Sverige AB",
   "website": "https://bredablickforvaltning.se/",
+  "logo": {
+    "file": "/logos/bredablick.svg",
+    "source": "l1",
+    "width": 341.2,
+    "height": 61.2
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Ekonomisk och teknisk förvaltning samt fastighetsskötsel. Startade 2009 i Limhamn och ingår sedan 2023 i PHM Group. Anger över 1 000 kunder. Anger inget pris, ingen avtalstid och ingen uppsägningstid för någon av tjänsterna.",
@@ -421,6 +427,13 @@
       "id": "f2",
       "url": "https://www.reco.se/bredablick-forvaltning",
       "title": "Bredablick Förvaltning på Reco.se",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://bredablickforvaltning.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

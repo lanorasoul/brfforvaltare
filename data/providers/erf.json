@@ -3,6 +3,12 @@
   "name": "ERF",
   "legalName": "ERF Enkel Redovisning Förvaltning AB",
   "website": "https://erf.se/",
+  "logo": {
+    "file": "/logos/erf.png",
+    "source": "g1",
+    "width": 310,
+    "height": 117
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Digital ekonomisk förvaltning i hela Sverige med publicerad prislista per föreningsstorlek, exklusive moms. Erbjuder inte teknisk förvaltning.",

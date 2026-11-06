@@ -32,6 +32,7 @@ export default function ForForvaltarePage() {
                   Vi skriver ner vad era egna webbplatser säger om ekonomisk och teknisk förvaltning: pris, uppsägningstid, tjänster, var ni verkar och vad ni berättar öppet. Varje uppgift har en länk till sidan och datumet då vi läste den.
                 </li>
                 <li>Alla förvaltare visas på samma sätt och i namnordning. Vi räknar ingen poäng och rangordnar inte.</li>
+                <li>Loggan visas i samma storlek för alla och är hämtad från er egen webbplats. Vill ni byta den eller inte visas med logga, hör av er så ändrar vi.</li>
                 <li>
                   Ni behöver inte göra något. Är något fel, eller har ni ändrat era sidor, se <a className="link" href="#rattelser">rättelser</a> nedan. Hur vi läser och räknar står på <Link className="link" href="/metod">metodsidan</Link>.
                 </li>

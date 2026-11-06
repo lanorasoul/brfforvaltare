@@ -2,6 +2,12 @@
   "slug": "riksbyggen",
   "name": "Riksbyggen",
   "website": "https://www.riksbyggen.se/",
+  "logo": {
+    "file": "/logos/riksbyggen.svg",
+    "source": "l1",
+    "width": 294.3,
+    "height": 105.0
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Stor aktör med kontor över hela landet. Anger inget pris för ekonomisk eller teknisk förvaltning, men prissätter tillägget Digital underhållsplan.",
@@ -293,6 +299,13 @@
       "id": "f2",
       "url": "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/",
       "title": "Simpleko vinnare i kundnöjdhet (Riksbyggen om Prognoscentrets NKI 2025)",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://www.riksbyggen.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

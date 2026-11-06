@@ -26,6 +26,7 @@ export interface OverviewRow {
   slug: string;
   name: string;
   website: string;
+  logo: { file: string; ratio: number } | null;
   region: string | null;
   ekonomisk: boolean;
   teknisk: boolean;
@@ -85,6 +86,7 @@ export function overviewRows(providers: Provider[]): OverviewRow[] {
       slug: p.slug,
       name: p.name,
       website: p.website,
+      logo: p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null,
       region: p.region,
       ekonomisk: p.services.ekonomisk === "yes",
       teknisk: p.services.teknisk === "yes",

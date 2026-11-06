@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useId, useMemo, useState } from "react";
 import { ArrowIcon, ExternalIcon, MinusIcon, PlusIcon } from "./icons";
+import { ProviderLogo } from "./ProviderLogo";
 import { dateLong, num } from "@/lib/format";
 import { sortRows, type OverviewRating, type OverviewRow, type SortKey } from "@/lib/overview";
 import { priceRow, type PriceRow } from "@/lib/price";
@@ -146,9 +147,12 @@ function Card({ r, n, price }: { r: OverviewRow; n: number; price: PriceRow | nu
   return (
     <article className="ov-card" aria-labelledby={`ov-${r.slug}`}>
       <header className="ov-head">
-        <h3 className="ov-name" id={`ov-${r.slug}`}>
-          <Link href={`/forvaltare/${r.slug}`}>{r.name}</Link>
-        </h3>
+        <Link className="ov-id" href={`/forvaltare/${r.slug}`}>
+          <ProviderLogo name={r.name} logo={r.logo} />
+          <h3 className="ov-name" id={`ov-${r.slug}`}>
+            {r.name}
+          </h3>
+        </Link>
         <ul className="ov-tags" aria-label="Erbjuder">
           {r.ekonomisk && <li className="ov-tag">Ekonomisk</li>}
           {r.teknisk && <li className="ov-tag">Teknisk</li>}

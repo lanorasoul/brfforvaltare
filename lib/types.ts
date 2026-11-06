@@ -180,6 +180,11 @@ export interface Provider {
   name: string;
   legalName?: string;
   website: string;
+  /**
+   * Förvaltarens logga, sparad i public/logos. Källan är sidan där loggan hämtades. Loggan visas oförändrad,
+   * utom när förvaltaren bara visar en vit version: då används samma form i mörk färg.
+   */
+  logo: { file: string; source: string; width: number; height: number } | null;
   /** Region om förvaltaren bara verkar i en del av landet. Null om förvaltaren själv inte anger något. */
   region: string | null;
   /** Senaste datum då vi läste en sida från förvaltaren. */

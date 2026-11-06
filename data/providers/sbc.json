@@ -2,6 +2,12 @@
   "slug": "sbc",
   "name": "SBC",
   "website": "https://www.sbc.se/",
+  "logo": {
+    "file": "/logos/sbc.svg",
+    "source": "l1",
+    "width": 538.3,
+    "height": 160.2
+  },
   "region": null,
   "checked": "2026-11-06",
   "summary": "Förvaltare med kontor i nio orter. Anger prisexempel för ekonomisk förvaltning men inget pris för teknisk förvaltning.",
@@ -337,6 +343,13 @@
       "id": "f4",
       "url": "https://www.reco.se/sbc-sveriges-bostadsrattscentrum-ab-stockholm",
       "title": "Sbc Sveriges Bostadsrättscentrum AB på Reco.se",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "l1",
+      "url": "https://www.sbc.se/",
+      "title": "Startsida",
       "checked": "2026-11-06",
       "scope": "general"
     }

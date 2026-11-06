@@ -99,6 +99,13 @@ for (const f of files) {
 
   if (p.group) needSource(p.group.source, "group.source");
   if (p.customers) needSource(p.customers.source, "customers.source");
+  if (!("logo" in p)) err(f, "logo saknas (använd null om ingen logga finns)");
+  if (p.logo) {
+    needSource(p.logo.source, "logo.source");
+    if (!/^\/logos\/[a-z0-9-]+\.(svg|png|webp)$/.test(p.logo.file ?? "")) err(f, "logo.file ska vara /logos/<namn>.svg, .png eller .webp");
+    else if (!fs.existsSync(path.join(root, "public", p.logo.file))) err(f, `logo.file finns inte: public${p.logo.file}`);
+    if (!(p.logo.width > 0 && p.logo.height > 0)) err(f, "logo.width och logo.height behövs för att loggorna ska få samma yta");
+  }
 
   // Fakta och betyg
   const fx = p.facts;
