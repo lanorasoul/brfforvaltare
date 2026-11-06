@@ -918,7 +918,7 @@
   }
 }
 
-/* ---------- öppenhetsmatris (mörk) ---------- */
+/* ---------- öppenhetsmatris (ljus panel) ---------- */
 
 .matrix-wrap {
   max-width: 1000px;
@@ -928,9 +928,9 @@
 .matrix-scroll {
   position: relative;
   overflow-x: auto;
-  border: 1px solid var(--night-line);
+  border: 1px solid var(--band-line);
   border-radius: 20px;
-  background: var(--night-2);
+  background: var(--band-2);
 }
 
 .matrix {
@@ -944,7 +944,7 @@
 .matrix th,
 .matrix td {
   padding: 15px 16px;
-  border-bottom: 1px solid var(--night-line);
+  border-bottom: 1px solid var(--band-line);
 }
 
 .matrix-col,
@@ -955,7 +955,7 @@
 
 .matrix tbody tr:last-child th,
 .matrix tbody tr:last-child td {
-  border-bottom: 1px solid var(--night-line);
+  border-bottom: 1px solid var(--band-line);
 }
 
 .matrix-corner,
@@ -964,7 +964,7 @@
   left: 0;
   z-index: 1;
   min-width: 150px;
-  background: var(--night-2);
+  background: var(--band-2);
   text-align: left;
   font-weight: 600;
 }
@@ -975,14 +975,14 @@
 }
 
 .matrix-col {
-  color: var(--night-ink-2);
+  color: var(--band-ink-2);
   font-size: 14px;
   font-weight: 600;
 }
 
 .matrix-cell {
-  --presence-check: var(--night);
-  color: var(--night-ink);
+  --presence-check: var(--band);
+  color: var(--band-ink);
 }
 
 .matrix-notfound {
@@ -991,7 +991,7 @@
 
 .matrix tbody tr:hover th,
 .matrix tbody tr:hover td {
-  background: var(--night-3);
+  background: var(--band-3);
 }
 
 .matrix tfoot th,
@@ -999,7 +999,7 @@
   border-bottom: 0;
   font-size: 13px;
   font-weight: 500;
-  color: var(--night-ink-2);
+  color: var(--band-ink-2);
 }
 
 .matrix tfoot .matrix-total {
@@ -1013,7 +1013,7 @@
   gap: 10px 28px;
   margin-top: 24px;
   font-size: 14px;
-  color: var(--night-ink-2);
+  color: var(--band-ink-2);
 }
 
 .matrix-key li {
@@ -1023,11 +1023,11 @@
 }
 
 .matrix-key .mark {
-  color: var(--night-ink);
-  --presence-check: var(--night);
+  color: var(--band-ink);
+  --presence-check: var(--band);
 }
 
-/* ---------- vanliga frågor (mörk) ---------- */
+/* ---------- vanliga frågor (ljus panel) ---------- */
 
 .faq-section {
   padding-bottom: clamp(56px, 7vw, 96px);
@@ -1043,9 +1043,9 @@
 }
 
 .faq-item {
-  border: 1px solid var(--night-line);
+  border: 1px solid var(--band-line);
   border-radius: 16px;
-  background: var(--night-2);
+  background: var(--band-2);
 }
 
 .faq-q {
@@ -1073,7 +1073,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--night-3);
+  background: var(--band-3);
 }
 
 .faq-minus {
@@ -1091,22 +1091,22 @@
 .faq-a {
   padding: 0 24px 24px;
   max-width: 64ch;
-  color: var(--night-ink-2);
+  color: var(--band-ink-2);
 }
 
-.night .link {
+.band .link {
   text-decoration-color: #4b5163;
 }
 
-.night .link:hover {
+.band .link:hover {
   text-decoration-color: currentColor;
 }
 
-/* ---------- sidfot (mörk) ---------- */
+/* ---------- sidfot (ljus panel) ---------- */
 
 .foot {
   padding-top: 8px;
-  border-top: 1px solid var(--night-line);
+  border-top: 1px solid var(--band-line);
 }
 
 .foot-cta .lead {
@@ -1144,12 +1144,12 @@
 }
 
 .foot-col a {
-  color: var(--night-ink-2);
+  color: var(--band-ink-2);
   transition: color 0.15s;
 }
 
 .foot-col a:hover {
-  color: #fff;
+  color: var(--ink);
 }
 
 .foot-legal {

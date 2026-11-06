@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/schibsted-grotesk";
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
 import "@fontsource-variable/doto/full.css";
 import "../styles/base.css";
 import "../styles/nav.css";
@@ -12,6 +13,7 @@ import "../styles/guide.css";
 import "../styles/overview.css";
 import "../styles/wizard.css";
 import "../styles/insights.css";
+import "../styles/home.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/lib/site";

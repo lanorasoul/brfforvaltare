@@ -23,6 +23,7 @@ export default async function HittaForvaltarePage({ searchParams }: { searchPara
 
   return (
     <section className="wz">
+      <div className="aurora aurora-soft" aria-hidden="true" />
       <div className="wz-inner">
         <h1 className="wz-h1">Hitta rätt förvaltare för er brf</h1>
         <p className="wz-lead">Tre korta steg. Vi matchar er med förvaltare som passar, bland de {count} vi har granskat. Gratis och utan förpliktelser.</p>

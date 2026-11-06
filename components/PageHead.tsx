@@ -22,6 +22,7 @@ export function PageHead({
 }) {
   return (
     <header className="page-head">
+      <div className="aurora aurora-soft" aria-hidden="true" />
       <div className="container">
         {crumbs && crumbs.length > 0 && (
           <nav aria-label="Brödsmula" className="crumbs small">

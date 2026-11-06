@@ -5,7 +5,7 @@ import { dateLong } from "@/lib/format";
 
 export function Footer() {
   return (
-    <footer className="foot night">
+    <footer className="foot band">
       <div className="container">
         <div className="foot-grid">
           <div className="foot-brand">

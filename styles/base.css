@@ -1,36 +1,46 @@
 /* Tokens, grundstil och byggstenar. Alla selektorer är en klass, så ingenting vinner över något annat av misstag. */
 
 :root {
+  /* Ljust och varmt: vitt papper, stenfärgade paneler, nästan svart text. */
   --paper: #ffffff;
-  --ink: #12151c;
-  --ink-2: #5d6068;
-  --ink-3: #6b6e76;
-  --panel: #f4f5f6;
-  --panel-2: #eceef0;
-  --line: #e4e6e9;
-  --line-strong: #cfd2d8;
-  --dot-off: #d8dbe1;
-  --mark-est: #848995;
+  --ink: #141418;
+  --ink-2: #55565e;
+  --ink-3: #6b6c74;
+  --panel: #f6f4f1;
+  --panel-2: #eeebe6;
+  --line: #e9e5df;
+  --line-strong: #d6d1c9;
+  --dot-off: #e3dfd8;
+  --mark-est: #8b8d96;
 
-  --accent: #d92d20;
-  --accent-hover: #bf2419;
-  --accent-soft: #fdeceb;
-  --accent-glow: rgba(217, 45, 32, 0.34);
+  /* Accenten klarar 4,5:1 mot vit text. Ljusare toner används bara till glöd och diagram. */
+  --accent: #dc2f1b;
+  --accent-hover: #c42614;
+  --accent-bright: #ff4a2e;
+  --accent-pink: #ff4f8b;
+  --accent-soft: #fff0ec;
+  --accent-glow: rgba(240, 58, 34, 0.42);
+  --ok: #1f8a5b;
+  --ok-soft: #e8f6ef;
 
-  --night: #0d0f14;
-  --night-2: #151821;
-  --night-3: #1d212d;
-  --night-line: #262b38;
-  --night-ink: #f2f3f5;
-  --night-ink-2: #a8adba;
-  --accent-on-night: #ff6b5e;
+  /* Ytor som skiljer ut sig från papperet: paneler och band. Alla är ljusa. */
+  --band: #f6f4f1;
+  --band-2: #ffffff;
+  --band-3: #f1eee9;
+  --band-line: #e8e4de;
+  --band-ink: #141418;
+  --band-ink-2: #5f6068;
+  --accent-on-band: #dc2f1b;
 
-  --font-sans: "Schibsted Grotesk Variable", "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Geist Variable", "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --font-dot: "Doto Variable", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --r-panel: 24px;
-  --r-tile: 16px;
-  --r-btn: 12px;
+  --r-panel: 26px;
+  --r-tile: 18px;
+  --r-btn: 14px;
+
+  --shadow-float: 0 1px 0 rgba(20, 20, 24, 0.04), 0 30px 70px -36px rgba(20, 20, 24, 0.32);
 
   --container: 1200px;
   --gutter: 24px;
@@ -120,8 +130,8 @@ svg {
   outline-offset: 3px;
 }
 
-.night :focus-visible {
-  outline-color: var(--accent-on-night);
+.band :focus-visible {
+  outline-color: var(--accent-on-band);
 }
 
 ::selection {
@@ -178,42 +188,42 @@ svg {
   padding-block: clamp(56px, 7vw, 96px);
 }
 
-.night {
-  background: var(--night);
-  color: var(--night-ink);
+.band {
+  background: var(--band);
+  color: var(--band-ink);
 }
 
 /* ---------- typografi ---------- */
 
 .display {
-  font-size: clamp(44px, 7.4vw, 94px);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  font-weight: 500;
+  font-size: clamp(44px, 7.6vw, 100px);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-weight: 600;
   text-wrap: balance;
 }
 
 .h1 {
   font-size: clamp(38px, 5.4vw, 68px);
   line-height: 1;
-  letter-spacing: -0.038em;
-  font-weight: 500;
+  letter-spacing: -0.045em;
+  font-weight: 600;
   text-wrap: balance;
 }
 
 .h2 {
   font-size: clamp(34px, 4.6vw, 58px);
   line-height: 1.02;
-  letter-spacing: -0.035em;
-  font-weight: 500;
+  letter-spacing: -0.042em;
+  font-weight: 600;
   text-wrap: balance;
 }
 
 .h3 {
   font-size: clamp(27px, 3vw, 40px);
   line-height: 1.06;
-  letter-spacing: -0.03em;
-  font-weight: 500;
+  letter-spacing: -0.035em;
+  font-weight: 600;
   text-wrap: balance;
 }
 
@@ -247,13 +257,13 @@ svg {
   color: var(--ink-3);
 }
 
-.night .lead,
-.night .muted {
-  color: var(--night-ink-2);
+.band .lead,
+.band .muted {
+  color: var(--band-ink-2);
 }
 
-.night .fine {
-  color: var(--night-ink-2);
+.band .fine {
+  color: var(--band-ink-2);
 }
 
 .center {
@@ -296,23 +306,43 @@ svg {
 }
 
 .btn-accent {
-  background: var(--accent);
+  background: linear-gradient(180deg, #e8371f 0%, var(--accent) 55%, #cf2814 100%);
   color: #fff;
-  box-shadow: 0 12px 32px 0 var(--accent-glow);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 1px 2px rgba(150, 30, 10, 0.3),
+    0 14px 34px -10px var(--accent-glow);
 }
 
 .btn-accent:hover {
-  background: var(--accent-hover);
+  background: linear-gradient(180deg, #db3119 0%, var(--accent-hover) 60%, #b92210 100%);
   transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 1px 2px rgba(150, 30, 10, 0.3),
+    0 20px 40px -12px var(--accent-glow);
 }
 
 .btn-dark {
-  background: var(--ink);
+  background: linear-gradient(180deg, #2a2a30, var(--ink));
   color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 8px 20px -10px rgba(20, 20, 24, 0.5);
 }
 
 .btn-dark:hover {
-  background: #272c38;
+  background: linear-gradient(180deg, #34343b, #1d1d22);
+}
+
+.btn-xl {
+  height: 62px;
+  padding: 0 16px 0 30px;
+  border-radius: 18px;
+  font-size: 19px;
+}
+
+.btn-xl .btn-icon {
+  width: 32px;
+  height: 32px;
 }
 
 .btn-light {
@@ -325,9 +355,10 @@ svg {
 }
 
 .btn-quiet {
-  background: var(--panel);
+  background: #fff;
   color: var(--ink);
   padding-inline: 22px;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
 }
 
 .btn-quiet:hover {
@@ -353,7 +384,73 @@ svg {
 
 .btn-quiet .btn-icon,
 .btn-light .btn-icon {
-  background: rgba(18, 21, 28, 0.08);
+  background: rgba(20, 20, 24, 0.07);
+}
+
+/* ---------- etiketter och siffror i produktstil ---------- */
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.chip-dark {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: #3a3a40;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.text-accent {
+  background: linear-gradient(92deg, var(--accent) 10%, #ff4f6d 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* En panel som ser ut som en del av en app: stenfärgad ram med vita rutor i. */
+.ui-panel {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  background: var(--panel);
+  box-shadow: var(--shadow-float);
+}
+
+.ui-tile {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* Mjuk färgglöd överst på sidan. */
+.aurora {
+  position: absolute;
+  inset: -120px 0 auto 0;
+  height: 620px;
+  pointer-events: none;
+  background:
+    radial-gradient(34% 48% at 28% 30%, rgba(255, 168, 120, 0.55), transparent 72%),
+    radial-gradient(30% 46% at 72% 26%, rgba(255, 120, 170, 0.45), transparent 72%),
+    radial-gradient(46% 60% at 50% 12%, rgba(255, 214, 180, 0.7), transparent 74%);
+  filter: blur(28px);
 }
 
 .link {

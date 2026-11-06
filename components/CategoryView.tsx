@@ -63,7 +63,7 @@ export function CategoryView({ category }: { category: Category }) {
             </div>
           </section>
 
-          <section className="night section" id="oppenhet" aria-labelledby="matrix-title">
+          <section className="band section" id="oppenhet" aria-labelledby="matrix-title">
             <div className="container">
               <div className="section-head center">
                 <h2 className="h2" id="matrix-title">

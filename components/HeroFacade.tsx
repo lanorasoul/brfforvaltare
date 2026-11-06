@@ -46,13 +46,13 @@ export function HeroFacade() {
       <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMin slice" width="100%" height="100%">
         <defs>
           <pattern id="facade-dots" width={PITCH} height={PITCH} patternUnits="userSpaceOnUse">
-            <circle cx={PITCH / 2} cy={PITCH / 2} r="1.9" fill="#dcdfe5" />
+            <circle cx={PITCH / 2} cy={PITCH / 2} r="1.9" fill="#e6e1da" />
           </pattern>
         </defs>
         <rect width={w} height={h} fill="url(#facade-dots)" />
         {[...windows.entries()].map(([key, o]) => {
           const [c, r] = key.split(":").map(Number);
-          return <circle key={key} cx={c * PITCH + PITCH / 2} cy={r * PITCH + PITCH / 2} r="2.9" fill="#d92d20" opacity={o.toFixed(2)} />;
+          return <circle key={key} cx={c * PITCH + PITCH / 2} cy={r * PITCH + PITCH / 2} r="2.9" fill="#ff4a2e" opacity={o.toFixed(2)} />;
         })}
       </svg>
     </div>

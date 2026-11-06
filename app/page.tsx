@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Faq } from "@/components/Faq";
 import { HeroFacade } from "@/components/HeroFacade";
-import { ArrowIcon, ExternalIcon } from "@/components/icons";
+import { ArrowIcon, CheckIcon, ExternalIcon } from "@/components/icons";
+import { HeroPreview } from "@/components/HeroPreview";
+import { LogoMarquee } from "@/components/LogoMarquee";
 import { JsonLd } from "@/components/JsonLd";
 import { ProviderOverview } from "@/components/ProviderOverview";
 import { WhySwitch, type FeePoint } from "@/components/WhySwitch";
@@ -98,39 +100,61 @@ export default function Home() {
     <>
       <JsonLd data={ld} />
       <section className="top">
+        <div className="aurora" aria-hidden="true" />
         <HeroFacade />
         <div className="container top-inner">
+          <p className="top-kicker">
+            <span className="top-kicker-dot" aria-hidden="true" />
+            Oberoende jämförelse för bostadsrättsföreningar
+          </p>
           <h1 className="display">
             Jämför förvaltare
             <br />
-            för er brf
+            <span className="text-accent">för er brf</span>
           </h1>
           <p className="lead top-lead">
-            Pris, kundnöjdhet och villkor för {providers.length} förvaltare av ekonomisk och teknisk förvaltning. Gratis, oberoende och med källa till varje uppgift.
+            Pris, kundnöjdhet och villkor för {providers.length} förvaltare av ekonomisk och teknisk förvaltning. Med källa till varje uppgift.
           </p>
           <div className="hero-actions">
-            <Link className="btn btn-accent" href="/hitta-forvaltare">
+            <Link className="btn btn-accent btn-xl" href="/hitta-forvaltare">
               Få förslag på förvaltare
               <span className="btn-icon">
                 <ArrowIcon />
               </span>
             </Link>
-            <Link className="btn btn-quiet" href="#forvaltare">
+            <Link className="btn btn-quiet btn-xl" href="#forvaltare">
               Jämför själva
             </Link>
           </div>
+          <ul className="top-proof" aria-label="Det här gäller alltid">
+            <li>
+              <CheckIcon size={13} /> Gratis för styrelser
+            </li>
+            <li>
+              <CheckIcon size={13} /> Ingen förvaltare betalar för plats
+            </li>
+            <li>
+              <CheckIcon size={13} /> Källa vid varje siffra
+            </li>
+          </ul>
+          <div className="top-preview">
+            <HeroPreview rows={rows.slice(0, 5)} total={rows.length} />
+          </div>
         </div>
       </section>
+
+      <LogoMarquee items={rows.map((r) => ({ slug: r.slug, name: r.name, logo: r.logo }))} />
 
       <WhySwitch fees={fees} />
 
       <section className="ov-section" id="forvaltare" aria-labelledby="ov-title">
         <div className="container">
           <div className="ov-section-head">
-            <h2 className="h3" id="ov-title">
-              Förvaltare för bostadsrättsföreningar
+            <span className="mono-label">Jämförelsen</span>
+            <h2 className="h2" id="ov-title">
+              Förvaltare för <span className="text-accent">bostadsrättsföreningar</span>
             </h2>
-            <p className="muted">Ange antal lägenheter så räknas priset om. Tryck på Mer om för omdömen, kontor och avtalsvillkor.</p>
+            <p className="lead">Ange antal lägenheter så räknas priset om. Tryck på Mer om för omdömen, kontor och avtalsvillkor.</p>
           </div>
           <ProviderOverview rows={rows} />
         </div>
@@ -138,10 +162,13 @@ export default function Home() {
 
       <section className="home-band" aria-labelledby="kostnad-title">
         <div className="container">
-          <h2 className="h3" id="kostnad-title">
-            Vad brukar förvaltning kosta?
-          </h2>
-          <p className="muted home-band-lead">Bra att ha när ni får en offert från en förvaltare som inte publicerar pris. Siffrorna beskriver marknaden, inte förvaltarnas egna priser.</p>
+          <div className="home-band-head">
+            <span className="mono-label">Prisnivå</span>
+            <h2 className="h2" id="kostnad-title">
+              Vad brukar förvaltning kosta?
+            </h2>
+            <p className="lead">Bra att ha när ni får en offert från en förvaltare som inte publicerar pris. Siffrorna beskriver marknaden, inte förvaltarnas egna priser.</p>
+          </div>
           <div className="ov-market">
             {market.map((m) =>
               m.cite ? (
@@ -155,7 +182,7 @@ export default function Home() {
               ) : null,
             )}
           </div>
-          <p className="small">
+          <p className="small center">
             <Link className="link" href="/prisguide">
               Läs prisguiden
             </Link>
@@ -165,9 +192,12 @@ export default function Home() {
 
       <section className="home-band home-band-last" id="fragor" aria-labelledby="faq-title">
         <div className="container-narrow">
-          <h2 className="h3" id="faq-title">
-            Vanliga frågor
-          </h2>
+          <div className="home-band-head">
+            <span className="mono-label">Frågor och svar</span>
+            <h2 className="h2" id="faq-title">
+              Vanliga frågor
+            </h2>
+          </div>
           <Faq items={faq} />
         </div>
       </section>
