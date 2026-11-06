@@ -8,7 +8,6 @@ import { dateLong } from "@/lib/format";
 import { priceRow } from "@/lib/price";
 import { priceLabel, VAT_TEXT } from "@/lib/price-label";
 import { CATEGORIES, CATEGORY, DISCLOSURE_KEYS } from "@/lib/schema";
-import { HSB_REGIONALS_TOTAL, isHsb } from "@/lib/site";
 import type { Category, Provider, Service } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -70,7 +69,7 @@ function ProviderTile({ p }: { p: Provider }) {
           {p.region && <span className="pill prov-region">{p.region}</span>}
         </h3>
         <p className="small muted prov-summary">{p.summary}</p>
-        {p.group && !isHsb(p) && <p className="small prov-group">{p.group.text}</p>}
+        {p.group && <p className="small prov-group">{p.group.text}</p>}
         <ul className="prov-services">
           {(Object.keys(SERVICE_LABEL) as (keyof typeof SERVICE_LABEL)[]).map((k) => (
             <li key={k} className="prov-service" data-state={p.services[k]}>
@@ -126,11 +125,6 @@ function ProviderTile({ p }: { p: Provider }) {
 
 export default function ForvaltarePage() {
   const providers = getProviders();
-  const hsb = providers.filter(isHsb);
-  const others = providers.filter((p) => !isHsb(p));
-  const hsbSource = hsb.length > 0 ? requireSource(hsb[0], "g0") : null;
-  const hsbGroup = hsb[0]?.group?.text ?? "";
-
   return (
     <>
       <PageHead
@@ -141,24 +135,12 @@ export default function ForvaltarePage() {
       <section className="page-body">
         <div className="container">
           <p className="small muted list-note">
-            Priset gäller 50 lägenheter. Räkna för er egen storlek i <Link className="link" href="/#rakna">prisräknaren</Link>. De små märkena visar vad förvaltaren berättar öppet: sex uppgifter för
+            Priset gäller 50 lägenheter. Räkna för er egen storlek i <Link className="link" href="/#forvaltare">jämförelsen</Link>. De små märkena visar vad förvaltaren berättar öppet: sex uppgifter för
             ekonomisk förvaltning och sex för teknisk. Jämför alla på <Link className="link" href="/ekonomisk-forvaltning">ekonomisk</Link> eller <Link className="link" href="/teknisk-forvaltning">teknisk</Link> förvaltning.
           </p>
 
-          <h2 className="h3 list-head">Egna organisationer</h2>
           <ul className="prov-list">
-            {others.map((p) => (
-              <ProviderTile key={p.slug} p={p} />
-            ))}
-          </ul>
-
-          <h2 className="h3 list-head list-head-gap">HSB:s regionala föreningar</h2>
-          <p className="small muted list-note">
-            {hsbGroup} Vi har läst {hsb.length} av {HSB_REGIONALS_TOTAL}. De har egna tjänster, avtal och webbplatser, så två HSB-föreningar kan skilja sig åt.{" "}
-            {hsbSource && <SourceLink url={hsbSource.url} checked={hsbSource.checked} />}
-          </p>
-          <ul className="prov-list">
-            {hsb.map((p) => (
+            {providers.map((p) => (
               <ProviderTile key={p.slug} p={p} />
             ))}
           </ul>

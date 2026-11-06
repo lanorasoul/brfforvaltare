@@ -136,12 +136,51 @@ export interface ServiceBlock {
   notes?: string[];
 }
 
+/** En uppgift med källa. */
+export interface Fact {
+  text: string;
+  source: string;
+}
+
+/**
+ * Betyg eller kundnöjdhet. NKI kommer från Prognoscentrets årliga mätning och är oberoende av förvaltaren.
+ * Reco och Trustpilot är omdömessajter. "egen" är ett betyg som förvaltaren själv visar, till exempel från sin kundportal.
+ */
+export interface Rating {
+  kind: "nki" | "reco" | "trustpilot" | "google" | "egen";
+  value: number;
+  /** NKI är 0 till 100, omdömen 1 till 5. */
+  scale: 100 | 5;
+  /** Antal omdömen eller svar, om det anges. */
+  count?: number;
+  /** Mätår för NKI. */
+  year?: number;
+  /** Branschsnittet samma år, för NKI. */
+  average?: number;
+  /** Vem som publicerar siffran. "förvaltaren" betyder att vi bara har förvaltarens ord för den. */
+  by: "oberoende" | "förvaltaren";
+  text: string;
+  source: string;
+}
+
+/** Fakta om förvaltaren som helhet, det en styrelse oftast frågar först. */
+export interface Facts {
+  founded?: Fact & { year: number };
+  /** Antal föreningar eller kunder som förvaltaren uppger. */
+  clients?: Fact & { value: number };
+  offices?: Fact & { count: number; places: string[] };
+  employees?: Fact & { value: number };
+  /** Avtal, uppsägning, uppstart och byte. */
+  terms: Fact[];
+  ratings: Rating[];
+}
+
 export interface Provider {
   slug: string;
   name: string;
   legalName?: string;
   website: string;
-  /** Regional organisation, till exempel HSB Skåne. Null om förvaltaren själv inte anger något. */
+  /** Region om förvaltaren bara verkar i en del av landet. Null om förvaltaren själv inte anger något. */
   region: string | null;
   /** Senaste datum då vi läste en sida från förvaltaren. */
   checked: string;
@@ -150,6 +189,7 @@ export interface Provider {
   group: { text: string; source: string } | null;
   customers: { text: string; source: string } | null;
   services: { ekonomisk: Service; teknisk: Service; fastighetsskotsel: Service };
+  facts: Facts;
   ekonomisk: ServiceBlock | null;
   teknisk: ServiceBlock | null;
   notes?: string[];

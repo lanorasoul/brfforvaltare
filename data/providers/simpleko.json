@@ -3,7 +3,7 @@
   "name": "Simpleko",
   "website": "https://www.simpleko.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Ekonomisk förvaltning i hela Sverige, helägt dotterbolag till Riksbyggen. Anger inget pris för förvaltningen men prissätter tillägget Digital underhållsplan. Vi hittade ingen teknisk förvaltning.",
   "group": {
     "text": "Grundat 2020 som helägt dotterbolag till Riksbyggen enligt Simpleko.",
@@ -17,6 +17,54 @@
     "ekonomisk": "yes",
     "teknisk": "unknown",
     "fastighetsskotsel": "unknown"
+  },
+  "facts": {
+    "founded": {
+      "year": 2020,
+      "text": "Bildades 2020 som dotterbolag till Riksbyggen när två aktörer gick samman. Verksamheten har rötter i 1950-talet.",
+      "source": "g1"
+    },
+    "clients": {
+      "value": 1300,
+      "text": "Över 1 300 föreningar och fastighetsägare enligt Simpleko.",
+      "source": "g1"
+    },
+    "offices": {
+      "count": 2,
+      "places": [
+        "Uppsala",
+        "Östersund"
+      ],
+      "text": "Kontor i Uppsala och Östersund. Kunder i hela landet.",
+      "source": "g1"
+    },
+    "employees": {
+      "value": 75,
+      "text": "Cirka 75 medarbetare.",
+      "source": "g1"
+    },
+    "terms": [
+      {
+        "text": "Föreningen får en egen uppstartsansvarig. Efter 6 till 10 månader tar ett fast kundteam över, med ansvarig ekonom och kontakter för lägenhetsförteckning och leverantörsfakturor.",
+        "source": "f3"
+      },
+      {
+        "text": "Priset beror på storlek, behov och tjänster. Lokaler med moms, parkeringsplatser och IMD kan höja det.",
+        "source": "e4"
+      }
+    ],
+    "ratings": [
+      {
+        "kind": "nki",
+        "value": 78,
+        "scale": 100,
+        "year": 2025,
+        "average": 68,
+        "by": "oberoende",
+        "text": "NKI 78 i Prognoscentrets mätning 2025, högst av alla redovisade förvaltare för tredje året i rad. Branschsnittet var 68.",
+        "source": "f2"
+      }
+    ]
   },
   "ekonomisk": {
     "summary": "Anger inget pris för förvaltningen. Listar grundtjänst, exempel på tilläggstjänster och kundportalen Portalen. Digital underhållsplan har ett pris.",
@@ -151,15 +199,29 @@
       "id": "e4",
       "url": "https://www.simpleko.se/ekonomisk-forvaltning/faq/",
       "title": "Vanliga frågor om ekonomisk förvaltning för Brf",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "scope": "ekonomisk"
     },
     {
       "id": "g1",
       "url": "https://www.simpleko.se/om-oss/",
       "title": "Om Simpleko",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "scope": "general"
+    },
+    {
+      "id": "f2",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/",
+      "title": "Simpleko vinnare i kundnöjdhet (Riksbyggen om Prognoscentrets NKI 2025)",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f3",
+      "url": "https://www.simpleko.se/ekonomisk-forvaltning/byta-ekonomisk-forvaltare/",
+      "title": "Byta ekonomisk förvaltare",
+      "checked": "2026-11-06",
+      "scope": "ekonomisk"
     }
   ]
 }

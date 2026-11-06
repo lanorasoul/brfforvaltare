@@ -8,9 +8,11 @@ import { MissingSection, ServiceSection } from "@/components/ServiceSection";
 import { SourceLink } from "@/components/SourceLink";
 import { getProvider, getProviders, requireSource } from "@/lib/data";
 import { dateLong, shortUrl } from "@/lib/format";
+import { overviewRows } from "@/lib/overview";
 import { priceRow } from "@/lib/price";
 import { priceLabel, VAT_TEXT } from "@/lib/price-label";
 import { CATEGORIES, CATEGORY } from "@/lib/schema";
+import { NKI_AVERAGE } from "@/lib/site";
 import type { Category, Provider, Service } from "@/lib/types";
 
 type Params = { slug: string };
@@ -61,7 +63,7 @@ function QuickFacts({ p }: { p: Provider }) {
                     </span>
                   </>
                 ) : (
-                  <strong className="facts-big">Pris på förfrågan</strong>
+                  <strong className="facts-big">Endast offert</strong>
                 )}
               </dd>
             </div>
@@ -107,7 +109,13 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
   if (!p) notFound();
 
   const groupSrc = p.group ? requireSource(p, p.group.source) : null;
-  const customersSrc = p.customers ? requireSource(p, p.customers.source) : null;
+  const ov = overviewRows([p])[0];
+  const facts = [
+    { label: "Grundad", fact: ov.founded },
+    { label: "Kunder", fact: ov.clients },
+    { label: "Kontor", fact: ov.offices },
+    { label: "Anställda", fact: ov.employees },
+  ];
 
   return (
     <>
@@ -171,16 +179,55 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
               )}
 
               <div className="psub">
-                <h3 className="h4 psub-head">Kunder</h3>
-                {p.customers && customersSrc ? (
-                  <>
-                    <p className="psec-text">{p.customers.text}</p>
-                    <p className="fine psec-src">
-                      Förvaltarens egen uppgift. <SourceLink url={customersSrc.url} checked={customersSrc.checked} />
-                    </p>
-                  </>
+                <h3 className="h4 psub-head">Storlek och erfarenhet</h3>
+                <dl className="pfacts">
+                  {facts.map((f) => (
+                    <div key={f.label} className="pfacts-row">
+                      <dt className="pfacts-label">{f.label}</dt>
+                      <dd className="pfacts-value">
+                        {f.fact ? (
+                          <>
+                            {f.fact.text} <SourceLink url={f.fact.url} checked={f.fact.checked} />
+                          </>
+                        ) : (
+                          <span className="muted">Anges inte på sidorna vi läste.</span>
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+
+              <div className="psub">
+                <h3 className="h4 psub-head">Kundnöjdhet och omdömen</h3>
+                {ov.ratings.length > 0 ? (
+                  <ul className="bullets">
+                    {ov.ratings.map((r, i) => (
+                      <li key={i}>
+                        {r.text} {r.ownClaim && <span className="fine">(förvaltarens egen uppgift)</span>} <SourceLink url={r.url} checked={r.checked} />
+                      </li>
+                    ))}
+                  </ul>
                 ) : (
-                  <p className="muted psec-text">Förvaltaren anger inte antal kunder på sidorna vi läste.</p>
+                  <p className="muted psec-text">Inget offentligt NKI-värde och inga omdömen med antal som vi har hittat.</p>
+                )}
+                <p className="fine psec-src">
+                  NKI kommer från Prognoscentrets årliga mätning bland bostadsrättsföreningar. Branschsnittet {NKI_AVERAGE.year} var {NKI_AVERAGE.value}.
+                </p>
+              </div>
+
+              <div className="psub">
+                <h3 className="h4 psub-head">Avtal och byte</h3>
+                {ov.terms.length > 0 ? (
+                  <ul className="bullets">
+                    {ov.terms.map((t, i) => (
+                      <li key={i}>
+                        {t.text} <SourceLink url={t.url} checked={t.checked} />
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="muted psec-text">Förvaltaren publicerar inga avtalsvillkor. Fråga efter avtalstid, uppsägningstid, uppstartsavgift och hur priset räknas upp.</p>
                 )}
               </div>
             </section>

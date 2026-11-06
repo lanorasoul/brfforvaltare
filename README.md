@@ -24,10 +24,10 @@ npm run build && npm start
 
 | Adress | Innehåll |
 |---|---|
-| `/` | Jämförelse av alla förvaltare med kategorival, ortfilter och lägenhetsantal: nyckeluppgifter, tjänstematris, öppenhetsmatris. Därefter priskalkylatorn, byta-steg och vanliga frågor. |
+| `/` | Ett kort per förvaltare: pris för föreningens storlek, kundnöjdhet (NKI), omdömen, antal kunder, grundår, kontor och avtalsvillkor. Filter för ekonomisk eller teknisk förvaltning och sortering som besökaren väljer. Därefter vad förvaltning brukar kosta, byta-steg och vanliga frågor. |
 | `/ekonomisk-forvaltning`, `/teknisk-forvaltning` | Samma jämförelse låst till en kategori, med frågor att ställa till alla förvaltare. |
 | `/jamfor` | Upp till tre förvaltare sida vid sida, per kategori. Delbar länk: `?kategori=teknisk&forvaltare=fastum,sbc&lgh=50`. |
-| `/forvaltare`, `/forvaltare/<slug>` | Alla förvaltare (egna organisationer och HSB:s regionala föreningar var för sig) och en profil per förvaltare med ett avsnitt per kategori. |
+| `/forvaltare`, `/forvaltare/<slug>` | Alla förvaltare och en profil per förvaltare med storlek, kundnöjdhet, avtal och ett avsnitt per kategori. |
 | `/prisguide` | Pris för 20, 50 och 100 lägenheter (bara ekonomisk förvaltning), hur man läser priset och vad som gäller för teknisk förvaltning. |
 | `/byta-forvaltare` | Fem steg, uppsägningskalender och offertmallar för båda kategorierna (`?mall=teknisk` väljer mall). |
 | `/hitta-forvaltare` | Guiden. Tre frågor (förvaltning, ort, antal lägenheter) och valfria önskemål om tjänster. Visar alla förvaltare som har rätt förvaltning, i namnordning och utan poäng. Svaren ligger i adressen. |
@@ -57,7 +57,8 @@ npm run build && npm start
 - Varje uppgift pekar på en källa (`source`) i samma fil. Varje källa har `url`, `checked` (datum då sidan lästes) och `scope` (`ekonomisk`, `teknisk` eller `general`).
 - `data/schema.json`: kategorierna, de tolv tjänsterna per kategori (`features`), de sex öppenhetsfrågorna per kategori (`disclosure`) och de fyra lägena för en tjänst. Både sajten och datakontrollen läser den.
 - `data/reference.json`: allmän vägledning från någon som inte är förvaltare (en offertförmedlare). Visas märkt med avsändare och används aldrig som underlag för en förvaltares pris.
-- `npm run validate` stoppar bygget om en uppgift saknar källa eller datum, om en källa saknas, om en källa har fel kategori, om ett tecken är otillåtet (tankstreck, minustecken) eller om en HSB-förening inte nämner att HSB har 23 regionala föreningar.
+- `facts` i varje förvaltare: grundår, antal kunder, kontor, anställda, avtalsvillkor (`terms`) och betyg (`ratings`). Varje uppgift har en källa. Betyg är NKI från Prognoscentret (med mätår och branschsnitt samma år), Reco (med antal omdömen) eller betyg som bara förvaltaren själv anger (`by: "förvaltaren"`).
+- `npm run validate` stoppar bygget om en uppgift saknar källa eller datum, om en källa saknas, om en källa har fel kategori, om ett tecken är otillåtet (tankstreck, minustecken), om ett betyg saknar skala, år eller antal, eller om HSB-posten inte nämner antalet regionala HSB-föreningar.
 
 ### Lägga till en förvaltare
 
@@ -70,7 +71,7 @@ npm run build && npm start
 7. Ett tillägg med pris som står på en annan sida än avtalets prissida får `source` med den källans id.
 8. Kör `npm run validate` och `npm test`.
 
-HSB är 23 fristående regionala föreningar med egna tjänster, avtal och webbplatser. Varje förening som läses läggs till som en egen förvaltare med slug `hsb-<ort>`. Antalet 23 och källan står i `lib/site.ts` och i `group` hos varje förening.
+HSB är 21 fristående regionala föreningar. HSB visas som en förvaltare (`data/providers/hsb.json`). Uppgifter som bara gäller en region skrivs ut med regionens namn, till exempel avtalstiden hos HSB Mälardalarna. Antalet och källan står i `lib/site.ts`.
 
 ### Regler för innehållet
 

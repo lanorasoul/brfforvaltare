@@ -19,6 +19,7 @@ const VAT = new Set(["excl", "incl", "unknown"]);
 const FEATURE_STATE = new Set(Object.keys(schema.featureStates));
 const COVERAGE = new Set(["national", "regional", "unknown"]);
 const SOURCE_SCOPE = new Set([...CATEGORIES, "general"]);
+const RATING_KIND = new Set(["nki", "reco", "trustpilot", "google", "egen"]);
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 // Tankstreck (U+2013), långt tankstreck (U+2014) och minustecken (U+2212) är inte tillåtna i innehåll.
 const BANNED = /[\u2013\u2014\u2212]/;
@@ -43,7 +44,7 @@ for (const c of CATEGORIES) {
 const featureKeys = Object.fromEntries(CATEGORIES.map((c) => [c, new Set(schema.features[c].map((x) => x.key))]));
 const disclosureKeys = Object.fromEntries(CATEGORIES.map((c) => [c, schema.disclosure[c].map((x) => x.key)]));
 
-// HSB är 23 fristående föreningar. Antalet står i lib/site.ts och ska stämma med texten hos varje HSB-förening.
+// HSB är fristående regionala föreningar. Antalet står i lib/site.ts och ska stämma med texten hos varje HSB-förening.
 const siteTs = fs.readFileSync(path.join(root, "lib", "site.ts"), "utf8");
 const hsbTotal = siteTs.match(/HSB_REGIONALS_TOTAL\s*=\s*(\d+)/)?.[1];
 if (!hsbTotal) err("lib/site.ts", "HSB_REGIONALS_TOTAL saknas");
@@ -69,10 +70,10 @@ for (const f of files) {
   if (p.region !== null && typeof p.region !== "string") err(f, "region måste vara text eller null");
   if (!("group" in p)) err(f, "group saknas (använd null om inget anges)");
   if (!("customers" in p)) err(f, "customers saknas (använd null om inget anges)");
-  if (p.slug?.startsWith("hsb-")) {
-    if (!p.group?.text || (hsbTotal && !p.group.text.includes(hsbTotal))) err(f, `HSB-förening: group.text ska nämna att HSB har ${hsbTotal} regionala föreningar`);
-    if (!p.region) err(f, "HSB-förening: region saknas");
+  if (p.slug === "hsb") {
+    if (!p.group?.text || (hsbTotal && !p.group.text.includes(hsbTotal))) err(f, `HSB: group.text ska nämna att HSB har ${hsbTotal} regionala föreningar`);
   }
+  if (p.slug?.startsWith("hsb-")) err(f, "HSB visas som en förvaltare (hsb.json). Lägg regionala uppgifter där.");
 
   // Källor
   const sourceById = new Map();
@@ -98,6 +99,40 @@ for (const f of files) {
 
   if (p.group) needSource(p.group.source, "group.source");
   if (p.customers) needSource(p.customers.source, "customers.source");
+
+  // Fakta och betyg
+  const fx = p.facts;
+  if (!fx || typeof fx !== "object") err(f, "facts saknas");
+  else {
+    const year = new Date().getFullYear();
+    for (const k of ["founded", "clients", "offices", "employees"]) {
+      const v = fx[k];
+      if (v === undefined) continue;
+      if (!v.text) err(f, `facts.${k}: text saknas`);
+      needSource(v.source, `facts.${k}.source`);
+    }
+    if (fx.founded && !(Number.isInteger(fx.founded.year) && fx.founded.year > 1800 && fx.founded.year <= year)) err(f, "facts.founded.year är inte ett rimligt år");
+    for (const k of ["clients", "employees"]) if (fx[k] && !(Number.isFinite(fx[k].value) && fx[k].value > 0)) err(f, `facts.${k}.value måste vara ett positivt tal`);
+    if (fx.offices && (!Number.isInteger(fx.offices.count) || fx.offices.count < 1 || !Array.isArray(fx.offices.places))) err(f, "facts.offices behöver count (minst 1) och places");
+    if (!Array.isArray(fx.terms)) err(f, "facts.terms måste vara en lista");
+    for (const [i, t] of (fx.terms ?? []).entries()) {
+      if (!t.text) err(f, `facts.terms[${i}]: text saknas`);
+      needSource(t.source, `facts.terms[${i}].source`);
+    }
+    if (!Array.isArray(fx.ratings)) err(f, "facts.ratings måste vara en lista");
+    for (const [i, r] of (fx.ratings ?? []).entries()) {
+      const at = `facts.ratings[${i}]`;
+      if (!RATING_KIND.has(r.kind)) err(f, `${at}: okänd kind ${r.kind}`);
+      if (r.scale !== 100 && r.scale !== 5) err(f, `${at}: scale måste vara 100 eller 5`);
+      if (!(typeof r.value === "number" && r.value >= 0 && r.value <= r.scale)) err(f, `${at}: value utanför skalan`);
+      if (r.kind === "nki" && (r.scale !== 100 || !Number.isInteger(r.year) || !Number.isInteger(r.average) || r.by !== "oberoende")) err(f, `${at}: NKI kräver scale 100, year, average och by oberoende`);
+      if (r.kind !== "nki" && r.scale !== 5) err(f, `${at}: omdömen har scale 5`);
+      if ((r.kind === "reco" || r.kind === "trustpilot") && r.by === "oberoende" && !Number.isInteger(r.count)) err(f, `${at}: antal omdömen saknas`);
+      if (r.by !== "oberoende" && r.by !== "förvaltaren") err(f, `${at}: by måste vara oberoende eller förvaltaren`);
+      if (!r.text) err(f, `${at}: text saknas`);
+      needSource(r.source, `${at}.source`);
+    }
+  }
   for (const id of p.moreSources ?? []) needSource(id, "moreSources");
 
   // Tjänster

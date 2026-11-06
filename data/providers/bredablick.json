@@ -4,7 +4,7 @@
   "legalName": "Bredablick Förvaltning i Sverige AB",
   "website": "https://bredablickforvaltning.se/",
   "region": null,
-  "checked": "2026-10-28",
+  "checked": "2026-11-06",
   "summary": "Ekonomisk och teknisk förvaltning samt fastighetsskötsel. Startade 2009 i Limhamn och ingår sedan 2023 i PHM Group. Anger över 1 000 kunder. Anger inget pris, ingen avtalstid och ingen uppsägningstid för någon av tjänsterna.",
   "group": {
     "text": "Bredablick Förvaltning ingår i Bredablickgruppen, som sedan 2023 är en del av PHM Group.",
@@ -18,6 +18,41 @@
     "ekonomisk": "yes",
     "teknisk": "yes",
     "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 2009,
+      "text": "Startade 2009 enligt Bredablick.",
+      "source": "g1"
+    },
+    "clients": {
+      "value": 1000,
+      "text": "Över 1 000 kunder, de flesta bostadsrättsföreningar. Den minsta har 10 lägenheter och den största 900.",
+      "source": "f1"
+    },
+    "offices": {
+      "count": 12,
+      "places": [],
+      "text": "12 kontor runt om i landet.",
+      "source": "g1"
+    },
+    "employees": {
+      "value": 750,
+      "text": "Över 750 medarbetare, med egen personal för städ och fastighetsskötsel i stället för underentreprenörer.",
+      "source": "g1"
+    },
+    "terms": [],
+    "ratings": [
+      {
+        "kind": "reco",
+        "value": 3.8,
+        "scale": 5,
+        "count": 212,
+        "by": "oberoende",
+        "text": "3,8 av 5 från 212 omdömen på Reco. Bredablick bjuder in kunder att skriva omdömen via Reco.",
+        "source": "f2"
+      }
+    ]
   },
   "ekonomisk": {
     "summary": "Ekonomisk förvaltning till kunder i hela Sverige, med lokala ekonomer i Stockholm, Göteborg, Malmö och Helsingborg. Anger inget pris, ingen avtalstid och ingen uppsägningstid. Listar åtta punkter som ingår i grundavtalet och tre tillägg utan pris.",
@@ -347,7 +382,7 @@
       "id": "g1",
       "url": "https://bredablickforvaltning.se/om-oss/",
       "title": "Om Bredablick Förvaltning",
-      "checked": "2026-10-28",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-09-01",
       "scope": "general"
     },
@@ -373,6 +408,20 @@
       "title": "Cookieinformation",
       "checked": "2026-10-28",
       "pageDate": "Sidan ändrad 2025-08-25",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://bredablickforvaltning.se/om-oss/omdomen/",
+      "title": "Omdömen",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f2",
+      "url": "https://www.reco.se/bredablick-forvaltning",
+      "title": "Bredablick Förvaltning på Reco.se",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

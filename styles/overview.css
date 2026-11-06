@@ -1,0 +1,403 @@
+/* Översikten på startsidan: ett kort per förvaltare med pris, kundnöjdhet, storlek och villkor. */
+
+.ov-section {
+  padding-block: clamp(40px, 6vw, 72px) clamp(64px, 8vw, 112px);
+}
+
+.ov-section-head {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.ov-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  align-items: flex-end;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-tile);
+  background: var(--paper);
+  box-shadow: 0 10px 30px rgba(18, 21, 28, 0.06);
+}
+
+.ov-control {
+  display: grid;
+  gap: 8px;
+}
+
+.ov-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.ov-n {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.ov-step {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.ov-input {
+  width: 72px;
+  height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  text-align: center;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ov-quick {
+  display: flex;
+  gap: 4px;
+  margin-left: 6px;
+}
+
+.ov-chip {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.ov-chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.ov-status {
+  margin: 14px 2px 18px;
+}
+
+.ov-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ov-list > li {
+  display: flex;
+}
+
+.ov-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-tile);
+  background: var(--paper);
+}
+
+.ov-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+
+.ov-name {
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.ov-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ov-name a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ov-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ov-tag {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.ov-tag-off {
+  color: var(--ink-3);
+  text-decoration: line-through;
+  background: transparent;
+  border: 1px dashed var(--line-strong);
+}
+
+.ov-tag-region {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+
+.ov-k {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.ov-price {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.ov-big {
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.ov-sub {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.ov-src {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.ov-src:hover {
+  text-decoration-color: currentColor;
+}
+
+.ov-none {
+  color: var(--ink-3);
+}
+
+.ov-big.ov-none {
+  font-size: 22px;
+}
+
+.ov-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.ov-stat dd {
+  margin: 4px 0 0;
+}
+
+.ov-v {
+  display: block;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.ov-v.ov-none {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ov-reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.ov-review {
+  color: var(--ink);
+}
+
+.ov-flag {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--panel-2);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.ov-terms {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.ov-terms ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.ov-terms p {
+  margin: 0;
+}
+
+.ov-srclink {
+  color: var(--ink-3);
+}
+
+.ov-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ov-market {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.ov-market-item {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-tile);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ov-market-item p {
+  margin: 6px 0 0;
+}
+
+@media (max-width: 900px) {
+  .ov-list,
+  .ov-market {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .ov-card {
+    padding: 18px 16px;
+  }
+
+  .ov-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ov-controls {
+    padding: 16px;
+  }
+
+  .ov-quick {
+    margin-left: 0;
+  }
+}
+
+/* Fakta på profilsidan */
+
+.pfacts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.pfacts-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.pfacts-label {
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.pfacts-value {
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .pfacts-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}
+
+.ov-foot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.ov-controls .seg {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 520px) {
+  .ov-control {
+    width: 100%;
+  }
+
+  .ov-controls .seg {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .ov-controls .seg-btn {
+    white-space: nowrap;
+  }
+}

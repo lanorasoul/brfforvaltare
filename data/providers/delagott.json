@@ -4,11 +4,53 @@
   "legalName": "Delagott Real Estate AB",
   "website": "https://www.delagott.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Förvaltare med huvudkontor i Stockholm. Beskriver ekonomisk och teknisk förvaltning på en gemensam sida. Anger inget pris, inga kundantal och inga villkor.",
-  "group": null,
+  "group": {
+    "text": "Franchisekedja: 16 franchisetagare med totalt 21 lokala förvaltningskontor enligt Delagott.",
+    "source": "f1"
+  },
   "customers": null,
-  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "unknown" },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "unknown"
+  },
+  "facts": {
+    "clients": {
+      "value": 330,
+      "text": "Över 330 kunder och över 20 000 lägenheter enligt Delagott.",
+      "source": "f1"
+    },
+    "offices": {
+      "count": 21,
+      "places": [],
+      "text": "21 lokala förvaltningskontor som drivs av 16 franchisetagare.",
+      "source": "f1"
+    },
+    "terms": [],
+    "ratings": [
+      {
+        "kind": "nki",
+        "value": 74,
+        "scale": 100,
+        "year": 2025,
+        "average": 68,
+        "by": "oberoende",
+        "text": "NKI 74 i Prognoscentrets mätning 2025, andra plats. Branschsnittet var 68.",
+        "source": "f2"
+      },
+      {
+        "kind": "reco",
+        "value": 4.4,
+        "scale": 5,
+        "count": 116,
+        "by": "oberoende",
+        "text": "4,4 av 5 från 116 omdömen på Reco. Delagott bjuder in kunder att skriva omdömen via Reco.",
+        "source": "f3"
+      }
+    ]
+  },
   "ekonomisk": {
     "summary": "Listar bokföring, budget, bokslut, årsredovisning, deklaration och avisering. Anger inget pris.",
     "source": "d1",
@@ -17,7 +59,12 @@
       "text": "Inget pris anges på sidan.",
       "source": "d1"
     },
-    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
     "included": [
       "Bokföring",
       "Budget",
@@ -37,7 +84,9 @@
     "coverage": {
       "scope": "unknown",
       "text": "Huvudkontor i Stockholm. Sidan skriver att lokal kapacitet bekräftas i offerten.",
-      "places": ["Stockholm"],
+      "places": [
+        "Stockholm"
+      ],
       "source": "d1"
     },
     "features": {
@@ -56,7 +105,9 @@
       "portal": "notfound",
       "customers": "notfound"
     },
-    "notes": ["Sidan skiljer inte på vad som ingår och vad som tillkommer."]
+    "notes": [
+      "Sidan skiljer inte på vad som ingår och vad som tillkommer."
+    ]
   },
   "teknisk": {
     "summary": "Listar underhålls- och verksamhetsplanering, driftuppföljning, kontroll av entreprenörer, stöd vid upphandlingar och energiuppföljning. Anger inget pris.",
@@ -66,7 +117,12 @@
       "text": "Inget pris anges på sidan.",
       "source": "d1"
     },
-    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
     "included": [
       "Underhålls- och verksamhetsplanering",
       "Driftuppföljning",
@@ -83,7 +139,9 @@
     "coverage": {
       "scope": "unknown",
       "text": "Huvudkontor i Stockholm. Sidan skriver att lokal kapacitet bekräftas i offerten.",
-      "places": ["Stockholm"],
+      "places": [
+        "Stockholm"
+      ],
       "source": "d1"
     },
     "features": {
@@ -101,7 +159,9 @@
       "extras": "notfound",
       "emergency": "notfound"
     },
-    "notes": ["Sidan skiljer inte på vad som ingår och vad som tillkommer."]
+    "notes": [
+      "Sidan skiljer inte på vad som ingår och vad som tillkommer."
+    ]
   },
   "sources": [
     {
@@ -110,6 +170,27 @@
       "title": "Teknisk eller ekonomisk förvaltning",
       "checked": "2026-10-27",
       "pageDate": "Sidan uppdaterad 2026-08-23",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://www.delagott.se/om-oss",
+      "title": "Om oss",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f2",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/",
+      "title": "Simpleko vinnare i kundnöjdhet (Riksbyggen om Prognoscentrets NKI 2025)",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f3",
+      "url": "https://www.reco.se/delagott",
+      "title": "Delagott på Reco.se",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

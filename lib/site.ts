@@ -18,11 +18,17 @@ export const SITE = {
    */
   conflicts: [] as string[],
   /** Senaste datum då någon källa lästes. Varje källa har också sitt eget läsdatum i data/providers. */
-  dataCheckedAt: "2026-10-28",
+  dataCheckedAt: "2026-11-06",
 };
 
-/** Antal regionala HSB-föreningar enligt HSB själv: https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/ (läst 2026-10-27). */
-export const HSB_REGIONALS_TOTAL = 23;
+/** Antal regionala HSB-föreningar enligt HSB själv: https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/ (läst 2026-11-06). */
+export const HSB_REGIONALS_TOTAL = 21;
 
-/** HSB:s regionala föreningar är fristående och ligger som egna förvaltare i data/providers med slug hsb-. */
-export const isHsb = (p: { slug: string }): boolean => p.slug.startsWith("hsb-");
+/** HSB visas som en förvaltare. De regionala föreningarna nämns i texten, inte som egna rader. */
+export const isHsb = (p: { slug: string }): boolean => p.slug === "hsb";
+
+/**
+ * Branschsnittet i Prognoscentrets senaste NKI-mätning bland bostadsrättsföreningar (fältarbete november 2025 till januari 2026, 946 svar).
+ * Källa: Riksbyggens pressmeddelande om mätningen, läst 2026-11-06.
+ */
+export const NKI_AVERAGE = { value: 68, year: 2025, url: "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/" };

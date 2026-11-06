@@ -3,14 +3,92 @@
   "name": "SBC",
   "website": "https://www.sbc.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Förvaltare med kontor i nio orter. Anger prisexempel för ekonomisk förvaltning men inget pris för teknisk förvaltning.",
-  "group": null,
+  "group": {
+    "text": "Del av den internationella Odevogruppen enligt SBC.",
+    "source": "f1"
+  },
   "customers": {
     "text": "Över 5 000 föreningar i Sverige och över 800 föreningar i Malmö enligt SBC.",
     "source": "e2"
   },
-  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 1921,
+      "text": "Har hjälpt bostadsrättsföreningar sedan 1921 enligt SBC.",
+      "source": "e1"
+    },
+    "clients": {
+      "value": 5000,
+      "text": "Över 5 000 bostadsrättsföreningar enligt SBC.",
+      "source": "f1"
+    },
+    "offices": {
+      "count": 9,
+      "places": [
+        "Göteborg",
+        "Malmö",
+        "Stockholm",
+        "Sundsvall",
+        "Uppsala",
+        "Linköping",
+        "Norrköping",
+        "Jönköping",
+        "Örebro"
+      ],
+      "text": "Kontor i nio orter: Göteborg, Malmö, Stockholm, Sundsvall, Uppsala, Linköping, Norrköping, Jönköping och Örebro.",
+      "source": "g1"
+    },
+    "employees": {
+      "value": 460,
+      "text": "460 medarbetare och en omsättning på 630 miljoner kronor 2025 enligt SBC.",
+      "source": "f1"
+    },
+    "terms": [
+      {
+        "text": "Priset börjar på 22 000 kr per år. SBC anger att priserna är exempel och inte fasta prisnivåer.",
+        "source": "e1"
+      },
+      {
+        "text": "SBC har en mall för att säga upp den nuvarande förvaltaren och tar kontakten med den tidigare förvaltaren under uppstarten.",
+        "source": "f2"
+      }
+    ],
+    "ratings": [
+      {
+        "kind": "trustpilot",
+        "value": 4,
+        "scale": 5,
+        "by": "förvaltaren",
+        "text": "SBC skriver att kundnöjdheten ligger på 4 av 5 på Trustpilot. Antal omdömen anges inte.",
+        "source": "f2"
+      },
+      {
+        "kind": "reco",
+        "value": 1.4,
+        "scale": 5,
+        "count": 9,
+        "by": "oberoende",
+        "text": "1,4 av 5 från 9 omdömen på Reco (profilen SBC Sveriges Bostadsrätts Centrum).",
+        "source": "f3"
+      },
+      {
+        "kind": "reco",
+        "value": 1.7,
+        "scale": 5,
+        "count": 6,
+        "by": "oberoende",
+        "text": "1,7 av 5 från 6 omdömen på Reco (profilen Sbc Sveriges Bostadsrättscentrum AB).",
+        "source": "f4"
+      }
+    ]
+  },
   "ekonomisk": {
     "summary": "Anger ett lägsta pris och tre prisexempel för ekonomisk förvaltning. Förvaltaren skriver att exemplen inte är fasta prisnivåer.",
     "source": "e1",
@@ -19,9 +97,18 @@
       "vat": "unknown",
       "fromPerYear": 22000,
       "examples": [
-        { "lgh": 20, "perYear": 26000 },
-        { "lgh": 50, "perYear": 55000 },
-        { "lgh": 100, "perYear": 70000 }
+        {
+          "lgh": 20,
+          "perYear": 26000
+        },
+        {
+          "lgh": 50,
+          "perYear": 55000
+        },
+        {
+          "lgh": 100,
+          "perYear": 70000
+        }
       ],
       "disclaimer": "Priserna är exempel och inte fasta prisnivåer.",
       "source": "e1",
@@ -52,12 +139,24 @@
     ],
     "levels": [],
     "extras": [],
-    "digital": ["SBC Hemma (kundportal)"],
+    "digital": [
+      "SBC Hemma (kundportal)"
+    ],
     "reporting": [],
     "coverage": {
       "scope": "regional",
       "text": "Kontor i nio orter: Göteborg, Malmö, Stockholm, Sundsvall, Uppsala, Linköping, Norrköping, Jönköping och Örebro.",
-      "places": ["Göteborg", "Malmö", "Stockholm", "Sundsvall", "Uppsala", "Linköping", "Norrköping", "Jönköping", "Örebro"],
+      "places": [
+        "Göteborg",
+        "Malmö",
+        "Stockholm",
+        "Sundsvall",
+        "Uppsala",
+        "Linköping",
+        "Norrköping",
+        "Jönköping",
+        "Örebro"
+      ],
       "source": "g1"
     },
     "features": {
@@ -87,7 +186,9 @@
       "portal": "published",
       "customers": "published"
     },
-    "notes": ["Sidan säger att tillval finns och visas i ett paketval, men listar dem inte."]
+    "notes": [
+      "Sidan säger att tillval finns och visas i ett paketval, men listar dem inte."
+    ]
   },
   "teknisk": {
     "summary": "Listar teknisk förvaltare på avrop, underhållsplan, statusbedömning, SBA och elkontroll. Anger inget pris, inga nivåer och ingen avtalstid.",
@@ -99,7 +200,9 @@
     },
     "terms": {
       "notice": null,
-      "other": ["Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning."]
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid för teknisk förvaltning."
+      ]
     },
     "included": [
       "Övergripande teknisk kontroll",
@@ -117,12 +220,26 @@
     ],
     "levels": [],
     "extras": [],
-    "digital": ["SBC Hemma (kundportal)"],
-    "reporting": ["Sidan har en länk till felanmälan. Den anger inga tider och ingen jour."],
+    "digital": [
+      "SBC Hemma (kundportal)"
+    ],
+    "reporting": [
+      "Sidan har en länk till felanmälan. Den anger inga tider och ingen jour."
+    ],
     "coverage": {
       "scope": "regional",
       "text": "Egna sidor för teknisk förvaltning i Stockholm, Göteborg, Malmö, Uppsala och Sundsvall. Kontor i nio orter.",
-      "places": ["Göteborg", "Malmö", "Stockholm", "Sundsvall", "Uppsala", "Linköping", "Norrköping", "Jönköping", "Örebro"],
+      "places": [
+        "Göteborg",
+        "Malmö",
+        "Stockholm",
+        "Sundsvall",
+        "Uppsala",
+        "Linköping",
+        "Norrköping",
+        "Jönköping",
+        "Örebro"
+      ],
       "source": "g1"
     },
     "features": {
@@ -150,7 +267,9 @@
       "extras": "notfound",
       "emergency": "partial"
     },
-    "notes": ["Sidan skiljer inte på vad som ingår och vad som tillkommer. Teknisk förvaltare finns som tjänst på avrop."]
+    "notes": [
+      "Sidan skiljer inte på vad som ingår och vad som tillkommer. Teknisk förvaltare finns som tjänst på avrop."
+    ]
   },
   "notes": [
     "SBC:s egna sidor anger olika antal. Sidan om fastighetsförvaltning i Malmö skriver fler än 500 föreningar i Malmö med omnejd och över 5 000 i resten av Sverige, och dess vanliga frågor skriver över 4 600 i Sverige. Sidan om ekonomisk förvaltning i Malmö skriver över 800 i Malmö och 5 000 runtom i Sverige."
@@ -160,7 +279,7 @@
       "id": "e1",
       "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/",
       "title": "Ekonomisk förvaltning för bostadsrättsföreningar",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "scope": "ekonomisk"
     },
     {
@@ -182,7 +301,7 @@
       "id": "g1",
       "url": "https://www.sbc.se/om-sbc/kontor/",
       "title": "Kontor",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© 2026",
       "scope": "general"
     },
@@ -191,6 +310,34 @@
       "url": "https://www.sbc.se/fastighetsforvaltning/malmo/",
       "title": "Fastighetsförvaltning i Malmö",
       "checked": "2026-10-27",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://www.sbc.se/om-sbc/press/",
+      "title": "Press",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f2",
+      "url": "https://www.sbc.se/byta-till-sbc/",
+      "title": "Byta till SBC",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f3",
+      "url": "https://www.reco.se/sbc-sveriges-bostadsratts-centrum",
+      "title": "SBC Sveriges Bostadsrätts Centrum på Reco.se",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f4",
+      "url": "https://www.reco.se/sbc-sveriges-bostadsrattscentrum-ab-stockholm",
+      "title": "Sbc Sveriges Bostadsrättscentrum AB på Reco.se",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

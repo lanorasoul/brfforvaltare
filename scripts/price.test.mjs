@@ -66,11 +66,11 @@ test("Fastum: tumregel är ett antagande eftersom perioden saknas", () => {
 });
 
 test("Förvaltare utan pris sorteras sist, efter namn", () => {
-  const all = ["erf", "sbc", "riksbyggen", "hsb-skane", "fastum", "nabo", "simpleko"].map(load);
+  const all = ["erf", "sbc", "riksbyggen", "hsb", "fastum", "nabo", "simpleko"].map(load);
   const rows = priceRows(all, 50);
   assert.deepEqual(rows.slice(0, 3).map((r) => r.slug), ["erf", "fastum", "sbc"]);
   assert.ok(rows.slice(3).every((r) => r.perYear === null));
-  assert.deepEqual(rows.slice(3).map((r) => r.name), ["HSB Skåne", "Nabo", "Riksbyggen", "Simpleko"]);
+  assert.deepEqual(rows.slice(3).map((r) => r.name), ["HSB", "Nabo", "Riksbyggen", "Simpleko"]);
 });
 
 test("niceMax", () => {

@@ -3,14 +3,46 @@
   "name": "Fastum",
   "website": "https://fastum.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Anger en tumregel för ekonomisk förvaltning och fem avtalsnivåer med innehåll för teknisk förvaltning, men inget pris för tekniken.",
   "group": {
     "text": "Grundat 1931 och familjeägt enligt Fastum.",
     "source": "g1"
   },
   "customers": null,
-  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 1931,
+      "text": "Har funnits sedan 1931 enligt Fastum.",
+      "source": "g1"
+    },
+    "offices": {
+      "count": 2,
+      "places": [
+        "Solna",
+        "Uppsala"
+      ],
+      "text": "Verksamheten finns i hela Sverige enligt Fastum. Kontor i Solna och Uppsala.",
+      "source": "g1"
+    },
+    "terms": [],
+    "ratings": [
+      {
+        "kind": "reco",
+        "value": 3.1,
+        "scale": 5,
+        "count": 58,
+        "by": "oberoende",
+        "text": "3,1 av 5 från 58 omdömen på Reco.",
+        "source": "f1"
+      }
+    ]
+  },
   "ekonomisk": {
     "summary": "Anger en tumregel på runt 1 000 kr per lägenhet, utan att säga per vilken period eller om moms ingår. Listar grundtjänst och tilläggstjänster.",
     "source": "e1",
@@ -27,7 +59,12 @@
         "Sidan skriver att det kan skilja sig vad som ingår och vad som kostar extra mellan olika förvaltare."
       ]
     },
-    "terms": { "notice": null, "other": ["Sidan anger ingen uppsägningstid."] },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen uppsägningstid."
+      ]
+    },
     "included": [
       "Ekonomisk rådgivning",
       "Bokslut och årsredovisning",
@@ -39,13 +76,27 @@
     ],
     "levels": [],
     "extras": [
-      { "label": "K3-övergång" },
-      { "label": "Scenarioanalys eller flerårsbudget" },
-      { "label": "Hantering av individuellt kapitaltillskott" },
-      { "label": "Hantering av parkeringskö" },
-      { "label": "Hyresavtal och villkorsändringar" },
-      { "label": "Godkännande av medlemskap" },
-      { "label": "Digital brevlåda" }
+      {
+        "label": "K3-övergång"
+      },
+      {
+        "label": "Scenarioanalys eller flerårsbudget"
+      },
+      {
+        "label": "Hantering av individuellt kapitaltillskott"
+      },
+      {
+        "label": "Hantering av parkeringskö"
+      },
+      {
+        "label": "Hyresavtal och villkorsändringar"
+      },
+      {
+        "label": "Godkännande av medlemskap"
+      },
+      {
+        "label": "Digital brevlåda"
+      }
     ],
     "digital": [
       "Digital kundportal för styrelsearbetet",
@@ -56,7 +107,10 @@
     "coverage": {
       "scope": "national",
       "text": "Verksamheten finns i hela Sverige enligt Fastum. Kontor i Solna och Uppsala.",
-      "places": ["Solna", "Uppsala"],
+      "places": [
+        "Solna",
+        "Uppsala"
+      ],
       "source": "g1"
     },
     "features": {
@@ -77,7 +131,9 @@
       "portal": "published",
       "customers": "notfound"
     },
-    "notes": ["Sidan anger inte vad tilläggstjänsterna kostar."]
+    "notes": [
+      "Sidan anger inte vad tilläggstjänsterna kostar."
+    ]
   },
   "teknisk": {
     "summary": "Beskriver fem avtalsnivåer för teknisk förvaltning, från Driftavtal till X-Large, med antal ronderingar per år. Anger inget pris.",
@@ -128,16 +184,34 @@
       }
     ],
     "extras": [
-      { "label": "Skadeservice" },
-      { "label": "Nyckelhantering" },
-      { "label": "Statuskontroll" },
-      { "label": "Underhållsplan" },
-      { "label": "Energideklaration (via samarbetspartner)" },
-      { "label": "Förvaltningskontor" },
-      { "label": "Energikartläggning" },
-      { "label": "Projekt- och byggledning" }
+      {
+        "label": "Skadeservice"
+      },
+      {
+        "label": "Nyckelhantering"
+      },
+      {
+        "label": "Statuskontroll"
+      },
+      {
+        "label": "Underhållsplan"
+      },
+      {
+        "label": "Energideklaration (via samarbetspartner)"
+      },
+      {
+        "label": "Förvaltningskontor"
+      },
+      {
+        "label": "Energikartläggning"
+      },
+      {
+        "label": "Projekt- och byggledning"
+      }
     ],
-    "digital": ["Kundportalen"],
+    "digital": [
+      "Kundportalen"
+    ],
     "reporting": [
       "Felanmälan och personlig kundsupport ingår på alla nivåer. Felanmälan görs i ett webbformulär.",
       "Vanliga frågor skriver att teknisk förvaltning omfattar felanmälan, jour och beredskap. Tider för jour anges inte.",
@@ -146,7 +220,10 @@
     "coverage": {
       "scope": "national",
       "text": "Verksamheten finns i hela Sverige enligt Fastum. Kontor i Solna och Uppsala.",
-      "places": ["Solna", "Uppsala"],
+      "places": [
+        "Solna",
+        "Uppsala"
+      ],
       "source": "g1"
     },
     "features": {
@@ -196,8 +273,15 @@
       "id": "g1",
       "url": "https://fastum.se/om-oss/",
       "title": "Om oss",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-13, © 2025",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://www.reco.se/fastum",
+      "title": "Fastum på Reco.se",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

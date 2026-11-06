@@ -2,15 +2,41 @@
   "slug": "fastighetsagarna-service",
   "name": "Fastighetsägarna Service",
   "website": "https://www.fastighetsagarna.se/",
-  "region": "Stockholm, Uppsala och Gotland",
-  "checked": "2026-10-27",
+  "region": "Stockholm och Gotland",
+  "checked": "2026-11-06",
   "summary": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm. Erbjuder ekonomisk och teknisk förvaltning och anger inget pris för någon av dem.",
   "group": {
     "text": "Helägt dotterbolag till branschorganisationen Fastighetsägarna Stockholm.",
     "source": "g1"
   },
-  "customers": { "text": "Tusentals kunder enligt Fastighetsägarna Service. Siffran gäller alla kunder, inte bara bostadsrättsföreningar.", "source": "g1" },
-  "services": { "ekonomisk": "yes", "teknisk": "yes", "fastighetsskotsel": "yes" },
+  "customers": {
+    "text": "Tusentals kunder enligt Fastighetsägarna Service. Siffran gäller alla kunder, inte bara bostadsrättsföreningar.",
+    "source": "g1"
+  },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "yes",
+    "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 1971,
+      "text": "Bildades 1971 enligt Fastighetsägarna Service.",
+      "source": "g1"
+    },
+    "terms": [],
+    "ratings": [
+      {
+        "kind": "reco",
+        "value": 2.4,
+        "scale": 5,
+        "count": 62,
+        "by": "oberoende",
+        "text": "2,4 av 5 från 62 omdömen på Reco.",
+        "source": "f1"
+      }
+    ]
+  },
   "ekonomisk": {
     "summary": "Beskriver ekonomisk förvaltning med egen ekonomisk förvaltare och egen hyres- och avgiftshandläggare. Anger inget pris.",
     "source": "e1",
@@ -19,7 +45,12 @@
       "text": "Inget pris anges på sidan.",
       "source": "e1"
     },
-    "terms": { "notice": null, "other": ["Sidan anger ingen uppsägningstid."] },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen uppsägningstid."
+      ]
+    },
     "included": [
       "Egen ekonomisk förvaltare och egen hyres- och avgiftshandläggare",
       "Budget",
@@ -35,21 +66,41 @@
     ],
     "levels": [],
     "extras": [
-      { "label": "Bokföring" },
-      { "label": "Fastighetsdeklaration" },
-      { "label": "Flerårsbudget" },
-      { "label": "Investeringsanalys" },
-      { "label": "Låneupphandling" },
-      { "label": "Momsavdrag" },
-      { "label": "Villkorsändring" },
-      { "label": "Se över avgiften" }
+      {
+        "label": "Bokföring"
+      },
+      {
+        "label": "Fastighetsdeklaration"
+      },
+      {
+        "label": "Flerårsbudget"
+      },
+      {
+        "label": "Investeringsanalys"
+      },
+      {
+        "label": "Låneupphandling"
+      },
+      {
+        "label": "Momsavdrag"
+      },
+      {
+        "label": "Villkorsändring"
+      },
+      {
+        "label": "Se över avgiften"
+      }
     ],
     "digital": [],
     "reporting": [],
     "coverage": {
       "scope": "regional",
       "text": "Kundområden Stockholm och Gotland. Fastighetsägarna Service Uppsala är en separat enhet. Sidan skriver att tjänsteutbudet skiljer sig åt i olika delar av landet.",
-      "places": ["Stockholm", "Gotland", "Uppsala"],
+      "places": [
+        "Stockholm",
+        "Gotland",
+        "Uppsala"
+      ],
       "source": "g1"
     },
     "features": {
@@ -84,7 +135,12 @@
       "text": "Inget pris anges på sidan.",
       "source": "t1"
     },
-    "terms": { "notice": null, "other": ["Sidan anger ingen avtalstid eller uppsägningstid."] },
+    "terms": {
+      "notice": null,
+      "other": [
+        "Sidan anger ingen avtalstid eller uppsägningstid."
+      ]
+    },
     "included": [
       "Planering och uppföljning",
       "Samordning och kontakt",
@@ -99,7 +155,11 @@
     "coverage": {
       "scope": "regional",
       "text": "Kundområden Stockholm och Gotland. Fastighetsägarna Service Uppsala är en separat enhet.",
-      "places": ["Stockholm", "Gotland", "Uppsala"],
+      "places": [
+        "Stockholm",
+        "Gotland",
+        "Uppsala"
+      ],
       "source": "g1"
     },
     "features": {
@@ -141,7 +201,14 @@
       "id": "g1",
       "url": "https://www.fastighetsagarna.se/om-oss/organisation/fastighetsagarna-service/",
       "title": "Fastighetsägarna Service",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://www.reco.se/fastighetsagarna-service",
+      "title": "Fastighetsägarna Service på Reco.se",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

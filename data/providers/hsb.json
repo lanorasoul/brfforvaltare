@@ -1,34 +1,62 @@
 {
-  "slug": "hsb-stockholm",
-  "name": "HSB Stockholm",
-  "website": "https://www.hsb.se/stockholm/",
-  "region": "Stockholm",
-  "checked": "2026-10-27",
-  "summary": "Regional HSB-förening i Stockholmsområdet. Erbjuder ekonomisk förvaltning i tre paket (Bas, Plus och Komplett) och teknisk förvaltning. Anger inget pris.",
+  "slug": "hsb",
+  "name": "HSB",
+  "website": "https://www.hsb.se/",
+  "region": null,
+  "checked": "2026-11-06",
+  "summary": "Sveriges största bostadskooperation, med 21 regionala HSB-föreningar som erbjuder ekonomisk och teknisk förvaltning. Pris, paket och villkor bestäms av den regionala föreningen och lämnas på offert.",
   "group": {
-    "text": "En av 23 regionala HSB-föreningar. Föreningarna är fristående och bildar en kooperativ federation. Hela HSB har cirka 4 150 bostadsrättsföreningar och nära 680 000 medlemmar enligt HSB.",
+    "text": "HSB består av 21 fristående regionala HSB-föreningar som samverkar i en kooperativ federation. Förvaltningen sköts av den regionala föreningen där er brf ligger, så paket och villkor kan skilja sig mellan regionerna.",
     "source": "g0"
   },
   "customers": null,
   "services": {
     "ekonomisk": "yes",
     "teknisk": "yes",
-    "fastighetsskotsel": "unknown"
+    "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 1923,
+      "text": "HSB grundades 1923 i Stockholm.",
+      "source": "g1"
+    },
+    "clients": {
+      "value": 4160,
+      "text": "4 160 bostadsrättsföreningar är medlemmar i HSB (2025). Alla köper inte förvaltning av HSB, och HSB anger inte hur många som gör det.",
+      "source": "g1"
+    },
+    "offices": {
+      "count": 106,
+      "places": [],
+      "text": "106 kontor över hela landet enligt HSB.",
+      "source": "g0"
+    },
+    "terms": [
+      {
+        "text": "Hos HSB Mälardalarna är det vanligaste ett avtal på 3 år med 9 månaders uppsägningstid. Avtalslängd och uppsägningstid kan variera, och andra regioner anger inget.",
+        "source": "e3"
+      },
+      {
+        "text": "Hos HSB Stockholm kan föreningen byta paket uppåt eller nedåt under avtalstiden.",
+        "source": "e1"
+      }
+    ],
+    "ratings": []
   },
   "ekonomisk": {
-    "summary": "Beskriver tre paket: Ekonomi Bas, Ekonomi Plus och Ekonomi Komplett. Listar vad Ekonomi Bas innehåller. Pris lämnas på offert.",
+    "summary": "De regionala föreningarna säljer ekonomisk förvaltning i paket. HSB Stockholm har till exempel Ekonomi Bas, Plus och Komplett, där Plus och Komplett har en personlig ekonom. Pris lämnas på offert.",
     "source": "e1",
     "pricing": {
       "model": "on_request",
-      "text": "Inget pris anges. Sidan hänvisar till offert.",
+      "text": "Ingen HSB-förening anger pris på sina sidor. Pris lämnas på offert av den regionala föreningen.",
       "source": "e1"
     },
     "terms": {
-      "notice": null,
+      "notice": "Hos HSB Mälardalarna är det vanligaste ett avtal på 3 år med 9 månaders uppsägningstid, men det kan variera.",
+      "noticeSource": "e3",
       "other": [
-        "Sidan anger ingen avtalstid eller uppsägningstid.",
-        "Tillgång till underhållsplan krävs för samtliga paket. Den ingår om behov finns i föreningen.",
-        "Föreningen kan byta paket uppåt eller nedåt under avtalstiden."
+        "Andra regionala föreningar anger ingen avtalstid eller uppsägningstid på sina sidor."
       ]
     },
     "included": [
@@ -73,12 +101,10 @@
     ],
     "reporting": [],
     "coverage": {
-      "scope": "unknown",
-      "text": "Sidorna om ekonomisk förvaltning anger inget verksamhetsområde. Teknisk förvaltning nämner orter i Stockholmsområdet.",
-      "places": [
-        "Stockholm"
-      ],
-      "source": "e1"
+      "scope": "national",
+      "text": "Regionala HSB-föreningar i hela landet, 106 kontor enligt HSB.",
+      "places": [],
+      "source": "g0"
     },
     "features": {
       "bokforing": "included",
@@ -100,15 +126,15 @@
       "customers": "notfound"
     },
     "notes": [
-      "Sidan jämför paketen i en bild som vi inte kunde läsa. Vad Plus och Komplett innehåller utöver personlig ekonom framgår därför inte här.",
-      "Sidorna om Ekonomi Bas nämner Låneförvaltning och Nyckeltalsanalys som exempel på tilläggstjänster."
+      "Uppgifterna om innehåll och paket kommer från HSB Stockholm. Andra regioner kan ha andra paket och namn."
     ],
     "moreSources": [
-      "e2"
+      "e2",
+      "e3"
     ]
   },
   "teknisk": {
-    "summary": "Listar fastighetsförvaltare, underhållsplan, TryggEntreprenad (byggprojekt till fast pris) och energioptimering. Anger inget pris.",
+    "summary": "De regionala föreningarna erbjuder fastighetsförvaltare, underhållsplan, besiktningar, energioptimering och projektledning. Pris lämnas på offert.",
     "source": "t1",
     "pricing": {
       "model": "on_request",
@@ -140,21 +166,10 @@
       "Sidan har en länk till felanmälan. Den anger inga tider och ingen jour."
     ],
     "coverage": {
-      "scope": "regional",
-      "text": "Sidan nämner Stockholm, Järfälla, Haninge, Täby, Tyresö, Solna, Upplands Väsby, Upplands-Bro, Sollentuna och Nacka.",
-      "places": [
-        "Stockholm",
-        "Järfälla",
-        "Haninge",
-        "Täby",
-        "Tyresö",
-        "Solna",
-        "Upplands Väsby",
-        "Upplands-Bro",
-        "Sollentuna",
-        "Nacka"
-      ],
-      "source": "t1"
+      "scope": "national",
+      "text": "Regionala HSB-föreningar i hela landet, 106 kontor enligt HSB.",
+      "places": [],
+      "source": "g0"
     },
     "features": {
       "forvaltare": "listed",
@@ -176,31 +191,38 @@
       "emergency": "partial"
     },
     "notes": [
-      "Sidan skiljer inte på vad som ingår och vad som tillkommer."
+      "Uppgifterna om innehåll kommer från HSB Stockholm. Andra regioner kan erbjuda annat."
     ]
   },
   "sources": [
     {
       "id": "e1",
       "url": "https://www.hsb.se/stockholm/forvaltningstjanster/ekonomisk-forvaltning/",
-      "title": "Ekonomisk förvaltning",
-      "checked": "2026-10-27",
+      "title": "HSB Stockholm: Ekonomisk förvaltning",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-03-12",
       "scope": "ekonomisk"
     },
     {
       "id": "e2",
       "url": "https://www.hsb.se/stockholm/forvaltningstjanster/ekonomisk-forvaltning/ekonomi-bas/",
-      "title": "Ekonomi Bas",
-      "checked": "2026-10-27",
+      "title": "HSB Stockholm: Ekonomi Bas",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2025-10-22",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "e3",
+      "url": "https://www.hsb.se/malardalarna/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "title": "HSB Mälardalarna: Ekonomisk förvaltning",
+      "checked": "2026-11-06",
       "scope": "ekonomisk"
     },
     {
       "id": "t1",
       "url": "https://www.hsb.se/stockholm/forvaltningstjanster/teknisk-forvaltning/",
-      "title": "Teknisk förvaltning",
-      "checked": "2026-10-27",
+      "title": "HSB Stockholm: Teknisk förvaltning",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2025-10-09",
       "scope": "teknisk"
     },
@@ -208,8 +230,14 @@
       "id": "g0",
       "url": "https://www.hsb.se/omhsb/om-oss/organisation-och-agarinformation/",
       "title": "HSB:s organisation och ägarinformation",
-      "checked": "2026-10-27",
-      "pageDate": "Sidan ändrad 2026-05-27",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "g1",
+      "url": "https://www.hsb.se/omhsb/om-oss/",
+      "title": "Om HSB",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

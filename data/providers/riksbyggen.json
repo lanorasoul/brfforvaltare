@@ -3,9 +3,12 @@
   "name": "Riksbyggen",
   "website": "https://www.riksbyggen.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Stor aktör med kontor över hela landet. Anger inget pris för ekonomisk eller teknisk förvaltning, men prissätter tillägget Digital underhållsplan.",
-  "group": null,
+  "group": {
+    "text": "Kooperativt företag som ägs av bostadsrättsföreningar och organisationer inom byggsektorn. Simpleko är ett dotterbolag.",
+    "source": "f1"
+  },
   "customers": {
     "text": "178 972 bostadsrätter i 4 204 bostadsrättsföreningar. Siffrorna gäller all förvaltning, inte bara ekonomisk.",
     "source": "g1"
@@ -14,6 +17,42 @@
     "ekonomisk": "yes",
     "teknisk": "yes",
     "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 1940,
+      "text": "Riksbyggen startade 1940.",
+      "source": "f1"
+    },
+    "clients": {
+      "value": 4204,
+      "text": "178 972 bostadsrätter i 4 204 bostadsrättsföreningar. Siffrorna gäller all förvaltning, inte bara ekonomisk.",
+      "source": "g1"
+    },
+    "offices": {
+      "count": 60,
+      "places": [],
+      "text": "60 kontor över hela landet enligt Riksbyggen.",
+      "source": "g1"
+    },
+    "employees": {
+      "value": 2200,
+      "text": "Cirka 2 200 anställda (2025).",
+      "source": "g1"
+    },
+    "terms": [],
+    "ratings": [
+      {
+        "kind": "nki",
+        "value": 71,
+        "scale": 100,
+        "year": 2025,
+        "average": 68,
+        "by": "oberoende",
+        "text": "NKI 71 i Prognoscentrets mätning 2025, tredje plats. Branschsnittet var 68. Mätningen bygger på 946 svar.",
+        "source": "f2"
+      }
+    ]
   },
   "ekonomisk": {
     "summary": "Anger inget pris för ekonomisk förvaltning och lämnar prisförslag på förfrågan. Listar både grundtjänst och tilläggstjänster.",
@@ -240,7 +279,21 @@
       "id": "g1",
       "url": "https://www.riksbyggen.se/forvaltning-brf/",
       "title": "Förvaltning för bostadsrättsföreningar",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/",
+      "title": "Om Riksbyggen",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f2",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/",
+      "title": "Simpleko vinnare i kundnöjdhet (Riksbyggen om Prognoscentrets NKI 2025)",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

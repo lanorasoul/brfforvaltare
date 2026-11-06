@@ -1,28 +1,22 @@
 import Link from "next/link";
-import { Bento } from "@/components/Bento";
-import { CategoryLabel, CategoryWhat, OpennessLead } from "@/components/CategoryText";
-import { CompareBar } from "@/components/CompareBar";
-import { CompareProvider } from "@/components/CompareProvider";
-import { Coverage, type CoverageData } from "@/components/Coverage";
 import { Faq, type FaqItem } from "@/components/Faq";
-import { FeatureMatrix } from "@/components/FeatureMatrix";
 import { HeroFacade } from "@/components/HeroFacade";
-import { ArrowIcon } from "@/components/icons";
-import { KeyFactsTable } from "@/components/KeyFactsTable";
+import { ArrowIcon, ExternalIcon } from "@/components/icons";
 import { LoopSection, type LoopData } from "@/components/LoopSection";
-import { OpennessMatrix } from "@/components/OpennessMatrix";
-import { PriceCalculator, type CalcProvider } from "@/components/PriceCalculator";
-import { getCompareData, getProviders, requireSource } from "@/lib/data";
+import type { CalcProvider } from "@/components/PriceCalculator";
+import { ProviderOverview } from "@/components/ProviderOverview";
+import { getProvider, getProviders, requireSource } from "@/lib/data";
 import { dateLong } from "@/lib/format";
-import { allMatrixStats, pricedCount } from "@/lib/matrix";
+import { pricedCount } from "@/lib/matrix";
+import { overviewRows } from "@/lib/overview";
 import { priceRows } from "@/lib/price";
 import { priceLabel, VAT_TEXT } from "@/lib/price-label";
 import { withBlock } from "@/lib/schema";
-import { HSB_REGIONALS_TOTAL, isHsb, SITE } from "@/lib/site";
+import { HSB_REGIONALS_TOTAL, NKI_AVERAGE, SITE } from "@/lib/site";
 
 export default function Home() {
   const providers = getProviders();
-  const compare = getCompareData();
+  const rows = overviewRows(providers);
 
   const eko = withBlock(providers, "ekonomisk");
   const tek = withBlock(providers, "teknisk");
@@ -34,18 +28,20 @@ export default function Home() {
   });
   const rows50 = priceRows(calc, 50);
 
-  const stats = allMatrixStats(providers);
   const ekoPriced = pricedCount(providers, "ekonomisk");
   const tekPriced = pricedCount(providers, "teknisk");
-  const coverage: CoverageData = {
-    providers: providers.length,
-    hsb: { read: providers.filter(isHsb).length, total: HSB_REGIONALS_TOTAL },
-    ekonomisk: { providers: eko.length, priced: ekoPriced },
-    teknisk: { providers: tek.length, priced: tekPriced },
-    published: stats.published,
-    cells: stats.cells,
-    checkedAt: SITE.dataCheckedAt,
-  };
+  const withNki = rows.filter((r) => r.nki).length;
+
+  // Vad förvaltare själva skriver om marknadens prisnivå. Det är inte deras egna priser.
+  const market = [
+    { slug: "nabo", source: "e3", text: "En förening med 20 lägenheter betalar ungefär 26 000 till 30 500 kr per år exklusive moms, och en med 100 lägenheter ungefär 64 000 till 77 000 kr." },
+    { slug: "sbc", source: "e1", text: "För mindre och medelstora föreningar ligger priset vanligtvis på 1 100 till 1 300 kr per lägenhet och år. Ju fler lägenheter, desto lägre kostnad per lägenhet." },
+  ].flatMap((m) => {
+    const p = getProvider(m.slug);
+    if (!p) return [];
+    const s = requireSource(p, m.source);
+    return [{ name: p.name, text: m.text, url: s.url, checked: s.checked }];
+  });
 
   // Underlag till stegsektionen: allt är hämtat ur datafilerna.
   const withNotice = eko.find((x) => x.block.terms.notice);
@@ -82,7 +78,7 @@ export default function Home() {
   const faq: FaqItem[] = [
     {
       q: "Varifrån kommer uppgifterna?",
-      a: "Från förvaltarnas egna webbplatser. Varje uppgift har en länk till sidan vi läste och datumet då vi läste den. Siffror som vi har räknat fram själva märks Uppskattning eller Antagande.",
+      a: "Pris, villkor, antal kunder, grundår och kontor kommer från förvaltarnas egna webbplatser. Kundnöjdhet (NKI) kommer från analysföretaget Prognoscentrets årliga mätning bland bostadsrättsföreningar, och omdömen från Reco. Varje uppgift länkar till sidan vi läste.",
     },
     {
       q: "Hur hittar jag förvaltare som passar vår brf?",
@@ -98,15 +94,15 @@ export default function Home() {
     },
     {
       q: "Varför saknas pris hos så många förvaltare?",
-      a: `${eko.length - ekoPriced} av ${eko.length} förvaltare anger inget pris för ekonomisk förvaltning på sin webbplats, och ${tek.length - tekPriced} av ${tek.length} anger inget pris för teknisk förvaltning. Då visar vi Pris på förfrågan i stället för att gissa.`,
+      a: `${eko.length - ekoPriced} av ${eko.length} förvaltare anger inget pris för ekonomisk förvaltning på sin webbplats, och ${tek.length - tekPriced} av ${tek.length} anger inget pris för teknisk förvaltning. Då visar vi Endast offert i stället för att gissa. Rutorna under jämförelsen visar vad förvaltare själva säger att det brukar kosta.`,
     },
     {
-      q: "Hur fungerar filtret för ort?",
-      a: "Vi har skrivit in de orter som förvaltarens egen sida nämner. Filtret döljer bara förvaltare vars sidor nämner andra orter. De som anger hela landet eller inga orter visas alltid. Att en ort saknas betyder inte att förvaltaren tackar nej, så fråga dem.",
+      q: "Vad är NKI?",
+      a: `Nöjd Kund-Index, ett mått från 0 till 100 som analysföretaget Prognoscentret tar fram varje år genom att fråga styrelser i omkring 6 500 bostadsrättsföreningar. Värden mellan 65 och 75 är medelgod nöjdhet. Branschsnittet ${NKI_AVERAGE.year} var ${NKI_AVERAGE.value}. Bara förvaltare med minst 20 svar får ett eget värde, och bara en del av dem publiceras. ${withNki} av ${providers.length} förvaltare här har ett offentligt värde.`,
     },
     {
-      q: "Varför finns HSB med flera gånger?",
-      a: `HSB består av ${HSB_REGIONALS_TOTAL} fristående regionala föreningar med egna tjänster, avtal och webbplatser. Vi har läst ${coverage.hsb.read} av dem och lägger till fler. Därför kan två HSB-föreningar skilja sig åt, till exempel i hur många timmar som ingår i ett paket.`,
+      q: "Varför är HSB bara en rad?",
+      a: `HSB består av ${HSB_REGIONALS_TOTAL} fristående regionala föreningar. Förvaltningen sköts av föreningen där er brf ligger, så paket och villkor kan skilja sig. Vi visar HSB som en förvaltare och skriver ut när en uppgift bara gäller en region.`,
     },
     {
       q: "Går priserna att jämföra rakt av?",
@@ -150,95 +146,52 @@ export default function Home() {
             för er brf
           </h1>
           <p className="lead top-lead">
-            {providers.length} förvaltare av ekonomisk och teknisk förvaltning, jämförda på pris, uppsägningstid, tjänster och var de verkar. Vi läser deras egna sidor, och varje uppgift har källa och datum.
+            Pris för er storlek, kundnöjdhet, antal kunder och avtalsvillkor för {providers.length} förvaltare. Varje uppgift länkar till sin källa.
           </p>
           <div className="hero-actions">
-            <Link className="btn btn-accent" href="/hitta-forvaltare">
-              Hitta förvaltare
+            <Link className="btn btn-accent" href="#forvaltare">
+              Se jämförelsen
               <span className="btn-icon">
                 <ArrowIcon />
               </span>
             </Link>
-            <Link className="btn btn-quiet" href="#jamfor-aktorer">
-              Se jämförelsen
+            <Link className="btn btn-quiet" href="/hitta-forvaltare">
+              Hitta förvaltare där ni bor
             </Link>
           </div>
         </div>
       </section>
 
-      <CompareProvider data={compare}>
-        <div className="hub-region">
-          <CompareBar />
-
-          <section className="hub" id="jamfor-aktorer" aria-labelledby="kf-title">
-            <div className="container">
-              <div className="hub-head">
-                <h2 className="h3" id="kf-title">
-                  Nyckeluppgifter, <CategoryLabel lower />
-                </h2>
-                <p className="muted hub-lead">
-                  <CategoryWhat /> Raderna är sorterade efter namn. Ingen har betalat för sin plats.
-                </p>
-              </div>
-              <KeyFactsTable />
-            </div>
-          </section>
-
-          <section className="hub hub-last" id="tjanster" aria-labelledby="fm-title">
-            <div className="container">
-              <div className="hub-head">
-                <h2 className="h3" id="fm-title">
-                  Tjänster, <CategoryLabel lower />
-                </h2>
-                <p className="muted hub-lead">Så beskriver varje förvaltare tjänsterna på sin egen sida.</p>
-              </div>
-              <FeatureMatrix />
-            </div>
-          </section>
-
-          <Coverage data={coverage} />
-
-          <section className="night section" id="oppenhet" aria-labelledby="matrix-title">
-            <div className="container">
-              <div className="section-head center">
-                <h2 className="h2" id="matrix-title">
-                  Vad förvaltarna berättar öppet
-                </h2>
-                <p className="lead">
-                  <OpennessLead />
-                </p>
-              </div>
-              <OpennessMatrix />
-            </div>
-          </section>
-        </div>
-      </CompareProvider>
-
-      <section className="calc-section section-tight" id="rakna" aria-labelledby="calc-title">
+      <section className="ov-section" id="forvaltare" aria-labelledby="ov-title">
         <div className="container">
-          <div className="section-head center">
-            <h2 className="h2" id="calc-title">
-              Vad kostar ekonomisk förvaltning för er storlek?
+          <div className="ov-section-head">
+            <h2 className="h3" id="ov-title">
+              {providers.length} förvaltare sida vid sida
             </h2>
-            <p className="lead">
-              Bara {coverage.ekonomisk.priced} av {coverage.ekonomisk.providers} förvaltare anger något pris. Dra i reglaget för att se vad de säger för just er förening.
+            <p className="muted">
+              Ange hur många lägenheter föreningen har så räknas priset om. Ingen förvaltare har betalat för sin plats. Uppgifterna lästes senast {dateLong(SITE.dataCheckedAt)}.
             </p>
           </div>
-          <PriceCalculator providers={calc} checkedAt={SITE.dataCheckedAt} />
-          <p className="calc-after center">
-            <Link className="btn btn-quiet" href="/prisguide">
-              Prisguiden
-              <span className="btn-icon">
-                <ArrowIcon />
-              </span>
-            </Link>
+          <ProviderOverview rows={rows} />
+
+          <div className="ov-market">
+            {market.map((m) => (
+              <div key={m.name} className="ov-market-item">
+                <span className="ov-k">Vad brukar det kosta? Enligt {m.name}</span>
+                <p>{m.text}</p>
+                <a className="fine link" href={m.url} target="_blank" rel="noopener noreferrer">
+                  Källa, läst {dateLong(m.checked)} <ExternalIcon />
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="fine" style={{ marginTop: 12 }}>
+            Rutorna ovan beskriver marknaden i stort och är inte förvaltarnas egna priser. Använd dem för att bedöma offerter från förvaltare som inte publicerar pris.
           </p>
         </div>
       </section>
 
       <LoopSection data={loop} />
-
-      <Bento providers={compare.rows.ekonomisk} rows50={rows50} checkedAt={SITE.dataCheckedAt} />
 
       <section className="night faq-section" id="fragor" aria-labelledby="faq-title">
         <div className="container-narrow">

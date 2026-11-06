@@ -3,7 +3,7 @@
   "name": "Nabo",
   "website": "https://nabo.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Ekonomisk förvaltning i hela Sverige och teknisk förvaltning i fyra städer. Anger inget eget pris, men publicerar allmänna prisintervall för ekonomisk förvaltning.",
   "group": {
     "text": "Nabo ingår i Odevo. Sidan anger inte vem som äger Odevo.",
@@ -17,6 +17,69 @@
     "ekonomisk": "yes",
     "teknisk": "yes",
     "fastighetsskotsel": "yes"
+  },
+  "facts": {
+    "founded": {
+      "year": 1979,
+      "text": "Nabos historik börjar 1979, då ekonomisk förvaltning i Uppsala grundades.",
+      "source": "g1"
+    },
+    "clients": {
+      "value": 4000,
+      "text": "4 000 bostadsrättsföreningar och 150 000 lägenheter enligt Nabo.",
+      "source": "g1"
+    },
+    "offices": {
+      "count": 5,
+      "places": [
+        "Stockholm",
+        "Göteborg",
+        "Malmö",
+        "Uppsala",
+        "Söderhamn"
+      ],
+      "text": "Kontor i Stockholm, Göteborg, Malmö, Uppsala och Söderhamn.",
+      "source": "g1"
+    },
+    "employees": {
+      "value": 350,
+      "text": "Över 350 medarbetare inom ekonomi, teknik och juridik.",
+      "source": "g1"
+    },
+    "terms": [
+      {
+        "text": "Uppstartsavgift kan tillkomma och står i så fall i offerten.",
+        "source": "f1"
+      },
+      {
+        "text": "Hela bytet tar normalt fyra till tolv månader, uppsägningstiden inräknad. Styrelsens aktiva del är ungefär två månader.",
+        "source": "f1"
+      },
+      {
+        "text": "Arvodet räknas upp med index varje år om avtalet inte säger något annat.",
+        "source": "f2"
+      }
+    ],
+    "ratings": [
+      {
+        "kind": "nki",
+        "value": 69,
+        "scale": 100,
+        "year": 2024,
+        "average": 66,
+        "by": "oberoende",
+        "text": "NKI 69 i Prognoscentrets mätning 2024. Branschsnittet var 66.",
+        "source": "f3"
+      },
+      {
+        "kind": "google",
+        "value": 4,
+        "scale": 5,
+        "by": "förvaltaren",
+        "text": "Nabo visar kundbetyget 4 av 5 på Google. Antal omdömen anges inte.",
+        "source": "g1"
+      }
+    ]
   },
   "ekonomisk": {
     "summary": "Anger inget eget pris men skriver att priset beror på bland annat om föreningen är momsregistrerad. Publicerar allmänna prisintervall. Listar grundtjänst och exempel på tillägg.",
@@ -230,7 +293,7 @@
       "id": "g1",
       "url": "https://nabo.se/om-nabo/",
       "title": "Om Nabo",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "Sidan ändrad 2026-10-19",
       "scope": "general"
     },
@@ -240,6 +303,27 @@
       "title": "Här finns vi",
       "checked": "2026-10-27",
       "pageDate": "Sidan ändrad 2025-05-22",
+      "scope": "general"
+    },
+    {
+      "id": "f1",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/",
+      "title": "Byta förvaltare",
+      "checked": "2026-11-06",
+      "scope": "ekonomisk"
+    },
+    {
+      "id": "f2",
+      "url": "https://nabo.se/allmanna-uppdragsvillkor/",
+      "title": "Allmänna uppdragsvillkor",
+      "checked": "2026-11-06",
+      "scope": "general"
+    },
+    {
+      "id": "f3",
+      "url": "https://press.prognoscentret.se/posts/pressreleases/forvaltningsbolaget-simpleko-har-branschens-n",
+      "title": "Förvaltningsbolaget Simpleko har branschens nöjdaste kunder (Prognoscentret, NKI 2024)",
+      "checked": "2026-11-06",
       "scope": "general"
     }
   ]

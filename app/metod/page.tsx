@@ -8,7 +8,7 @@ import { getProviders, requireSource } from "@/lib/data";
 import { dateLong, kr, num } from "@/lib/format";
 import { allMatrixStats, pricedCount } from "@/lib/matrix";
 import { CATEGORY, DISCLOSURE_KEYS, FEATURE_STATE, FEATURE_STATE_ORDER, FEATURES, withBlock } from "@/lib/schema";
-import { HSB_REGIONALS_TOTAL, isHsb, SITE } from "@/lib/site";
+import { HSB_REGIONALS_TOTAL, isHsb, NKI_AVERAGE, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Så räknar vi",
@@ -92,10 +92,16 @@ export default function MetodPage() {
                   Allmän vägledning från andra än förvaltare, till exempel en offertförmedlare, visas separat och med avsändare. Den används aldrig som underlag för en förvaltares pris.
                 </li>
                 <li>
+                  Kundnöjdhet (NKI) kommer från analysföretaget Prognoscentret, som varje år frågar styrelser i omkring 6 500 bostadsrättsföreningar. Bara förvaltare med minst 20 svar får ett eget värde, och bara de värden som har publicerats visas här. Branschsnittet {NKI_AVERAGE.year} var {NKI_AVERAGE.value}.
+                </li>
+                <li>
+                  Omdömen från Reco visas med antal omdömen. Under 20 omdömen märks betyget som för få för slutsatser. Betyg som bara förvaltaren själv anger, till exempel från Google, Trustpilot eller en egen kundportal, märks Enligt förvaltaren.
+                </li>
+                <li>
                   Just nu har vi {providers.length} förvaltare: {eko.length} med ekonomisk och {tek.length} med teknisk förvaltning. Vi har börjat med stora och välkända förvaltare och lägger till fler. Urvalet är ingen rangordning. Datan kontrollerades senast {dateLong(SITE.dataCheckedAt)}.
                 </li>
                 <li>
-                  HSB består av {HSB_REGIONALS_TOTAL} fristående regionala föreningar med egna tjänster, avtal och webbplatser. Vi har läst {hsb.length} av dem och visar var och en för sig. Därför står HSB flera gånger, och det som gäller en förening gäller inte automatiskt de andra.
+                  HSB består av {HSB_REGIONALS_TOTAL} fristående regionala föreningar med egna tjänster, avtal och webbplatser. Förvaltningen sköts av föreningen där brf:en ligger. Vi visar HSB som en förvaltare och skriver ut när en uppgift bara gäller en region, till exempel paketen hos HSB Stockholm eller avtalstiden hos HSB Mälardalarna.
                   {hsbOrg ? (
                     <>
                       {" "}
@@ -446,11 +452,6 @@ export default function MetodPage() {
                 <li>
                   Vi har {providers.length} förvaltare hittills. Det finns fler, och vi lägger till dem med källa och datum.
                 </li>
-                {hsb.length > 0 && (
-                  <li>
-                    Uppgifterna för en HSB-förening gäller just den föreningen. Vi har läst {hsb.length} av {HSB_REGIONALS_TOTAL}.
-                  </li>
-                )}
                 <li>
                   Vi har läst webbsidor, inte avtal. Vad som står i ett avtal kan skilja sig från vad sidan säger, och teknisk förvaltning är ofta skräddarsydd efter fastigheten.
                 </li>

@@ -4,11 +4,45 @@
   "legalName": "ERF Enkel Redovisning Förvaltning AB",
   "website": "https://erf.se/",
   "region": null,
-  "checked": "2026-10-27",
+  "checked": "2026-11-06",
   "summary": "Digital ekonomisk förvaltning i hela Sverige med publicerad prislista per föreningsstorlek, exklusive moms. Erbjuder inte teknisk förvaltning.",
   "group": null,
   "customers": null,
-  "services": { "ekonomisk": "yes", "teknisk": "no", "fastighetsskotsel": "no" },
+  "services": {
+    "ekonomisk": "yes",
+    "teknisk": "no",
+    "fastighetsskotsel": "no"
+  },
+  "facts": {
+    "offices": {
+      "count": 1,
+      "places": [
+        "Malmö"
+      ],
+      "text": "Kontor i Malmö. Digital tjänst i hela landet.",
+      "source": "g1"
+    },
+    "terms": [
+      {
+        "text": "Avtalet löper ett år i taget och sägs upp med tre månaders varsel före årsskiftet.",
+        "source": "e1"
+      },
+      {
+        "text": "Ingen uppstartsavgift och inga dolda avgifter enligt ERF.",
+        "source": "e2"
+      }
+    ],
+    "ratings": [
+      {
+        "kind": "egen",
+        "value": 4.4,
+        "scale": 5,
+        "by": "förvaltaren",
+        "text": "ERF visar 4,4 av 5 som snitt av omdömen i sin egen kundportal. Antal omdömen anges inte.",
+        "source": "g1"
+      }
+    ]
+  },
   "ekonomisk": {
     "summary": "Publicerar en prislista för ekonomisk förvaltning per föreningsstorlek, exklusive moms. Teknisk förvaltning och fastighetsskötsel ingår inte.",
     "source": "e1",
@@ -17,24 +51,69 @@
       "vat": "excl",
       "priceDate": "2026-08-21",
       "anchors": [
-        { "lgh": 3, "perYear": 9469 },
-        { "lgh": 10, "perYear": 13625 },
-        { "lgh": 11, "perYear": 14219 },
-        { "lgh": 20, "perYear": 19563 },
-        { "lgh": 21, "perYear": 20157 },
-        { "lgh": 50, "perYear": 37375 },
-        { "lgh": 51, "perYear": 37969 },
-        { "lgh": 100, "perYear": 67063 }
+        {
+          "lgh": 3,
+          "perYear": 9469
+        },
+        {
+          "lgh": 10,
+          "perYear": 13625
+        },
+        {
+          "lgh": 11,
+          "perYear": 14219
+        },
+        {
+          "lgh": 20,
+          "perYear": 19563
+        },
+        {
+          "lgh": 21,
+          "perYear": 20157
+        },
+        {
+          "lgh": 50,
+          "perYear": 37375
+        },
+        {
+          "lgh": 51,
+          "perYear": 37969
+        },
+        {
+          "lgh": 100,
+          "perYear": 67063
+        }
       ],
-      "openFrom": { "lgh": 100, "perYear": 67063 },
+      "openFrom": {
+        "lgh": 100,
+        "perYear": 67063
+      },
       "setupFee": "Ingen uppstartsavgift enligt förvaltaren.",
       "extras": [
-        { "label": "Individuell mätning och debitering (IMD)", "price": "59 kr per lägenhet och år" },
-        { "label": "Interna hyresobjekt", "price": "178 kr per objekt och år" },
-        { "label": "Externa hyresobjekt", "price": "888 kr per objekt och år" },
-        { "label": "Andrahandsuthyrning", "price": "1 184 kr per styck" },
-        { "label": "Överlåtelse", "price": "1 184 kr per transaktion" },
-        { "label": "Pantnotering", "price": "592 kr per pantsättning" }
+        {
+          "label": "Individuell mätning och debitering (IMD)",
+          "price": "59 kr per lägenhet och år"
+        },
+        {
+          "label": "Interna hyresobjekt",
+          "price": "178 kr per objekt och år"
+        },
+        {
+          "label": "Externa hyresobjekt",
+          "price": "888 kr per objekt och år"
+        },
+        {
+          "label": "Andrahandsuthyrning",
+          "price": "1 184 kr per styck"
+        },
+        {
+          "label": "Överlåtelse",
+          "price": "1 184 kr per transaktion"
+        },
+        {
+          "label": "Pantnotering",
+          "price": "592 kr per pantsättning"
+        }
       ],
       "source": "e1",
       "status": "verified",
@@ -46,7 +125,9 @@
     "terms": {
       "notice": "Avtalet löper ett år i taget och sägs upp med tre månaders varsel före årsskiftet.",
       "noticeSource": "e1",
-      "other": ["Bytet till ERF är kostnadsfritt och utan uppstartsavgift enligt förvaltaren."]
+      "other": [
+        "Bytet till ERF är kostnadsfritt och utan uppstartsavgift enligt förvaltaren."
+      ]
     },
     "included": [
       "Löpande bokföring",
@@ -60,12 +141,30 @@
     ],
     "levels": [],
     "extras": [
-      { "label": "Individuell mätning och debitering (IMD)", "price": "59 kr per lägenhet och år" },
-      { "label": "Interna hyresobjekt", "price": "178 kr per objekt och år" },
-      { "label": "Externa hyresobjekt", "price": "888 kr per objekt och år" },
-      { "label": "Andrahandsuthyrning", "price": "1 184 kr per styck" },
-      { "label": "Överlåtelse", "price": "1 184 kr per transaktion" },
-      { "label": "Pantnotering", "price": "592 kr per pantsättning" }
+      {
+        "label": "Individuell mätning och debitering (IMD)",
+        "price": "59 kr per lägenhet och år"
+      },
+      {
+        "label": "Interna hyresobjekt",
+        "price": "178 kr per objekt och år"
+      },
+      {
+        "label": "Externa hyresobjekt",
+        "price": "888 kr per objekt och år"
+      },
+      {
+        "label": "Andrahandsuthyrning",
+        "price": "1 184 kr per styck"
+      },
+      {
+        "label": "Överlåtelse",
+        "price": "1 184 kr per transaktion"
+      },
+      {
+        "label": "Pantnotering",
+        "price": "592 kr per pantsättning"
+      }
     ],
     "digital": [
       "Medlemsportal",
@@ -77,7 +176,9 @@
     "coverage": {
       "scope": "national",
       "text": "Digital tjänst för bostadsrättsföreningar över hela Sverige enligt ERF. Kontor i Malmö.",
-      "places": ["Malmö"],
+      "places": [
+        "Malmö"
+      ],
       "source": "g1"
     },
     "features": {
@@ -90,9 +191,21 @@
       "imd": "optional"
     },
     "claims": [
-      { "text": "Uppsägningstiden hos de flesta förvaltare är 5 till 7 månader.", "source": "e2", "by": "förvaltaren" },
-      { "text": "Bytet tar normalt 6 till 9 månader från beslut till färdig övergång.", "source": "e2", "by": "förvaltaren" },
-      { "text": "ERF hanterar kontakten med den gamla förvaltaren och dataöverföringen vid byte.", "source": "e2", "by": "förvaltaren" },
+      {
+        "text": "Uppsägningstiden hos de flesta förvaltare är 5 till 7 månader.",
+        "source": "e2",
+        "by": "förvaltaren"
+      },
+      {
+        "text": "Bytet tar normalt 6 till 9 månader från beslut till färdig övergång.",
+        "source": "e2",
+        "by": "förvaltaren"
+      },
+      {
+        "text": "ERF hanterar kontakten med den gamla förvaltaren och dataöverföringen vid byte.",
+        "source": "e2",
+        "by": "förvaltaren"
+      },
       {
         "text": "Kundbetyg 4,4 av 5, genomsnitt från omdömen i ERF:s kundportal. Antal omdömen anges inte.",
         "source": "g1",
@@ -117,7 +230,7 @@
       "id": "e1",
       "url": "https://erf.se/ekonomisk-forvaltning/kostnad",
       "title": "Pris och kostnad för ekonomisk förvaltning BRF 2026",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "pageDate": "Pris per 21 augusti 2026",
       "scope": "ekonomisk"
     },
@@ -125,14 +238,14 @@
       "id": "e2",
       "url": "https://erf.se/vanliga-fragor",
       "title": "Frågor och svar",
-      "checked": "2026-10-26",
+      "checked": "2026-11-06",
       "scope": "ekonomisk"
     },
     {
       "id": "g1",
       "url": "https://erf.se/",
       "title": "ERF Enkel Redovisning Förvaltning",
-      "checked": "2026-10-27",
+      "checked": "2026-11-06",
       "pageDate": "© 2026 ERF Enkel Redovisning Förvaltning AB",
       "scope": "general"
     }
