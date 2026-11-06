@@ -8,6 +8,20 @@ import { MAX_PICK, ORT_MAX, REQUEST_LGH_MAX } from "./limits.ts";
 export const CONSENT_VERSION = "1";
 export const CONSENT_TEXT =
   "Jag godkänner att uppgifterna jag fyller i skickas vidare till de förvaltare jag har valt, så att de kan svara på förfrågan.";
+export const CONSENT_MATCH_TEXT =
+  "Jag godkänner att uppgifterna jag fyller i skickas till de förvaltare som passar vår förening, så att de kan kontakta oss med en offert.";
+
+/** Det en styrelse kan välja som viktigast när den vill bli matchad. */
+export const WISHES = [
+  { key: "pris", label: "Lågt pris" },
+  { key: "nojda", label: "Nöjda kunder" },
+  { key: "personlig", label: "Personlig kontakt" },
+  { key: "lokalt", label: "Kontor nära oss" },
+  { key: "digitalt", label: "Digitalt och enkelt" },
+  { key: "avtal", label: "Kort bindningstid" },
+] as const;
+
+export type Wish = (typeof WISHES)[number]["key"];
 
 /** Längsta tillåtna text per fält. Längre text avvisas, den kapas aldrig i tysthet. */
 export const LIMITS = { forening: 80, ort: ORT_MAX, nuvarande: 80, meddelande: 1500, namn: 80, roll: 60, epost: 120, telefon: 24 } as const;
@@ -29,8 +43,12 @@ export interface RequestInput {
   roll: string;
   epost: string;
   telefon: string;
-  /** Slug för varje vald förvaltare, högst MAX_PICK. */
+  /** Slug för varje vald förvaltare, högst MAX_PICK. Tom när styrelsen vill bli matchad. */
   forvaltare: string[];
+  /** Sant när styrelsen inte har valt förvaltare utan vill att vi föreslår lämpliga. */
+  matcha: boolean;
+  /** Vad styrelsen tycker är viktigast. Bara vid matchning. */
+  viktigt: Wish[];
   samtycke: true;
 }
 
@@ -116,10 +134,16 @@ export function validateRequest(raw: unknown, ctx: { slugs: readonly string[]; n
   const behov = NEEDS.find((n) => n === r.behov);
   if (!behov) errors.behov = "Välj vad ni vill ha offert på.";
 
+  const matcha = r.matcha === true;
+  const wishKeys = new Set<string>(WISHES.map((w) => w.key));
+  const viktigt = matcha && Array.isArray(r.viktigt) ? ([...new Set(r.viktigt.map(oneLine))].filter((k) => wishKeys.has(k)) as Wish[]) : [];
+
   const asked = Array.isArray(r.forvaltare) ? r.forvaltare.map(oneLine).filter((s) => s !== "") : [];
-  const forvaltare = [...new Set(asked)];
+  const forvaltare = matcha ? [] : [...new Set(asked)];
   const known = new Set(ctx.slugs);
-  if (forvaltare.length === 0) errors.forvaltare = "Välj minst en förvaltare att skicka förfrågan till.";
+  if (matcha) {
+    // Vid matchning väljer vi förvaltare, så listan ska vara tom.
+  } else if (forvaltare.length === 0) errors.forvaltare = "Välj minst en förvaltare att skicka förfrågan till.";
   else if (forvaltare.length > MAX_PICK) errors.forvaltare = "Välj högst tre förvaltare.";
   else if (forvaltare.some((s) => !known.has(s))) errors.forvaltare = "En av förvaltarna finns inte längre i listan. Gå tillbaka och välj igen.";
 
@@ -150,7 +174,7 @@ export function validateRequest(raw: unknown, ctx: { slugs: readonly string[]; n
 
   return {
     kind: "ok",
-    value: { forening, ort, lgh, behov: behov as Need, nuvarande, meddelande, namn, roll, epost, telefon, forvaltare, samtycke: true },
+    value: { forening, ort, lgh, behov: behov as Need, nuvarande, meddelande, namn, roll, epost, telefon, forvaltare, matcha, viktigt, samtycke: true },
   };
 }
 
@@ -172,8 +196,9 @@ const stamp = new Intl.DateTimeFormat("sv-SE", { dateStyle: "medium", timeStyle:
 export function buildEmail(v: RequestInput, providers: MailProvider[], at: Date): { subject: string; text: string; replyTo: string } {
   const chosen = v.forvaltare.map((slug) => providers.find((p) => p.slug === slug)).filter((p): p is MailProvider => p !== undefined);
 
+  const wishText = v.viktigt.map((k) => WISHES.find((w) => w.key === k)?.label ?? k).join(", ");
   const lines = [
-    "Ny offertförfrågan från sajten",
+    v.matcha ? "Ny förfrågan om matchning från sajten" : "Ny offertförfrågan från sajten",
     "",
     `Förening: ${v.forening}`,
     `Ort: ${v.ort}`,
@@ -181,8 +206,9 @@ export function buildEmail(v: RequestInput, providers: MailProvider[], at: Date)
     `Gäller: ${NEED_TEXT[v.behov]}`,
     `Nuvarande förvaltare: ${v.nuvarande || "Anges inte"}`,
     "",
-    "Styrelsen har valt att skicka förfrågan till:",
-    ...chosen.map((p) => `- ${p.name}, ${p.website}`),
+    ...(v.matcha
+      ? ["Styrelsen vill bli matchad med lämpliga förvaltare.", `Viktigast för styrelsen: ${wishText || "Anges inte"}`]
+      : ["Styrelsen har valt att skicka förfrågan till:", ...chosen.map((p) => `- ${p.name}, ${p.website}`)]),
     "",
     "Kontakt:",
     `Namn: ${v.namn}`,
@@ -193,12 +219,12 @@ export function buildEmail(v: RequestInput, providers: MailProvider[], at: Date)
     "Meddelande:",
     v.meddelande || "Inget meddelande.",
     "",
-    `Samtycke (text version ${CONSENT_VERSION}): ${CONSENT_TEXT}`,
+    `Samtycke (text version ${CONSENT_VERSION}): ${v.matcha ? CONSENT_MATCH_TEXT : CONSENT_TEXT}`,
     `Mottagen: ${stamp.format(at)}`,
   ];
 
   return {
-    subject: `Offertförfrågan: ${v.forening}, ${v.ort} (${v.lgh} lgh)`.slice(0, 150),
+    subject: `${v.matcha ? "Matchning" : "Offertförfrågan"}: ${v.forening}, ${v.ort} (${v.lgh} lgh)`.slice(0, 150),
     text: lines.join("\n"),
     replyTo: v.epost,
   };

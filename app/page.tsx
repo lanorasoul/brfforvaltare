@@ -49,6 +49,10 @@ export default function Home() {
       a: "Det beror mest på antal lägenheter. Förvaltare som publicerar priser ligger på ungefär 700 till 1 300 kr per lägenhet och år, lägre per lägenhet ju större föreningen är. För 50 lägenheter är ERF:s listpris 37 375 kr per år exklusive moms och SBC:s exempel ungefär 55 000 kr. De flesta förvaltare lämnar pris bara på offert.",
     },
     {
+      q: "Hur fungerar Hitta förvaltare?",
+      a: "Ni berättar i tre korta steg vad föreningen behöver, hur stor den är och hur vi når er. Vi skickar förfrågan till förvaltare som passar, och de kontaktar er med en offert. Det är gratis och ni är inte bundna till något.",
+    },
+    {
       q: "Vad är skillnaden mellan ekonomisk och teknisk förvaltning?",
       a: "Ekonomisk förvaltning är bokföring, avgiftsavier, leverantörsfakturor, budget och årsredovisning. Teknisk förvaltning är tillsyn av fastigheten, underhållsplan, besiktningar och upphandling av entreprenörer. Föreningen kan anlita olika förvaltare för de två delarna.",
     },
@@ -104,14 +108,14 @@ export default function Home() {
             Pris, kundnöjdhet och villkor för {providers.length} förvaltare av ekonomisk och teknisk förvaltning. Gratis, oberoende och med källa till varje uppgift.
           </p>
           <div className="hero-actions">
-            <Link className="btn btn-accent" href="#forvaltare">
-              Jämför förvaltare
+            <Link className="btn btn-accent" href="/hitta-forvaltare">
+              Få förslag på förvaltare
               <span className="btn-icon">
                 <ArrowIcon />
               </span>
             </Link>
-            <Link className="btn btn-quiet" href="/hitta-forvaltare">
-              Hitta förvaltare där ni bor
+            <Link className="btn btn-quiet" href="#forvaltare">
+              Jämför själva
             </Link>
           </div>
         </div>

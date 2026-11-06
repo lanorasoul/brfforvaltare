@@ -174,3 +174,21 @@ test("sameOrigin kräver att Origin och Host pekar på samma värd", () => {
   assert.equal(sameOrigin("https://brfforvaltare.se", null), false);
   assert.equal(sameOrigin("inte en url", "brfforvaltare.se"), false);
 });
+
+test("Matchning: inga valda förvaltare krävs, önskemål städas och mejlet säger att styrelsen vill bli matchad", () => {
+  const r = validateRequest(good({ matcha: true, forvaltare: ["sbc"], viktigt: ["pris", "okand", "pris", "nojda"] }), ctx);
+  assert.equal(r.kind, "ok");
+  assert.deepEqual(r.value.forvaltare, []);
+  assert.deepEqual(r.value.viktigt, ["pris", "nojda"]);
+  const mail = buildEmail(r.value, [], new Date(now));
+  assert.match(mail.subject, /^Matchning: Brf Solgläntan/);
+  assert.match(mail.text, /vill bli matchad/);
+  assert.match(mail.text, /Viktigast för styrelsen: Lågt pris, Nöjda kunder/);
+  assert.ok(!hasDash(mail.text));
+});
+
+test("Utan matchning krävs fortfarande minst en vald förvaltare", () => {
+  const r = validateRequest(good({ forvaltare: [] }), ctx);
+  assert.equal(r.kind, "invalid");
+  assert.ok(r.errors.forvaltare);
+});

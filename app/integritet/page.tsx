@@ -69,7 +69,7 @@ export default function IntegritetPage() {
                 </h2>
               </div>
               <ul className="bullets">
-                <li>För att skicka er förfrågan till de förvaltare ni har valt, så att de kan svara er.</li>
+                <li>För att skicka er förfrågan till de förvaltare ni har valt, eller till de förvaltare vi bedömer passar er när ni ber oss matcha er, så att de kan svara er.</li>
                 <li>
                   Grunden är ert samtycke, som ni ger genom att kryssa i rutan innan ni skickar. Ni kan ta tillbaka samtycket, men det gäller inte det som redan har skickats vidare till en förvaltare.
                 </li>
