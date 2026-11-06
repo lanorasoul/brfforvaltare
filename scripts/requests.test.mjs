@@ -192,3 +192,31 @@ test("Utan matchning krävs fortfarande minst en vald förvaltare", () => {
   assert.equal(r.kind, "invalid");
   assert.ok(r.errors.forvaltare);
 });
+
+test("Tjänsterna i guiden har samma nycklar som schemat", async () => {
+  const { SERVICES } = await import("../lib/requests.ts");
+  const fs = await import("node:fs");
+  const schema = JSON.parse(fs.readFileSync(new URL("../data/schema.json", import.meta.url), "utf8"));
+  for (const c of ["ekonomisk", "teknisk"]) {
+    assert.deepEqual(SERVICES[c].map((x) => x.key), schema.features[c].map((x) => x.key));
+  }
+});
+
+test("Matchning med tjänster: bara kända tjänster för vald förvaltning, och de står i mejlet", () => {
+  const r = validateRequest(
+    good({ matcha: true, behov: "ekonomisk", upplagg: "tjanster", tjanster: { ekonomisk: ["avisering", "bokforing", "okand"], teknisk: ["ovk"] } }),
+    ctx,
+  );
+  assert.equal(r.kind, "ok");
+  assert.deepEqual(r.value.tjanster, { ekonomisk: ["bokforing", "avisering"], teknisk: [] });
+  const mail = buildEmail(r.value, [], new Date(now));
+  assert.match(mail.text, /Önskade tjänster, ekonomisk förvaltning: Löpande bokföring, Avier för avgifter och hyror/);
+  assert.doesNotMatch(mail.text, /teknisk förvaltning:/);
+});
+
+test("Matchning med kontakt först: inga tjänster och upplägget står i mejlet", () => {
+  const r = validateRequest(good({ matcha: true, behov: "bada", upplagg: "kontakt", tjanster: { ekonomisk: ["bokforing"] } }), ctx);
+  assert.equal(r.kind, "ok");
+  assert.deepEqual(r.value.tjanster, { ekonomisk: [], teknisk: [] });
+  assert.match(buildEmail(r.value, [], new Date(now)).text, /vill bli kontaktad först/);
+});

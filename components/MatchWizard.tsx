@@ -4,7 +4,19 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { ArrowIcon, CheckIcon } from "./icons";
 import type { Need } from "@/lib/guide";
-import { CONSENT_MATCH_TEXT, LIMITS, looksLikeEmail, looksLikePhone, WISHES, type FieldErrors, type SubmitResponse, type Wish } from "@/lib/requests";
+import {
+  CONSENT_MATCH_TEXT,
+  LIMITS,
+  looksLikeEmail,
+  looksLikePhone,
+  SERVICES,
+  WISHES,
+  type FieldErrors,
+  type ServiceCategory,
+  type SubmitResponse,
+  type Upplagg,
+  type Wish,
+} from "@/lib/requests";
 
 interface Props {
   /** Serverns klocka när sidan ritades. Skickas tillbaka så att tiden inte beror på webbläsarens klocka. */
@@ -19,12 +31,12 @@ const NEEDS: { key: Need; label: string; help: string }[] = [
   { key: "bada", label: "Båda", help: "Ekonomisk och teknisk förvaltning" },
 ];
 
-const STEPS = ["Ert behov", "Föreningen", "Kontakt"];
+const STEPS = ["Behov", "Föreningen", "Kontakt"];
 
 /** Vilket steg varje fält ligger i, så att ett fel från servern visar rätt steg. */
 const STEP_OF: Partial<Record<keyof FieldErrors, number>> = {
   behov: 0,
-  meddelande: 0,
+  meddelande: 1,
   forening: 1,
   ort: 1,
   lgh: 1,
@@ -42,6 +54,10 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
   const [step, setStep] = useState(0);
   const [behov, setBehov] = useState<Need | null>(initial.behov);
   const [viktigt, setViktigt] = useState<Wish[]>([]);
+  const [upplagg, setUpplagg] = useState<Upplagg>("tjanster");
+  const [tjanster, setTjanster] = useState<Record<ServiceCategory, string[]>>({ ekonomisk: [], teknisk: [] });
+  const toggleService = (c: ServiceCategory, k: string) =>
+    setTjanster((cur) => ({ ...cur, [c]: cur[c].includes(k) ? cur[c].filter((x) => x !== k) : [...cur[c], k] }));
   const [v, setV] = useState({ meddelande: "", forening: "", ort: initial.ort, lgh: initial.lgh, nuvarande: "", namn: "", roll: "", epost: "", telefon: "" });
   const [consent, setConsent] = useState(false);
   const [trap, setTrap] = useState("");
@@ -102,7 +118,7 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
       const res = await fetch("/api/forfragan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...v, lgh: Number(v.lgh), behov, viktigt, matcha: true, forvaltare: [], samtycke: true, webbplats: trap, t: issuedAt }),
+        body: JSON.stringify({ ...v, lgh: Number(v.lgh), behov, viktigt, upplagg, tjanster, matcha: true, forvaltare: [], samtycke: true, webbplats: trap, t: issuedAt }),
       });
       const data = (await res.json()) as SubmitResponse;
       if (data.ok) setDone(data);
@@ -128,7 +144,8 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
           Tack! Vi matchar er med lämpliga förvaltare.
         </h2>
         <p className="wz-text">
-          Vi går igenom det ni har skrivit och skickar er förfrågan till förvaltare som passar {v.forening}. De kontaktar er på {v.epost}.
+          Vi går igenom det ni har skrivit och skickar er förfrågan till förvaltare som passar {v.forening}.{" "}
+          {upplagg === "kontakt" ? `De kontaktar er på ${v.epost} för att gå igenom vad ni behöver och lämnar sedan en offert.` : `De kontaktar er på ${v.epost} med en offert.`}
         </p>
         <p className="wz-text">Ni är inte bundna till något. Det är gratis, och ni väljer själva om ni vill gå vidare med någon.</p>
         {done.mode === "preview" && (
@@ -181,39 +198,45 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
           </div>
           {err("behov")}
 
-          <fieldset className="wz-field">
-            <legend className="wz-label">
-              Vad är viktigast för er? <span className="wz-opt">Valfritt</span>
-            </legend>
-            <div className="wz-chips">
-              {WISHES.map((w) => {
-                const on = viktigt.includes(w.key);
-                return (
-                  <button key={w.key} type="button" className="wz-chip" aria-pressed={on} onClick={() => setViktigt((c) => (on ? c.filter((x) => x !== w.key) : [...c, w.key]))}>
-                    {on && <CheckIcon size={12} />}
-                    {w.label}
-                  </button>
-                );
-              })}
+          {behov && (
+            <div className="wz-field">
+              <span className="wz-label">Vet ni vad ni vill ha med?</span>
+              <div className="wz-mode" role="group" aria-label="Upplägg">
+                <button type="button" className="wz-mode-btn" aria-pressed={upplagg === "tjanster"} onClick={() => setUpplagg("tjanster")}>
+                  <strong>Ja, vi väljer tjänster</strong>
+                  <span>Kryssa i det ni vill ha</span>
+                </button>
+                <button type="button" className="wz-mode-btn" aria-pressed={upplagg === "kontakt"} onClick={() => setUpplagg("kontakt")}>
+                  <strong>Kontakta oss först</strong>
+                  <span>Vi tar det i en offert</span>
+                </button>
+              </div>
             </div>
-          </fieldset>
+          )}
 
-          <div className="wz-field">
-            <label className="wz-label" htmlFor={`${uid}-msg`}>
-              Något mer vi bör veta? <span className="wz-opt">Valfritt</span>
-            </label>
-            <textarea
-              id={`${uid}-msg`}
-              className="wz-input wz-area"
-              rows={3}
-              maxLength={LIMITS.meddelande}
-              placeholder="Till exempel att ni har lokaler, garage eller ett stambyte på gång."
-              value={v.meddelande}
-              onChange={set("meddelande")}
-              aria-describedby={desc("meddelande")}
-            />
-            {err("meddelande")}
-          </div>
+          {behov && upplagg === "tjanster" &&
+            (["ekonomisk", "teknisk"] as ServiceCategory[])
+              .filter((c) => behov === "bada" || behov === c)
+              .map((c) => (
+                <fieldset key={c} className="wz-field">
+                  <legend className="wz-label">
+                    {c === "ekonomisk" ? "Ekonomisk förvaltning" : "Teknisk förvaltning"} <span className="wz-opt">Välj det ni vill ha med</span>
+                  </legend>
+                  <div className="wz-checks">
+                    {SERVICES[c].map((x) => {
+                      const on = tjanster[c].includes(x.key);
+                      return (
+                        <label key={x.key} className={on ? "wz-check is-on" : "wz-check"}>
+                          <input type="checkbox" checked={on} onChange={() => toggleService(c, x.key)} />
+                          {x.label}
+                        </label>
+                      );
+                    })}
+                  </div>
+                </fieldset>
+              ))}
+
+          {behov && upplagg === "kontakt" && <p className="wz-note">Bra. Förvaltarna går igenom vad ni behöver med er och lämnar sedan en offert.</p>}
         </div>
       )}
 
@@ -258,6 +281,40 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
               Nuvarande förvaltare <span className="wz-opt">Valfritt</span>
             </label>
             <input id={`${uid}-nuv`} className="wz-input" maxLength={LIMITS.nuvarande} value={v.nuvarande} onChange={set("nuvarande")} />
+          </div>
+
+          <fieldset className="wz-field">
+            <legend className="wz-label">
+              Vad är viktigast för er? <span className="wz-opt">Valfritt</span>
+            </legend>
+            <div className="wz-chips">
+              {WISHES.map((w) => {
+                const on = viktigt.includes(w.key);
+                return (
+                  <button key={w.key} type="button" className="wz-chip" aria-pressed={on} onClick={() => setViktigt((c) => (on ? c.filter((x) => x !== w.key) : [...c, w.key]))}>
+                    {on && <CheckIcon size={12} />}
+                    {w.label}
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
+
+          <div className="wz-field">
+            <label className="wz-label" htmlFor={`${uid}-msg`}>
+              Något mer vi bör veta? <span className="wz-opt">Valfritt</span>
+            </label>
+            <textarea
+              id={`${uid}-msg`}
+              className="wz-input wz-area"
+              rows={3}
+              maxLength={LIMITS.meddelande}
+              placeholder="Till exempel att ni har lokaler, garage eller ett stambyte på gång."
+              value={v.meddelande}
+              onChange={set("meddelande")}
+              aria-describedby={desc("meddelande")}
+            />
+            {err("meddelande")}
           </div>
         </div>
       )}

@@ -23,6 +23,46 @@ export const WISHES = [
 
 export type Wish = (typeof WISHES)[number]["key"];
 
+/**
+ * Tjänster en styrelse kan kryssa i vid matchning. Nycklarna är desamma som i data/schema.json (kontrolleras av ett test),
+ * men texterna är skrivna för en styrelse som inte kan branschens ord.
+ */
+export const SERVICES = {
+  ekonomisk: [
+    { key: "bokforing", label: "Löpande bokföring" },
+    { key: "leverantorsfakturor", label: "Betalning av leverantörsfakturor" },
+    { key: "avisering", label: "Avier för avgifter och hyror" },
+    { key: "budget", label: "Budget och uppföljning" },
+    { key: "arsredovisning", label: "Bokslut och årsredovisning" },
+    { key: "skatt", label: "Moms, skatt och deklaration" },
+    { key: "overlatelser", label: "Överlåtelser och pantsättningar" },
+    { key: "lan", label: "Hjälp med föreningens lån" },
+    { key: "radgivning", label: "Ekonomisk rådgivning" },
+    { key: "flerars", label: "Flerårsbudget" },
+    { key: "inkasso", label: "Påminnelser och inkasso" },
+    { key: "imd", label: "IMD, el eller vatten per lägenhet" },
+  ],
+  teknisk: [
+    { key: "forvaltare", label: "Fast teknisk förvaltare" },
+    { key: "underhallsplan", label: "Underhållsplan" },
+    { key: "besiktning", label: "Besiktningar och tillsyn" },
+    { key: "ovk", label: "OVK, ventilationskontroll" },
+    { key: "sba", label: "Brandskydd, SBA" },
+    { key: "energi", label: "Energi och energideklaration" },
+    { key: "projekt", label: "Projektledning" },
+    { key: "renovering", label: "Stambyte och större renoveringar" },
+    { key: "skotsel", label: "Fastighetsskötsel" },
+    { key: "upphandling", label: "Upphandling av entreprenörer" },
+    { key: "felanmalan", label: "Felanmälan för boende" },
+    { key: "jour", label: "Jour utanför kontorstid" },
+  ],
+} as const;
+
+export type ServiceCategory = keyof typeof SERVICES;
+
+/** tjanster: styrelsen kryssar i vad den vill ha. kontakt: styrelsen vill bli kontaktad först och ta resten i offerten. */
+export type Upplagg = "tjanster" | "kontakt";
+
 /** Längsta tillåtna text per fält. Längre text avvisas, den kapas aldrig i tysthet. */
 export const LIMITS = { forening: 80, ort: ORT_MAX, nuvarande: 80, meddelande: 1500, namn: 80, roll: 60, epost: 120, telefon: 24 } as const;
 
@@ -49,6 +89,10 @@ export interface RequestInput {
   matcha: boolean;
   /** Vad styrelsen tycker är viktigast. Bara vid matchning. */
   viktigt: Wish[];
+  /** Bara vid matchning. */
+  upplagg: Upplagg;
+  /** Tjänster per förvaltning. Tomma när upplägget är kontakt. */
+  tjanster: Record<ServiceCategory, string[]>;
   samtycke: true;
 }
 
@@ -138,6 +182,17 @@ export function validateRequest(raw: unknown, ctx: { slugs: readonly string[]; n
   const wishKeys = new Set<string>(WISHES.map((w) => w.key));
   const viktigt = matcha && Array.isArray(r.viktigt) ? ([...new Set(r.viktigt.map(oneLine))].filter((k) => wishKeys.has(k)) as Wish[]) : [];
 
+  const upplagg: Upplagg = r.upplagg === "kontakt" ? "kontakt" : "tjanster";
+  const rawT = (r.tjanster !== null && typeof r.tjanster === "object" ? r.tjanster : {}) as Record<string, unknown>;
+  const pickServices = (c: ServiceCategory): string[] => {
+    if (!matcha || upplagg === "kontakt") return [];
+    if (behov && behov !== "bada" && behov !== c) return [];
+    const ok = new Set<string>(SERVICES[c].map((x) => x.key));
+    const list = Array.isArray(rawT[c]) ? (rawT[c] as unknown[]).map(oneLine) : [];
+    return SERVICES[c].map((x) => x.key as string).filter((k) => ok.has(k) && list.includes(k));
+  };
+  const tjanster = { ekonomisk: pickServices("ekonomisk"), teknisk: pickServices("teknisk") };
+
   const asked = Array.isArray(r.forvaltare) ? r.forvaltare.map(oneLine).filter((s) => s !== "") : [];
   const forvaltare = matcha ? [] : [...new Set(asked)];
   const known = new Set(ctx.slugs);
@@ -174,7 +229,7 @@ export function validateRequest(raw: unknown, ctx: { slugs: readonly string[]; n
 
   return {
     kind: "ok",
-    value: { forening, ort, lgh, behov: behov as Need, nuvarande, meddelande, namn, roll, epost, telefon, forvaltare, matcha, viktigt, samtycke: true },
+    value: { forening, ort, lgh, behov: behov as Need, nuvarande, meddelande, namn, roll, epost, telefon, forvaltare, matcha, viktigt, upplagg: matcha ? upplagg : "tjanster", tjanster, samtycke: true },
   };
 }
 
@@ -207,7 +262,21 @@ export function buildEmail(v: RequestInput, providers: MailProvider[], at: Date)
     `Nuvarande förvaltare: ${v.nuvarande || "Anges inte"}`,
     "",
     ...(v.matcha
-      ? ["Styrelsen vill bli matchad med lämpliga förvaltare.", `Viktigast för styrelsen: ${wishText || "Anges inte"}`]
+      ? [
+          "Styrelsen vill bli matchad med lämpliga förvaltare.",
+          v.upplagg === "kontakt"
+            ? "Upplägg: Styrelsen vill bli kontaktad först och ta upp vad som ska ingå i offerten."
+            : "Upplägg: Styrelsen har valt tjänster.",
+          ...(v.upplagg === "tjanster"
+            ? (["ekonomisk", "teknisk"] as const)
+                .filter((c) => v.behov === "bada" || v.behov === c)
+                .map((c) => {
+                  const labels = v.tjanster[c].map((k) => SERVICES[c].find((x) => x.key === k)?.label ?? k);
+                  return `Önskade tjänster, ${c === "ekonomisk" ? "ekonomisk" : "teknisk"} förvaltning: ${labels.join(", ") || "Inga valda"}`;
+                })
+            : []),
+          `Viktigast för styrelsen: ${wishText || "Anges inte"}`,
+        ]
       : ["Styrelsen har valt att skicka förfrågan till:", ...chosen.map((p) => `- ${p.name}, ${p.website}`)]),
     "",
     "Kontakt:",
