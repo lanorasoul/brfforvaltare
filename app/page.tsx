@@ -5,6 +5,8 @@ import { HeroFacade } from "@/components/HeroFacade";
 import { ArrowIcon, ExternalIcon } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { ProviderOverview } from "@/components/ProviderOverview";
+import { WhySwitch, type FeePoint } from "@/components/WhySwitch";
+import { priceRow } from "@/lib/price";
 import { getProvider, getProviders, requireSource } from "@/lib/data";
 import { dateLong } from "@/lib/format";
 import { overviewRows } from "@/lib/overview";
@@ -32,15 +34,14 @@ export default function Home() {
     { cite: cite("nabo", "e3"), text: "En förening med 20 lägenheter betalar ungefär 26 000 till 30 500 kr per år exklusive moms, och en med 100 lägenheter ungefär 64 000 till 77 000 kr." },
     { cite: cite("sbc", "e1"), text: "För mindre och medelstora föreningar ligger priset vanligtvis på 1 100 till 1 300 kr per lägenhet och år. Ju fler lägenheter, desto lägre kostnad per lägenhet." },
   ];
-  const noticeSrc = cite("nabo", "f1");
+  // Publicerade priser för 50 lägenheter, till diagrammet om arvoden.
+  const fees: FeePoint[] = providers.flatMap((p) => {
+    if (!p.ekonomisk) return [];
+    const r = priceRow({ slug: p.slug, name: p.name, pricing: p.ekonomisk.pricing }, 50);
+    if (r.perYear === null || r.kind === "from") return [];
+    return [{ name: p.name, perYear: r.perYear, approx: r.kind !== "list", url: requireSource(p, p.ekonomisk.pricing.source).url }];
+  }).sort((a, b) => a.perYear - b.perYear);
 
-  const steps = [
-    { t: "Läs ert avtal", d: "Hitta uppsägningstiden. Tre till tolv månader är vanligast, och avtalet förlängs ofta automatiskt om ni missar datumet." },
-    { t: "Be om offerter", d: "Skicka samma frågor till minst tre förvaltare, så att priserna går att jämföra." },
-    { t: "Jämför lika mot lika", d: "Pris med och utan moms, vad som ingår, tillval och hur priset räknas upp." },
-    { t: "Säg upp skriftligt", d: "Styrelsen beslutar och säger upp avtalet. Spara bekräftelsen med slutdatum." },
-    { t: "Låt den nya ta över", d: "Den nya förvaltaren hämtar underlag från den gamla. Hela bytet tar normalt fyra till tolv månader." },
-  ];
 
   // Svaren är vanlig text så att samma text kan visas och läggas i den strukturerade datan.
   const faq = [
@@ -121,6 +122,8 @@ export default function Home() {
         </div>
       </section>
 
+      <WhySwitch fees={fees} />
+
       <section className="ov-section" id="forvaltare" aria-labelledby="ov-title">
         <div className="container">
           <div className="ov-section-head">
@@ -156,36 +159,6 @@ export default function Home() {
             <Link className="link" href="/prisguide">
               Läs prisguiden
             </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="home-band" aria-labelledby="byta-title">
-        <div className="container">
-          <h2 className="h3" id="byta-title">
-            Så byter ni förvaltare
-          </h2>
-          <ol className="home-steps">
-            {steps.map((s, i) => (
-              <li key={s.t}>
-                <span className="home-step-n">{i + 1}</span>
-                <strong>{s.t}</strong>
-                <span className="muted">{s.d}</span>
-              </li>
-            ))}
-          </ol>
-          <p className="small">
-            <Link className="link" href="/byta-forvaltare">
-              Hela guiden med uppsägningskalender och offertmall
-            </Link>
-            {noticeSrc && (
-              <>
-                {" · "}
-                <a className="link" href={noticeSrc.url} target="_blank" rel="noopener noreferrer">
-                  Källa om uppsägningstider ({noticeSrc.name}) <ExternalIcon />
-                </a>
-              </>
-            )}
           </p>
         </div>
       </section>
