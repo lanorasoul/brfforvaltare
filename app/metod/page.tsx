@@ -348,7 +348,7 @@ export default function MetodPage() {
                   Vi matchar ortens namn utan hänsyn till versaler eller å, ä och ö, och från tre bokstäver. Skriver ni Hels hittar ni de som nämner Helsingborg.
                 </li>
                 <li>
-                  <Link className="link" href="/hitta-forvaltare">Guiden</Link> använder samma regler. Där anger ni också vad ni vill ha hjälp med, och vi visar alla förvaltare som har den förvaltningen på sina sidor. Önskemål om tjänster döljer ingen, de visas som märken i en egen tabell. Orter som minst två förvaltare nämner på sina egna sidor har en egen sida under adressen /forvaltare-i.
+                  <Link className="link" href="/">Guiden</Link> använder samma regler. Där anger ni också vad ni vill ha hjälp med, och vi visar alla förvaltare som har den förvaltningen på sina sidor. Önskemål om tjänster döljer ingen, de visas som märken i en egen tabell. Orter som minst två förvaltare nämner på sina egna sidor har en egen sida under adressen /forvaltare-i.
                 </li>
               </ul>
             </section>

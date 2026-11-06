@@ -8,12 +8,9 @@ import { SITE } from "@/lib/site";
 
 // short är texten i menyraden, där det är trångt. Resten av namnet läses upp för skärmläsare och syns i mobilmenyn.
 const LINKS: { href: string; label: string; short?: string }[] = [
-  { href: "/ekonomisk-forvaltning", label: "Ekonomisk förvaltning", short: "Ekonomisk" },
-  { href: "/teknisk-forvaltning", label: "Teknisk förvaltning", short: "Teknisk" },
-  { href: "/forvaltare", label: "Förvaltare" },
-  { href: "/prisguide", label: "Prisguide" },
+  { href: "/forvaltare", label: "Jämför förvaltare" },
   { href: "/byta-forvaltare", label: "Byta förvaltare" },
-  { href: "/metod", label: "Metod" },
+  { href: "/metod", label: "Så fungerar det" },
 ];
 
 export function Nav() {
@@ -50,14 +47,16 @@ export function Nav() {
         </ul>
 
         <div className="nav-end">
-          <Link className="btn btn-dark nav-cta" href="/hitta-forvaltare" aria-label="Hitta förvaltare">
-            <span>
-              Hitta<span className="nav-cta-more"> förvaltare</span>
-            </span>
-            <span className="btn-icon">
-              <ArrowIcon size={12} />
-            </span>
-          </Link>
+          {pathname !== "/" && (
+            <Link className="btn btn-dark nav-cta" href="/" aria-label="Hitta förvaltare">
+              <span>
+                Hitta<span className="nav-cta-more"> förvaltare</span>
+              </span>
+              <span className="btn-icon">
+                <ArrowIcon size={12} />
+              </span>
+            </Link>
+          )}
           <button
             type="button"
             className="nav-toggle"
