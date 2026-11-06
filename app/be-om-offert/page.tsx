@@ -22,7 +22,7 @@ type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 const FEATURE_KEYS = Object.fromEntries(CATEGORIES.map((c) => [c, FEATURES[c].map((f) => f.key)])) as Record<Category, string[]>;
 
 const CRUMBS = [
-  { href: "/", label: "Hitta förvaltare" },
+  { href: "/hitta-forvaltare", label: "Hitta förvaltare" },
   { href: "/be-om-offert", label: "Be om offert" },
 ];
 
@@ -31,7 +31,7 @@ export default async function BeOmOffertPage({ searchParams }: { searchParams: S
   const sp = await searchParams;
   const mode = currentMode();
   const g = parseGuide(sp, FEATURE_KEYS);
-  const back = `/?${guideQuery(g)}#resultat`;
+  const back = `/hitta-forvaltare?${guideQuery(g)}#resultat`;
 
   if (mode === "off") {
     return (

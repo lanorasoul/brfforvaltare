@@ -10,7 +10,6 @@ import "../styles/tools.css";
 import "../styles/compare.css";
 import "../styles/guide.css";
 import "../styles/overview.css";
-import "../styles/match.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/lib/site";
