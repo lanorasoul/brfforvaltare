@@ -35,6 +35,8 @@ export interface LaunchState {
   operator: unknown;
   contactEmail: unknown;
   mailConfigured: boolean;
+  /** Värdet i NEXT_PUBLIC_SITE_URL. Utan det pekar kanoniska adresser och sitemap på arbetsnamnets domän. */
+  siteUrl?: string;
 }
 
 /** Skäl till att en publik driftsättning inte ska släppas igenom. Tom lista betyder att inget hindrar. */
@@ -45,5 +47,8 @@ export function launchProblems(s: LaunchState): string[] {
   if (s.mode === "live" && !s.mailConfigured) out.push("REQUESTS_MODE=live kräver RESEND_API_KEY, REQUEST_TO_EMAIL och REQUEST_FROM_EMAIL.");
   if (s.indexable && !s.operator) out.push("NEXT_PUBLIC_INDEXABLE=true kräver att operator är satt i lib/site.ts.");
   if (s.indexable && !s.contactEmail) out.push("NEXT_PUBLIC_INDEXABLE=true kräver att contactEmail är satt i lib/site.ts.");
+  if (s.indexable && !/^https:\/\/[^/]+$/.test(s.siteUrl ?? "")) {
+    out.push("NEXT_PUBLIC_INDEXABLE=true kräver att NEXT_PUBLIC_SITE_URL är sajtens riktiga adress, till exempel https://exempel.se (utan snedstreck sist).");
+  }
   return out;
 }

@@ -2,6 +2,7 @@ import { getProviders } from "@/lib/data";
 import { currentMode } from "@/lib/launch";
 import { sendMail } from "@/lib/mail";
 import { buildEmail, MAX_BODY_CHARS, sameOrigin, validateRequest, type SubmitResponse } from "@/lib/requests";
+import { signingSecret, verifyToken } from "@/lib/token";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,6 +21,10 @@ export async function POST(request: Request): Promise<Response> {
     return reply({ ok: false, reason: "origin", message: "Förfrågan kom inte från sajtens egen sida." }, 403);
   }
 
+  if (!(request.headers.get("content-type") ?? "").toLowerCase().startsWith("application/json")) {
+    return reply({ ok: false, reason: "unsupported", message: "Förfrågan måste skickas från formuläret på sajten." }, 415);
+  }
+
   const declared = Number(request.headers.get("content-length") ?? 0);
   if (declared > MAX_BODY_CHARS * 4) return reply({ ok: false, reason: "toolarge", message: "Förfrågan är för stor." }, 413);
 
@@ -33,10 +38,20 @@ export async function POST(request: Request): Promise<Response> {
     return reply({ ok: false, reason: "invalid", errors: { form: "Förfrågan kunde inte läsas. Ladda om sidan och försök igen." } }, 400);
   }
 
-  const providers = getProviders();
-  const check = validateRequest(raw, { slugs: providers.map((p) => p.slug), now: Date.now() });
+  const now = Date.now();
+  const fields = raw !== null && typeof raw === "object" && !Array.isArray(raw) ? (raw as Record<string, unknown>) : {};
 
-  // En bot ska inte få veta att den blev stoppad.
+  // Tiden måste komma från en sida som servern själv har ritat och signerat. Ett skript vinner inget på att få veta
+  // att signaturen var fel, och en människa vars sida blivit för gammal ska inte tro att förfrågan gick iväg.
+  const token = verifyToken(fields.token, now, signingSecret(process.env));
+  if (token.kind !== "ok") {
+    return reply({ ok: false, reason: "stale", message: "Formuläret behöver laddas om. Ladda om sidan och skicka igen." }, 409);
+  }
+
+  const providers = getProviders();
+  const check = validateRequest({ ...fields, t: token.t }, { slugs: providers.map((p) => p.slug), now });
+
+  // En bot som fyller i det dolda fältet ska inte få veta att den blev stoppad.
   if (check.kind === "bot") return reply({ ok: true, mode: "live" });
   if (check.kind === "toofast") {
     return reply({ ok: false, reason: "toofast", message: "Det gick för fort. Vänta ett par sekunder och skicka igen." }, 429);

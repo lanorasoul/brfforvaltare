@@ -56,7 +56,7 @@ export default function IntegritetPage() {
               </div>
               <ul className="bullets">
                 <li>
-                  Bara det formuläret frågar efter: föreningens namn, ort och antal lägenheter, vad ni vill ha offert på, nuvarande förvaltare (valfritt), ert namn, er roll i föreningen (valfritt), e-postadress, telefonnummer (valfritt) och ett meddelande (valfritt).
+                  Bara det formuläret frågar efter: föreningens namn, ort och antal lägenheter, vad ni vill ha offert på, vilka tjänster ni vill ha och vad som är viktigast för er (valfritt), nuvarande förvaltare (valfritt), ert namn, er roll i föreningen (valfritt), e-postadress, telefonnummer (valfritt) och ett meddelande (valfritt).
                 </li>
                 <li>Skickar ni ingen förfrågan samlar vi inte in något om er. Guiden och jämförelsen kräver inga uppgifter.</li>
               </ul>
@@ -84,11 +84,12 @@ export default function IntegritetPage() {
                 </h2>
               </div>
               <ul className="bullets">
-                <li>De förvaltare ni har valt, högst tre. Ingen annan förvaltare får förfrågan.</li>
+                <li>De förvaltare ni har valt, högst tre. Ber ni oss i stället matcha er får högst tre förvaltare som vi bedömer passar er förfrågan. Ingen annan förvaltare får den.</li>
                 <li>
                   Den e-posttjänst som tar emot förfrågan åt oss och skickar den till vår brevlåda. Den behandlar uppgifterna för vår räkning.
                 </li>
-                <li>Sajten körs hos Vercel, som i sina driftloggar kan se tekniska uppgifter som IP-adress.</li>
+                <li>Sajten körs hos Vercel, som i sina driftloggar och sin brandvägg kan se tekniska uppgifter som IP-adress. Brandväggen använder IP-adressen för att stoppa den som skickar för många förfrågningar.</li>
+                <li>Vercel och e-posttjänsten är amerikanska företag. Uppgifterna kan därför behandlas utanför EU, med de skyddsåtgärder som dataskyddsförordningen kräver, till exempel EU:s standardavtalsklausuler.</li>
                 <li>Vi säljer inte uppgifterna och lämnar dem inte till andra.</li>
                 <li>När en förvaltare har fått förfrågan ansvarar förvaltaren själv för hur den hanteras.</li>
               </ul>

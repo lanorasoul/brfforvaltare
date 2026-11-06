@@ -5,6 +5,7 @@ import { PageHead } from "@/components/PageHead";
 import { RequestForm } from "@/components/RequestForm";
 import { getCompareData } from "@/lib/data";
 import { guideQuery, matchGuide, parseGuide, parsePick } from "@/lib/guide";
+import { issueToken, signingSecret } from "@/lib/token";
 import { currentMode } from "@/lib/launch";
 import { MAX_PICK } from "@/lib/limits";
 import { CATEGORIES, FEATURES } from "@/lib/schema";
@@ -124,7 +125,7 @@ export default async function BeOmOffertPage({ searchParams }: { searchParams: S
                 <RequestForm
                   providers={chosen.map((r) => ({ slug: r.slug, name: r.name }))}
                   initial={{ ort: g.ort, lgh: String(g.lgh), behov: g.need }}
-                  issuedAt={Date.now()}
+                  token={issueToken(Date.now(), signingSecret(process.env))}
                   mode={mode}
                   backHref={back}
                 />

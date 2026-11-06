@@ -5,11 +5,11 @@ import type { Need } from "./guide.ts";
 import { MAX_PICK, ORT_MAX, REQUEST_LGH_MAX } from "./limits.ts";
 
 /** Ändra versionen när texten nedan ändras, så att varje mejl visar vilken text som godkändes. */
-export const CONSENT_VERSION = "1";
+export const CONSENT_VERSION = "2";
 export const CONSENT_TEXT =
   "Jag godkänner att uppgifterna jag fyller i skickas vidare till de förvaltare jag har valt, så att de kan svara på förfrågan.";
 export const CONSENT_MATCH_TEXT =
-  "Jag godkänner att uppgifterna jag fyller i skickas till de förvaltare som passar vår förening, så att de kan kontakta oss med en offert.";
+  "Jag godkänner att uppgifterna jag fyller i skickas till högst tre förvaltare som passar vår förening, så att de kan kontakta oss med en offert.";
 
 /** Det en styrelse kan välja som viktigast när den vill bli matchad. */
 export const WISHES = [
@@ -111,7 +111,7 @@ export type SubmitResponse =
   | { ok: true; mode: "live" }
   | { ok: true; mode: "preview"; preview: { subject: string; text: string } }
   | { ok: false; reason: "invalid"; errors: FieldErrors }
-  | { ok: false; reason: "toofast" | "closed" | "unavailable" | "origin" | "toolarge"; message: string };
+  | { ok: false; reason: "toofast" | "closed" | "unavailable" | "origin" | "toolarge" | "unsupported" | "stale"; message: string };
 
 // Styrtecken utom tab och radbrytning, samt osynliga riktningstecken som kan dölja text i ett mejl.
 const CONTROL = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g;

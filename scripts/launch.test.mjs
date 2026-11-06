@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { effectiveMode, launchProblems, mailConfigured, parseMode } from "../lib/launch.ts";
 
 const operator = { name: "Exempel AB", orgnr: null, address: null };
-const closed = { mode: "off", indexable: false, operator: null, contactEmail: null, mailConfigured: false };
+const closed = { mode: "off", indexable: false, operator: null, contactEmail: null, mailConfigured: false, siteUrl: "https://exempel.se" };
 
 test("Läget är stängt om inget annat anges eller om värdet är okänt", () => {
   assert.equal(parseMode(undefined), "off");
@@ -51,5 +51,14 @@ test("Sökmotorer släpps in först när avsändare och kontaktadress finns", ()
 });
 
 test("Allt klart ger inga problem", () => {
-  assert.deepEqual(launchProblems({ mode: "live", indexable: true, operator, contactEmail: "kontakt@exempel.se", mailConfigured: true }), []);
+  assert.deepEqual(launchProblems({ mode: "live", indexable: true, operator, contactEmail: "kontakt@exempel.se", mailConfigured: true, siteUrl: "https://exempel.se" }), []);
+});
+
+test("Sökmotorer kräver sajtens riktiga adress", async () => {
+  const { launchProblems } = await import("../lib/launch.ts");
+  const ready = { mode: "off", indexable: true, operator: { name: "X", orgnr: null, address: null }, contactEmail: "a@b.se", mailConfigured: false };
+  assert.equal(launchProblems({ ...ready, siteUrl: "https://exempel.se" }).length, 0);
+  for (const siteUrl of [undefined, "", "http://exempel.se", "https://exempel.se/"]) {
+    assert.equal(launchProblems({ ...ready, siteUrl }).length, 1, String(siteUrl));
+  }
 });

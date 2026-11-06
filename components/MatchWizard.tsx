@@ -19,8 +19,8 @@ import {
 } from "@/lib/requests";
 
 interface Props {
-  /** Serverns klocka när sidan ritades. Skickas tillbaka så att tiden inte beror på webbläsarens klocka. */
-  issuedAt: number;
+  /** Serverns signerade tidsstämpel från när sidan ritades. Skickas tillbaka oförändrad. */
+  token: string;
   mode: "off" | "preview" | "live";
   initial: { behov: Need | null; ort: string; lgh: string };
 }
@@ -49,7 +49,7 @@ const STEP_OF: Partial<Record<keyof FieldErrors, number>> = {
   form: 2,
 };
 
-export function MatchWizard({ issuedAt, mode, initial }: Props) {
+export function MatchWizard({ token, mode, initial }: Props) {
   const uid = useId();
   const [step, setStep] = useState(0);
   const [behov, setBehov] = useState<Need | null>(initial.behov);
@@ -118,7 +118,7 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
       const res = await fetch("/api/forfragan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...v, lgh: Number(v.lgh), behov, viktigt, upplagg, tjanster, matcha: true, forvaltare: [], samtycke: true, webbplats: trap, t: issuedAt }),
+        body: JSON.stringify({ ...v, lgh: Number(v.lgh), behov, viktigt, upplagg, tjanster, matcha: true, forvaltare: [], samtycke: true, webbplats: trap, token }),
       });
       const data = (await res.json()) as SubmitResponse;
       if (data.ok) setDone(data);
@@ -367,7 +367,7 @@ export function MatchWizard({ issuedAt, mode, initial }: Props) {
             />
             <span>
               {CONSENT_MATCH_TEXT}{" "}
-              <Link className="link" href="/integritet" target="_blank">
+              <Link className="link" href="/integritet" target="_blank" rel="noopener noreferrer">
                 Så hanteras uppgifterna
               </Link>
             </span>

@@ -2,7 +2,7 @@
 
 Jämförelsesajt för förvaltare av bostadsrättsföreningar i Sverige, för både ekonomisk och teknisk förvaltning. Sajten visar vad förvaltarna själva skriver på sina webbplatser, med källa och läsdatum vid varje uppgift. Jämförelsen kommer först: nyckeluppgifter, tjänstematris, var förvaltarna verkar och vad de berättar öppet. Priskalkylatorn är en del längre ned. Därtill finns en guide där en styrelse svarar på några frågor, ser alla förvaltare som passar och kan be om offert från högst tre. Arbetsnamn och domän ändras på ett ställe: `lib/site.ts`.
 
-Next.js 16 (App Router), React 19, TypeScript och vanlig CSS. Ingen databas: all data ligger som JSON i `data/` och versionshanteras med git, så varje ändring har ett datum och en författare.
+Next.js 16 (App Router), React 19, TypeScript och vanlig CSS. Typsnitten Geist, Geist Mono och Doto ligger på sajten själv (fontsource), så inga anrop går till Google. Färger och byggstenar finns som variabler i `styles/base.css`. Ingen databas: all data ligger som JSON i `data/` och versionshanteras med git, så varje ändring har ett datum och en författare.
 
 ## Kom igång
 
@@ -24,13 +24,13 @@ npm run build && npm start
 
 | Adress | Innehåll |
 |---|---|
-| `/` | Ett kort per förvaltare: pris för föreningens storlek, kundnöjdhet (NKI), omdömen, antal kunder, grundår, kontor och avtalsvillkor. Filter för ekonomisk eller teknisk förvaltning och sortering som besökaren väljer. Därefter vad förvaltning brukar kosta, byta-steg och vanliga frågor. |
+| `/` | Topp med förhandsbild av jämförelsen och rullande loggor. Därefter Lönar det sig att byta förvaltare (siffror med källa, diagram, tecken på att det är dags och hur lång tid ett byte tar), sedan ett kort per förvaltare med pris för föreningens storlek, kundnöjdhet, kunder och grundår (omdömen, kontor och avtalsvillkor fälls ut), filter och sortering. Sist vad förvaltning brukar kosta och vanliga frågor. Siffrorna om att byta, med källor, ligger i `lib/insights.ts`. |
 | `/ekonomisk-forvaltning`, `/teknisk-forvaltning` | Samma jämförelse låst till en kategori, med frågor att ställa till alla förvaltare. |
 | `/jamfor` | Upp till tre förvaltare sida vid sida, per kategori. Delbar länk: `?kategori=teknisk&forvaltare=fastum,sbc&lgh=50`. |
 | `/forvaltare`, `/forvaltare/<slug>` | Alla förvaltare och en profil per förvaltare med storlek, kundnöjdhet, avtal och ett avsnitt per kategori. |
 | `/prisguide` | Pris för 20, 50 och 100 lägenheter (bara ekonomisk förvaltning), hur man läser priset och vad som gäller för teknisk förvaltning. |
 | `/byta-forvaltare` | Fem steg, uppsägningskalender och offertmallar för båda kategorierna (`?mall=teknisk` väljer mall). |
-| `/hitta-forvaltare` | Guiden. Tre frågor (förvaltning, ort, antal lägenheter) och valfria önskemål om tjänster. Visar alla förvaltare som har rätt förvaltning, i namnordning och utan poäng. Svaren ligger i adressen. |
+| `/hitta-forvaltare` | Matchningen i tre steg: behov (ekonomisk, teknisk eller båda, och antingen valda tjänster eller kontakt först), föreningen (namn, ort, storlek, vad som är viktigast) och kontakt. Sist ett tack. Förfrågan går som mejl till den som driver sajten, som väljer högst tre förvaltare. |
 | `/be-om-offert` | Formuläret för förfrågan till de valda förvaltarna (högst tre). Stängt tills `REQUESTS_MODE` tillåter det. Indexeras aldrig. |
 | `/api/forfragan` | Tar emot formuläret, validerar och skickar ett mejl. Sparar ingenting. |
 | `/forvaltare-i/<ort>` | En sida per ort som minst två förvaltare nämner på sina egna sidor. Andra adresser ger 404. |
@@ -40,14 +40,15 @@ npm run build && npm start
 
 ## Guiden och offertförfrågan
 
-- `/hitta-forvaltare` visar alla förvaltare som har rätt förvaltning på sina egna sidor, i namnordning. Orten döljer bara förvaltare vars sidor nämner andra orter (samma regel som jämförelsen). Önskemål om tjänster döljer ingen, de visas som märken i en egen tabell. Ingen poäng, ingen rangordning. Logiken ligger i `lib/guide.ts` och testas i `scripts/guide.test.mjs`.
-- Styrelsen kryssar i högst tre förvaltare och går vidare till `/be-om-offert`. Formuläret skickas till `/api/forfragan` (`app/api/forfragan/route.ts`), som validerar (`lib/requests.ts`) och skickar ett mejl till `REQUEST_TO_EMAIL` via Resend (`lib/mail.ts`). Ingenting sparas på sajten: ingen databas och inga loggar med personuppgifter.
-- I början skickar den som driver sajten förfrågan vidare till de valda förvaltarna för hand. Mejlet har styrelsens adress som reply-to, så förvaltaren svarar styrelsen direkt.
+- `/hitta-forvaltare` (`components/MatchWizard.tsx`) skickar en förfrågan märkt som matchning (`matcha: true`), med valda tjänster (`tjanster`, nycklar ur `data/schema.json`) eller upplägget kontakt först, och det som är viktigast (`viktigt`). Den som driver sajten väljer högst tre förvaltare och skickar vidare för hand.
+- `/be-om-offert` tar emot en förfrågan till förvaltare som styrelsen själv har valt, högst tre (adressen `?f=<slug>`). Logiken för att läsa svaren ligger i `lib/guide.ts` och testas i `scripts/guide.test.mjs`.
+- Båda formulären skickas till `/api/forfragan` (`app/api/forfragan/route.ts`), som validerar (`lib/requests.ts`) och skickar ett mejl till `REQUEST_TO_EMAIL` via Resend (`lib/mail.ts`). Ingenting sparas på sajten: ingen databas och inga loggar med personuppgifter.
+- I början skickar den som driver sajten förfrågan vidare för hand. Mejlet har styrelsens adress som reply-to, så ett svar går direkt till styrelsen.
 - Läget styrs av `REQUESTS_MODE`:
-  - `off` (standard): formuläret är stängt. Guiden visar förvaltarna utan valrutor och `/api/forfragan` svarar 403.
+  - `off` (standard): formulären är stängda. Matchningen går att fylla i men skicka-knappen är avstängd, `/be-om-offert` säger att förfrågningar öppnar senare och `/api/forfragan` svarar 403.
   - `preview`: formuläret fungerar och svaret visar mejlet som skulle ha skickats. Ingenting skickas. Bara för test. `starta.cmd` använder det lokalt och `npm run check:launch` stoppar det i produktion.
   - `live`: mejlet skickas. Kräver `operator` i `lib/site.ts`. Saknas den behandlas läget som `off`.
-- Skydd mot skräp utan lagring: ett dolt fält (`webbplats`), en tid från serverns klocka (formuläret måste ha legat framme minst 2,5 sekunder), kontroll att anropet kommer från sajten själv, storleksgräns och gränser per fält. En riktig gräns per avsändare kräver lagring. Sätt i stället en regel under Rate Limiting i Vercel Firewall på `/api/forfragan`, till exempel fem anrop per minut och IP-adress.
+- Skydd mot skräp utan lagring: ett dolt fält (`webbplats`), en signerad tid från serverns klocka (formuläret måste ha legat framme minst 2,5 sekunder och högst ett dygn), kontroll att anropet kommer från sajten själv och är JSON, storleksgräns och gränser per fält. En gräns per avsändare kräver lagring, så den sätts i Vercel Firewall (se Före öppning).
 - Modellen: gratis för styrelser, betalt av förvaltare per förfrågan de svarar på. Det är en plan, inte något som är infört. Pris och villkor är inte bestämda och inget faktureras före skriftligt godkännande. Betalning får aldrig påverka vilka som visas, ordningen, märkena eller uppgifterna, och ta ingen betalning av förvaltaren för den egna föreningen.
 
 ## Data
@@ -94,11 +95,12 @@ HSB är 21 fristående regionala föreningar. HSB visas som en förvaltare (`dat
 | Variabel | Standard | Betydelse |
 |---|---|---|
 | `NEXT_PUBLIC_INDEXABLE` | tom (stängd) | `true` släpper in sökmotorer. Annars `noindex`, `Disallow: /` och tom sitemap. |
-| `NEXT_PUBLIC_SITE_URL` | `https://brfforvaltare.se` | Grundadress för canonical och sitemap. |
+| `NEXT_PUBLIC_SITE_URL` | `https://brfforvaltare.se` | Grundadress för canonical, sitemap och delningsbild. Måste vara den riktiga adressen innan sökmotorer släpps in (kontrolleras). |
 | `REQUESTS_MODE` | `off` | `off`, `preview` eller `live`. Se Guiden och offertförfrågan. Läses vid varje anrop (guiden, formuläret och API:t ritas per besök). Ändringar av miljövariabler på Vercel gäller först efter en ny driftsättning. |
 | `RESEND_API_KEY` | tom | Nyckel till Resend. Krävs för `live`. Läggs bara i Vercel, aldrig i koden. |
 | `REQUEST_TO_EMAIL` | tom | Dit förfrågningarna skickas. Krävs för `live`. |
 | `REQUEST_FROM_EMAIL` | tom | Avsändaradress. Krävs för `live`. Avsändaren `onboarding@resend.dev` når bara Resend-kontots egen adress, så verifiera en domän för att skicka från egen adress. |
+| `REQUEST_SIGNING_SECRET` | tom | Valfri. Nyckel för att signera tidsstämpeln i formulären. Saknas den används `RESEND_API_KEY`. En lång slumpmässig sträng, till exempel från `openssl rand -base64 32`. |
 | `CHECK_LAUNCH` | tom | `1` gör launch-kontrollen strikt även utanför Vercels produktion. |
 
 `.env.example` visar alla variabler. Kopiera den till `.env.local` lokalt. `.env.local` ligger i `.gitignore`.
@@ -112,10 +114,21 @@ Sajten är medvetet stängd för sökmotorer, och offertförfrågningar är stä
 3. Jävsinformation i `SITE.conflicts`, en mening per post: att den som driver sajten är ordförande i en bostadsrättsförening och vilken förvaltare den föreningen har. Ta ingen betalning av förvaltaren för den egna föreningen.
 4. Mejltjänst: skapa ett Resend-konto och lägg `RESEND_API_KEY`, `REQUEST_TO_EMAIL` och `REQUEST_FROM_EMAIL` i Vercel. Verifiera en domän om mejlen ska gå från egen adress. Skriv in tjänstens namn i `app/integritet/page.tsx`.
 5. Bekräfta lagringstiden på tolv månader i `app/integritet/page.tsx`, eller ändra den.
-6. Regel för Rate Limiting i Vercel Firewall på `/api/forfragan`.
+6. Regel i Vercel Firewall som begränsar formulärets API: Project, Firewall, Configure, New Rule. Villkor: Request Path equals `/api/forfragan` och Method equals `POST`. Åtgärd: Rate Limit, Fixed Window, 60 sekunder, 5 förfrågningar, nyckel IP Address, därefter Deny. Utan den kan ett skript fylla er inkorg. Det går inte att sätta från koden.
 7. Beslut om de offentliga påståendena: ingen förvaltare har betalat för att synas, sajten är gratis för styrelser, betalning påverkar aldrig ordning, märken eller uppgifter, och framtida annonser märks Annons. Samma sak står i vanliga frågor, på metodsidan och på sidan för förvaltare.
 8. Fler förvaltare och fler HSB-föreningar, var och en med källa och datum.
-9. Domän kopplad i Vercel. Sätt sedan `REQUESTS_MODE=live` och `NEXT_PUBLIC_INDEXABLE=true`, och driftsätt om.
+9. Domän kopplad i Vercel. Sätt `NEXT_PUBLIC_SITE_URL` till domänen, därefter `REQUESTS_MODE=live` och `NEXT_PUBLIC_INDEXABLE=true`, och driftsätt om.
+10. Personuppgiftsbiträdesavtal (DPA) med Vercel och Resend. Båda erbjuder standardavtal på sina webbplatser.
+11. Efter lansering: lägg till sajten i Google Search Console och skicka in `https://<domän>/sitemap.xml`.
+
+## Säkerhet
+
+- **Säkerhetshuvuden** sätts i `next.config.ts` för alla sidor: innehållspolicy (CSP) som bara tillåter sajtens egna resurser, skydd mot inbäddning (`frame-ancestors 'none'`, `X-Frame-Options`), `nosniff`, referrer-policy, permissions-policy, HSTS och `Cross-Origin-Opener-Policy`. Sajten laddar inga skript, typsnitt eller bilder från andra värdar. På förhandsversioner släpps Vercels verktygsrad in, i produktion inte.
+- **Loggorna** i `public/logos` får en egen strikt policy, så att en SVG som öppnas direkt inte kan köra skript. `npm run validate` stoppar bygget om en SVG innehåller skript, händelser eller externa länkar.
+- **Formulärets API** (`/api/forfragan`) tar bara emot JSON från sajtens egen domän, med en storleksgräns. Tidsstämpeln är signerad av servern (`lib/token.ts`), så ett skript kan inte låtsas att sidan legat framme längre än den gjort. Ett dolt fält fångar enkla robotar. Allt som skrivs in kontrolleras i `lib/requests.ts`, styrtecken och osynliga tecken tas bort, och mejlet är ren text.
+- **Ingenting sparas.** Ingen databas, inga cookies, ingen besöksstatistik och inga loggar med personuppgifter. Förfrågan finns bara som mejl.
+- **Hemligheter** ligger bara i Vercels miljövariabler. `.env*.local` ignoreras av git.
+- **Beroenden**: kör `npm audit` före lansering och vid uppdateringar.
 
 ## När en databas behövs
 

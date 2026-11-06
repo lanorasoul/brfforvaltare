@@ -13,6 +13,7 @@ const state = {
   operator: SITE.operator,
   contactEmail: SITE.contactEmail,
   mailConfigured: mailConfigured(env),
+  siteUrl: env.NEXT_PUBLIC_SITE_URL,
 };
 
 const problems = launchProblems(state);

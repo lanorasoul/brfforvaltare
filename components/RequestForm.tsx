@@ -11,8 +11,8 @@ interface Props {
   /** De valda förvaltarna, i den ordning styrelsen kryssade dem. */
   providers: { slug: string; name: string }[];
   initial: { ort: string; lgh: string; behov: Need };
-  /** Serverns klocka när sidan ritades. Skickas tillbaka så att tiden inte beror på webbläsarens klocka. */
-  issuedAt: number;
+  /** Serverns signerade tidsstämpel från när sidan ritades. Skickas tillbaka oförändrad. */
+  token: string;
   mode: "preview" | "live";
   /** Tillbaka till guiden med samma svar. */
   backHref: string;
@@ -21,7 +21,7 @@ interface Props {
 const FIELD_ORDER: (keyof FieldErrors)[] = ["forening", "ort", "lgh", "behov", "nuvarande", "namn", "roll", "epost", "telefon", "meddelande", "samtycke", "forvaltare", "form"];
 
 /** Formuläret för en offertförfrågan. Skickas som JSON till /api/forfragan, som inte sparar något. */
-export function RequestForm({ providers, initial, issuedAt, mode, backHref }: Props) {
+export function RequestForm({ providers, initial, token, mode, backHref }: Props) {
   const [v, setV] = useState({
     forening: "",
     ort: initial.ort,
@@ -70,7 +70,7 @@ export function RequestForm({ providers, initial, issuedAt, mode, backHref }: Pr
       const res = await fetch("/api/forfragan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...v, forvaltare: providers.map((p) => p.slug), samtycke: consent, webbplats: trap, t: issuedAt }),
+        body: JSON.stringify({ ...v, forvaltare: providers.map((p) => p.slug), samtycke: consent, webbplats: trap, token }),
       });
       const data = (await res.json()) as SubmitResponse;
       if (data.ok) setDone(data);
@@ -306,7 +306,7 @@ export function RequestForm({ providers, initial, issuedAt, mode, backHref }: Pr
           </p>
         )}
         <p className="fine">
-          <Link className="link" href="/integritet" target="_blank" rel="noopener">
+          <Link className="link" href="/integritet" target="_blank" rel="noopener noreferrer">
             Så hanteras uppgifterna
           </Link>{" "}
           (öppnas i ny flik). Vi sparar ingenting på sajten.

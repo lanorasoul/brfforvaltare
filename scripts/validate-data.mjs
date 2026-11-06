@@ -49,6 +49,16 @@ const siteTs = fs.readFileSync(path.join(root, "lib", "site.ts"), "utf8");
 const hsbTotal = siteTs.match(/HSB_REGIONALS_TOTAL\s*=\s*(\d+)/)?.[1];
 if (!hsbTotal) err("lib/site.ts", "HSB_REGIONALS_TOTAL saknas");
 
+// Loggorna är SVG-filer från förvaltarnas webbplatser. En SVG kan innehålla skript, så de kontrolleras här.
+const UNSAFE_SVG = /<script|<foreignObject|<iframe|<embed|<object|\son[a-z]+\s*=|javascript:|data:text\/html|(?:xlink:)?href\s*=\s*["']\s*(?:https?:)?\/\//i;
+const logoDir = path.join(root, "public", "logos");
+for (const f of fs.existsSync(logoDir) ? fs.readdirSync(logoDir) : []) {
+  if (!/\.(svg|png|webp)$/.test(f)) err(`public/logos/${f}`, "bara svg, png och webp är tillåtna");
+  if (f.endsWith(".svg") && UNSAFE_SVG.test(fs.readFileSync(path.join(logoDir, f), "utf8"))) {
+    err(`public/logos/${f}`, "SVG-filen innehåller skript, händelser eller externa länkar. Rensa filen innan den används.");
+  }
+}
+
 const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
 const slugs = new Set();
 let blocks = { ekonomisk: 0, teknisk: 0 };
