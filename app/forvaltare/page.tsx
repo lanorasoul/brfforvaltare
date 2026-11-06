@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHead } from "@/components/PageHead";
+import { ProviderLogo } from "@/components/ProviderLogo";
 import { PresenceMark, PRESENCE_LABEL } from "@/components/icons";
 import { SourceLink } from "@/components/SourceLink";
 import { getProviders, requireSource } from "@/lib/data";
@@ -63,7 +64,8 @@ function ProviderTile({ p }: { p: Provider }) {
     <li className="prov tile">
       <div className="prov-main">
         <h3 className="h4 prov-title">
-          <Link className="prov-link" href={`/forvaltare/${p.slug}`}>
+          <Link className="prov-link logo-link" href={`/forvaltare/${p.slug}`}>
+            <ProviderLogo name={p.name} logo={p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null} />
             {p.name}
           </Link>
           {p.region && <span className="pill prov-region">{p.region}</span>}

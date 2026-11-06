@@ -1,3 +1,4 @@
+import { ProviderLogo } from "./ProviderLogo";
 import Link from "next/link";
 import { CoverageCell, PriceCell, SourceCell } from "./FactCells";
 import { ScrollRegion } from "./ScrollRegion";
@@ -70,7 +71,8 @@ export function ResultsTable({ results, categories, n, ort, selectable = false, 
                   <div className="rt-namecell">
                     {selectable && <input className="cbox rt-box" type="checkbox" name="f" value={r.slug} aria-label={`Be ${r.name} om offert`} />}
                     <div>
-                      <Link className="kf-link" href={`/forvaltare/${r.slug}`}>
+                      <Link className="kf-link logo-link" href={`/forvaltare/${r.slug}`}>
+                        <ProviderLogo name={r.name} logo={(r.rows.ekonomisk ?? r.rows.teknisk)?.logo ?? null} size="sm" />
                         {r.name}
                       </Link>
                       {r.region && <span className="kf-region">{r.region}</span>}

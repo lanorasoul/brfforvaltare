@@ -6,6 +6,7 @@ import { PresenceMark, PRESENCE_LABEL } from "./icons";
 import { ScrollRegion } from "./ScrollRegion";
 import { matrixStats } from "@/lib/matrix";
 import { CATEGORY, DISCLOSURE_KEYS } from "@/lib/schema";
+import { ProviderLogo } from "./ProviderLogo";
 
 /** Vad förvaltarna berättar öppet på sina egna sidor. Samma ort och kategori som i tabellerna ovanför. */
 export function OpennessMatrix() {
@@ -44,7 +45,10 @@ export function OpennessMatrix() {
             {shown.map(({ row }) => (
               <tr key={row.slug}>
                 <th scope="row" className="matrix-row">
-                  <Link href={`/forvaltare/${row.slug}`}>{row.name}</Link>
+                  <Link className="logo-link" href={`/forvaltare/${row.slug}`}>
+                    <ProviderLogo name={row.name} logo={row.logo} size="sm" />
+                    {row.name}
+                  </Link>
                 </th>
                 {keys.map((k) => {
                   const v = row.disclosure[k.key];

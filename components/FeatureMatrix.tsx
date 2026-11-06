@@ -6,6 +6,7 @@ import { FeatureMark, FEATURE_LABEL } from "./icons";
 import { ScrollRegion } from "./ScrollRegion";
 import { featureTally, mentioned } from "@/lib/matrix";
 import { CATEGORY, FEATURES, FEATURE_STATE_ORDER } from "@/lib/schema";
+import { ProviderLogo } from "./ProviderLogo";
 
 /** Vilka tjänster förvaltarna listar, och om de ingår, ingår i vissa nivåer, är tillval eller bara nämns. */
 export function FeatureMatrix() {
@@ -44,7 +45,10 @@ export function FeatureMatrix() {
             {shown.map(({ row }) => (
               <tr key={row.slug}>
                 <th scope="row" className="fm-row">
-                  <Link href={`/forvaltare/${row.slug}`}>{row.name}</Link>
+                  <Link className="logo-link" href={`/forvaltare/${row.slug}`}>
+                    <ProviderLogo name={row.name} logo={row.logo} size="sm" />
+                    {row.name}
+                  </Link>
                 </th>
                 {features.map((f) => {
                   const state = row.features[f.key] ?? "none";

@@ -13,6 +13,8 @@ export interface SourceRef {
 export interface CompareRow {
   slug: string;
   name: string;
+  /** Loggan och dess bredd delat med höjd, eller null. */
+  logo: { file: string; ratio: number } | null;
   category: Category;
   region: string | null;
   summary: string;
@@ -63,6 +65,7 @@ function rowOf(p: Provider, category: Category, b: ServiceBlock): CompareRow {
   return {
     slug: p.slug,
     name: p.name,
+    logo: p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null,
     category,
     region: p.region,
     summary: b.summary,

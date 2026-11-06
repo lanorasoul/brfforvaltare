@@ -1,5 +1,7 @@
 "use client";
 
+import { ProviderLogo } from "./ProviderLogo";
+
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { CheckIcon, ExternalIcon, FeatureMark, FEATURE_LABEL, MinusIcon, PlusIcon, PresenceMark, PRESENCE_LABEL, StatusMark, STATUS_LABEL } from "./icons";
@@ -252,7 +254,8 @@ export function Compare({ details, defaults, initialCategory, initialSel, initia
                   {chosen.map((p) => (
                     <th key={p.slug} scope="col" className="cp-head">
                       <div className="cp-head-in">
-                        <Link className="cp-name" href={`/forvaltare/${p.slug}`}>
+                        <Link className="cp-name logo-link logo-stack" href={`/forvaltare/${p.slug}`}>
+                          <ProviderLogo name={p.name} logo={p.logo} />
                           {p.name}
                         </Link>
                         {p.region && <span className="pill cp-region">{p.region}</span>}

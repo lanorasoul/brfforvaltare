@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCompare } from "./CompareProvider";
 import { CompareNotes } from "./CompareNotes";
 import { CoverageCell, PriceCell, SourceCell } from "./FactCells";
+import { ProviderLogo } from "./ProviderLogo";
 import { ScrollRegion } from "./ScrollRegion";
 import { CATEGORY } from "@/lib/schema";
 
@@ -42,7 +43,8 @@ export function KeyFactsTable() {
             {shown.map(({ row, match }) => (
               <tr key={row.slug}>
                 <th scope="row" className="kf-name">
-                  <Link className="kf-link" href={`/forvaltare/${row.slug}`}>
+                  <Link className="kf-link logo-link" href={`/forvaltare/${row.slug}`}>
+                    <ProviderLogo name={row.name} logo={row.logo} size="sm" />
                     {row.name}
                   </Link>
                   {row.region && <span className="kf-region">{row.region}</span>}
