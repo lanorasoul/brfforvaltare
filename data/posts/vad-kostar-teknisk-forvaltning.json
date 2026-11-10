@@ -1,0 +1,226 @@
+{
+  "slug": "vad-kostar-teknisk-forvaltning",
+  "title": "Vad kostar teknisk förvaltning för en brf?",
+  "metaTitle": "Vad kostar teknisk förvaltning för en brf? Pris 2026",
+  "description": "Förvaltare publicerar sällan pris för teknisk förvaltning. Se vad som styr priset, vilka tillägg som har pris och hur ni får offerter som går att jämföra.",
+  "keyword": "vad kostar teknisk förvaltning",
+  "keywords": [
+    "pris teknisk förvaltning brf",
+    "kostnad teknisk förvaltare",
+    "offert teknisk förvaltning",
+    "vad kostar fastighetsförvaltning brf"
+  ],
+  "category": "Vad förvaltning innehåller och kostar",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Det finns inget listpris. {{tek.priced}} av de {{tek.total}} förvaltare vi har läst anger ett pris för teknisk förvaltning på sin webbplats. Priset sätts i en offert och beror på fastighetens storlek, ålder och skick och på vilka tjänster ni väljer. Räkna med att behöva be flera förvaltare om offert.",
+  "points": [
+    "Det som styr priset mest: antal byggnader och yta, fastighetens skick och hur mycket förvaltaren ska göra.",
+    "Omfattningen varierar mycket. Samma förvaltare kan sälja allt från fyra ronderingar om året till ett fullt uppdrag.",
+    "Några tillägg har utskrivet pris, till exempel digital underhållsplan. Se tabellen nedan.",
+    "Be alla förvaltare om offert på samma underlag, annars går priserna inte att jämföra."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "varfor-inget-pris",
+      "text": "Varför finns det inget listpris?"
+    },
+    {
+      "type": "p",
+      "text": "Teknisk förvaltning anpassas efter fastigheten. [Bredablick](https://bredablickforvaltning.se/teknisk-forvaltning/) skriver att kostnaden beror på vilka tjänster som ska ingå, vilken slags fastighet det är och fastighetens storlek, ålder och skick. [Fastum](https://fastum.se/teknisk-forvaltning/) och [Fastighetsägarna Service](https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/) skriver samma sak: priset beror på storlek, skick och vilka tjänster som ingår."
+    },
+    {
+      "type": "p",
+      "text": "Det skiljer teknisk förvaltning från ekonomisk, där {{eko.priced}} av {{eko.total}} förvaltare anger något pris. De priserna finns i [prisguiden](/prisguide)."
+    },
+    {
+      "type": "h2",
+      "id": "vad-styr-priset",
+      "text": "Vad styr priset?"
+    },
+    {
+      "type": "p",
+      "text": "Bredablick listar fyra saker som brukar påverka priset mest:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Antal byggnader och yta",
+        "Fastighetens tekniska status",
+        "Omfattningen av tjänsterna",
+        "Behovet av förvaltartjänster och projektledning"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Omfattningen är det ni själva styr. Fastums fem avtalsnivåer visar hur stor skillnaden kan vara hos en och samma förvaltare:"
+    },
+    {
+      "type": "table",
+      "caption": "Fastums avtalsnivåer för teknisk förvaltning",
+      "head": [
+        "Nivå",
+        "Ronderingar per år, driftutrymmen",
+        "Ronderingar per år, gemensamma utrymmen",
+        "Förvaltare vid behov",
+        "Årlig statusbesiktning"
+      ],
+      "rows": [
+        [
+          "Driftavtal",
+          "4",
+          "Inga",
+          "Nej",
+          "Nej"
+        ],
+        [
+          "Small",
+          "2",
+          "2",
+          "Ja",
+          "Nej"
+        ],
+        [
+          "Medium",
+          "12",
+          "12",
+          "Ja",
+          "Nej"
+        ],
+        [
+          "Large",
+          "12",
+          "24",
+          "Ja",
+          "Ja"
+        ],
+        [
+          "X-Large",
+          "12",
+          "48",
+          "Ja",
+          "Ja"
+        ]
+      ],
+      "note": "Fastum anger inget pris för nivåerna. Felanmälan och personlig kundsupport ingår i alla."
+    },
+    {
+      "type": "p",
+      "text": "Två offerter kan därför skilja mycket i pris bara för att de innehåller olika mycket arbete. Ett pris säger ingenting förrän ni vet vad som ingår."
+    },
+    {
+      "type": "h2",
+      "id": "priser-som-finns",
+      "text": "Priser som faktiskt är publicerade"
+    },
+    {
+      "type": "p",
+      "text": "Det är enskilda tjänster, inte själva förvaltningen, som har utskrivna priser:"
+    },
+    {
+      "type": "data",
+      "key": "teknisk-priser"
+    },
+    {
+      "type": "p",
+      "text": "Bredablick skriver dessutom att arvodet för deras energiförvaltning grundar sig på besparingen: sänks inte föreningens kostnader tar de inte betalt. Inget belopp anges."
+    },
+    {
+      "type": "h2",
+      "id": "utanfor-avtalet",
+      "text": "Det här ligger ofta utanför avtalet"
+    },
+    {
+      "type": "p",
+      "text": "Räkna inte med att allt ingår i det löpande priset. [Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2020/vem-ska-skota-om-fastigheten) skriver att uppgifter som görs sällan eller vid behov oftast ligger utanför förvaltningsavtalet, till exempel stamspolning, rensning av ventilationskanaler och obligatorisk ventilationskontroll (OVK). Planerat underhåll, som en balkongrenovering, hanteras också separat."
+    },
+    {
+      "type": "p",
+      "text": "Fastum anger att energikartläggning, projektledning och byggledning oftast är tillval. Fråga därför alltid vad som ingår, vad som kostar extra och vad arbete utanför avtalet kostar per timme."
+    },
+    {
+      "type": "h2",
+      "id": "jamforbara-offerter",
+      "text": "Så får ni offerter som går att jämföra"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Bestäm omfattningen först: vill ni ha en förvaltare som håller i allt, eller bara tillsyn och fastighetsskötsel? Läs [vad teknisk förvaltning är](/kunskap/vad-ar-teknisk-forvaltning).",
+        "Skriv ett förfrågningsunderlag. Bostadsrätterna rekommenderar ett tydligt skriftligt underlag, så att anbuden blir jämförbara.",
+        "Skicka samma underlag till flera förvaltare. Vår [offertmall för teknisk förvaltning](/byta-forvaltare#offert) har frågorna färdiga.",
+        "Jämför vad som ingår rad för rad, inte bara totalpriset. [Jämför teknisk förvaltning](/teknisk-forvaltning) visar vilka tjänster varje förvaltare listar."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Bredablick och Fastum erbjuder en kostnadsfri genomgång av föreningens behov innan de lämnar offert."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Varför publicerar förvaltarna inga priser för teknisk förvaltning?",
+      "a": "Förvaltarna anger att priset beror på fastighetens storlek, ålder och skick och på vilka tjänster som ingår. Två föreningar med lika många lägenheter kan därför få olika pris."
+    },
+    {
+      "q": "Ingår fastighetsskötsel i priset för teknisk förvaltning?",
+      "a": "Inte automatiskt. [Delagott](https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning) skriver att fastighetsskötsel ofta är ett eget tjänsteområde och råder styrelsen att kontrollera avtalet. Fråga vad offerten omfattar."
+    },
+    {
+      "q": "Kan vi köpa teknisk förvaltning bara när vi behöver?",
+      "a": "Ja, hos vissa. [SBC](https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/) säljer till exempel en teknisk förvaltare på avrop, per timme och utan fast avtal."
+    },
+    {
+      "q": "Vad kostar en underhållsplan?",
+      "a": "Några förvaltare skriver ut priset, se tabellen ovan. Mer om krav och innehåll står i [guiden om underhållsplan](/kunskap/underhallsplan-brf)."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Teknisk förvaltning för brf och fastighetsbolag",
+      "publisher": "Bredablick Förvaltning",
+      "url": "https://bredablickforvaltning.se/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk förvaltning för BRF",
+      "publisher": "Fastum",
+      "url": "https://fastum.se/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk förvaltning",
+      "publisher": "Fastighetsägarna Service",
+      "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Vem ska sköta om fastigheten?",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2020/vem-ska-skota-om-fastigheten",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Teknisk eller ekonomisk förvaltning: vad är skillnaden?",
+      "publisher": "Delagott",
+      "url": "https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk förvaltning för brf och föreningar",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "vad-ar-teknisk-forvaltning",
+    "underhallsplan-brf",
+    "totalforvaltning-brf"
+  ],
+  "next": {
+    "href": "/teknisk-forvaltning",
+    "label": "Jämför teknisk förvaltning"
+  }
+}

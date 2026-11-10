@@ -1,0 +1,449 @@
+/* Kunskapsartiklar: svaret först i en egen ruta, sedan lugn brödtext med tydliga rubriker, tabeller och källor. */
+
+/* ---------- sidhuvudet: metarad och kort svar ---------- */
+
+.post-meta {
+  margin-top: 18px;
+}
+
+.post-answer {
+  max-width: 860px;
+  margin-top: 26px;
+  padding: 22px 24px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-float);
+}
+
+.post-answer-text {
+  margin-top: 10px;
+  font-size: clamp(18px, 1.7vw, 21px);
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.post-points {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  color: var(--ink-2);
+}
+
+.post-points li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.post-points li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.42em;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ok-soft);
+  box-shadow: inset 0 0 0 4px var(--ok-soft), inset 0 0 0 7px var(--ok);
+}
+
+/* ---------- brödtext ---------- */
+
+.post {
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.post-sec {
+  padding-block: clamp(30px, 3.6vw, 46px);
+  border-top: 1px solid var(--line);
+}
+
+.post-sec:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.post-sec > * {
+  max-width: 70ch;
+}
+
+.post-sec > * + * {
+  margin-top: 16px;
+}
+
+.post-sec > .post-figure,
+.post-sec > .post-cards {
+  max-width: 920px;
+}
+
+.post-h2 {
+  font-size: clamp(25px, 2.6vw, 32px);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.post-h2 + * {
+  margin-top: 14px;
+}
+
+.post-h3 {
+  margin-top: 28px;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.post-list {
+  display: grid;
+  gap: 8px;
+}
+
+.post-list li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.post-list li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.post-steps {
+  counter-reset: steg;
+}
+
+.post-steps li {
+  padding-left: 38px;
+  counter-increment: steg;
+}
+
+.post-steps li::before {
+  content: counter(steg);
+  left: 0;
+  top: 0.12em;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.post-note {
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  background: var(--accent-soft);
+  font-size: 17px;
+}
+
+.post-note-title {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* ---------- tabeller ---------- */
+
+.post-figure {
+  margin-block: 24px 8px;
+}
+
+.post-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.post-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+.post-table caption {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  font-weight: 600;
+  text-align: left;
+  caption-side: top;
+}
+
+.post-table th,
+.post-table td {
+  padding: 11px 16px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-table thead th {
+  border-top: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  vertical-align: bottom;
+}
+
+.post-table tbody th {
+  font-weight: 600;
+}
+
+.post-table .num {
+  font-variant-numeric: tabular-nums;
+}
+
+.post-figure-note {
+  margin-top: 10px;
+  max-width: 76ch;
+  color: var(--ink-3);
+}
+
+/* ---------- vanliga frågor och källor ---------- */
+
+.post-faq {
+  display: grid;
+  gap: 22px;
+}
+
+.post-faq dt {
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+.post-faq dd {
+  margin-top: 6px;
+  color: var(--ink-2);
+}
+
+.post-sources {
+  display: grid;
+  gap: 10px;
+  counter-reset: kalla;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.post-sources li {
+  position: relative;
+  padding-left: 30px;
+  counter-increment: kalla;
+}
+
+.post-sources li::before {
+  content: counter(kalla);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+/* ---------- uppmaning ---------- */
+
+.post-cta {
+  display: grid;
+  gap: 18px;
+  margin-block: clamp(30px, 3.6vw, 46px);
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  background: var(--panel);
+}
+
+.post-cta-title {
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.post-cta p {
+  max-width: 60ch;
+  margin-top: 8px;
+  font-size: 17px;
+  color: var(--ink-2);
+}
+
+.post-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- kort till artiklar ---------- */
+
+.post-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.post-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  background: var(--panel);
+  font-size: 16px;
+  line-height: 1.5;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.post-card:hover,
+.post-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-float);
+}
+
+.post-card-title {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+/* Hela kortet är klickbart via länkens ::after, men bara rubriken läses upp som länk. */
+.post-card-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.post-card-text {
+  color: var(--ink-2);
+}
+
+.post-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+  color: var(--ink-3);
+}
+
+.post-card-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.post-group {
+  padding-block: clamp(28px, 3.4vw, 44px);
+  border-top: 1px solid var(--line);
+}
+
+.post-group:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.post-group-title {
+  margin-bottom: 18px;
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.post-index-note {
+  margin-top: 28px;
+  max-width: 76ch;
+}
+
+/* Rad med artiklar på startsidan och under verktygssidorna. */
+.post-strip {
+  padding-block: clamp(56px, 7vw, 96px);
+}
+
+.post-strip-head {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  max-width: 720px;
+  margin: 0 auto clamp(28px, 4vw, 44px);
+  text-align: center;
+}
+
+.post-strip-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
+.post-more {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+}
+
+.post-more-title {
+  margin-bottom: 18px;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .post {
+    font-size: 17px;
+  }
+
+  .post-answer {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .post-cta {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .post-cta-actions .btn {
+    width: 100%;
+  }
+
+  .post-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+}

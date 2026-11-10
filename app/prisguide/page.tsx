@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowIcon, ExternalIcon, StatusMark } from "@/components/icons";
+import { PostMore } from "@/components/PostMore";
 import { PageHead } from "@/components/PageHead";
 import { PriceCurve } from "@/components/PriceCurve";
 import { SourceLink } from "@/components/SourceLink";
@@ -552,6 +553,7 @@ export default function PrisguidePage() {
               </li>
             </ul>
           </section>
+          <PostMore slugs={["vad-ingar-i-ekonomisk-forvaltning", "vad-kostar-teknisk-forvaltning", "maste-brf-ha-forvaltare"]} />
           </div>
         </div>
       </div>

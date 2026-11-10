@@ -1,0 +1,223 @@
+{
+  "slug": "vad-ingar-i-ekonomisk-forvaltning",
+  "title": "Vad ingår i ekonomisk förvaltning för en brf?",
+  "metaTitle": "Vad ingår i ekonomisk förvaltning för en brf? Checklista",
+  "description": "Bokföring, avier, leverantörsfakturor, budget, årsredovisning och deklaration ingår oftast. Se vad som brukar kosta extra och vad styrelsen ansvarar för.",
+  "keyword": "vad ingår i ekonomisk förvaltning",
+  "keywords": [
+    "ekonomisk förvaltning brf",
+    "vad gör en ekonomisk förvaltare",
+    "tilläggstjänster ekonomisk förvaltning",
+    "grundavtal ekonomisk förvaltning"
+  ],
+  "category": "Vad förvaltning innehåller och kostar",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "I ekonomisk förvaltning ingår normalt löpande bokföring, betalning av leverantörsfakturor, avisering av avgifter och hyror, budget, bokslut, årsredovisning och deklaration. Det som skiljer mellan förvaltarna är vad som kostar extra, till exempel överlåtelser, pantnoteringar, flerårsbudget och inkasso. Styrelsen har alltid kvar ansvaret för föreningens ekonomi.",
+  "points": [
+    "Be om en lista över vad som ingår i grundpriset och vad som debiteras separat.",
+    "Överlåtelser, pantnoteringar och andrahandsuthyrning prissätts ofta per ärende.",
+    "Att attestera fakturor kan styrelsen inte lämna ifrån sig.",
+    "Tabellen nedan visar hur {{eko.total}} förvaltare beskriver tolv vanliga tjänster."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "ingar-normalt",
+      "text": "Det här ingår normalt"
+    },
+    {
+      "type": "p",
+      "text": "[SBC](https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/) listar det som vanligtvis ingår i ett grundavtal för ekonomisk förvaltning:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Löpande bokföring och redovisning",
+        "Hantering av leverantörsfakturor",
+        "Avisering av månadsavgifter och hyror",
+        "Budget och löpande ekonomisk uppföljning",
+        "Bokslut och årsredovisning",
+        "Deklaration och rapportering till myndigheter",
+        "Medlems- och lägenhetsförteckning, pantsättningar och överlåtelser",
+        "Ekonomisk rådgivning till styrelsen"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "[Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare) beskriver det på liknande sätt: förutom det rena kassaflödet ingår ofta att förvaltaren upprättar årsredovisningen, håller lägenhets- och medlemsförteckningen uppdaterad och noterar pantsättningar."
+    },
+    {
+      "type": "p",
+      "text": "Från räkenskapsåret 2026 ska årsredovisningen upprättas enligt K3. Läs [vad K3 innebär för föreningen](/kunskap/k3-brf)."
+    },
+    {
+      "type": "h2",
+      "id": "kostar-extra",
+      "text": "Det här kostar ofta extra"
+    },
+    {
+      "type": "p",
+      "text": "[Fastum](https://fastum.se/ekonomisk-forvaltning/) skriver rakt ut att det kan skilja sig mellan förvaltare vad som ingår och vad som kostar extra. [Nabo](https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/) beskriver att priset ofta består av ett fast arvode plus rörliga avgifter, och nämner överlåtelseavgifter och pantavgifter som vanliga rörliga poster."
+    },
+    {
+      "type": "p",
+      "text": "[ERF](https://erf.se/ekonomisk-forvaltning/kostnad) är en av få som skriver ut vad tilläggen kostar. Det ger en bild av nivån:"
+    },
+    {
+      "type": "table",
+      "caption": "ERF:s priser för tillägg till ekonomisk förvaltning",
+      "head": [
+        "Tillägg",
+        "Pris"
+      ],
+      "rows": [
+        [
+          "Överlåtelse",
+          "1 184 kr per transaktion"
+        ],
+        [
+          "Pantnotering",
+          "592 kr per pantsättning"
+        ],
+        [
+          "Andrahandsuthyrning",
+          "1 184 kr per styck"
+        ],
+        [
+          "Individuell mätning och debitering (IMD)",
+          "59 kr per lägenhet och år"
+        ],
+        [
+          "Interna hyresobjekt, till exempel förråd och parkeringar",
+          "178 kr per objekt och år"
+        ],
+        [
+          "Externa hyresobjekt",
+          "888 kr per objekt och år"
+        ]
+      ],
+      "note": "Priserna bygger på prisbasbeloppet för 2026. ERF skriver att avgifterna för överlåtelse och pantnotering kan vidaredebiteras till medlemmen."
+    },
+    {
+      "type": "p",
+      "text": "Andra tillägg som förvaltarna i vår jämförelse listar är flerårsbudget, inkasso, köhantering för parkering och hjälp på föreningsstämman."
+    },
+    {
+      "type": "h2",
+      "id": "sa-beskriver-forvaltarna",
+      "text": "Så beskriver förvaltarna tjänsterna"
+    },
+    {
+      "type": "p",
+      "text": "Vi har läst hur {{eko.total}} förvaltare beskriver tolv vanliga tjänster. Tabellen visar hur många som säger att tjänsten ingår, hur många som har den som tillval eller bara i vissa paket, och hur många som nämner den utan att säga vilket."
+    },
+    {
+      "type": "data",
+      "key": "features-ekonomisk"
+    },
+    {
+      "type": "h2",
+      "id": "styrelsens-ansvar",
+      "text": "Det här ansvarar styrelsen alltid för"
+    },
+    {
+      "type": "p",
+      "text": "En förvaltare gör arbetet, men ansvaret ligger kvar hos styrelsen. Enligt 7 kap. 4 § [lagen om ekonomiska föreningar](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018672-om-ekonomiska-foreningar_sfs-2018-672/), som också gäller bostadsrättsföreningar, ska styrelsen se till att bokföringen och medelsförvaltningen kontrolleras på ett betryggande sätt. Lämnar styrelsen över uppgifter till någon annan ska den fortlöpande kontrollera att det fungerar."
+    },
+    {
+      "type": "p",
+      "text": "I praktiken betyder det att styrelsen attesterar fakturor, läser rapporterna och godkänner budget och årsredovisning. [Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/) skriver att just attesten, att godkänna fakturor innan de betalas, inte går att lämna över."
+    },
+    {
+      "type": "h2",
+      "id": "fragor-i-offerten",
+      "text": "Frågor att ställa i offerten"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Vad ingår i det fasta priset, och vad debiteras per ärende eller per timme?",
+        "Ingår budgetmöte, bokslutsmöte eller deltagande på stämman?",
+        "Vem blir vår kontaktperson, och går den att nå per telefon?",
+        "Hur hanteras föreningens pengar: klientmedelskonto eller fullmakt på föreningens egna konton?",
+        "Gäller priset med eller utan moms?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Frågan om pengarna kommer från Bostadsrätterna, som råder styrelser att kontrollera om förvaltaren använder klientmedelskonton med insättningsgaranti eller en fullmakt på föreningens konton. En färdig lista med frågor finns i vår [offertmall](/byta-forvaltare#offert), och priser för olika storlekar i [prisguiden](/prisguide)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ingår årsredovisningen i ekonomisk förvaltning?",
+      "a": "Ja, hos de flesta. Bokslut och årsredovisning står i SBC:s lista över vad som vanligtvis ingår i ett grundavtal, och Nabo skriver att bokslut och årsredovisning alltid ingår hos dem."
+    },
+    {
+      "q": "Vad är skillnaden mellan ekonomisk och teknisk förvaltning?",
+      "a": "Ekonomisk förvaltning gäller föreningens pengar: bokföring, avier, budget och årsredovisning. Teknisk förvaltning gäller fastigheten: underhåll, besiktningar och entreprenörer. Läs mer i [Vad är teknisk förvaltning?](/kunskap/vad-ar-teknisk-forvaltning)"
+    },
+    {
+      "q": "Måste föreningen ha en ekonomisk förvaltare?",
+      "a": "Nej, det finns inget lagkrav. Läs [Måste en brf ha en förvaltare?](/kunskap/maste-brf-ha-forvaltare)"
+    },
+    {
+      "q": "Ingår hjälp med föreningens lån?",
+      "a": "Det varierar. Tabellen ovan visar hur många förvaltare som säger att hjälp med lån ingår, är tillval eller bara nämns."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Ekonomisk förvaltning för brf",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Dags att byta ekonomisk förvaltare",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Ekonomisk förvaltning för Brf",
+      "publisher": "Fastum",
+      "url": "https://fastum.se/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Vad kostar ekonomisk förvaltning i en BRF?",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för BRF: pris och kostnad",
+      "publisher": "ERF",
+      "url": "https://erf.se/ekonomisk-forvaltning/kostnad",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Lag (2018:672) om ekonomiska föreningar",
+      "publisher": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018672-om-ekonomiska-foreningar_sfs-2018-672/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Ekonomisk förvaltning för din BRF",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "maste-brf-ha-forvaltare",
+    "k3-brf",
+    "vad-ar-teknisk-forvaltning"
+  ],
+  "next": {
+    "href": "/ekonomisk-forvaltning",
+    "label": "Jämför ekonomisk förvaltning"
+  }
+}

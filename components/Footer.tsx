@@ -40,6 +40,9 @@ export function Footer() {
               <li>
                 <Link href="/jamfor">Jämför sida vid sida</Link>
               </li>
+              <li>
+                <Link href="/kunskap">Kunskap</Link>
+              </li>
             </ul>
           </nav>
           <nav className="foot-col" aria-label="Så arbetar vi">

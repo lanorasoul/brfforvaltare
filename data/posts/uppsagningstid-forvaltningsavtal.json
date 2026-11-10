@@ -1,0 +1,218 @@
+{
+  "slug": "uppsagningstid-forvaltningsavtal",
+  "title": "Uppsägningstid för förvaltningsavtal i en brf",
+  "metaTitle": "Uppsägningstid förvaltningsavtal brf: så lång är den",
+  "description": "Uppsägningstiden för ett förvaltningsavtal står i avtalet, inte i lagen. Oftast är den 3 till 12 månader. Så räknar ni ut sista dagen och säger upp rätt.",
+  "keyword": "uppsägningstid förvaltningsavtal",
+  "keywords": [
+    "säga upp förvaltare brf",
+    "uppsägning förvaltningsavtal",
+    "avtalstid ekonomisk förvaltning",
+    "byta förvaltare uppsägningstid"
+  ],
+  "category": "Välja förvaltare",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Uppsägningstiden står i ert avtal och regleras inte i lag. Vanligast är tre till tolv månader, och Bostadsrätterna anger sex till sju månader som vanligt för ekonomisk förvaltning. Säger ni upp för sent förlängs avtalet ofta automatiskt, enligt Nabo ofta med tolv månader.",
+  "points": [
+    "Läs avtalet först: avtalstid, uppsägningstid och hur uppsägningen ska göras.",
+    "Löper avtalet per kalenderår med sex månaders uppsägningstid ska ni säga upp senast den 30 juni.",
+    "{{eko.notice}} av {{eko.total}} förvaltare i vår jämförelse skriver ut uppsägningstiden för ekonomisk förvaltning på sin webbplats.",
+    "Säg upp skriftligt och begär en bekräftelse på vilket datum avtalet upphör."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "hur-lang",
+      "text": "Hur lång är uppsägningstiden?"
+    },
+    {
+      "type": "p",
+      "text": "Det finns ingen lag som bestämmer uppsägningstiden för ett förvaltningsavtal. Den står i avtalet mellan föreningen och förvaltaren. Så här beskriver branschen själv vad som är vanligt:"
+    },
+    {
+      "type": "table",
+      "caption": "Vad olika källor anger som vanlig uppsägningstid",
+      "head": [
+        "Källa",
+        "Uppsägningstid",
+        "Avtalstid"
+      ],
+      "rows": [
+        [
+          "[Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/)",
+          "Tre till tolv månader är vanligast",
+          "Förlängs ofta automatiskt med tolv månader"
+        ],
+        [
+          "[Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare)",
+          "Sex till sju månader är vanligt",
+          "Ofta kalenderår, ibland två år"
+        ],
+        [
+          "[ERF](https://erf.se/vanliga-fragor)",
+          "Fem till sju månader hos de flesta förvaltare",
+          "Anges inte"
+        ],
+        [
+          "[HSB MälarDalarna](https://www.hsb.se/malardalarna/fastighetsforvaltning/ekonomisk-forvaltning/)",
+          "Nio månader är vanligast hos dem",
+          "Tre år är vanligast hos dem"
+        ]
+      ],
+      "note": "Uppgifterna gäller framför allt ekonomisk förvaltning. Varje källa beskriver vad den ser som vanligt, inte en regel."
+    },
+    {
+      "type": "p",
+      "text": "Spannet är alltså stort. Det enda som gäller för er är det som står i ert eget avtal."
+    },
+    {
+      "type": "h2",
+      "id": "forvaltarna",
+      "text": "Förvaltare som skriver ut sin uppsägningstid"
+    },
+    {
+      "type": "p",
+      "text": "De flesta förvaltare anger ingen uppsägningstid på sin webbplats. Av dem vi jämför gör {{eko.notice}} av {{eko.total}} det för ekonomisk förvaltning och {{tek.notice}} av {{tek.total}} för teknisk förvaltning."
+    },
+    {
+      "type": "data",
+      "key": "notice"
+    },
+    {
+      "type": "p",
+      "text": "Fråga alltid efter uppsägningstid och avtalstid när ni tar in offerter. Det avgör hur lätt ni kan byta nästa gång. Villkoren som varje förvaltare skriver ut finns också i [jämförelsen sida vid sida](/jamfor)."
+    },
+    {
+      "type": "h2",
+      "id": "rakna-ut",
+      "text": "Räkna ut sista dagen för uppsägning"
+    },
+    {
+      "type": "p",
+      "text": "Uppsägningstiden räknas bakåt från den dag avtalet slutar. Tre exempel för ett avtal som löper ut den 31 december:"
+    },
+    {
+      "type": "table",
+      "caption": "Sista dag att säga upp ett avtal som löper ut den 31 december",
+      "head": [
+        "Uppsägningstid",
+        "Säg upp senast"
+      ],
+      "rows": [
+        [
+          "3 månader",
+          "30 september"
+        ],
+        [
+          "6 månader",
+          "30 juni"
+        ],
+        [
+          "9 månader",
+          "31 mars"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "[Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare) påpekar att många föreningar därför måste säga upp vid halvårsskiftet eller sista maj för att kunna byta vid årsskiftet. Deras råd är att se över avtalet i samband med budgeten på hösten, för att kunna säga upp det på våren."
+    },
+    {
+      "type": "p",
+      "text": "Vårt [verktyg för uppsägningsdatum](/byta-forvaltare#datum) räknar ut dagen för just ert avtal."
+    },
+    {
+      "type": "h2",
+      "id": "for-sent",
+      "text": "Vad händer om ni säger upp för sent?"
+    },
+    {
+      "type": "p",
+      "text": "Då fortsätter avtalet att gälla. Många avtal förlängs automatiskt om de inte sägs upp i tid, enligt [Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/) ofta med tolv månader. Hur lång förlängningen blir står i avtalet."
+    },
+    {
+      "type": "p",
+      "text": "Missar ni datumet får ni alltså räkna med en period till hos samma förvaltare. Lägg in en påminnelse i god tid före sista dagen, och se till att den följer med när styrelsen byts."
+    },
+    {
+      "type": "h2",
+      "id": "sa-sager-ni-upp",
+      "text": "Så säger ni upp avtalet"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Kontrollera i avtalet hur uppsägningen ska göras och vart den ska skickas.",
+        "Fatta beslutet i styrelsen och skriv in det i protokollet. Enligt Nabo är det normalt styrelsen som beslutar, om inte stadgarna säger något annat.",
+        "Säg upp skriftligt och begär en skriftlig bekräftelse på vilket datum avtalet upphör.",
+        "Planera överlämningen med den nya förvaltaren. Flera förvaltare, till exempel [SBC](https://www.sbc.se/byta-till-sbc/), tar kontakten med den gamla förvaltaren mot en fullmakt. SBC har också en mall för uppsägningen."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Hela bytet tar enligt Nabo normalt fyra till tolv månader med uppsägningstiden inräknad, och styrelsens aktiva del är ungefär två månader. Alla steg finns i guiden [Så byter ni förvaltare](/byta-forvaltare). Vet ni inte vilken förvaltare ni ska byta till kan ni börja med [vilka som har nöjdast kunder](/kunskap/basta-forvaltaren-brf)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Måste föreningsstämman besluta om att säga upp förvaltaren?",
+      "a": "Normalt inte. Enligt Nabo är det en förvaltningsfråga som styrelsen beslutar om, så länge föreningens stadgar inte säger något annat. Kontrollera era stadgar och protokollför beslutet."
+    },
+    {
+      "q": "Kostar det något att byta förvaltare?",
+      "a": "Det beror på avtalen. Nabo skriver att en uppstartsavgift kan tillkomma och i så fall står i offerten, och att det gamla avtalet kan ge kostnader för till exempel utdrag eller arbete under uppsägningstiden. [ERF](https://erf.se/ekonomisk-forvaltning/kostnad) anger att de inte tar någon uppstartsavgift."
+    },
+    {
+      "q": "Kan vi byta förvaltare mitt i året?",
+      "a": "Ja. Både Nabo och ERF skriver att det går. ERF tillägger att ett byte vid nytt räkenskapsår ger en enklare överlämning av bokföringen."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Byta förvaltare",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Dags att byta ekonomisk förvaltare",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Vanliga frågor",
+      "publisher": "ERF",
+      "url": "https://erf.se/vanliga-fragor",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning med lokal närvaro",
+      "publisher": "HSB MälarDalarna",
+      "url": "https://www.hsb.se/malardalarna/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Funderar din brf på att byta förvaltare?",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/byta-till-sbc/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för BRF: pris och kostnad",
+      "publisher": "ERF",
+      "url": "https://erf.se/ekonomisk-forvaltning/kostnad",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "basta-forvaltaren-brf",
+    "vad-ingar-i-ekonomisk-forvaltning",
+    "maste-brf-ha-forvaltare"
+  ],
+  "next": {
+    "href": "/byta-forvaltare#datum",
+    "label": "Räkna ut er sista dag"
+  }
+}

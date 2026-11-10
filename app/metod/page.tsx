@@ -458,7 +458,7 @@ export default function MetodPage() {
                 <li>Priser och villkor ändras. Varje uppgift visar när vi läste den, men fråga alltid förvaltaren innan ni bestämmer er.</li>
                 <li>Vi tolkar sidor som människor har skrivit för människor. Kan en uppgift läsas på två sätt skriver vi det och märker den antagande.</li>
                 <li>
-                  Vi jämför inte kvalitet eller nöjdhet. Nöjdhetssiffror som en förvaltare själv anger visas som förvaltarens eget påstående, med källa.
+                  Vi bedömer inte kvalitet själva. Kundnöjdhet visas som Prognoscentrets NKI och som betyg från Reco, med källa. Betyg som bara förvaltaren själv anger märks som förvaltarens egen uppgift.
                 </li>
                 <li>Sajten ger ingen juridisk eller ekonomisk rådgivning.</li>
               </ul>

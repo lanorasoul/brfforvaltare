@@ -1,0 +1,201 @@
+{
+  "slug": "underhallsplan-brf",
+  "title": "Underhållsplan för brf: krav, innehåll och pris",
+  "metaTitle": "Underhållsplan brf: krav, innehåll och vad den kostar",
+  "description": "Måste en brf ha en underhållsplan? Bara nya föreningar enligt lag, men alla ska redovisa om de har en. Se vad planen ska innehålla och vad den kostar.",
+  "keyword": "underhållsplan brf",
+  "keywords": [
+    "underhållsplan bostadsrättsförening krav",
+    "måste brf ha underhållsplan",
+    "vad kostar en underhållsplan",
+    "underhållsplan 50 år"
+  ],
+  "category": "Regler och krav",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "En befintlig bostadsrättsförening måste inte ha en underhållsplan enligt lag. Kravet gäller föreningar som upplåter bostadsrätter från den 1 januari 2024: deras ekonomiska plan ska innehålla en teknisk underhållsplan för 50 år. Alla föreningar ska däremot ange i årsredovisningen om de har en aktuell underhållsplan eller inte.",
+  "points": [
+    "Planen visar vad som ska underhållas, när det ska göras och vad det beräknas kosta.",
+    "Bostadsrätterna råder alla föreningar att ha en plan och att uppdatera den varje år.",
+    "En vanlig längd är 30 till 50 år.",
+    "Några förvaltare säljer digital underhållsplan med utskrivet pris. Se tabellen nedan."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "krav",
+      "text": "Måste föreningen ha en underhållsplan?"
+    },
+    {
+      "type": "p",
+      "text": "Det beror på när föreningen bildades. Den ekonomiska plan som en förening upprättar innan den upplåter bostadsrätter ska sedan den 1 januari 2024 innehålla en teknisk underhållsplan för de kommande 50 åren. Det står i 3 kap. 1 a § [bostadsrättslagen](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bostadsrattslag-1991614_sfs-1991-614/)."
+    },
+    {
+      "type": "p",
+      "text": "För föreningar som redan finns är det enligt [Bostadsrätterna](https://www.bostadsratterna.se/nyheter/artiklar/2025/fragor-och-svar-om-overgangen-fran-k2-till-k3) inget lagkrav. [Bokföringsnämnden](https://www.bfn.se/fragor-och-svar/andringar-i-k2-och-k3-fran-2026/) skriver att inte heller redovisningsreglerna i K3 kräver en underhållsplan, men att föreningen i förvaltningsberättelsen ska upplysa om den har en aktuell underhållsplan eller inte."
+    },
+    {
+      "type": "p",
+      "text": "Kontrollera också era stadgar. Enligt bostadsrättslagen ska stadgarna ange grunderna för hur föreningen sätter av pengar till underhåll, och Bostadsrätterna nämner som exempel stadgar där avsättningen ska göras enligt underhållsplanen."
+    },
+    {
+      "type": "h2",
+      "id": "innehall",
+      "text": "Vad ska en underhållsplan innehålla?"
+    },
+    {
+      "type": "p",
+      "text": "För den lagstadgade planen har [Boverket](https://www.boverket.se/sv/ekonomiska-planer/ekonomisk-plan/teknisk-underhallsplan/) preciserat kraven. Den ska:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "visa fastighetens behov av underhåll och återinvestering de kommande 50 åren",
+        "vara uppdelad på byggnadens komponenter, till exempel stomme, stammar, fasad och tak",
+        "omfatta föreningens alla byggnader och all mark",
+        "ange åtgärderna, när de beräknas utföras och vad de beräknas kosta"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Planen bör enligt Boverket vara mer detaljerad ju närmare i tiden en åtgärd ligger. För åren mot slutet kan det räcka med de mest omfattande och dyraste åtgärderna."
+    },
+    {
+      "type": "p",
+      "text": "För äldre föreningar finns inga formkrav, men samma upplägg fungerar. [Bostadsrätterna](https://www.bostadsratterna.se/kunskapsbanken/u/underhallsplan) påminner om att planen bara ska ta upp det föreningen har underhållsansvar för, inte det medlemmarna ansvarar för."
+    },
+    {
+      "type": "h2",
+      "id": "langd-och-uppdatering",
+      "text": "Hur lång ska planen vara, och hur ofta ska den uppdateras?"
+    },
+    {
+      "type": "p",
+      "text": "Bostadsrätterna skriver att det är vanligt att planen till en början omfattar de kommande 30 eller 50 åren. Förvaltare som [SBC](https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/underhallsplan/) gör planer för 50 år."
+    },
+    {
+      "type": "p",
+      "text": "Det finns inget krav på att hålla planen uppdaterad, enligt Boverket. Bostadsrätterna råder ändå styrelsen att uppdatera den varje år: det som har gjorts får ett nytt nästa tillfälle, och det som inte blev av får ett nytt år. En plan som inte uppdateras blir snabbt mindre användbar."
+    },
+    {
+      "type": "h2",
+      "id": "kostnad",
+      "text": "Vad kostar en underhållsplan?"
+    },
+    {
+      "type": "p",
+      "text": "De flesta förvaltare lämnar pris på förfrågan, eftersom arbetet beror på fastigheten. Några skriver ut priser för digitala planer och licenser:"
+    },
+    {
+      "type": "data",
+      "key": "underhallsplan-priser"
+    },
+    {
+      "type": "p",
+      "text": "Tänk på vad priset gäller. En prenumeration på ett digitalt verktyg är inte samma sak som en plan som bygger på en besiktning på plats. [Fastighetsägarna Service](https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/underhallsplan/) säljer till exempel tre varianter, där två börjar med en besiktning och den tredje, för nybyggda hus, bygger på ritningar. Hos [ERF](https://erf.se/vanliga-fragor) ingår ett verktyg för underhållsplanen i den ekonomiska förvaltningen, men inte att ta fram själva planen."
+    },
+    {
+      "type": "h2",
+      "id": "vem-gor-planen",
+      "text": "Vem tar fram planen?"
+    },
+    {
+      "type": "p",
+      "text": "Bostadsrätterna råder styrelsen att överväga en extern konsult, eftersom den som bedömer fastighetens skick behöver bred kunskap om hela huset. Styrelsen hjälper till genom att samla historik: när gjordes renoveringarna, vad kostade de och vilken livslängd har de?"
+    },
+    {
+      "type": "p",
+      "text": "Har föreningen teknisk förvaltning kan uppdatering av planen ingå. Det skiljer mellan förvaltarna, se [Jämför teknisk förvaltning](/teknisk-forvaltning)."
+    },
+    {
+      "type": "h2",
+      "id": "avgiften-och-k3",
+      "text": "Därför hänger planen ihop med avgiften och K3"
+    },
+    {
+      "type": "p",
+      "text": "Underhållsplanen är ett underlag för att sätta rätt årsavgift över tid, och banker kan vilja se den vid en låneansökan, skriver Bostadsrätterna."
+    },
+    {
+      "type": "p",
+      "text": "Den är också till hjälp vid övergången till K3, där byggnaden ska delas upp i komponenter. Det är inget krav, men Bostadsrätterna kallar planen ett utmärkt underlag för bedömningarna. Läs mer i [K3 för brf](/kunskap/k3-brf)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Måste underhållsplanen vara på 50 år?",
+      "a": "Bara för föreningar som omfattas av lagkravet, alltså de som upplåter bostadsrätter från 2024. För övriga är 30 eller 50 år vanligt enligt Bostadsrätterna."
+    },
+    {
+      "q": "Hur ofta ska underhållsplanen uppdateras?",
+      "a": "Lagen kräver ingen uppdatering, men Bostadsrätterna råder styrelsen att uppdatera planen varje år."
+    },
+    {
+      "q": "Måste vi skriva i årsredovisningen om vi har en underhållsplan?",
+      "a": "Ja. Enligt Bokföringsnämnden ska föreningen i förvaltningsberättelsen upplysa om den har en aktuell underhållsplan eller inte."
+    },
+    {
+      "q": "Ingår underhållsplanen i teknisk förvaltning?",
+      "a": "Ibland. Hos vissa förvaltare ingår uppdatering av planen i grundtjänsten, hos andra är det ett tillval. Att ta fram en ny plan är oftast en egen tjänst. Läs [vad teknisk förvaltning är](/kunskap/vad-ar-teknisk-forvaltning)."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Bostadsrättslag (1991:614)",
+      "publisher": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bostadsrattslag-1991614_sfs-1991-614/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Frågor och svar om övergången från K2 till K3",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/artiklar/2025/fragor-och-svar-om-overgangen-fran-k2-till-k3",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Frågor och svar: Ändringar i K2 och K3 från 2026",
+      "publisher": "Bokföringsnämnden",
+      "url": "https://www.bfn.se/fragor-och-svar/andringar-i-k2-och-k3-fran-2026/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Teknisk underhållsplan är obligatorisk för bostadsrättsföreningar",
+      "publisher": "Boverket",
+      "url": "https://www.boverket.se/sv/ekonomiska-planer/ekonomisk-plan/teknisk-underhallsplan/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Underhållsplan",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/kunskapsbanken/u/underhallsplan",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Beställ underhållsplan för brf",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/underhallsplan/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Underhållsplan",
+      "publisher": "Fastighetsägarna Service",
+      "url": "https://www.fastighetsagarna.se/tjanster/teknisk-forvaltning/underhallsplan/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Vanliga frågor",
+      "publisher": "ERF",
+      "url": "https://erf.se/vanliga-fragor",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "k3-brf",
+    "vad-ar-teknisk-forvaltning",
+    "vad-kostar-teknisk-forvaltning"
+  ],
+  "next": {
+    "href": "/teknisk-forvaltning",
+    "label": "Jämför teknisk förvaltning"
+  }
+}

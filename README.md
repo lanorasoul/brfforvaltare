@@ -36,6 +36,7 @@ npm run build && npm start
 | `/forvaltare-i/<ort>` | En sida per ort som minst två förvaltare nämner på sina egna sidor. Andra adresser ger 404. |
 | `/for-forvaltare` | Hur förvaltare visas, hur förfrågningar fungerar, vad som gäller för pengar och oberoende. |
 | `/integritet` | Vad som händer med uppgifterna i en förfrågan. |
+| `/kunskap`, `/kunskap/<slug>` | Kunskapsartiklar för styrelser. Svaret står överst, sedan brödtext, vanliga frågor och källor. Se Kunskapsartiklar nedan. |
 | `/metod` | Vad vi läser, vad märkena betyder, hur priser räknas, hur filtret för ort fungerar, ordning och annonser, hur sajten finansieras, rättelser. |
 
 ## Guiden och offertförfrågan
@@ -81,6 +82,24 @@ HSB är 21 fristående regionala föreningar. HSB visas som en förvaltare (`dat
 - Ingen rangordning och inget "bäst". Sajten jämför. Listor och matriser står i namnordning.
 - En tom ruta i en matris betyder inte att förvaltaren saknar tjänsten, bara att sidan vi läste inte listar den.
 - Inga tankstreck i texter (kontrolleras av `validate`).
+
+## Kunskapsartiklar
+
+Artiklarna ligger som en JSON-fil per artikel i `data/posts/`. Filnamnet är adressen: `data/posts/k3-brf.json` blir `/kunskap/k3-brf`. Sidan, listan på `/kunskap`, sitemap och strukturerad data (Article, FAQPage, BreadcrumbList) byggs ur filen.
+
+Varje artikel har:
+
+- `title` (sidans rubrik), `metaTitle` (titeln i sökresultatet, högst 60 tecken) och `description` (110 till 160 tecken).
+- `keyword`, sökfrasen artikeln svarar på. Den ska synas i rubriken. Två artiklar får inte ha samma sökfras, så att de inte konkurrerar med varandra.
+- `answer`, svaret på frågan i 25 till 70 ord. Det står överst på sidan, före allt annat, och `points` är det viktigaste i punktform.
+- `body`, brödtexten som en lista av block: `h2` (med `id`), `h3`, `p`, `ul`, `ol`, `table`, `note` och `data`.
+- `faq`, `sources`, `related` (två eller tre andra artiklar) och `next` (knappen bredvid Hitta förvaltare).
+
+Text får innehålla `[länktext](adress)` och `**fetstil**`. En länk ut från sajten måste gå till en adress som finns i artikelns `sources`, och varje källa måste länkas från texten. En länk inom sajten måste gå till en sida som finns.
+
+Tal som räknas ur förvaltardatan skrivs som `{{nyckel}}`, till exempel `{{tek.priced}} av {{tek.total}}`, och fylls i när sidan byggs. Nycklarna står i `lib/post-text.ts`. Ett block `{ "type": "data", "key": "nki" }` ritar en tabell direkt ur förvaltardatan (kundnöjdhet, tjänster, uppsägningstider och publicerade priser). På så vis säger en artikel aldrig något annat än jämförelsen.
+
+`npm run validate` kontrollerar allt ovan och stoppar bygget om något saknas. Lägg till en artikel genom att kopiera en befintlig fil, byta innehållet och läsa varje källa innan `checked` får dagens datum.
 
 ## Prislogik
 

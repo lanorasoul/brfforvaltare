@@ -1,0 +1,210 @@
+{
+  "slug": "basta-forvaltaren-brf",
+  "title": "Bästa förvaltaren för brf: vilka har nöjdast kunder?",
+  "metaTitle": "Bästa förvaltaren för brf 2026: nöjdast kunder enligt NKI",
+  "description": "Simpleko, Delagott och Riksbyggen har nöjdast kunder i Prognoscentrets mätning 2025. Se NKI för tre år, hur mätningen görs och hur ni väljer rätt.",
+  "keyword": "bästa förvaltare brf",
+  "keywords": [
+    "bästa förvaltaren bostadsrättsförening",
+    "nöjdast kunder förvaltare",
+    "NKI förvaltare brf",
+    "bäst ekonomisk förvaltning brf"
+  ],
+  "category": "Välja förvaltare",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "I Prognoscentrets senaste mätning, som gäller 2025, har Simpleko nöjdast kunder med NKI 78, följt av Delagott med 74 och Riksbyggen med 71. Branschsnittet var 68. Mätningen visar hur nöjda styrelserna är med sin förvaltare, inte vilken förvaltare som passar just er förening.",
+  "points": [
+    "NKI är Nöjd Kund-Index, en skala från 0 till 100. Värden mellan 65 och 75 räknas som medelhög nöjdhet.",
+    "Simpleko har legat högst tre mätningar i rad: 80, 77 och 78. Simpleko är inriktat på ekonomisk förvaltning.",
+    "För 2025 har vi bara hittat de tre högsta värdena publicerade. Att en förvaltare saknas betyder inte att kunderna är missnöjda.",
+    "Vi utser ingen vinnare själva. Siffrorna kommer från en oberoende mätning."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "resultat",
+      "text": "Så ser resultaten ut år för år"
+    },
+    {
+      "type": "p",
+      "text": "Analysföretaget Prognoscentret har mätt hur nöjda bostadsrättsföreningar är med sina förvaltare tre gånger. Styrelser i omkring 6 500 föreningar får enkäten, och en förvaltare får ett eget resultat först när tillräckligt många styrelser har svarat."
+    },
+    {
+      "type": "table",
+      "caption": "Prognoscentrets mätningar av kundnöjdhet bland förvaltare",
+      "head": [
+        "Mätning",
+        "Branschsnitt",
+        "Högst",
+        "Övrigt som har publicerats",
+        "Antal svar"
+      ],
+      "rows": [
+        [
+          "2023",
+          "62",
+          "Simpleko 80",
+          "Lägsta värde bland förvaltare med minst 20 svar: 17",
+          "1 205"
+        ],
+        [
+          "2024",
+          "66",
+          "Simpleko 77",
+          "Nabo 69 och Riksbyggen 69",
+          "1 044"
+        ],
+        [
+          "2025",
+          "68",
+          "Simpleko 78",
+          "Delagott 74 och Riksbyggen 71",
+          "946"
+        ]
+      ],
+      "note": "Källor: Prognoscentrets pressmeddelanden om mätningarna [2023](https://press.prognoscentret.se/posts/pressreleases/manga-bostadsrattsforeningar-ar-missnojda-med) och [2024](https://press.prognoscentret.se/posts/pressreleases/forvaltningsbolaget-simpleko-har-branschens-n), samt [Riksbyggens pressmeddelande om mätningen 2025](https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/)."
+    },
+    {
+      "type": "p",
+      "text": "Snittet har stigit från 62 till 68 på tre mätningar. Enligt Prognoscentret ska värden mellan 65 och 75 läsas som medelhög nöjdhet, och värden under 60 som ett uttryck för missnöje."
+    },
+    {
+      "type": "p",
+      "text": "I mätningen 2024 kom gruppen Övriga, som mest består av mindre förvaltare, på andra plats efter Simpleko. En liten förvaltare utan eget resultat kan alltså ha mycket nöjda kunder."
+    },
+    {
+      "type": "h2",
+      "id": "jamforelsen",
+      "text": "Förvaltarna i vår jämförelse"
+    },
+    {
+      "type": "p",
+      "text": "Av de {{providers}} förvaltare vi jämför har {{nki.count}} ett offentligt NKI-värde. Tabellen hämtas ur samma data som resten av sajten."
+    },
+    {
+      "type": "data",
+      "key": "nki"
+    },
+    {
+      "type": "p",
+      "text": "Vill ni se pris, antal kunder och villkor bredvid nöjdheten finns allt i [översikten över förvaltare](/#forvaltare), där ni själva kan sortera efter kundnöjdhet."
+    },
+    {
+      "type": "h2",
+      "id": "vad-gor-styrelser-nojda",
+      "text": "Vad som gör styrelser nöjda"
+    },
+    {
+      "type": "p",
+      "text": "Prognoscentret har också räknat på vad som påverkar nöjdheten mest. Enligt [mätningen 2024](https://press.prognoscentret.se/posts/pressreleases/forvaltningsbolaget-simpleko-har-branschens-n) väger två saker tyngst:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Pålitlighet:** att förvaltaren hanterar fel bra och levererar enligt avtal.",
+        "**Grundläggande kvalitet:** god kunskap och förmåga att förebygga problem."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Därefter kommer personalen och den personliga servicen. Samma mätning visar att de minsta föreningarna, med färre än 30 bostäder, och de största, med fler än 200, är nöjdare än de mellanstora. Äldre föreningar är nöjdare än yngre."
+    },
+    {
+      "type": "p",
+      "text": "Hälften av styrelserna var tydligt nöjda och 36 procent tydligt missnöjda. 33 procent skulle eller funderade på att byta förvaltare när avtalet går ut, enligt [Bostadsrätternas sammanfattning](https://www.bostadsratterna.se/nyheter/artiklar/2025/33-procent-vill-byta-forvaltare)."
+    },
+    {
+      "type": "h2",
+      "id": "begransningar",
+      "text": "Mätningens begränsningar"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Den jämför inte pris.** En förvaltare med nöjda kunder kan vara dyrare eller billigare än en annan. Priser finns i [prisguiden](/prisguide).",
+        "**Den täcker inte alla förvaltare.** De flesta får för få svar för att redovisas var för sig.",
+        "**Underlaget är begränsat.** Mätningen 2025 bygger på 946 svar från 6 500 tillfrågade föreningar.",
+        "**Den skiljer inte på ekonomisk och teknisk förvaltning.** De publicerade värdena är ett tal per förvaltare.",
+        "**Det finns ägarband.** Simpleko är ett dotterbolag till Riksbyggen, och uppgifterna om 2025 kommer från Riksbyggens pressmeddelande om mätningen."
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "sa-valjer-ni",
+      "text": "Så väljer ni förvaltare för er förening"
+    },
+    {
+      "type": "p",
+      "text": "Använd nöjdheten som ett av flera underlag. [Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare) råder styrelser att skicka förfrågan till minst tre förvaltare som är vana vid bostadsrättsföreningar, och att inte bara titta på priset."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Bestäm vad ni behöver hjälp med: bara ekonomi, bara teknik eller båda. Läs [vad som ingår i ekonomisk förvaltning](/kunskap/vad-ingar-i-ekonomisk-forvaltning).",
+        "Kontrollera [uppsägningstiden i ert nuvarande avtal](/kunskap/uppsagningstid-forvaltningsavtal) innan ni gör något annat.",
+        "Be minst tre förvaltare om offert på samma underlag, och be om referenser från föreningar i er storlek.",
+        "Jämför pris, vad som ingår, uppsägningstid och kundnöjdhet [sida vid sida](/jamfor)."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Vilken förvaltare är bäst för en liten brf?",
+      "a": "Det finns ingen mätning som pekar ut en förvaltare för små föreningar. Prognoscentrets mätning 2024 visar att föreningar med färre än 30 bostäder i genomsnitt är nöjdare med sina förvaltare än mellanstora föreningar. För en liten förening väger pris per lägenhet och tydlig ansvarsfördelning tungt. Jämför [priser för er storlek](/prisguide)."
+    },
+    {
+      "q": "Vad är ett bra NKI?",
+      "a": "Enligt Prognoscentret är 65 till 75 medelhög nöjdhet och värden under 60 ett uttryck för missnöje. Branschsnittet 2025 var 68. Ett värde över 75 är alltså klart högre än det vanliga i branschen."
+    },
+    {
+      "q": "Varför finns inte alla förvaltare med i mätningen?",
+      "a": "En förvaltare får ett eget resultat först när tillräckligt många styrelser har svarat. Enligt Bostadsrätterna utvärderades drygt 165 förvaltare i mätningen 2024, och elva av dem fick ett eget resultat."
+    },
+    {
+      "q": "Kan en förvaltare betala för att synas här?",
+      "a": "Nej. Ingen förvaltare har betalat för plats, ordning eller uppgifter. Hur vi arbetar står på [metodsidan](/metod)."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Simpleko vinnare i kundnöjdhet, Riksbyggen på pallplats för andra året i rad (mätningen 2025)",
+      "publisher": "Riksbyggen",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Förvaltningsbolaget Simpleko har branschens nöjdaste kunder (mätningen 2024)",
+      "publisher": "Prognoscentret",
+      "url": "https://press.prognoscentret.se/posts/pressreleases/forvaltningsbolaget-simpleko-har-branschens-n",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Många bostadsrättsföreningar är missnöjda med sina förvaltningsbolag (mätningen 2023)",
+      "publisher": "Prognoscentret",
+      "url": "https://press.prognoscentret.se/posts/pressreleases/manga-bostadsrattsforeningar-ar-missnojda-med",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "33 procent vill byta förvaltare",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/artiklar/2025/33-procent-vill-byta-forvaltare",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Dags att byta ekonomisk förvaltare",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare",
+      "checked": "2026-11-10"
+    }
+  ],
+  "related": [
+    "totalforvaltning-brf",
+    "uppsagningstid-forvaltningsavtal",
+    "vad-ingar-i-ekonomisk-forvaltning"
+  ],
+  "next": {
+    "href": "/#forvaltare",
+    "label": "Jämför förvaltarna"
+  }
+}

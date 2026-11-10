@@ -1,0 +1,193 @@
+{
+  "slug": "totalforvaltning-brf",
+  "title": "Totalförvaltning eller två förvaltare för en brf?",
+  "metaTitle": "Totalförvaltning brf: en förvaltare eller två?",
+  "description": "Totalförvaltning betyder att samma bolag sköter ekonomi och fastighet. Se fördelar, nackdelar, vad mätningarna säger om nöjdhet och vilka som erbjuder båda.",
+  "keyword": "totalförvaltning brf",
+  "keywords": [
+    "totalförvaltning bostadsrättsförening",
+    "ekonomisk och teknisk förvaltning samma bolag",
+    "helhetsförvaltning brf",
+    "totalförvaltare"
+  ],
+  "category": "Välja förvaltare",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Totalförvaltning betyder att samma bolag sköter både ekonomisk och teknisk förvaltning. Det ger en kontakt och enklare samordning. Men i Prognoscentrets mätning 2023 var föreningar som anlitade samma bolag för båda delarna mindre nöjda (NKI 59) än snittet (62). Välj efter vad föreningen behöver, inte efter paketet.",
+  "points": [
+    "{{both}} av {{providers}} förvaltare i vår jämförelse erbjuder både ekonomisk och teknisk förvaltning.",
+    "Fördelen är samordning: ekonomen och teknikern delar information.",
+    "Två förvaltare kan ge större frihet att välja en specialist för varje del.",
+    "Oavsett upplägg måste någon hålla ihop helheten. Bestäm vem."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "vad-ar-det",
+      "text": "Vad är totalförvaltning?"
+    },
+    {
+      "type": "p",
+      "text": "[Bredablick](https://bredablickforvaltning.se/ekonomisk-forvaltning/) definierar totalförvaltning som att ha samma förvaltare för både ekonomisk och teknisk förvaltning. Helhetsförvaltning och totalförvaltare är andra ord för samma sak."
+    },
+    {
+      "type": "p",
+      "text": "Alternativet är att köpa tjänsterna var för sig. [Delagott](https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning) påpekar att alla föreningar behöver hantera både tekniska och ekonomiska frågor, men att de inte måste köpa båda tjänsterna från samma leverantör."
+    },
+    {
+      "type": "h2",
+      "id": "for-och-nackdelar",
+      "text": "Fördelar och nackdelar"
+    },
+    {
+      "type": "table",
+      "caption": "Totalförvaltning jämfört med två förvaltare",
+      "head": [
+        "Fråga",
+        "Totalförvaltning",
+        "Två förvaltare"
+      ],
+      "rows": [
+        [
+          "Samordning",
+          "Ekonom och tekniker delar information och kan stämma av med varandra",
+          "Styrelsen behöver se till att informationen går fram"
+        ],
+        [
+          "Kontaktvägar",
+          "En leverantör att vända sig till",
+          "Två leverantörer och två avtal"
+        ],
+        [
+          "Specialisering",
+          "Samma bolag ska vara bra på båda delarna",
+          "Större frihet att välja en specialist för varje del"
+        ],
+        [
+          "Gränsdragning",
+          "Färre gränsdragningar",
+          "Ansvarsfördelningen behöver skrivas ned"
+        ]
+      ],
+      "note": "Sammanställt efter hur Bredablick och Delagott beskriver uppläggen."
+    },
+    {
+      "type": "p",
+      "text": "Bredablick ger ett exempel på samordningen: ser den ekonomiska förvaltaren att avsättningen till underhåll verkar för låg kan hen stämma av med den tekniska förvaltaren, som känner fastighetens behov. Delagott sammanfattar avvägningen: ett samlat uppdrag kan ge enklare samordning och färre gränsdragningar, medan separata leverantörer kan ge större specialistfrihet."
+    },
+    {
+      "type": "h2",
+      "id": "nojdhet",
+      "text": "Vad säger mätningarna om nöjdhet?"
+    },
+    {
+      "type": "p",
+      "text": "Två av Prognoscentrets mätningar bland styrelser pekar åt samma håll:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**2023:** Föreningar som anlitade samma bolag för både teknisk och ekonomisk förvaltning hade NKI 59, mot 62 för alla. Det framgår av [Prognoscentrets pressmeddelande](https://press.prognoscentret.se/posts/pressreleases/manga-bostadsrattsforeningar-ar-missnojda-med).",
+        "**2024:** Föreningar som anlitade en förvaltare som var specialiserad på antingen ekonomisk eller teknisk förvaltning var nöjdare än de vars förvaltare erbjöd båda delarna, enligt [Bostadsrätternas sammanfattning](https://www.bostadsratterna.se/nyheter/artiklar/2025/33-procent-vill-byta-forvaltare)."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Det betyder inte att totalförvaltning är ett dåligt val. Mätningarna visar ett genomsnitt, inte orsaken, och enskilda förvaltare med båda tjänsterna ligger högt. Delagott och Riksbyggen, som båda erbjuder ekonomisk och teknisk förvaltning, kom tvåa och trea i [mätningen 2025](https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/). Se [vilka förvaltare som har nöjdast kunder](/kunskap/basta-forvaltaren-brf)."
+    },
+    {
+      "type": "h2",
+      "id": "vilka-erbjuder-bada",
+      "text": "Vilka förvaltare erbjuder båda?"
+    },
+    {
+      "type": "p",
+      "text": "Av de {{providers}} förvaltare vi jämför erbjuder {{both}} både ekonomisk och teknisk förvaltning."
+    },
+    {
+      "type": "data",
+      "key": "services"
+    },
+    {
+      "type": "p",
+      "text": "Att en förvaltare erbjuder båda betyder inte att den gör det på er ort. Teknisk förvaltning och fastighetsskötsel kräver folk på plats och finns hos flera förvaltare bara i vissa regioner, medan ekonomisk förvaltning oftare säljs i hela landet. Kontrollera orten under [Förvaltare](/forvaltare)."
+    },
+    {
+      "type": "h2",
+      "id": "sa-bestammer-ni-er",
+      "text": "Så bestämmer ni er"
+    },
+    {
+      "type": "p",
+      "text": "Delagott föreslår fyra frågor innan styrelsen väljer upplägg:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Vilken kompetens och tid finns i styrelsen, även efter nästa styrelsebyte?",
+        "Vilka tekniska och ekonomiska risker finns de kommande åren? Utgå från underhållsplan, budget och pågående avtal.",
+        "Vilka uppgifter behöver en tydlig ägare? Skriv ned vem som ansvarar för vad.",
+        "Vilken rapportering behöver styrelsen, hur ofta och i vilken form?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Är ni osäkra, ta in offerter på båda uppläggen. Be om pris för ekonomisk och teknisk förvaltning var för sig, även från en förvaltare som erbjuder båda, så ser ni vad paketet är värt. [Jämför förvaltare sida vid sida](/jamfor) eller låt oss [föreslå förvaltare](/hitta-forvaltare)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Blir det billigare med totalförvaltning?",
+      "a": "Det går inte att säga generellt. {{tek.priced}} av {{tek.total}} förvaltare vi har läst anger något pris för teknisk förvaltning, så paketpriser går inte att jämföra utan offert. Be om pris för delarna var för sig och tillsammans."
+    },
+    {
+      "q": "Ingår fastighetsskötsel i totalförvaltning?",
+      "a": "Inte alltid. Fastighetsskötsel är ofta en egen tjänst. Tabellen ovan visar vilka förvaltare som erbjuder den."
+    },
+    {
+      "q": "Kan vi byta bara den ena delen?",
+      "a": "Ja, om tjänsterna ligger i separata avtal eller om avtalet tillåter det. Kontrollera uppsägningstiden för varje del, se [Uppsägningstid för förvaltningsavtal](/kunskap/uppsagningstid-forvaltningsavtal)."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Ekonomisk förvaltning för brf och fastighetsbolag",
+      "publisher": "Bredablick Förvaltning",
+      "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk eller ekonomisk förvaltning: vad är skillnaden?",
+      "publisher": "Delagott",
+      "url": "https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Många bostadsrättsföreningar är missnöjda med sina förvaltningsbolag (mätningen 2023)",
+      "publisher": "Prognoscentret",
+      "url": "https://press.prognoscentret.se/posts/pressreleases/manga-bostadsrattsforeningar-ar-missnojda-med",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "33 procent vill byta förvaltare",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/artiklar/2025/33-procent-vill-byta-forvaltare",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Simpleko vinnare i kundnöjdhet, Riksbyggen på pallplats för andra året i rad (mätningen 2025)",
+      "publisher": "Riksbyggen",
+      "url": "https://www.riksbyggen.se/om-riksbyggen/pressrum/2026/3436832/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "basta-forvaltaren-brf",
+    "vad-ar-teknisk-forvaltning",
+    "vad-ingar-i-ekonomisk-forvaltning"
+  ],
+  "next": {
+    "href": "/jamfor",
+    "label": "Jämför sida vid sida"
+  }
+}

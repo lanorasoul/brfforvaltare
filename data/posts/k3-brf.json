@@ -1,0 +1,200 @@
+{
+  "slug": "k3-brf",
+  "title": "K3 för brf: vad gäller från 2026?",
+  "metaTitle": "K3 för brf 2026: vad ändras och vad ska styrelsen göra?",
+  "description": "Från räkenskapsåret 2026 ska alla bostadsrättsföreningar redovisa enligt K3. Se vad som ändras, vad styrelsen ska göra och hur avgiften påverkas.",
+  "keyword": "K3 brf",
+  "keywords": [
+    "K3 bostadsrättsförening",
+    "K2 eller K3 brf",
+    "komponentavskrivning brf",
+    "K3 obligatoriskt 2026"
+  ],
+  "category": "Regler och krav",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Från och med det räkenskapsår som börjar efter den 31 december 2025 ska alla bostadsrättsföreningar upprätta årsredovisningen enligt K3. För föreningar med kalenderår gäller det årsredovisningen för 2026. Den stora skillnaden mot K2 är att byggnaden delas upp i komponenter, som tak, fasad och stammar, som skrivs av var för sig.",
+  "points": [
+    "Kravet gäller alla bostadsrättsföreningar, oavsett storlek och omsättning.",
+    "Föreningen ska upprätta en ingångsbalansräkning och dela upp byggnaden i komponenter.",
+    "Avskrivningarna ökar troligen och resultatet blir sämre på papperet. För avgiften är det likviditeten som avgör, enligt Bostadsrätterna.",
+    "Fråga er förvaltare om övergången ingår i priset eller kostar extra. Det skiljer."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "skillnaden",
+      "text": "Vad är skillnaden mellan K2 och K3?"
+    },
+    {
+      "type": "p",
+      "text": "K2 och K3 är två regelverk för hur en årsredovisning upprättas. [Bostadsrätterna](https://www.bostadsratterna.se/nyheter/artiklar/2025/fragor-och-svar-om-overgangen-fran-k2-till-k3) förklarar skillnaden så här: i K2 skrivs byggnaden av med samma procentsats varje år, medan K3 delar upp fastigheten i delar som skrivs av efter sin egen livslängd."
+    },
+    {
+      "type": "p",
+      "text": "[Riksbyggen](https://www.riksbyggen.se/fastighetsforvaltning/ekonomisk-forvaltning/overgang-till-k3-regelverk/) ger ett exempel. Byter föreningen tak bokfördes hela kostnaden enligt K2 som underhåll det år bytet gjordes. Enligt K3 blir taket en tillgång i balansräkningen som skrivs av under den tid det används. Kostnaden sprids alltså över flera år i stället för att belasta ett enda."
+    },
+    {
+      "type": "table",
+      "caption": "K2 och K3 i korthet",
+      "head": [
+        "Fråga",
+        "K2",
+        "K3"
+      ],
+      "rows": [
+        [
+          "Byggnaden",
+          "Redovisas som en enda tillgång",
+          "Delas upp i komponenter"
+        ],
+        [
+          "Avskrivning",
+          "Samma procentsats varje år",
+          "Varje komponent efter sin livslängd"
+        ],
+        [
+          "Större underhåll, till exempel takbyte",
+          "Kostnad det år det görs",
+          "Tillgång som skrivs av över tid"
+        ],
+        [
+          "Får användas av en brf från räkenskapsåret 2026",
+          "Nej",
+          "Ja, det är obligatoriskt"
+        ]
+      ],
+      "note": "Sammanställt efter Bostadsrätterna, Riksbyggen och Bokföringsnämnden."
+    },
+    {
+      "type": "h2",
+      "id": "nar",
+      "text": "När börjar K3 gälla?"
+    },
+    {
+      "type": "p",
+      "text": "[Bokföringsnämnden](https://www.bfn.se/fragor-och-svar/andringar-i-k2-och-k3-fran-2026/) har beslutat att samtliga bostadsrättsföreningar och bostadsföreningar ska upprätta årsredovisning enligt K3 från och med det räkenskapsår som inleds efter den 31 december 2025."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Kalenderår som räkenskapsår:** K3 gäller årsredovisningen för 2026.",
+        "**Brutet räkenskapsår:** En förening vars år började den 1 juli 2025 tillämpar K3 först för året 2026 till 2027, enligt Bostadsrätterna."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Kravet gäller oavsett antal lägenheter och omsättning."
+    },
+    {
+      "type": "h2",
+      "id": "vad-ska-styrelsen-gora",
+      "text": "Vad ska styrelsen göra?"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "**Upprätta en ingångsbalansräkning.** Det är en balansräkning per den dag föreningen går över till K3. Enligt Bokföringsnämnden är den dagen som huvudregel den 1 januari 2025 för föreningar med kalenderår. Mindre föreningar som väljer att inte räkna om jämförelsetalen använder i stället den 1 januari 2026.",
+        "**Dela upp byggnaden i komponenter.** En komponent är en betydande del av fastigheten med egen livslängd, som stomme, tak, fasad och stamledningar. Det finns ingen fast beloppsgräns, styrelsen får resonera sig fram.",
+        "**Se över underhållsplanen.** Den är inget krav för K3, men Bostadsrätterna kallar den ett utmärkt underlag för bedömningarna.",
+        "**Läs stadgarna om underhållsfonden.** Storleken på avsättningen styrs av stadgarna, inte av K3. Överväger ni att ändra stadgarna råder Bostadsrätterna er att tala med revisorn först.",
+        "**Tala med förvaltaren och revisorn i god tid.**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Bokföringsnämnden påpekar att ingångsbalansräkningen inte behöver vara färdig på övergångsdagen. Föreningen kan arbeta med den under 2026."
+    },
+    {
+      "type": "h2",
+      "id": "ekonomin",
+      "text": "Hur påverkas ekonomin och avgiften?"
+    },
+    {
+      "type": "p",
+      "text": "Enligt Bostadsrätterna kommer avskrivningarna med stor sannolikhet att öka, vilket ger ett större underskott i resultatet. Bostadsrätterna skriver samtidigt att föreningen lever på sin likviditet, och att en förening som har kontroll på likviditeten och en långsiktig budget bör klara sig bra och kunna höja avgifterna successivt enligt tidigare plan."
+    },
+    {
+      "type": "p",
+      "text": "Årsredovisningen ser nästan likadan ut som förut. Enligt Bostadsrätterna blir det bara små ändringar, i noten om redovisningsprinciper. Det kan ändå vara klokt att förklara för medlemmarna varför resultatet ändras. [SBC](https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/k3-for-brf/) har det som ett av sina tre råd inför övergången."
+    },
+    {
+      "type": "h2",
+      "id": "forvaltaren",
+      "text": "Ingår övergången hos förvaltaren?"
+    },
+    {
+      "type": "p",
+      "text": "Det varierar, så fråga. Av förvaltarna vi har läst skriver till exempel [Bredablick](https://bredablickforvaltning.se/ekonomisk-forvaltning/) att komponentavskrivning enligt K3 ingår i grundavtalet, medan [Fastum](https://fastum.se/ekonomisk-forvaltning/) listar övergången till K3 som en tilläggstjänst. Riksbyggen säljer K3-redovisning som tillägg, och skriver att en komplett och uppdaterad underhållsplan är en förutsättning för att de ska kunna hjälpa till med övergången."
+    },
+    {
+      "type": "p",
+      "text": "Tar ni in offerter på ekonomisk förvaltning, fråga om årsredovisning enligt K3 ingår i priset. Se [vad som ingår i ekonomisk förvaltning](/kunskap/vad-ingar-i-ekonomisk-forvaltning) och jämför priser i [prisguiden](/prisguide)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Måste vi ha en underhållsplan för att gå över till K3?",
+      "a": "Nej. Bokföringsnämnden skriver att K3 inte kräver någon underhållsplan. Föreningen ska däremot ange i förvaltningsberättelsen om den har en aktuell plan eller inte. Läs mer i [guiden om underhållsplan](/kunskap/underhallsplan-brf)."
+    },
+    {
+      "q": "Gäller K3 även små föreningar?",
+      "a": "Ja. Enligt Bostadsrätterna gäller K3 både bostadsrättsföreningar och bostadsföreningar, oavsett antal lägenheter och omsättning."
+    },
+    {
+      "q": "Vad händer med fonden för yttre underhåll?",
+      "a": "Reglerna om fonden finns i bostadsrättslagen och i föreningens stadgar, inte i K3. Bostadsrätterna skriver att fonden inte behövs i samma utsträckning som i K2, eftersom underhåll som räknas som investering läggs i balansräkningen och skrivs av över tid."
+    },
+    {
+      "q": "Måste avgiften höjas på grund av K3?",
+      "a": "Inte på grund av bytet i sig. Bostadsrätterna skriver att en förening med kontroll på likviditeten och en långsiktig budget bör klara sig bra."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Frågor och svar: Ändringar i K2 och K3 från 2026",
+      "publisher": "Bokföringsnämnden",
+      "url": "https://www.bfn.se/fragor-och-svar/andringar-i-k2-och-k3-fran-2026/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Frågor och svar om övergången från K2 till K3",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/artiklar/2025/fragor-och-svar-om-overgangen-fran-k2-till-k3",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Övergång till K3-regelverk",
+      "publisher": "Riksbyggen",
+      "url": "https://www.riksbyggen.se/fastighetsforvaltning/ekonomisk-forvaltning/overgang-till-k3-regelverk/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "K3 för brf",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/k3-for-brf/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Ekonomisk förvaltning för brf och fastighetsbolag",
+      "publisher": "Bredablick Förvaltning",
+      "url": "https://bredablickforvaltning.se/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för Brf",
+      "publisher": "Fastum",
+      "url": "https://fastum.se/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "underhallsplan-brf",
+    "vad-ingar-i-ekonomisk-forvaltning",
+    "bostadsrattsregistret"
+  ],
+  "next": {
+    "href": "/ekonomisk-forvaltning",
+    "label": "Jämför ekonomisk förvaltning"
+  }
+}

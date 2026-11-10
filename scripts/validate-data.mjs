@@ -285,6 +285,137 @@ for (const f of files) {
   });
 }
 
+// ---------- Kunskapsartiklar ----------
+// Samma krav som på förvaltardatan: varje länk ut från sajten ska gå till en källa i artikelns källista,
+// och varje länk inom sajten ska gå till en sida som finns. Dessutom några krav som gör sidan lätt att hitta och läsa.
+const postDir = path.join(root, "data", "posts");
+const postFiles = fs.existsSync(postDir) ? fs.readdirSync(postDir).filter((f) => f.endsWith(".json")).sort() : [];
+const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const POST_TOKENS = ["providers", "eko.total", "tek.total", "eko.priced", "tek.priced", "eko.notice", "tek.notice", "both", "nki.count", "checked"];
+const POST_DATA = new Set(["nki", "features-ekonomisk", "features-teknisk", "services", "notice", "teknisk-priser", "underhallsplan-priser"]);
+const POST_BLOCKS = new Set(["h2", "h3", "p", "ul", "ol", "table", "note", "data"]);
+const RESERVED_IDS = new Set(["vanliga-fragor", "kallor", "las-ocksa", "main"]);
+const STATIC_ROUTES = new Set(["/", "/hitta-forvaltare", "/ekonomisk-forvaltning", "/teknisk-forvaltning", "/forvaltare", "/prisguide", "/byta-forvaltare", "/jamfor", "/metod", "/for-forvaltare", "/integritet", "/kunskap"]);
+const providerSlugs = new Set(files.map((f) => f.replace(/\.json$/, "")));
+const postSlugs = new Set(postFiles.map((f) => f.replace(/\.json$/, "")));
+const LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+const words = (s) => s.replace(LINK, "$1").replace(/\*\*/g, "").split(/\s+/).filter(Boolean).length;
+const seenMeta = new Map();
+
+function routeExists(href) {
+  const route = href.split("#")[0];
+  if (STATIC_ROUTES.has(route)) return true;
+  const m = /^\/(forvaltare|kunskap)\/([a-z0-9-]+)$/.exec(route);
+  return m ? (m[1] === "forvaltare" ? providerSlugs : postSlugs).has(m[2]) : false;
+}
+
+for (const file of postFiles) {
+  const f = `posts/${file}`;
+  let post;
+  try {
+    post = JSON.parse(fs.readFileSync(path.join(postDir, file), "utf8"));
+  } catch (e) {
+    err(f, `ogiltig JSON: ${e.message}`);
+    continue;
+  }
+  const slug = file.replace(/\.json$/, "");
+  if (post.slug !== slug) err(f, `slug (${post.slug}) ska vara samma som filnamnet`);
+  if (!SLUG.test(slug)) err(f, "slug får bara ha gemener, siffror och bindestreck");
+  for (const k of ["title", "metaTitle", "description", "keyword", "category", "published", "updated", "answer"]) if (typeof post[k] !== "string" || !post[k].trim()) err(f, `saknar ${k}`);
+  for (const k of ["published", "updated"]) if (!ISO.test(post[k] ?? "")) err(f, `${k} måste vara ISO-datum`);
+  if ((post.updated ?? "") < (post.published ?? "")) err(f, "updated får inte vara före published");
+
+  // Det som syns i sökresultatet.
+  if ((post.metaTitle ?? "").length > 60) err(f, `metaTitle är ${post.metaTitle.length} tecken, högst 60`);
+  const dl = (post.description ?? "").length;
+  if (dl < 110 || dl > 160) err(f, `description är ${dl} tecken, ska vara 110 till 160`);
+  const headline = `${post.title} ${post.metaTitle}`.toLowerCase();
+  for (const w of (post.keyword ?? "").toLowerCase().split(/\s+/).filter((x) => x.length > 2)) {
+    if (!headline.includes(w.slice(0, 5))) err(f, `sökfrasen "${post.keyword}" syns inte i rubriken eller metaTitle (saknar "${w}")`);
+  }
+  for (const [k, v] of [["metaTitle", post.metaTitle], ["description", post.description], ["keyword", post.keyword]]) {
+    const key = `${k}:${(v ?? "").toLowerCase()}`;
+    if (seenMeta.has(key)) err(f, `${k} är samma som i ${seenMeta.get(key)}`);
+    seenMeta.set(key, f);
+  }
+  if (!Array.isArray(post.keywords) || post.keywords.length < 2) err(f, "keywords behöver minst två närliggande sökfraser");
+
+  // Svaret först: kort nog att läsas direkt, långt nog att vara ett svar.
+  const aw = words(post.answer ?? "");
+  if (aw < 25 || aw > 70) err(f, `answer är ${aw} ord, ska vara 25 till 70`);
+  if (!Array.isArray(post.points) || post.points.length < 2 || post.points.length > 5) err(f, "points ska ha två till fem punkter");
+
+  // Brödtexten.
+  const body = Array.isArray(post.body) ? post.body : [];
+  const ids = new Set();
+  for (const [i, b] of body.entries()) {
+    const at = `body[${i}]`;
+    if (!POST_BLOCKS.has(b.type)) err(f, `${at}: okänd typ ${b.type}`);
+    if (b.type === "h2") {
+      if (!SLUG.test(b.id ?? "")) err(f, `${at}: h2 behöver ett id med gemener och bindestreck`);
+      if (ids.has(b.id) || RESERVED_IDS.has(b.id)) err(f, `${at}: id "${b.id}" används redan`);
+      ids.add(b.id);
+    }
+    if (["h2", "h3", "p", "note"].includes(b.type) && !b.text) err(f, `${at}: text saknas`);
+    if (["ul", "ol"].includes(b.type) && !(Array.isArray(b.items) && b.items.length >= 2)) err(f, `${at}: en lista behöver minst två punkter`);
+    if (b.type === "table") {
+      if (!b.caption) err(f, `${at}: tabellen saknar caption`);
+      if (!Array.isArray(b.head) || b.head.length < 2) err(f, `${at}: tabellen behöver minst två kolumner`);
+      for (const [r, row] of (b.rows ?? []).entries()) if (row.length !== b.head?.length) err(f, `${at}: rad ${r + 1} har ${row.length} celler, rubrikraden har ${b.head?.length}`);
+      if ((b.rows ?? []).length < 2) err(f, `${at}: tabellen behöver minst två rader`);
+    }
+    if (b.type === "data" && !POST_DATA.has(b.key)) err(f, `${at}: okänd datatabell "${b.key}"`);
+  }
+  if (ids.size < 3) err(f, "brödtexten behöver minst tre h2-rubriker");
+  if (body[0]?.type !== "h2") err(f, "brödtexten ska börja med en h2. Svaret står redan överst på sidan.");
+  if (!Array.isArray(post.faq) || post.faq.length < 3) err(f, "faq behöver minst tre frågor");
+  for (const [i, q] of (post.faq ?? []).entries()) if (!q.q || !q.a) err(f, `faq[${i}] saknar fråga eller svar`);
+
+  // Källor och länkar.
+  const sources = Array.isArray(post.sources) ? post.sources : [];
+  if (sources.length < 2) err(f, "sources behöver minst två källor");
+  const sourceUrls = new Set();
+  for (const [i, s] of sources.entries()) {
+    for (const k of ["title", "publisher", "url", "checked"]) if (!s[k]) err(f, `sources[${i}] saknar ${k}`);
+    if (!/^https:\/\//.test(s.url ?? "")) err(f, `sources[${i}]: url måste börja med https://`);
+    if (!ISO.test(s.checked ?? "")) err(f, `sources[${i}]: checked måste vara ISO-datum`);
+    if ((s.checked ?? "") > (post.updated ?? "")) err(f, `sources[${i}]: checked är senare än artikelns updated`);
+    if (sourceUrls.has(s.url)) err(f, `sources[${i}]: samma url två gånger`);
+    sourceUrls.add(s.url);
+  }
+  const cited = new Set();
+  const text = { answer: post.answer, points: post.points, body, faq: post.faq };
+  walkStrings(text, (s, where) => {
+    for (const m of s.matchAll(LINK)) {
+      const href = m[2];
+      if (/^https?:\/\//.test(href)) {
+        if (!sourceUrls.has(href)) err(f, `${where}: länken ${href} finns inte i sources`);
+        cited.add(href);
+      } else if (href.startsWith("/")) {
+        if (!routeExists(href)) err(f, `${where}: sidan ${href} finns inte`);
+      } else err(f, `${where}: länken ${href} ska börja med / eller https://`);
+    }
+    for (const m of s.matchAll(/\{\{([^}]*)\}\}/g)) if (!POST_TOKENS.includes(m[1])) err(f, `${where}: okänd nyckel {{${m[1]}}}`);
+  });
+  walkStrings({ title: post.title, metaTitle: post.metaTitle, description: post.description }, (s, where) => {
+    if (/\{\{|\]\(/.test(s)) err(f, `${where}: rubrik och beskrivning får inte innehålla länkar eller nycklar`);
+  });
+  for (const u of sourceUrls) if (!cited.has(u)) err(f, `källan ${u} länkas inte från texten`);
+  const internal = new Set();
+  walkStrings(text, (s) => {
+    for (const m of s.matchAll(LINK)) if (m[2].startsWith("/")) internal.add(m[2].split("#")[0]);
+  });
+  if (internal.size < 2) err(f, "artikeln behöver länka till minst två andra sidor på sajten");
+
+  if (!Array.isArray(post.related) || post.related.length < 2 || post.related.length > 3) err(f, "related ska peka på två eller tre andra artiklar");
+  for (const r of post.related ?? []) if (r === slug || !postSlugs.has(r)) err(f, `related: artikeln "${r}" finns inte`);
+  if (!post.next?.label || !routeExists(post.next?.href ?? "")) err(f, "next behöver label och en href till en sida som finns");
+
+  walkStrings(post, (s, where) => {
+    if (BANNED.test(s)) err(f, `otillåtet tankstreck eller minustecken i ${where}`);
+  });
+}
+
 try {
   const ref = JSON.parse(fs.readFileSync(path.join(root, "data", "reference.json"), "utf8"));
   walkStrings(ref, (s, where) => {
@@ -303,5 +434,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(
-  `Datakontroll ok: ${files.length} förvaltare (${blocks.ekonomisk} ekonomiska och ${blocks.teknisk} tekniska delar), alla uppgifter har källa och datum.`,
+  `Datakontroll ok: ${files.length} förvaltare (${blocks.ekonomisk} ekonomiska och ${blocks.teknisk} tekniska delar) och ${postFiles.length} artiklar, alla uppgifter har källa och datum.`,
 );

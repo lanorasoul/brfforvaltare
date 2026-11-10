@@ -1,0 +1,231 @@
+{
+  "slug": "bostadsrattsregistret",
+  "title": "Bostadsrättsregistret: det här ska föreningen göra 2027",
+  "metaTitle": "Bostadsrättsregistret 2027: vad ska föreningen göra?",
+  "description": "Alla bostadsrättsföreningar ska lämna uppgifter till Lantmäteriets bostadsrättsregister senast 31 december 2027. Se tidsplanen och vad styrelsen ska göra.",
+  "keyword": "bostadsrättsregistret",
+  "keywords": [
+    "bostadsrättsregister 2027",
+    "bostadsrättsregistret Lantmäteriet",
+    "bostadsrättsregistret uppgifter brf",
+    "pantsättning bostadsrättsregister"
+  ],
+  "category": "Regler och krav",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Alla bostadsrättsföreningar ska senast den 31 december 2027 lämna uppgifter om lägenheter, bostadsrättshavare och pantsättningar till Lantmäteriet, som bygger upp ett nationellt bostadsrättsregister. Insamlingen börjar våren 2027. En förening som inte lämnar uppgifterna kan föreläggas att göra det, och föreläggandet kan förenas med vite.",
+  "points": [
+    "Börja redan nu med att kontrollera lägenhetsförteckningen och pantnoteringarna.",
+    "Har föreningen en förvaltare kan den lämna uppgifterna åt er, med en digital fullmakt.",
+    "Föreningen fortsätter föra sin egen lägenhetsförteckning, även när registret är i bruk.",
+    "När registret är i bruk anmäler panthavaren, oftast banken, panterna själv."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "vad-ar-det",
+      "text": "Vad är bostadsrättsregistret?"
+    },
+    {
+      "type": "p",
+      "text": "Riksdagen har beslutat att Sverige ska få ett nationellt register över alla bostadsrätter. Det ska föras av [Lantmäteriet](https://www.lantmateriet.se/sv/bostadsrattsregistret/) och innehålla uppgifter om lägenheten, föreningen, bostadsrättshavaren och pantsättningar."
+    },
+    {
+      "type": "p",
+      "text": "I dag finns inget samlat register. Uppgifterna finns hos varje förening och dess förvaltare, och det är föreningen som håller reda på vilka lägenheter som är pantsatta. Enligt [Lantmäteriet](https://www.lantmateriet.se/sv/bostadsrattsregistret/om-bostadsrattsregistret/) finns ungefär 1,1 miljoner bostadsrätter och omkring 30 000 bostadsrättsföreningar. Registret ska bland annat göra hanteringen av pantsättningar säkrare, förbättra konsumentskyddet och förenkla för föreningarna."
+    },
+    {
+      "type": "h2",
+      "id": "tidsplan",
+      "text": "Tidsplan"
+    },
+    {
+      "type": "table",
+      "caption": "Tidsplan för bostadsrättsregistret",
+      "head": [
+        "När",
+        "Vad händer"
+      ],
+      "rows": [
+        [
+          "22 april 2026",
+          "Riksdagen beslutade om lagändringarna"
+        ],
+        [
+          "1 januari 2027",
+          "Lagen om införande av registret börjar gälla"
+        ],
+        [
+          "Våren 2027",
+          "Lantmäteriet börjar samla in uppgifter från föreningarna"
+        ],
+        [
+          "31 december 2027",
+          "Sista dag för föreningarna att lämna uppgifterna"
+        ],
+        [
+          "2028 eller senare",
+          "Registret tas i bruk, när regeringen har bestämt datum"
+        ]
+      ],
+      "note": "Källor: [Lantmäteriets tidslinje](https://www.lantmateriet.se/sv/bostadsrattsregistret/om-bostadsrattsregistret/tidslinje/) och [lagen (2026:485) om införande av lagen om bostadsrättsregister](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2026485-om-inforande-av-lagen-2026484-om_sfs-2026-485/)."
+    },
+    {
+      "type": "p",
+      "text": "[Riksbyggen](https://www.riksbyggen.se/kunskapsbanken/lagar-och-regler/bostadsrattsregister-2027-vad-innebar-det-for-din-forening/) räknar med att registret är i full drift omkring 2030."
+    },
+    {
+      "type": "h2",
+      "id": "vad-ska-foreningen-gora",
+      "text": "Vad ska föreningen göra?"
+    },
+    {
+      "type": "p",
+      "text": "Enligt 3 § i införandelagen ska föreningen senast den 31 december 2027 lämna de uppgifter registret ska innehålla om lägenheterna, föreningen, bostadsrättshavarna, pantsättningar och anteckningar. Ändras något efter att uppgifterna har lämnats ska föreningen meddela Lantmäteriet så snart som möjligt."
+    },
+    {
+      "type": "p",
+      "text": "[Lantmäteriet](https://www.lantmateriet.se/sv/bostadsrattsregistret/information-och-nyheter/information-till-bostadsrattsforeningar/) uppmanar föreningarna att förbereda sig redan nu, i tre steg:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Kontrollera uppgifterna om varje bostadsrättslägenhet. Börja med att beställa ett utdrag ur lägenhetsregistret och jämför det med föreningens lägenhetsförteckning.",
+        "Kontrollera pantnoteringarna.",
+        "Kontrollera uppgifterna om bostadsrättshavarna."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Uppgifterna ska kunna lämnas i en e-tjänst. Det är föreningens uppgifter som blir grunden för registret, så det lönar sig att rätta fel nu. Panthavarna kommer sedan att stämma av panterna mot sina egna uppgifter, enligt Lantmäteriets [frågor och svar](https://www.lantmateriet.se/sv/bostadsrattsregistret/information-och-nyheter/fragor-och-svar/)."
+    },
+    {
+      "type": "h2",
+      "id": "forvaltaren",
+      "text": "Vad gör förvaltaren?"
+    },
+    {
+      "type": "p",
+      "text": "Har föreningen en förvaltare eller ett annat ombud kan förberedelserna och inlämningen skötas av dem, skriver Lantmäteriet. Föreningen skapar då en digital fullmakt till en person hos förvaltaren i Lantmäteriets ombudstjänst."
+    },
+    {
+      "type": "p",
+      "text": "Förvaltarna har börjat informera sina kunder. [Nabo](https://nabo.se/kunskap/bostadsrattsregistret/) skriver till exempel att de lämnar in uppgifterna åt föreningar som har ekonomisk förvaltning hos dem. Fråga er förvaltare:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Sköter ni inlämningen till bostadsrättsregistret åt oss?",
+        "Ingår det i avtalet, eller kostar det extra?",
+        "Vad behöver styrelsen göra, och när?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Sköter föreningen ekonomin själv ligger hela arbetet på styrelsen. Läs [Måste en brf ha en förvaltare?](/kunskap/maste-brf-ha-forvaltare) om ni funderar på att ta hjälp, och se [vad som ingår i ekonomisk förvaltning](/kunskap/vad-ingar-i-ekonomisk-forvaltning)."
+    },
+    {
+      "type": "h2",
+      "id": "nar-registret-ar-i-bruk",
+      "text": "Vad händer när registret är i bruk?"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Föreningen anmäler nya bostadsrätter, övergångar som köp, arv och byte, och bostadsrätter som upphör.",
+        "Föreningen anmäler inte längre panter. Det gör panthavaren.",
+        "Föreningen fortsätter föra sin egen lägenhetsförteckning."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Fram till dess gäller dagens ordning för pantsättningar."
+    },
+    {
+      "type": "h2",
+      "id": "vite",
+      "text": "Vad händer om föreningen inte lämnar uppgifterna?"
+    },
+    {
+      "type": "p",
+      "text": "Då får Lantmäteriet enligt 7 § i införandelagen förelägga föreningen att göra det, och föreläggandet får förenas med vite. Lantmäteriet skriver att något beslut om hur stort vitet blir inte har fattats än."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Ska lokaler också registreras?",
+      "a": "Ja, om de är upplåtna med bostadsrätt. Bostäder och lokaler som föreningen hyr ut ska inte registreras, men föreningen ska lämna uppgift om det totala antalet lokaler, enligt Lantmäteriet."
+    },
+    {
+      "q": "Ska bostadsrätter som inte är pantsatta ingå?",
+      "a": "Ja. Alla bostadsrätter ska ingå i registret, oavsett om de är pantsatta eller inte."
+    },
+    {
+      "q": "Ska föreningen fortsätta skicka kontrolluppgifter (KU55) till Skatteverket?",
+      "a": "Lantmäteriet skriver att det är Skatteverket som bestämmer vad som gäller för KU55 när registret har tagits i bruk. Fram till dess är inget ändrat."
+    },
+    {
+      "q": "Gäller kravet även små föreningar?",
+      "a": "Ja. Lagen gäller alla bostadsrättsföreningar, och Lantmäteriet skriver att alla föreningar är skyldiga att lämna in uppgifterna under 2027."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Lag (2026:485) om införande av lagen (2026:484) om bostadsrättsregister",
+      "publisher": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2026485-om-inforande-av-lagen-2026484-om_sfs-2026-485/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Bostadsrättsregistret",
+      "publisher": "Lantmäteriet",
+      "url": "https://www.lantmateriet.se/sv/bostadsrattsregistret/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Om bostadsrättsregistret",
+      "publisher": "Lantmäteriet",
+      "url": "https://www.lantmateriet.se/sv/bostadsrattsregistret/om-bostadsrattsregistret/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Tidslinje för bostadsrättsregistret",
+      "publisher": "Lantmäteriet",
+      "url": "https://www.lantmateriet.se/sv/bostadsrattsregistret/om-bostadsrattsregistret/tidslinje/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Information till bostadsrättsföreningar",
+      "publisher": "Lantmäteriet",
+      "url": "https://www.lantmateriet.se/sv/bostadsrattsregistret/information-och-nyheter/information-till-bostadsrattsforeningar/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Frågor och svar om bostadsrättsregistret",
+      "publisher": "Lantmäteriet",
+      "url": "https://www.lantmateriet.se/sv/bostadsrattsregistret/information-och-nyheter/fragor-och-svar/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Bostadsrättsregister 2027: vad innebär det för din förening?",
+      "publisher": "Riksbyggen",
+      "url": "https://www.riksbyggen.se/kunskapsbanken/lagar-och-regler/bostadsrattsregister-2027-vad-innebar-det-for-din-forening/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Bostadsrättsregistret: det här betyder det för er förening",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/kunskap/bostadsrattsregistret/",
+      "checked": "2026-11-10"
+    }
+  ],
+  "related": [
+    "maste-brf-ha-forvaltare",
+    "k3-brf",
+    "vad-ingar-i-ekonomisk-forvaltning"
+  ],
+  "next": {
+    "href": "/ekonomisk-forvaltning",
+    "label": "Jämför ekonomisk förvaltning"
+  }
+}

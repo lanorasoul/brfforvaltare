@@ -1,0 +1,202 @@
+{
+  "slug": "vad-ar-teknisk-forvaltning",
+  "title": "Vad är teknisk förvaltning? Skillnaden mot fastighetsskötsel",
+  "metaTitle": "Teknisk förvaltning brf: vad det är och vad som ingår",
+  "description": "Teknisk förvaltning är planering och uppföljning av fastighetens underhåll. Fastighetsskötsel är det dagliga arbetet. Se vad som ingår och vad som är tillval.",
+  "keyword": "teknisk förvaltning",
+  "keywords": [
+    "vad är teknisk förvaltning",
+    "skillnad teknisk förvaltning fastighetsskötsel",
+    "vad gör en teknisk förvaltare",
+    "vad ingår i teknisk förvaltning"
+  ],
+  "category": "Vad förvaltning innehåller och kostar",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Teknisk förvaltning är planering, samordning och uppföljning av fastighetens drift och underhåll: underhållsplan, besiktningar, myndighetskrav, upphandling och kontakt med entreprenörer. Fastighetsskötsel är det dagliga praktiska arbetet, som ronderingar, lampbyten och enklare reparationer. Enligt Bredablick kombineras de två i de flesta uppdrag.",
+  "points": [
+    "Förvaltaren ger råd och ser till att beslut genomförs. Besluten fattar styrelsen.",
+    "Fastighetsskötsel ingår inte automatiskt i teknisk förvaltning. Kontrollera avtalet.",
+    "OVK, stamspolning och större renoveringar ligger oftast utanför det löpande avtalet.",
+    "{{tek.total}} av {{providers}} förvaltare i vår jämförelse erbjuder teknisk förvaltning."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "vad-gor-en-teknisk-forvaltare",
+      "text": "Vad gör en teknisk förvaltare?"
+    },
+    {
+      "type": "p",
+      "text": "En teknisk förvaltare är styrelsens stöd i frågor om fastigheten. [Bredablick](https://bredablickforvaltning.se/teknisk-forvaltning/) beskriver rollen som att ta fram underlag, ge råd och se till att beslutade åtgärder genomförs. Förvaltaren fattar inte besluten, det gör styrelsen."
+    },
+    {
+      "type": "p",
+      "text": "[Riksbyggens](https://www.riksbyggen.se/fastighetsforvaltning/teknisk-forvaltning/) grundtjänst ger en bild av vad som brukar ingå:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Uppdatera underhållsplanen och göra underhållsbesiktning",
+        "Årlig övergripande tillsyn av fastigheten, med förslag på åtgärder",
+        "Bevaka myndighetskrav",
+        "Upphandla material, tjänster och leverantörer för driften",
+        "Hantera försäkrings- och skadeärenden",
+        "Hålla ordning på avtal, garantier och försäkringsdokument",
+        "Årsplanering av underhåll, besiktningar och avtal som ska omförhandlas",
+        "Tekniskt stöd till styrelsen"
+      ]
+    },
+    {
+      "type": "h2",
+      "id": "skillnaden",
+      "text": "Teknisk förvaltning och fastighetsskötsel är inte samma sak"
+    },
+    {
+      "type": "p",
+      "text": "Begreppen blandas ofta ihop. [Fastum](https://fastum.se/teknisk-forvaltning/) drar gränsen så här: fastighetsskötsel tar hand om det dagliga, som lampor, ronderingar och enklare felanmälningar, medan teknisk förvaltning handlar om att planera, följa upp och utveckla fastigheten på lång sikt."
+    },
+    {
+      "type": "table",
+      "caption": "Skillnaden mellan teknisk förvaltning och fastighetsskötsel",
+      "head": [
+        "Fråga",
+        "Teknisk förvaltning",
+        "Fastighetsskötsel"
+      ],
+      "rows": [
+        [
+          "Vad det handlar om",
+          "Planering, uppföljning och utveckling av fastigheten",
+          "Den dagliga driften och skötseln"
+        ],
+        [
+          "Exempel på uppgifter",
+          "Underhållsplan, upphandling, myndighetskrav och projekt",
+          "Ronderingar, lampbyten, enklare reparationer och skötsel av utemiljö"
+        ],
+        [
+          "Tidsperspektiv",
+          "Flera år framåt",
+          "Dag för dag och vecka för vecka"
+        ],
+        [
+          "Vem som gör arbetet",
+          "En förvaltare som samordnar och ger råd",
+          "Fastighetsskötare och drifttekniker"
+        ]
+      ],
+      "note": "Sammanställt efter hur Bredablick, Fastum och Delagott beskriver tjänsterna."
+    },
+    {
+      "type": "p",
+      "text": "[Delagott](https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning) svarar att fastighetsskötsel inte ingår automatiskt i teknisk förvaltning, utan ofta är ett eget tjänsteområde. Samtidigt säljs de ofta ihop. Enligt Bredablick kombineras de i de flesta uppdrag, och förvaltaren leder då fastighetsskötarna."
+    },
+    {
+      "type": "h2",
+      "id": "tjanster",
+      "text": "Vilka tjänster listar förvaltarna?"
+    },
+    {
+      "type": "p",
+      "text": "Vi har läst hur {{tek.total}} förvaltare beskriver tolv vanliga tjänster inom teknisk förvaltning."
+    },
+    {
+      "type": "data",
+      "key": "features-teknisk"
+    },
+    {
+      "type": "h2",
+      "id": "utanfor-avtalet",
+      "text": "Det som oftast ligger utanför avtalet"
+    },
+    {
+      "type": "p",
+      "text": "[Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2020/vem-ska-skota-om-fastigheten) skriver att löpande avtal brukar omfatta det som återkommer ofta. Det som görs sällan eller vid behov ligger oftast utanför, till exempel:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Stamspolning och rensning av ventilationskanaler",
+        "Kontroller som myndigheter kräver, till exempel obligatorisk ventilationskontroll (OVK)",
+        "Planerat underhåll, som en balkongrenovering"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Fastum anger dessutom att energikartläggning, projektledning och byggledning oftast är tillval. Se också till att två avtal inte överlappar. Bostadsrätterna nämner som exempel fastighetsskötsel med tillsyn av undercentralen när föreningen redan har ett driftavtal som omfattar samma sak."
+    },
+    {
+      "type": "h2",
+      "id": "behover-vi-det",
+      "text": "Behöver föreningen teknisk förvaltning?"
+    },
+    {
+      "type": "p",
+      "text": "Det finns inget krav på att köpa tjänsten. Bostadsrätterna råder styrelsen att utgå från tre frågor: vilken kompetens finns i föreningen, hur mycket tid har styrelsen, och vilka uppgifter är bättre att köpa än att göra själv?"
+    },
+    {
+      "type": "p",
+      "text": "Omfattningen går att anpassa. Enligt Bredablick väljer vissa föreningar bara fastighetsskötsel, andra lämnar över allt, och de flesta hamnar däremellan. Vad det kostar står i [Vad kostar teknisk förvaltning?](/kunskap/vad-kostar-teknisk-forvaltning), och vilka förvaltare som erbjuder vad ser ni under [Jämför teknisk förvaltning](/teknisk-forvaltning)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Vem ansvarar för underhållsplanen?",
+      "a": "Styrelsen ansvarar för föreningens beslut. En teknisk förvaltare eller specialist kan ta fram och uppdatera planen, skriver Delagott. Läs mer i [guiden om underhållsplan](/kunskap/underhallsplan-brf)."
+    },
+    {
+      "q": "Är en fastighetsförvaltare samma sak som en teknisk förvaltare?",
+      "a": "Inte alltid. Delagott påpekar att begreppen används olika i branschen, och råder styrelser att be förvaltaren beskriva arbetsuppgifter och ansvar i stället för att lita på titeln."
+    },
+    {
+      "q": "Kan samma bolag sköta både teknisk och ekonomisk förvaltning?",
+      "a": "Ja, det kallas ofta totalförvaltning. Läs om för- och nackdelar i [Totalförvaltning eller två förvaltare?](/kunskap/totalforvaltning-brf)"
+    },
+    {
+      "q": "Ingår felanmälan och jour?",
+      "a": "Det varierar. Tabellen ovan visar hur många förvaltare som listar felanmälan och jour, och på vilket sätt."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Teknisk förvaltning för brf och fastighetsbolag",
+      "publisher": "Bredablick Förvaltning",
+      "url": "https://bredablickforvaltning.se/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk förvaltning",
+      "publisher": "Riksbyggen",
+      "url": "https://www.riksbyggen.se/fastighetsforvaltning/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk förvaltning för BRF",
+      "publisher": "Fastum",
+      "url": "https://fastum.se/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk eller ekonomisk förvaltning: vad är skillnaden?",
+      "publisher": "Delagott",
+      "url": "https://www.delagott.se/teknisk-eller-ekonomisk-forvaltning",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Vem ska sköta om fastigheten?",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2020/vem-ska-skota-om-fastigheten",
+      "checked": "2026-11-10"
+    }
+  ],
+  "related": [
+    "vad-kostar-teknisk-forvaltning",
+    "underhallsplan-brf",
+    "totalforvaltning-brf"
+  ],
+  "next": {
+    "href": "/teknisk-forvaltning",
+    "label": "Jämför teknisk förvaltning"
+  }
+}

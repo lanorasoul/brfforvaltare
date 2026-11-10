@@ -13,6 +13,7 @@ import "../styles/overview.css";
 import "../styles/wizard.css";
 import "../styles/insights.css";
 import "../styles/home.css";
+import "../styles/post.css";
 import { JsonLd } from "@/components/JsonLd";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";

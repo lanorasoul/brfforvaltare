@@ -7,6 +7,7 @@ import { ArrowIcon } from "./icons";
 import { KeyFactsTable } from "./KeyFactsTable";
 import { OpennessMatrix } from "./OpennessMatrix";
 import { PageHead } from "./PageHead";
+import { PostMore } from "./PostMore";
 import { getCompareData, getProviders } from "@/lib/data";
 import { pricedCount } from "@/lib/matrix";
 import { QUESTIONS } from "@/lib/offer";
@@ -14,6 +15,12 @@ import { CATEGORY, withBlock } from "@/lib/schema";
 import type { Category } from "@/lib/types";
 
 /** Hela jämförelsen för en kategori: filter, nyckeluppgifter, tjänstematris och öppenhet. */
+/** Artiklar som hör till kategorin, längst ned på sidan. */
+const READ_MORE: Record<Category, string[]> = {
+  ekonomisk: ["vad-ingar-i-ekonomisk-forvaltning", "k3-brf", "bostadsrattsregistret"],
+  teknisk: ["vad-ar-teknisk-forvaltning", "vad-kostar-teknisk-forvaltning", "underhallsplan-brf"],
+};
+
 export function CategoryView({ category }: { category: Category }) {
   const providers = getProviders();
   const compare = getCompareData();
@@ -104,6 +111,7 @@ export function CategoryView({ category }: { category: Category }) {
               Jämför sida vid sida
             </Link>
           </div>
+          <PostMore slugs={READ_MORE[category]} />
         </div>
       </section>
     </>

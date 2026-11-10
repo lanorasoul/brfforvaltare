@@ -1,0 +1,185 @@
+{
+  "slug": "maste-brf-ha-forvaltare",
+  "title": "Måste en brf ha en förvaltare?",
+  "metaTitle": "Måste en brf ha en förvaltare? Lagkrav och alternativ",
+  "description": "Nej, en bostadsrättsförening måste inte ha en förvaltare. Men styrelsen ansvarar alltid för bokföring, årsredovisning och fastighet. Det här krävs utan.",
+  "keyword": "måste brf ha förvaltare",
+  "keywords": [
+    "brf utan förvaltare",
+    "sköta brf ekonomi själv",
+    "måste brf ha ekonomisk förvaltare",
+    "styrelsens ansvar förvaltning brf"
+  ],
+  "category": "Välja förvaltare",
+  "published": "2026-11-10",
+  "updated": "2026-11-10",
+  "answer": "Nej. Det finns inget lagkrav på att en bostadsrättsförening ska anlita en förvaltare, varken för ekonomin eller för fastigheten. Styrelsen får sköta allt själv. Ansvaret ligger däremot alltid hos styrelsen, även när arbetet lämnas över, och från räkenskapsåret 2026 ska årsredovisningen följa regelverket K3.",
+  "points": [
+    "Styrelsen ansvarar enligt lag för föreningens organisation, bokföring och medelsförvaltning.",
+    "Utan förvaltare ska styrelsen själv klara bokföring, avier, årsredovisning enligt K3, deklaration och förteckningar.",
+    "Under 2027 ska alla föreningar lämna uppgifter till det nya bostadsrättsregistret.",
+    "Det går att köpa bara en del, till exempel ekonomisk förvaltning utan teknisk."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "vad-lagen-sager",
+      "text": "Vad säger lagen?"
+    },
+    {
+      "type": "p",
+      "text": "Ingen lag kräver att föreningen anlitar en förvaltare. [SBC](https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/) svarar kort nej på frågan, och tillägger att föreningen kan sköta ekonomin själv men att styrelsen fortfarande ansvarar för att bokföring, årsredovisning och deklarationer blir rätt."
+    },
+    {
+      "type": "p",
+      "text": "Ansvaret framgår av lag. Enligt 7 kap. 4 § [lagen om ekonomiska föreningar](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018672-om-ekonomiska-foreningar_sfs-2018-672/), som enligt 9 kap. 12 § [bostadsrättslagen](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bostadsrattslag-1991614_sfs-1991-614/) också gäller bostadsrättsföreningar, ska styrelsen:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "ansvara för föreningens organisation och förvaltningen av föreningens angelägenheter",
+        "fortlöpande bedöma föreningens ekonomiska situation",
+        "se till att bokföringen, medelsförvaltningen och föreningens ekonomiska förhållanden i övrigt kontrolleras på ett betryggande sätt"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Samma paragraf säger att styrelsen får lämna över uppgifter till andra, men att den då ska handla med omsorg och fortlöpande kontrollera att det fungerar. En förvaltare tar alltså över arbetet, inte ansvaret."
+    },
+    {
+      "type": "h2",
+      "id": "utan-forvaltare",
+      "text": "Det här ska styrelsen klara utan förvaltare"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Löpande bokföring, betalning av fakturor och avisering av avgifter.",
+        "Budget, bokslut och årsredovisning. Från det räkenskapsår som börjar efter den 31 december 2025 ska alla bostadsrättsföreningar upprätta årsredovisningen enligt K3, enligt [Bokföringsnämnden](https://www.bfn.se/fragor-och-svar/andringar-i-k2-och-k3-fran-2026/).",
+        "Deklaration och rapportering till myndigheter.",
+        "Medlemsförteckning och lägenhetsförteckning, som styrelsen enligt 9 kap. 8 § bostadsrättslagen ska föra.",
+        "Uppgifter till bostadsrättsregistret, som alla föreningar ska lämna till [Lantmäteriet](https://www.lantmateriet.se/sv/bostadsrattsregistret/information-och-nyheter/information-till-bostadsrattsforeningar/) under 2027.",
+        "Tillsyn och underhåll av fastigheten, upphandling av entreprenörer och koll på myndighetskrav."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Läs mer om [K3](/kunskap/k3-brf) och [bostadsrättsregistret](/kunskap/bostadsrattsregistret)."
+    },
+    {
+      "type": "h2",
+      "id": "nar-lonar-det-sig",
+      "text": "När lönar det sig att anlita en förvaltare?"
+    },
+    {
+      "type": "p",
+      "text": "[Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2020/vem-ska-skota-om-fastigheten) råder varje styrelse att ställa sig tre frågor: vilken kompetens finns i föreningen, vilka resurser har vi i form av tid och kunskap, och vilka uppgifter bör vi köpa i stället för att göra själva?"
+    },
+    {
+      "type": "p",
+      "text": "SBC pekar på tiden och ansvaret som de vanligaste skälen: bokföringen ska skötas varje månad även när styrelsen byts ut, och nya regler som K3 ställer högre krav på redovisningen."
+    },
+    {
+      "type": "h2",
+      "id": "mellanvagar",
+      "text": "Mellanvägar: köp bara det ni behöver"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "**Bara ekonomisk förvaltning.** Förvaltare säljer ofta ekonomisk och teknisk förvaltning var för sig. Se [vad som ingår i ekonomisk förvaltning](/kunskap/vad-ingar-i-ekonomisk-forvaltning).",
+        "**Ett enklare paket.** [ERF](https://erf.se/vanliga-fragor) har till exempel paketet Enkel, där bokföring, årsredovisning, deklaration och avier ingår och föreningen betalar för telefon, möten och rådgivning först när de används.",
+        "**Teknisk hjälp vid behov.** [SBC](https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/) säljer en teknisk förvaltare på avrop, per timme och utan fast avtal."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Vad det kostar beror mest på storleken. Bland förvaltare som publicerar priser börjar ekonomisk förvaltning på 9 469 kr per år exklusive moms för tre lägenheter hos [ERF](https://erf.se/ekonomisk-forvaltning/kostnad) (paketet Enkel) och på 22 000 kr per år hos SBC. Priser för fler storlekar finns i [prisguiden](/prisguide)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Kan styrelsen sköta bokföringen själv?",
+      "a": "Ja, det är tillåtet. Styrelsen ansvarar då för att bokföring, årsredovisning och deklaration blir rätt, och från räkenskapsåret 2026 ska årsredovisningen upprättas enligt K3."
+    },
+    {
+      "q": "Vem ansvarar om förvaltaren gör fel?",
+      "a": "Styrelsen har kvar ansvaret för föreningens förvaltning och ska enligt lagen fortlöpande kontrollera de uppgifter den har lämnat över. Vad förvaltaren ansvarar för gentemot föreningen står i förvaltningsavtalet."
+    },
+    {
+      "q": "Kan förvaltaren vara föreningens kassör?",
+      "a": "Inte formellt, eftersom kassören är en roll i styrelsen. [Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/) skriver att förvaltaren ändå gör det mesta av kassörens arbete, som avier, betalningar och bokföring, men att styrelsen själv måste attestera fakturorna."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Ekonomisk förvaltning för brf",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Lag (2018:672) om ekonomiska föreningar",
+      "publisher": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018672-om-ekonomiska-foreningar_sfs-2018-672/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Bostadsrättslag (1991:614)",
+      "publisher": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bostadsrattslag-1991614_sfs-1991-614/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Frågor och svar: Ändringar i K2 och K3 från 2026",
+      "publisher": "Bokföringsnämnden",
+      "url": "https://www.bfn.se/fragor-och-svar/andringar-i-k2-och-k3-fran-2026/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Information till bostadsrättsföreningar",
+      "publisher": "Lantmäteriet",
+      "url": "https://www.lantmateriet.se/sv/bostadsrattsregistret/information-och-nyheter/information-till-bostadsrattsforeningar/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Vem ska sköta om fastigheten?",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2020/vem-ska-skota-om-fastigheten",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Vanliga frågor",
+      "publisher": "ERF",
+      "url": "https://erf.se/vanliga-fragor",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Teknisk förvaltning för brf och föreningar",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/teknisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för BRF: pris och kostnad",
+      "publisher": "ERF",
+      "url": "https://erf.se/ekonomisk-forvaltning/kostnad",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för din BRF",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "vad-ingar-i-ekonomisk-forvaltning",
+    "k3-brf",
+    "bostadsrattsregistret"
+  ],
+  "next": {
+    "href": "/prisguide",
+    "label": "Se vad förvaltning kostar"
+  }
+}

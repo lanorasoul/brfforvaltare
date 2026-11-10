@@ -6,6 +6,7 @@ import { ArrowIcon, CheckIcon, ExternalIcon } from "@/components/icons";
 import { HeroPreview } from "@/components/HeroPreview";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { JsonLd } from "@/components/JsonLd";
+import { PostStrip } from "@/components/PostMore";
 import { ProviderOverview } from "@/components/ProviderOverview";
 import { WhySwitch } from "@/components/WhySwitch";
 import { getProvider, getProviders, requireSource } from "@/lib/data";
@@ -180,6 +181,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <PostStrip slugs={["basta-forvaltaren-brf", "uppsagningstid-forvaltningsavtal", "bostadsrattsregistret"]} />
 
       <section className="home-band home-band-last" id="fragor" aria-labelledby="faq-title">
         <div className="container-narrow">

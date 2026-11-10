@@ -4,6 +4,7 @@ import { Checklist } from "@/components/Checklist";
 import { ArrowIcon, ExternalIcon } from "@/components/icons";
 import { NoticeTool } from "@/components/NoticeTool";
 import { OfferTemplates } from "@/components/OfferTemplates";
+import { PostMore } from "@/components/PostMore";
 import { PageHead } from "@/components/PageHead";
 import { SourceLink } from "@/components/SourceLink";
 import { Toc } from "@/components/Toc";
@@ -262,6 +263,7 @@ export default function ByttaPage() {
                 </>
               )}
             </section>
+            <PostMore slugs={["uppsagningstid-forvaltningsavtal", "basta-forvaltaren-brf", "totalforvaltning-brf"]} />
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const LINKS: { href: string; label: string; short?: string }[] = [
   { href: "/forvaltare", label: "Förvaltare" },
   { href: "/prisguide", label: "Prisguide" },
   { href: "/byta-forvaltare", label: "Byta förvaltare" },
-  { href: "/metod", label: "Metod" },
+  { href: "/kunskap", label: "Kunskap" },
 ];
 
 export function Nav() {
