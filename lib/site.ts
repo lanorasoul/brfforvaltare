@@ -11,7 +11,7 @@ export const SITE = {
    * Den som driver sajten och ansvarar för personuppgifterna i förfrågningarna. Fylls i före publicering.
    * Förfrågningar är stängda så länge den är null, och sajten släpps inte in i sökmotorer utan den.
    */
-  operator: null as { name: string; orgnr: string | null; address: string | null } | null,
+  operator: { name: "Brfforvaltare", orgnr: null, address: null } as { name: string; orgnr: string | null; address: string | null } | null,
   /**
    * Intressen som läsaren bör känna till, en mening per post. Visas på metodsidan och på sidan för förvaltare.
    * Exempel: att den som driver sajten också sitter i styrelsen för en bostadsrättsförening.
