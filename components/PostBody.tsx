@@ -62,7 +62,7 @@ function Block({ b }: { b: Exclude<PostBlock, { type: "h2" }> }) {
     case "table":
       return (
         <figure className="post-figure">
-          <ScrollRegion label={b.caption} className="post-table-wrap" hint>
+          <ScrollRegion stack={b.rows.some((r) => r.some((c) => c.length > 24))} label={b.caption} className="post-table-wrap" hint>
             <table className="post-table">
               <caption>{b.caption}</caption>
               <thead>

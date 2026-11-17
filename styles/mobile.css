@@ -1,0 +1,339 @@
+/*
+ * Mobil: inga tabeller som måste rullas i sidled.
+ * En tabell med klassen stack (sätts av ScrollRegion) blir ett kort per rad, med kolumnens rubrik vid varje värde.
+ * Smala sifferabeller krymps i stället så att de får plats.
+ */
+
+@media (max-width: 640px) {
+  .stack {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+
+  .stack table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+  }
+
+  .stack thead {
+    display: none;
+  }
+
+  .stack caption:not(.sr-only) {
+    display: block;
+    padding: 0 0 10px;
+    border: 0;
+    background: none;
+  }
+
+  .stack tbody,
+  .stack tfoot {
+    display: grid;
+    gap: 10px;
+  }
+
+  .stack tfoot {
+    margin-top: 10px;
+  }
+
+  .stack tr {
+    display: block;
+    padding: 4px 16px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fff;
+  }
+
+  .stack tr:hover th,
+  .stack tr:hover td {
+    background: none;
+  }
+
+  /* Radens rubrik, oftast förvaltarens namn, blir kortets rubrik. */
+  .stack tr > th[scope="row"] {
+    position: static;
+    display: block;
+    min-width: 0;
+    width: auto;
+    padding: 12px 0 10px;
+    border: 0;
+    box-shadow: none;
+    background: none;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .stack tr > td {
+    display: grid;
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+    gap: 12px;
+    align-items: baseline;
+    min-width: 0 !important;
+    padding: 10px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    text-align: left;
+    white-space: normal;
+  }
+
+  .stack tr > td::before {
+    content: attr(data-label);
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--ink-3);
+  }
+
+  /* Celler utan rubrik, till exempel ett meddelande som spänner över hela raden. */
+  .stack tr > td[colspan],
+  .stack tr > td[data-label=""] {
+    display: block;
+  }
+
+  .stack tr > td[colspan]::before,
+  .stack tr > td[data-label=""]::before {
+    content: none;
+  }
+
+  .stack .dtable-num,
+  .stack .num {
+    text-align: left;
+  }
+
+  .stack .kf-price,
+  .stack .kf-src,
+  .stack .dtable-nowrap {
+    white-space: normal;
+  }
+
+  /* Smala tabeller som inte staplas krymps så att de ryms. */
+  .dtable-wrap:not(.stack) .dtable {
+    font-size: 14px;
+  }
+
+  .dtable-wrap:not(.stack) .dtable th,
+  .dtable-wrap:not(.stack) .dtable td {
+    padding: 10px 12px;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+}
+
+/* ---------- matriser som staplar ---------- */
+
+.mxb {
+  display: none;
+}
+
+.mxb-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.mxb-key li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mxb-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.mxb-list {
+  display: grid;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.mxb-list > li + li {
+  border-top: 1px solid var(--line);
+}
+
+.mxb-item summary {
+  display: grid;
+  gap: 8px;
+  padding: 13px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mxb-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.mxb-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mxb-count {
+  flex: none;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+}
+
+.mxb-item[open] .mxb-count::after {
+  content: " −";
+}
+
+.mxb-item:not([open]) .mxb-count::after {
+  content: " +";
+}
+
+.mxb-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.mxb-strong {
+  background: var(--ink);
+}
+
+.mxb-weak {
+  background: var(--ink-3);
+  opacity: 0.45;
+}
+
+.mxb-groups {
+  display: grid;
+  gap: 8px;
+  padding: 0 16px 14px;
+  font-size: 14px;
+}
+
+.mxb-groups dt {
+  font-weight: 600;
+}
+
+.mxb-groups dd {
+  color: var(--ink-2);
+}
+
+@media (max-width: 640px) {
+  .mxb {
+    display: block;
+  }
+
+  .fm-scroll,
+  .matrix-scroll,
+  .fm-key,
+  .matrix-key {
+    display: none;
+  }
+
+  /* Jämförelsen sida vid sida: uppgiftens namn på en egen rad, förvaltarna i kolumner under. */
+  .cp-wrap {
+    overflow: visible;
+  }
+
+  .cp-table,
+  .cp-table thead,
+  .cp-table tbody {
+    display: block;
+    min-width: 0;
+  }
+
+  .cp-table tr {
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
+  }
+
+  .cp-table th,
+  .cp-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .cp-table td + td,
+  .cp-head + .cp-head {
+    border-left: 1px solid var(--line);
+  }
+
+  .cp-corner,
+  .cp-scroll-hint {
+    display: none;
+  }
+
+  .cp-table tbody th[scope="row"],
+  .cp-group th {
+    position: static;
+    grid-column: 1 / -1;
+    width: auto;
+    min-width: 0;
+    padding-bottom: 0;
+    background: none;
+    font-size: 12.5px;
+  }
+
+  .cp-group th {
+    padding-block: 9px;
+    background: var(--panel);
+  }
+
+  .cp-table tbody th[scope="row"] + td,
+  .cp-table tbody th[scope="row"] ~ td {
+    border-top: 0;
+  }
+
+  .cp-name {
+    font-size: 15px;
+  }
+
+  .cp-price strong {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Allt cellinnehåll hamnar i värdekolumnen, även undertexter. */
+  .stack tr > td > * {
+    grid-column: 2;
+  }
+
+  /* Rader utan uppgift säger inget på en liten skärm och tas bort. */
+  .stack .kf tr > td:not(:nth-child(2)):has(> .kf-none:only-child) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Artikeltabeller med korta värden ryms som vanliga tabeller. */
+  .post-table-wrap:not(.stack) .post-table {
+    min-width: 0;
+    font-size: 13.5px;
+  }
+
+  .post-table-wrap:not(.stack) .post-table th,
+  .post-table-wrap:not(.stack) .post-table td {
+    padding: 9px 8px;
+  }
+
+  .post-table-wrap:not(.stack) .post-table thead th {
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+}

@@ -7,6 +7,8 @@ import { ScrollRegion } from "./ScrollRegion";
 import { matrixStats } from "@/lib/matrix";
 import { CATEGORY, DISCLOSURE_KEYS } from "@/lib/schema";
 import { ProviderLogo } from "./ProviderLogo";
+import { MatrixBars } from "./MatrixBars";
+import type { Presence } from "@/lib/types";
 
 /** Vad förvaltarna berättar öppet på sina egna sidor. Samma ort och kategori som i tabellerna ovanför. */
 export function OpennessMatrix() {
@@ -14,6 +16,15 @@ export function OpennessMatrix() {
   const keys = DISCLOSURE_KEYS[category];
   const label = CATEGORY[category].label.toLowerCase();
   const stats = matrixStats(shown.map((s) => s.row), category);
+  const states: Presence[] = ["published", "partial", "notfound"];
+  const bars = keys.map((k) => ({
+    key: k.key,
+    label: k.label,
+    strong: stats.byKey[k.key].published,
+    weak: stats.byKey[k.key].partial,
+    total: stats.providers,
+    groups: states.map((st) => ({ label: PRESENCE_LABEL[st], names: shown.filter(({ row }) => row.disclosure[k.key] === st).map(({ row }) => row.name) })),
+  }));
 
   return (
     <div className="matrix-wrap">
@@ -78,6 +89,8 @@ export function OpennessMatrix() {
           )}
         </table>
       </ScrollRegion>
+
+      {shown.length > 0 && <MatrixBars items={bars} strongLabel="Publicerat" weakLabel="Delvis" countLabel="Berättar om det" />}
 
       <ul className="matrix-key" aria-label="Teckenförklaring">
         <li>

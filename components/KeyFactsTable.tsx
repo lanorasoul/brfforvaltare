@@ -15,7 +15,7 @@ export function KeyFactsTable() {
 
   return (
     <div className="kf-wrap">
-      <ScrollRegion label={`Nyckeluppgifter för ${label}, rulla i sidled`} className="kf-scroll" hint>
+      <ScrollRegion stack label={`Nyckeluppgifter för ${label}, rulla i sidled`} className="kf-scroll" hint>
         <table className="kf">
           <caption className="sr-only">
             Nyckeluppgifter för {label}: pris, uppsägningstid, paket och var förvaltaren verkar. Sorterad efter namn.

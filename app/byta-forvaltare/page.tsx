@@ -151,7 +151,7 @@ export default function ByttaPage() {
                 {blocks.teknisk.length}. Det betyder inte att de andra saknar en, bara att den inte står där. Fråga alltid och be om svaret skriftligt.
               </p>
               {withNotice.length > 0 && (
-                <ScrollRegion label="Uppsägningstid enligt förvaltarna själva" className="dtable-wrap">
+                <ScrollRegion stack label="Uppsägningstid enligt förvaltarna själva" className="dtable-wrap">
                   <table className="dtable">
                     <caption className="sr-only">Uppsägningstid enligt förvaltarna själva, för ekonomisk och teknisk förvaltning</caption>
                     <thead>

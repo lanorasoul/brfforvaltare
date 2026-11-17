@@ -152,7 +152,7 @@ export default function PrisguidePage() {
               <p className="muted">Kr per år, så som förvaltarna själva anger det. Märket visar hur säker siffran är. Förvaltarna står i namnordning.</p>
             </div>
 
-            <ScrollRegion label="Pris per år för 20, 50 och 100 lägenheter" className="dtable-wrap dtable-sticky">
+            <ScrollRegion stack label="Pris per år för 20, 50 och 100 lägenheter" className="dtable-wrap dtable-sticky">
               <table className="dtable">
                 <caption className="sr-only">Pris per år för 20, 50 och 100 lägenheter</caption>
                 <thead>
@@ -245,7 +245,7 @@ export default function PrisguidePage() {
 
             <details className="twin">
               <summary className="twin-sum">Visa diagrammets punkter som tabell</summary>
-              <ScrollRegion label="Alla punkter i diagrammet" className="dtable-wrap">
+              <ScrollRegion stack label="Alla punkter i diagrammet" className="dtable-wrap">
                 <table className="dtable">
                   <caption className="sr-only">Alla punkter i diagrammet</caption>
                   <thead>
@@ -275,7 +275,7 @@ export default function PrisguidePage() {
             </details>
 
             <h3 className="h4 gsec-sub">Kr per lägenhet och år</h3>
-            <ScrollRegion label="Pris per lägenhet och år för 20, 50 och 100 lägenheter" className="dtable-wrap dtable-sticky">
+            <ScrollRegion stack label="Pris per lägenhet och år för 20, 50 och 100 lägenheter" className="dtable-wrap dtable-sticky">
               <table className="dtable">
                 <caption className="sr-only">Pris per lägenhet och år för 20, 50 och 100 lägenheter</caption>
                 <thead>
@@ -388,7 +388,7 @@ export default function PrisguidePage() {
             {addOns.length > 0 && (
               <>
                 <p className="gsec-text">Det enda vi hittar med pris är tillägg som rör en digital underhållsplan:</p>
-                <ScrollRegion label="Tillägg med pris som rör underhållsplan" className="dtable-wrap">
+                <ScrollRegion stack label="Tillägg med pris som rör underhållsplan" className="dtable-wrap">
                   <table className="dtable">
                     <caption className="sr-only">Tillägg med pris som rör underhållsplan</caption>
                     <thead>
@@ -450,7 +450,7 @@ export default function PrisguidePage() {
               <p className="muted">{ref.note}</p>
             </div>
 
-            <ScrollRegion label="Offertas allmänna nivåer för ekonomisk förvaltning" className="dtable-wrap">
+            <ScrollRegion stack label="Offertas allmänna nivåer för ekonomisk förvaltning" className="dtable-wrap">
               <table className="dtable">
                 <caption className="sr-only">Offertas allmänna nivåer för ekonomisk förvaltning</caption>
                 <thead>

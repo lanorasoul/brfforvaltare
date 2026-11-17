@@ -108,7 +108,7 @@ export function overviewRows(providers: Provider[]): OverviewRow[] {
   });
 }
 
-export type SortKey = "name" | "price" | "nki" | "clients";
+export type SortKey = "name" | "price" | "nki";
 
 /**
  * Sorterar raderna. Namn är standard. Övriga ordningar väljer besökaren själv, och rader som saknar

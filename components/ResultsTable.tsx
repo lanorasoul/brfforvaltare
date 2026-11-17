@@ -41,7 +41,7 @@ export function ResultsTable({ results, categories, n, ort, selectable = false, 
 
   return (
     <div className="kf-wrap">
-      <ScrollRegion label={`${caption}, rulla i sidled`} className="kf-scroll" hint>
+      <ScrollRegion stack label={`${caption}, rulla i sidled`} className="kf-scroll" hint>
         <table className="kf">
           <caption className="sr-only">{caption}</caption>
           <thead>

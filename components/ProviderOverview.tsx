@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useId, useMemo, useState } from "react";
 import { ArrowIcon, ExternalIcon, MinusIcon, PlusIcon } from "./icons";
 import { ProviderLogo } from "./ProviderLogo";
-import { dateLong, num } from "@/lib/format";
+import { num } from "@/lib/format";
 import { sortRows, type OverviewRating, type OverviewRow, type SortKey } from "@/lib/overview";
 import { priceRow, type PriceRow } from "@/lib/price";
 import { priceLabel, VAT_TEXT } from "@/lib/price-label";
@@ -21,7 +21,6 @@ const SORTS: { key: SortKey; label: string }[] = [
   { key: "name", label: "Namn" },
   { key: "price", label: "Pris" },
   { key: "nki", label: "Kundnöjdhet" },
-  { key: "clients", label: "Antal kunder" },
 ];
 
 const BASIS: Record<PriceRow["kind"], string> = {
@@ -51,8 +50,7 @@ export function ProviderOverview({ rows }: Props) {
     const list = rows.filter((r) => filter === "alla" || r[filter]);
     if (sort === "name") return [...list].sort((a, b) => a.name.localeCompare(b.name, "sv"));
     if (sort === "price") return sortRows(list, (r) => prices.get(r.slug)?.perYear ?? null, "asc");
-    if (sort === "nki") return sortRows(list, (r) => r.nki?.value ?? null, "desc");
-    return sortRows(list, (r) => r.clients?.value ?? null, "desc");
+    return sortRows(list, (r) => r.nki?.value ?? null, "desc");
   }, [rows, filter, sort, prices]);
 
   const commit = (v: number) => {
@@ -142,8 +140,7 @@ export function ProviderOverview({ rows }: Props) {
 }
 
 function Card({ r, n, price }: { r: OverviewRow; n: number; price: PriceRow | null }) {
-  const reviews = r.ratings.filter((x) => x.kind !== "nki");
-  const bestReview = reviews.filter((x) => !x.ownClaim && (x.count ?? 0) >= 20).sort((a, b) => (b.count ?? 0) - (a.count ?? 0))[0];
+  const bestReview = r.ratings.filter((x) => x.kind !== "nki").filter((x) => !x.ownClaim && (x.count ?? 0) >= 20).sort((a, b) => (b.count ?? 0) - (a.count ?? 0))[0];
   return (
     <article className="ov-card" aria-labelledby={`ov-${r.slug}`}>
       <header className="ov-head">
@@ -190,49 +187,7 @@ function Card({ r, n, price }: { r: OverviewRow; n: number; price: PriceRow | nu
             )}
           </dd>
         </div>
-        <Stat label="Kunder" fact={r.clients} value={r.clients ? num(r.clients.value) : null} />
-        <Stat label="Grundad" fact={r.founded} value={r.founded ? String(r.founded.year) : null} />
       </dl>
-
-      <details className="ov-more">
-        <summary>Mer om {r.name}</summary>
-        <div className="ov-more-body">
-          {(r.offices || r.employees) && (
-            <p>
-              {[r.offices?.text, r.employees?.text].filter(Boolean).join(" ")}
-            </p>
-          )}
-          {reviews.length > 0 && (
-            <div>
-              <span className="ov-k">Omdömen</span>
-              <ul className="ov-reviews">
-                {reviews.map((x, i) => (
-                  <li key={i}>
-                    <Review x={x} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <div className="ov-terms">
-            <span className="ov-k">Avtal och byte</span>
-            {r.terms.length > 0 ? (
-              <ul>
-                {r.terms.map((t, i) => (
-                  <li key={i}>
-                    {t.text}{" "}
-                    <a className="ov-srclink" href={t.url} target="_blank" rel="noopener noreferrer" aria-label={`Källa, läst ${dateLong(t.checked)}`}>
-                      <ExternalIcon size={10} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="ov-none">Inga villkor publicerade. Fråga efter avtalstid, uppsägningstid och uppstartsavgift.</p>
-            )}
-          </div>
-        </div>
-      </details>
 
       <footer className="ov-foot">
         <Link className="link ov-foot-link" href={`/forvaltare/${r.slug}`}>
@@ -272,36 +227,4 @@ function PriceValue({ r, n, price }: { r: OverviewRow; n: number; price: PriceRo
   );
 }
 
-function Stat({ label, fact, value, sub }: { label: string; fact: { text: string; url: string } | null; value: string | null; sub?: string }) {
-  return (
-    <div className="ov-stat">
-      <dt className="ov-k">{label}</dt>
-      <dd>
-        {fact && value ? (
-          <>
-            <a className="ov-v ov-src" href={fact.url} target="_blank" rel="noopener noreferrer" title={fact.text}>
-              {value}
-            </a>
-            {sub && <span className="ov-sub">{sub}</span>}
-          </>
-        ) : (
-          <span className="ov-v ov-none">Anges inte</span>
-        )}
-      </dd>
-    </div>
-  );
-}
-
 const REVIEW_SITE: Record<OverviewRating["kind"], string> = { nki: "NKI", reco: "Reco", trustpilot: "Trustpilot", google: "Google", egen: "Egen kundportal" };
-
-function Review({ x }: { x: OverviewRating }) {
-  const value = x.value.toLocaleString("sv-SE", { maximumFractionDigits: 1 });
-  const few = x.count !== null && x.count < 20;
-  return (
-    <a className="ov-review ov-src" href={x.url} target="_blank" rel="noopener noreferrer" title={x.text}>
-      <strong>{REVIEW_SITE[x.kind]}</strong> {value} av 5
-      {x.count !== null ? ` (${num(x.count)} omdömen${few ? ", för få för slutsatser" : ""})` : ""}
-      {x.ownClaim && <span className="ov-flag">enligt förvaltaren</span>}
-    </a>
-  );
-}

@@ -7,6 +7,7 @@ import { ScrollRegion } from "./ScrollRegion";
 import { featureTally, mentioned } from "@/lib/matrix";
 import { CATEGORY, FEATURES, FEATURE_STATE_ORDER } from "@/lib/schema";
 import { ProviderLogo } from "./ProviderLogo";
+import { MatrixBars } from "./MatrixBars";
 
 /** Vilka tjänster förvaltarna listar, och om de ingår, ingår i vissa nivåer, är tillval eller bara nämns. */
 export function FeatureMatrix() {
@@ -14,6 +15,18 @@ export function FeatureMatrix() {
   const features = FEATURES[category];
   const label = CATEGORY[category].label.toLowerCase();
   const tally = featureTally(shown.map((s) => s.row), category);
+  const states = [...FEATURE_STATE_ORDER, "none" as const];
+  const bars = features.map((f) => {
+    const t = tally[f.key];
+    return {
+      key: f.key,
+      label: f.label,
+      strong: t.included,
+      weak: t.level + t.optional + t.listed,
+      total: shown.length,
+      groups: states.map((st) => ({ label: FEATURE_LABEL[st], names: shown.filter(({ row }) => (row.features[f.key] ?? "none") === st).map(({ row }) => row.name) })),
+    };
+  });
 
   return (
     <div className="fm-wrap">
@@ -79,6 +92,8 @@ export function FeatureMatrix() {
         </table>
       </ScrollRegion>
 
+      {shown.length > 0 && <MatrixBars items={bars} strongLabel="Ingår" weakLabel="Tillval, vissa nivåer eller nämns" countLabel="Listar tjänsten" />}
+
       <ul className="fm-key" aria-label="Teckenförklaring">
         {[...FEATURE_STATE_ORDER, "none" as const].map((s) => (
           <li key={s}>
@@ -87,8 +102,7 @@ export function FeatureMatrix() {
         ))}
       </ul>
       <p className="fine fm-help">
-        Matrisen följer förvaltarens egen text. Ingår betyder att sidan säger det. Nämns betyder att sidan listar tjänsten utan att säga om den ingår eller kostar extra. Inte listad betyder att den inte står på sidorna vi läste,
-        inte att förvaltaren saknar den.
+        Inte listad betyder att tjänsten inte står på förvaltarens sidor, inte att den saknas.
       </p>
     </div>
   );

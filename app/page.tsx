@@ -146,7 +146,7 @@ export default function Home() {
             <h2 className="h2" id="ov-title">
               Förvaltare för <span className="text-accent">bostadsrättsföreningar</span>
             </h2>
-            <p className="lead">Ange antal lägenheter så räknas priset om. Tryck på Mer om för omdömen, kontor och avtalsvillkor.</p>
+            <p className="lead">Ange antal lägenheter så räknas priset om.</p>
           </div>
           <ProviderOverview rows={rows} />
         </div>

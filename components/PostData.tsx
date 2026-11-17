@@ -11,7 +11,7 @@ const SERVICE_TEXT: Record<Service, string> = { yes: "Ja", no: "Nej", unknown: "
 function Table({ caption, head, children, note }: { caption: string; head: string[]; children: React.ReactNode; note?: React.ReactNode }) {
   return (
     <figure className="post-figure">
-      <ScrollRegion label={caption} className="post-table-wrap" hint>
+      <ScrollRegion stack label={caption} className="post-table-wrap" hint>
         <table className="post-table">
           <caption>{caption}</caption>
           <thead>
