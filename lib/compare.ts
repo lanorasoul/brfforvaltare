@@ -30,6 +30,8 @@ export interface CompareRow {
   levelNames: string[];
   features: Record<string, FeatureState>;
   disclosure: Record<string, Presence>;
+  /** Senaste NKI från Prognoscentret, om förvaltaren har ett offentligt värde. */
+  nki: { value: number; year: number | null; average: number | null; url: string } | null;
   /** Senaste datum då vi läste en sida från förvaltaren. */
   checked: string;
 }
@@ -62,6 +64,7 @@ function ref(p: Provider, id: string): SourceRef {
 }
 
 function rowOf(p: Provider, category: Category, b: ServiceBlock): CompareRow {
+  const nki = p.facts.ratings.filter((r) => r.kind === "nki").sort((a, c) => (c.year ?? 0) - (a.year ?? 0))[0];
   return {
     slug: p.slug,
     name: p.name,
@@ -81,6 +84,7 @@ function rowOf(p: Provider, category: Category, b: ServiceBlock): CompareRow {
     levelNames: b.levels.map((l) => l.name),
     features: b.features,
     disclosure: b.disclosure,
+    nki: nki ? { value: nki.value, year: nki.year ?? null, average: nki.average ?? null, url: ref(p, nki.source).url } : null,
     checked: p.checked,
   };
 }

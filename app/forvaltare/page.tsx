@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHead } from "@/components/PageHead";
 import { ProviderLogo } from "@/components/ProviderLogo";
-import { PresenceMark, PRESENCE_LABEL } from "@/components/icons";
-import { SourceLink } from "@/components/SourceLink";
-import { getProviders, requireSource } from "@/lib/data";
-import { dateLong } from "@/lib/format";
+import { ArrowIcon, CheckIcon } from "@/components/icons";
+import { getProviders } from "@/lib/data";
 import { priceRow } from "@/lib/price";
 import { priceLabel, VAT_TEXT } from "@/lib/price-label";
-import { CATEGORIES, CATEGORY, DISCLOSURE_KEYS } from "@/lib/schema";
-import type { Category, Provider, Service } from "@/lib/types";
+import { CATEGORIES, DISCLOSURE_KEYS } from "@/lib/schema";
+import type { Provider, Service } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Förvaltare",
@@ -26,101 +24,83 @@ function firstSentence(s: string): string {
   return i === -1 ? s : s.slice(0, i + 1);
 }
 
-function CategoryFact({ p, category }: { p: Provider; category: Category }) {
-  const b = p[category];
-  const label = CATEGORY[category].label;
-  if (!b) {
-    return (
-      <div className="prov-fact">
-        <dt className="prov-fact-label">{label}</dt>
-        <dd className="prov-fact-value">
-          <strong className="prov-big prov-none">{p.services[category] === "no" ? "Erbjuds inte" : "Ej funnet"}</strong>
-        </dd>
-      </div>
-    );
-  }
-  const r = priceRow({ slug: p.slug, name: p.name, pricing: b.pricing }, 50);
+function ProviderCard({ p }: { p: Provider }) {
+  const eko = p.ekonomisk;
+  const price = eko ? priceRow({ slug: p.slug, name: p.name, pricing: eko.pricing }, 50) : null;
+  const nki = p.facts.ratings.filter((r) => r.kind === "nki").sort((a, b) => (b.year ?? 0) - (a.year ?? 0))[0];
+  const open = CATEGORIES.flatMap((c) => {
+    const b = p[c];
+    return b ? DISCLOSURE_KEYS[c].map((k) => b.disclosure[k.key]) : [];
+  });
+  const published = open.filter((v) => v === "published").length;
+
   return (
-    <div className="prov-fact">
-      <dt className="prov-fact-label">{label}</dt>
-      <dd className="prov-fact-value">
-        {r.perYear !== null ? (
-          <>
-            <strong className="prov-big">{priceLabel(r, r.perYear, "year")} per år</strong>
-            <span className="prov-sub">
-              {r.basis}, {VAT_TEXT[r.vat]}, 50 lägenheter
+    <li className="pc">
+      <div className="pc-head">
+        <Link className="pc-id logo-link" href={`/forvaltare/${p.slug}`}>
+          <ProviderLogo name={p.name} logo={p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null} size="sm" />
+          <span className="pc-name">{p.name}</span>
+        </Link>
+        {p.region && <span className="pc-pill">{p.region}</span>}
+      </div>
+
+      <p className="pl-summary">{firstSentence(p.summary)}</p>
+
+      <ul className="pl-services" aria-label="Erbjuder">
+        {(Object.keys(SERVICE_LABEL) as (keyof typeof SERVICE_LABEL)[]).map((k) => (
+          <li key={k} data-state={p.services[k]}>
+            <span className="pl-dot" aria-hidden="true">
+              {p.services[k] === "yes" && <CheckIcon size={11} />}
             </span>
+            {SERVICE_LABEL[k]}
+            <span className="sr-only">: {SERVICE_STATE[p.services[k]]}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="pc-price">
+        {price && price.perYear !== null ? (
+          <>
+            <strong>{priceLabel(price, price.perYear, "year")}</strong>
+            <span>Ekonomisk förvaltning per år, 50 lgh. {price.basis}, {VAT_TEXT[price.vat]}</span>
           </>
         ) : (
-          <strong className="prov-big prov-none">Pris på förfrågan</strong>
+          <>
+            <strong className="pc-muted">{eko ? "Pris på offert" : "Ingen ekonomisk förvaltning"}</strong>
+            <span>{eko ? "Inget pris för ekonomisk förvaltning på sidan" : "Enligt sidorna vi läste"}</span>
+          </>
         )}
-      </dd>
-    </div>
-  );
-}
-
-function ProviderTile({ p }: { p: Provider }) {
-  return (
-    <li className="prov tile">
-      <div className="prov-main">
-        <h3 className="h4 prov-title">
-          <Link className="prov-link logo-link" href={`/forvaltare/${p.slug}`}>
-            <ProviderLogo name={p.name} logo={p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null} />
-            {p.name}
-          </Link>
-          {p.region && <span className="pill prov-region">{p.region}</span>}
-        </h3>
-        <p className="small muted prov-summary">{p.summary}</p>
-        {p.group && <p className="small prov-group">{p.group.text}</p>}
-        <ul className="prov-services">
-          {(Object.keys(SERVICE_LABEL) as (keyof typeof SERVICE_LABEL)[]).map((k) => (
-            <li key={k} className="prov-service" data-state={p.services[k]}>
-              {SERVICE_LABEL[k]}: {SERVICE_STATE[p.services[k]]}
-            </li>
-          ))}
-        </ul>
       </div>
 
-      <dl className="prov-facts">
-        {CATEGORIES.map((c) => (
-          <CategoryFact key={c} p={p} category={c} />
-        ))}
-        <div className="prov-fact">
-          <dt className="prov-fact-label">Kunder</dt>
-          <dd className="prov-fact-value">
-            {p.customers ? <span>{firstSentence(p.customers.text)}</span> : <strong className="prov-big prov-none">Ej funnet</strong>}
-          </dd>
-        </div>
-      </dl>
-
-      <div className="prov-side">
-        <div className="prov-open">
-          <p className="fine">Berättar öppet</p>
-          {CATEGORIES.map((c) => {
-            const b = p[c];
-            if (!b) return null;
-            return (
-              <div key={c} className="prov-openrow">
-                <span className="fine">{CATEGORY[c].short}</span>
-                <ul className="prov-marks" aria-label={`Vad ${p.name} berättar öppet om ${CATEGORY[c].label.toLowerCase()}`}>
-                  {DISCLOSURE_KEYS[c].map((k) => (
-                    <li key={k.key} className="prov-mark" data-presence={b.disclosure[k.key]} title={`${k.label}: ${PRESENCE_LABEL[b.disclosure[k.key]]}`}>
-                      <PresenceMark presence={b.disclosure[k.key]} size={18} />
-                      <span className="sr-only">
-                        {k.label}: {PRESENCE_LABEL[b.disclosure[k.key]]}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-        <p className="fine">Läst {dateLong(p.checked)}</p>
-        <Link className="btn btn-quiet prov-btn" href={`/forvaltare/${p.slug}`}>
-          Se profil
-        </Link>
+      <div className="pc-nki">
+        <span className="pc-nki-k">Kundnöjdhet</span>
+        {nki ? (
+          <span className="pc-nki-v">
+            NKI {nki.value}
+            {nki.average != null && <span className={nki.value >= nki.average ? "pc-up" : "pc-down"}>{nki.value >= nki.average ? "över" : "under"} snittet {nki.average}</span>}
+          </span>
+        ) : (
+          <span className="pc-muted">Inte mätt</span>
+        )}
       </div>
+
+      {open.length > 0 && (
+        <div className="pc-meter">
+          <div className="pc-meter-top">
+            <span>Berättar öppet</span>
+            <strong>
+              {published} av {open.length}
+            </strong>
+          </div>
+          <span className="pc-meter-track" aria-hidden="true">
+            <span className="pc-meter-fill" style={{ width: `${(published / open.length) * 100}%` }} />
+          </span>
+        </div>
+      )}
+
+      <Link className="pc-go" href={`/forvaltare/${p.slug}`}>
+        Se profil <ArrowIcon size={12} />
+      </Link>
     </li>
   );
 }
@@ -137,13 +117,13 @@ export default function ForvaltarePage() {
       <section className="page-body">
         <div className="container">
           <p className="small muted list-note">
-            Priset gäller 50 lägenheter. Räkna för er egen storlek i <Link className="link" href="/#forvaltare">jämförelsen</Link>. De små märkena visar vad förvaltaren berättar öppet: sex uppgifter för
-            ekonomisk förvaltning och sex för teknisk. Jämför alla på <Link className="link" href="/ekonomisk-forvaltning">ekonomisk</Link> eller <Link className="link" href="/teknisk-forvaltning">teknisk</Link> förvaltning.
+            Priset gäller ekonomisk förvaltning för 50 lägenheter. Räkna för er storlek och jämför tjänsterna på <Link className="link" href="/ekonomisk-forvaltning">ekonomisk</Link> eller{" "}
+            <Link className="link" href="/teknisk-forvaltning">teknisk</Link> förvaltning.
           </p>
 
-          <ul className="prov-list">
+          <ul className="pl-grid">
             {providers.map((p) => (
-              <ProviderTile key={p.slug} p={p} />
+              <ProviderCard key={p.slug} p={p} />
             ))}
           </ul>
         </div>

@@ -127,10 +127,6 @@
 
 /* ---------- matriser som staplar ---------- */
 
-.mxb {
-  display: none;
-}
-
 .mxb-key {
   display: flex;
   flex-wrap: wrap;

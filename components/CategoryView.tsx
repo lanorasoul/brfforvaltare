@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CategoryLabel, OpennessLead } from "./CategoryText";
+import { CategoryStats, PriceChart, ProviderCards } from "./CategoryVisual";
 import { CompareBar } from "./CompareBar";
 import { CompareProvider } from "./CompareProvider";
 import { FeatureMatrix } from "./FeatureMatrix";
@@ -46,15 +47,29 @@ export function CategoryView({ category }: { category: Category }) {
         <div className="hub-region">
           <CompareBar />
 
+          <section className="hub" id="oversikt" aria-labelledby="cv-title">
+            <div className="container">
+              <h2 className="sr-only" id="cv-title">
+                Översikt
+              </h2>
+              <CategoryStats />
+              <PriceChart />
+            </div>
+          </section>
+
           <section className="hub" id="jamfor-aktorer" aria-labelledby="kf-title">
             <div className="container">
               <div className="hub-head">
                 <h2 className="h3" id="kf-title">
-                  Nyckeluppgifter
+                  Förvaltarna
                 </h2>
-                <p className="muted hub-lead">Raderna är sorterade efter namn. Ingen har betalat för sin plats.</p>
+                <p className="muted hub-lead">Ingen har betalat för sin plats. Mörk stapel betyder att tjänsten ingår.</p>
               </div>
-              <KeyFactsTable />
+              <ProviderCards />
+              <details className="mx-adv">
+                <summary>Visa alla uppgifter som tabell, med källor</summary>
+                <KeyFactsTable />
+              </details>
             </div>
           </section>
 
@@ -64,7 +79,7 @@ export function CategoryView({ category }: { category: Category }) {
                 <h2 className="h3" id="fm-title">
                   Tjänster inom <CategoryLabel lower />
                 </h2>
-                <p className="muted hub-lead">Så beskriver varje förvaltare tjänsterna på sin egen sida.</p>
+                <p className="muted hub-lead">Hur många förvaltare som listar varje tjänst. Tryck på en rad för att se vilka.</p>
               </div>
               <FeatureMatrix />
             </div>

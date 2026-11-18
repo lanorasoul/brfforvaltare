@@ -15,7 +15,10 @@ export function OpennessMatrix() {
   const { category, shown, ort } = useCompare();
   const keys = DISCLOSURE_KEYS[category];
   const label = CATEGORY[category].label.toLowerCase();
-  const stats = matrixStats(shown.map((s) => s.row), category);
+  const stats = matrixStats(
+    shown.map((s) => s.row),
+    category,
+  );
   const states: Presence[] = ["published", "partial", "notfound"];
   const bars = keys.map((k) => ({
     key: k.key,
@@ -23,86 +26,89 @@ export function OpennessMatrix() {
     strong: stats.byKey[k.key].published,
     weak: stats.byKey[k.key].partial,
     total: stats.providers,
-    groups: states.map((st) => ({ label: PRESENCE_LABEL[st], names: shown.filter(({ row }) => row.disclosure[k.key] === st).map(({ row }) => row.name) })),
+    groups: states.map((st) => ({
+      label: PRESENCE_LABEL[st],
+      names: shown.filter(({ row }) => row.disclosure[k.key] === st).map(({ row }) => row.name),
+    })),
   }));
 
   return (
     <div className="matrix-wrap">
-      <ScrollRegion label={`Öppenhetsmatris för ${label}, rulla i sidled`} className="matrix-scroll" hint>
-        <table className="matrix">
-          <caption className="sr-only">
-            Vilka uppgifter varje förvaltare publicerar på sin egen webbplats om {label}. Publicerat, delvis eller ej funnet.
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col" className="matrix-corner">
-                Förvaltare
-              </th>
-              {keys.map((k) => (
-                <th key={k.key} scope="col" className="matrix-col" title={k.help}>
-                  {k.label}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {shown.length === 0 && (
+      {shown.length > 0 && <MatrixBars items={bars} strongLabel="Publicerat" weakLabel="Delvis" countLabel="Berättar om det" />}
+      <details className="mx-adv">
+        <summary>Visa hela matrisen med varje förvaltare</summary>
+        <ScrollRegion label={`Öppenhetsmatris för ${label}, rulla i sidled`} className="matrix-scroll" hint>
+          <table className="matrix">
+            <caption className="sr-only">Vilka uppgifter varje förvaltare publicerar på sin egen webbplats om {label}. Publicerat, delvis eller ej funnet.</caption>
+            <thead>
               <tr>
-                <td colSpan={keys.length + 1} className="matrix-empty">
-                  Ingen förvaltare nämner orten {ort.trim()} på sidorna vi läste.
-                </td>
-              </tr>
-            )}
-            {shown.map(({ row }) => (
-              <tr key={row.slug}>
-                <th scope="row" className="matrix-row">
-                  <Link className="logo-link" href={`/forvaltare/${row.slug}`}>
-                    <ProviderLogo name={row.name} logo={row.logo} size="sm" />
-                    {row.name}
-                  </Link>
-                </th>
-                {keys.map((k) => {
-                  const v = row.disclosure[k.key];
-                  return (
-                    <td key={k.key} className={`matrix-cell matrix-${v}`}>
-                      <PresenceMark presence={v} />
-                      <span className="sr-only">{PRESENCE_LABEL[v]}</span>
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-          {shown.length > 0 && (
-            <tfoot>
-              <tr>
-                <th scope="row" className="matrix-row">
-                  Tydligt publicerat
+                <th scope="col" className="matrix-corner">
+                  Förvaltare
                 </th>
                 {keys.map((k) => (
-                  <td key={k.key} className="matrix-total num">
-                    {stats.byKey[k.key].published} av {stats.providers}
-                  </td>
+                  <th key={k.key} scope="col" className="matrix-col" title={k.help}>
+                    {k.label}
+                  </th>
                 ))}
               </tr>
-            </tfoot>
-          )}
-        </table>
-      </ScrollRegion>
+            </thead>
+            <tbody>
+              {shown.length === 0 && (
+                <tr>
+                  <td colSpan={keys.length + 1} className="matrix-empty">
+                    Ingen förvaltare nämner orten {ort.trim()} på sidorna vi läste.
+                  </td>
+                </tr>
+              )}
+              {shown.map(({ row }) => (
+                <tr key={row.slug}>
+                  <th scope="row" className="matrix-row">
+                    <Link className="logo-link" href={`/forvaltare/${row.slug}`}>
+                      <ProviderLogo name={row.name} logo={row.logo} size="sm" />
+                      {row.name}
+                    </Link>
+                  </th>
+                  {keys.map((k) => {
+                    const v = row.disclosure[k.key];
+                    return (
+                      <td key={k.key} className={`matrix-cell matrix-${v}`}>
+                        <PresenceMark presence={v} />
+                        <span className="sr-only">{PRESENCE_LABEL[v]}</span>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+            {shown.length > 0 && (
+              <tfoot>
+                <tr>
+                  <th scope="row" className="matrix-row">
+                    Tydligt publicerat
+                  </th>
+                  {keys.map((k) => (
+                    <td key={k.key} className="matrix-total num">
+                      {stats.byKey[k.key].published} av {stats.providers}
+                    </td>
+                  ))}
+                </tr>
+              </tfoot>
+            )}
+          </table>
+        </ScrollRegion>
 
-      {shown.length > 0 && <MatrixBars items={bars} strongLabel="Publicerat" weakLabel="Delvis" countLabel="Berättar om det" />}
-
-      <ul className="matrix-key" aria-label="Teckenförklaring">
-        <li>
-          <PresenceMark presence="published" size={18} /> Publicerat: sidan säger det tydligt
-        </li>
-        <li>
-          <PresenceMark presence="partial" size={18} /> Delvis: indirekt eller bara för en del
-        </li>
-        <li>
-          <PresenceMark presence="notfound" size={18} /> Ej funnet: står inte på sidorna vi läste
-        </li>
-      </ul>
+        <ul className="matrix-key" aria-label="Teckenförklaring">
+          <li>
+            <PresenceMark presence="published" size={18} /> Publicerat: sidan säger det tydligt
+          </li>
+          <li>
+            <PresenceMark presence="partial" size={18} /> Delvis: indirekt eller bara för en del
+          </li>
+          <li>
+            <PresenceMark presence="notfound" size={18} /> Ej funnet: står inte på sidorna vi läste
+          </li>
+        </ul>
+      </details>
     </div>
   );
 }
