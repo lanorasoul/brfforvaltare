@@ -3,8 +3,13 @@ export const SITE = {
   name: "brfförvaltare",
   domain: "brfforvaltare.se",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://brfforvaltare.se",
-  /** Sajten är avstängd för sökmotorer tills detta sätts till "true" i Vercel. */
-  indexable: process.env.NEXT_PUBLIC_INDEXABLE === "true",
+  /**
+   * Sökmotorer släpps in på produktionen. Förhandsversioner på Vercel stängs alltid ute.
+   * NEXT_PUBLIC_INDEXABLE=false stänger även produktionen, och =true öppnar var som helst.
+   */
+  indexable:
+    process.env.NEXT_PUBLIC_INDEXABLE === "true" ||
+    ((process.env.VERCEL_ENV ?? process.env.NEXT_PUBLIC_VERCEL_ENV) === "production" && process.env.NEXT_PUBLIC_INDEXABLE !== "false"),
   /** Fylls i när en e-postadress på domänen finns. Visas inte förrän den är satt. */
   contactEmail: null as string | null,
   /**

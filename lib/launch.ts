@@ -46,9 +46,15 @@ export function launchProblems(s: LaunchState): string[] {
   if (s.mode === "live" && !s.operator) out.push("REQUESTS_MODE=live kräver att operator är satt i lib/site.ts.");
   if (s.mode === "live" && !s.mailConfigured) out.push("REQUESTS_MODE=live kräver RESEND_API_KEY, REQUEST_TO_EMAIL och REQUEST_FROM_EMAIL.");
   if (s.indexable && !s.operator) out.push("NEXT_PUBLIC_INDEXABLE=true kräver att operator är satt i lib/site.ts.");
-  if (s.indexable && !s.contactEmail) out.push("NEXT_PUBLIC_INDEXABLE=true kräver att contactEmail är satt i lib/site.ts.");
   if (s.indexable && !/^https:\/\/[^/]+$/.test(s.siteUrl ?? "")) {
     out.push("NEXT_PUBLIC_INDEXABLE=true kräver att NEXT_PUBLIC_SITE_URL är sajtens riktiga adress, till exempel https://exempel.se (utan snedstreck sist).");
   }
+  return out;
+}
+
+/** Saker som bör ordnas men som inte stoppar bygget. */
+export function launchWarnings(s: LaunchState): string[] {
+  const out: string[] = [];
+  if (!s.contactEmail) out.push("contactEmail saknas i lib/site.ts. Integritetssidan anger då ingen adress för frågor om personuppgifter.");
   return out;
 }

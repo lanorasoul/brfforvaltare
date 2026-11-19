@@ -1,7 +1,7 @@
 // Kontroll före lansering. Körs som en del av bygget (npm run build).
 // På Vercel i produktion, eller med CHECK_LAUNCH=1, stoppas bygget om något hindrar en säker lansering.
 // Annars skrivs läget ut och bygget fortsätter.
-import { effectiveMode, launchProblems, mailConfigured, parseMode } from "../lib/launch.ts";
+import { effectiveMode, launchProblems, launchWarnings, mailConfigured, parseMode } from "../lib/launch.ts";
 import { SITE } from "../lib/site.ts";
 
 const env = process.env;
@@ -13,10 +13,11 @@ const state = {
   operator: SITE.operator,
   contactEmail: SITE.contactEmail,
   mailConfigured: mailConfigured(env),
-  siteUrl: env.NEXT_PUBLIC_SITE_URL,
+  siteUrl: env.NEXT_PUBLIC_SITE_URL ?? SITE.url,
 };
 
 const problems = launchProblems(state);
+for (const w of launchWarnings(state)) console.warn(`Varning: ${w}`);
 
 const modeText = { off: "stängda", preview: "förhandsvisning (skickar inget)", live: "öppna" }[effectiveMode(state.mode, state.operator)];
 console.log(`Förfrågningar: ${modeText}. Sökmotorer: ${state.indexable ? "öppna" : "stängda"}. Avsändare: ${state.operator ? state.operator.name : "inte angiven"}.`);

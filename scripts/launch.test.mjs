@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { effectiveMode, launchProblems, mailConfigured, parseMode } from "../lib/launch.ts";
+import { effectiveMode, launchProblems, launchWarnings, mailConfigured, parseMode } from "../lib/launch.ts";
 
 const operator = { name: "Exempel AB", orgnr: null, address: null };
 const closed = { mode: "off", indexable: false, operator: null, contactEmail: null, mailConfigured: false, siteUrl: "https://exempel.se" };
@@ -43,11 +43,12 @@ test("Live kräver både avsändare och mejlinställningar", () => {
   assert.deepEqual(launchProblems({ ...closed, mode: "live", operator, mailConfigured: true }), []);
 });
 
-test("Sökmotorer släpps in först när avsändare och kontaktadress finns", () => {
+test("Sökmotorer släpps in först när avsändaren finns, kontaktadress ger bara varning", () => {
   const problems = launchProblems({ ...closed, indexable: true });
-  assert.equal(problems.length, 2);
+  assert.equal(problems.length, 1);
   assert.deepEqual(launchProblems({ ...closed, indexable: true, operator, contactEmail: "kontakt@exempel.se" }), []);
-  assert.equal(launchProblems({ ...closed, indexable: true, operator }).length, 1);
+  assert.deepEqual(launchProblems({ ...closed, indexable: true, operator }), []);
+  assert.equal(launchWarnings({ ...closed, indexable: true, operator }).length, 1);
 });
 
 test("Allt klart ger inga problem", () => {
