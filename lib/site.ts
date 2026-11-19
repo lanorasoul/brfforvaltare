@@ -10,6 +10,8 @@ export const SITE = {
   indexable:
     process.env.NEXT_PUBLIC_INDEXABLE === "true" ||
     ((process.env.VERCEL_ENV ?? process.env.NEXT_PUBLIC_VERCEL_ENV) === "production" && process.env.NEXT_PUBLIC_INDEXABLE !== "false"),
+  /** Koden från Google Search Console (metataggen google-site-verification). Behövs inte om domänen verifieras med DNS. */
+  googleVerification: (process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? null) as string | null,
   /** Fylls i när en e-postadress på domänen finns. Visas inte förrän den är satt. */
   contactEmail: null as string | null,
   /**

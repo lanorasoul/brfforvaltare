@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   description:
     "Jämför förvaltare av bostadsrättsföreningar: pris för er storlek, kundnöjdhet (NKI), omdömen, antal kunder och avtalsvillkor för ekonomisk och teknisk förvaltning. Gratis och oberoende, med källa till varje uppgift.",
   robots: SITE.indexable ? { index: true, follow: true } : { index: false, follow: false },
+  ...(SITE.googleVerification ? { verification: { google: SITE.googleVerification } } : {}),
   applicationName: SITE.name,
   openGraph: {
     type: "website",
