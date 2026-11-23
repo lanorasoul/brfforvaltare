@@ -9,6 +9,7 @@ import { KeyFactsTable } from "./KeyFactsTable";
 import { OpennessMatrix } from "./OpennessMatrix";
 import { PageHead } from "./PageHead";
 import { PostMore } from "./PostMore";
+import { ProviderListLd } from "./ProviderListLd";
 import { getCompareData, getProviders } from "@/lib/data";
 import { pricedCount } from "@/lib/matrix";
 import { QUESTIONS } from "@/lib/offer";
@@ -37,8 +38,9 @@ export function CategoryView({ category }: { category: Category }) {
 
   return (
     <>
+      <ProviderListLd name={`Förvaltare av ${label.toLowerCase()} för bostadsrättsföreningar`} items={withBlock(providers, category).map((x) => x.provider)} />
       <PageHead
-        title={label}
+        title={`${label} för brf`}
         lead={`${CATEGORY[category].what} Här jämförs ${total} förvaltare på det de själva skriver. ${priceSentence}`}
         crumbs={[{ href: CATEGORY[category].path, label }]}
       />

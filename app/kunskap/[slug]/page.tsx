@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     description,
     keywords: [post.keyword, ...post.keywords],
     alternates: { canonical: url },
-    openGraph: { type: "article", title: flat(post.metaTitle), description, url, publishedTime: post.published, modifiedTime: post.updated, section: post.category },
+    openGraph: { type: "article", title: flat(post.metaTitle), description, url, publishedTime: post.published, modifiedTime: post.updated, section: post.category, images: ["/opengraph-image.png"] },
   };
 }
 
@@ -85,7 +85,7 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
   return (
     <article>
       <JsonLd data={ld} />
-      <PageHead title={post.title} crumbs={[{ href: "/kunskap", label: "Kunskap" }]}>
+      <PageHead breadcrumbLd={false} title={post.title} crumbs={[{ href: "/kunskap", label: "Kunskap" }]}>
         <p className="post-meta small muted">
           {post.category}
           <span aria-hidden="true"> · </span>

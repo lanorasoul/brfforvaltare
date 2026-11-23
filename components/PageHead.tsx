@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { JsonLd } from "./JsonLd";
+import { SITE } from "@/lib/site";
 
 interface Crumb {
   href: string;
@@ -12,6 +14,7 @@ export function PageHead({
   crumbs,
   children,
   logo,
+  breadcrumbLd = true,
 }: {
   title: string;
   lead?: React.ReactNode;
@@ -19,9 +22,25 @@ export function PageHead({
   children?: React.ReactNode;
   /** Visas ovanför rubriken, till exempel en förvaltares logga. */
   logo?: React.ReactNode;
+  /** Brödsmulan som strukturerad data. Av på sidor som redan lägger in den själva. */
+  breadcrumbLd?: boolean;
 }) {
+  const ld =
+    breadcrumbLd && crumbs && crumbs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [{ href: "", label: "Start" }, ...crumbs].map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: c.label,
+            item: `${SITE.url}${c.href}`,
+          })),
+        }
+      : null;
   return (
     <header className="page-head">
+      {ld && <JsonLd data={ld} />}
       <div className="aurora aurora-soft" aria-hidden="true" />
       <div className="container">
         {crumbs && crumbs.length > 0 && (

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Brf förvaltare",
   },
   description:
-    "Jämför förvaltare av bostadsrättsföreningar: pris för er storlek, kundnöjdhet (NKI), omdömen, antal kunder och avtalsvillkor för ekonomisk och teknisk förvaltning. Gratis och oberoende, med källa till varje uppgift.",
+    "Jämför brf förvaltare: pris för er storlek, kundnöjdhet (NKI) och villkor för ekonomisk och teknisk förvaltning. Gratis, oberoende och med källa.",
   robots: SITE.indexable ? { index: true, follow: true } : { index: false, follow: false },
   ...(SITE.googleVerification ? { verification: { google: SITE.googleVerification } } : {}),
   applicationName: SITE.name,
@@ -41,13 +41,30 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false, email: false, address: false },
 };
 
+// Sajten och den som står bakom den. Namnet skrivs både som varumärke och som sökfras, så att båda kopplas till sajten.
 const siteLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: SITE.name,
-  url: SITE.url,
-  inLanguage: "sv-SE",
-  description: "Jämför förvaltare av bostadsrättsföreningar: pris, kundnöjdhet och villkor, med källa till varje uppgift.",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      name: SITE.name,
+      alternateName: ["Brf förvaltare", "brfforvaltare.se"],
+      url: SITE.url,
+      inLanguage: "sv-SE",
+      description: "Jämför brf förvaltare: pris, kundnöjdhet och villkor för ekonomisk och teknisk förvaltning, med källa till varje uppgift.",
+      publisher: { "@id": `${SITE.url}/#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.name,
+      alternateName: "Brf förvaltare",
+      url: SITE.url,
+      logo: `${SITE.url}/apple-icon.png`,
+      ...(SITE.contactEmail ? { email: SITE.contactEmail } : {}),
+    },
+  ],
 };
 
 export const viewport: Viewport = {

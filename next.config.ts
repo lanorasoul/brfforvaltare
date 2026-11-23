@@ -50,6 +50,8 @@ const config: NextConfig = {
         ],
       },
       { source: "/api/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
+      // Samma sajt nås också på vercel.app. Bara den riktiga domänen ska synas i sökresultaten.
+      { source: "/:path*", has: [{ type: "host", value: "(?<host>.*)\\.vercel\\.app" }], headers: [{ key: "X-Robots-Tag", value: "noindex" }] },
     ];
   },
 };

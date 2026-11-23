@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: { absolute: "Brf förvaltning: guider för styrelser om förvaltare" },
   description: DESCRIPTION,
   alternates: { canonical: "/kunskap" },
-  openGraph: { title: "Brf förvaltning: guider för styrelser om förvaltare", description: DESCRIPTION, url: "/kunskap" },
+  openGraph: { title: "Brf förvaltning: guider för styrelser om förvaltare", description: DESCRIPTION, url: "/kunskap", images: ["/opengraph-image.png"] },
 };
 
 export default function KnowledgePage() {
@@ -53,7 +53,7 @@ export default function KnowledgePage() {
   return (
     <>
       <JsonLd data={ld} />
-      <PageHead
+      <PageHead breadcrumbLd={false}
         title={TITLE}
         lead="Korta guider som svarar på frågan först och förklarar sedan. Varje sakuppgift har en källa: lagtext, myndigheter, Bostadsrätterna eller förvaltarnas egna sidor."
         crumbs={[{ href: "/kunskap", label: "Kunskap" }]}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHead } from "@/components/PageHead";
+import { ProviderListLd } from "@/components/ProviderListLd";
 import { ProviderLogo } from "@/components/ProviderLogo";
 import { ArrowIcon, CheckIcon } from "@/components/icons";
 import { getProviders } from "@/lib/data";
@@ -12,7 +13,7 @@ import type { Provider, Service } from "@/lib/types";
 export const metadata: Metadata = {
   title: { absolute: `Brf förvaltare: ${getProviders().length} förvaltare jämförda med pris och NKI` },
   description:
-    "Förvaltare av bostadsrättsföreningar, för både ekonomisk och teknisk förvaltning, med pris, uppsägningstid och vad som ingår, hämtat från deras egna webbplatser.",
+    "Alla brf förvaltare i jämförelsen: HSB, Riksbyggen, SBC, Nabo med flera. Pris, kundnöjdhet (NKI) och tjänster för ekonomisk och teknisk förvaltning.",
   alternates: { canonical: "/forvaltare" },
 };
 
@@ -109,8 +110,9 @@ export default function ForvaltarePage() {
   const providers = getProviders();
   return (
     <>
+      <ProviderListLd name="Förvaltare av bostadsrättsföreningar" items={providers} />
       <PageHead
-        title="Förvaltare"
+        title="Förvaltare för brf"
         lead={`${providers.length} förvaltare av bostadsrättsföreningar, sorterade efter namn. Allt är hämtat från förvaltarnas egna webbplatser. Ingen har betalat för att synas.`}
       />
 

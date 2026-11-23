@@ -4,7 +4,7 @@ import { CategoryView } from "@/components/CategoryView";
 export const metadata: Metadata = {
   title: { absolute: "Ekonomisk förvaltning brf: jämför förvaltare och pris" },
   description:
-    "Jämför förvaltare av ekonomisk förvaltning för bostadsrättsföreningar: pris, uppsägningstid, vilka tjänster som ingår, var de verkar och vad de berättar öppet.",
+    "Ekonomisk förvaltning för brf: jämför förvaltarnas pris, kundnöjdhet, uppsägningstid och vad som ingår. Prisdiagram för er storlek, med källa.",
   alternates: { canonical: "/ekonomisk-forvaltning" },
 };
 

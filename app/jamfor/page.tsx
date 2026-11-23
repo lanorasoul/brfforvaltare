@@ -7,7 +7,7 @@ import type { Category } from "@/lib/types";
 export const metadata: Metadata = {
   title: { absolute: "Jämför brf förvaltare sida vid sida: pris och tjänster" },
   description:
-    "Lägg upp till tre förvaltare bredvid varandra, för ekonomisk eller teknisk förvaltning: pris, villkor, tjänster, var de verkar och vad de berättar öppet.",
+    "Jämför upp till tre brf förvaltare sida vid sida: pris, villkor, tjänster och var de verkar, för ekonomisk eller teknisk förvaltning.",
   alternates: { canonical: "/jamfor" },
 };
 

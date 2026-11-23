@@ -35,14 +35,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     `${p.name} erbjuder ${services} förvaltning för bostadsrättsföreningar.`,
     p.facts.clients ? `${p.facts.clients.value.toLocaleString("sv-SE")} kunder.` : "",
     nki ? `NKI ${nki.value} (${nki.year}).` : "",
-    "Pris, kundnöjdhet, omdömen och avtalsvillkor med källa.",
+    "Pris, omdömen och villkor med källa.",
   ].filter(Boolean);
   // Sökordet "<namn> förvaltning brf" först. Namn som redan slutar på Förvaltning får inte ordet två gånger.
   const base = /förvaltning$/i.test(p.name) ? p.name : `${p.name} förvaltning`;
   const long = `${base} brf: pris, omdömen och villkor`;
   const title = long.length <= 60 ? long : `${base} brf: pris och omdömen`;
   const description = bits.join(" ").replace(/\u00a0/g, " ");
-  return { title: { absolute: title }, description, alternates: { canonical: `/forvaltare/${p.slug}` }, openGraph: { title, description, url: `/forvaltare/${p.slug}` } };
+  return { title: { absolute: title }, description, alternates: { canonical: `/forvaltare/${p.slug}` }, openGraph: { title, description, url: `/forvaltare/${p.slug}`, images: ["/opengraph-image.png"] } };
 }
 
 const SERVICE_LABEL = { ekonomisk: "Ekonomisk förvaltning", teknisk: "Teknisk förvaltning", fastighetsskotsel: "Fastighetsskötsel" } as const;
@@ -159,7 +159,7 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
   return (
     <>
       <JsonLd data={ld} />
-      <PageHead logo={<ProviderLogo name={p.name} logo={p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null} size="lg" />} title={p.name} lead={p.summary} crumbs={[{ href: "/forvaltare", label: "Förvaltare" }]} />
+      <PageHead breadcrumbLd={false} logo={<ProviderLogo name={p.name} logo={p.logo ? { file: p.logo.file, ratio: p.logo.width / p.logo.height } : null} size="lg" />} title={p.name} lead={p.summary} crumbs={[{ href: "/forvaltare", label: "Förvaltare" }]} />
 
       <div className="page-body">
         <div className="container profile">

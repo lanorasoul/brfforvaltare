@@ -19,7 +19,7 @@ import { ScrollRegion } from "@/components/ScrollRegion";
 export const metadata: Metadata = {
   title: { absolute: "Brf förvaltare pris: vad kostar ekonomisk förvaltning?" },
   description:
-    "Priser för ekonomisk förvaltning av bostadsrättsföreningar för 20, 50 och 100 lägenheter, hämtade från förvaltarnas egna sidor. Med källa, datum och vad som skiljer.",
+    "Vad kostar en brf förvaltare? Priser för ekonomisk förvaltning för 20, 50 och 100 lägenheter, från förvaltarnas egna sidor. Med källa och datum.",
   alternates: { canonical: "/prisguide" },
 };
 

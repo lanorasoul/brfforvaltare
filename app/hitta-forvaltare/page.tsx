@@ -9,7 +9,7 @@ type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
 export const metadata: Metadata = {
   title: { absolute: "Hitta brf förvaltare: gratis förslag för er förening" },
-  description: "Berätta vad er bostadsrättsförening behöver i tre korta steg, så matchar vi er med förvaltare som passar. Gratis och utan förpliktelser.",
+  description: "Hitta rätt brf förvaltare: berätta i tre korta steg vad föreningen behöver, så får ni förslag på förvaltare som passar. Gratis och utan förpliktelser.",
   alternates: { canonical: "/hitta-forvaltare" },
 };
 

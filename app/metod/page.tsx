@@ -13,7 +13,7 @@ import { HSB_REGIONALS_TOTAL, isHsb, NKI_AVERAGE, SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: { absolute: "Så jämför vi brf förvaltare: metod och källor" },
   description:
-    "Vad vi läser, hur vi märker hur säkra siffrorna är, hur vi räknar priser, hur ordningen bestäms och hur annonser och rättelser hanteras.",
+    "Så jämför vi brf förvaltare: vilka källor vi läser, hur vi räknar priser, hur ordningen bestäms och hur vi rättar fel. Ingen betalar för plats.",
   alternates: { canonical: "/metod" },
 };
 

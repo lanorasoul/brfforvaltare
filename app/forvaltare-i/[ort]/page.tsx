@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const t = tally(Object.values(outcomesFor(place.name)));
   return {
     title: { absolute: `Brf förvaltare i ${place.name}: jämför förvaltare och pris` },
-    description: `${t.listed} förvaltare nämner ${place.name} på sina egna webbplatser, ${t.national} anger hela landet och ${t.unknown} anger inget verksamhetsområde. Ekonomisk och teknisk förvaltning, med pris, uppsägningstid och källa.`,
+    description: `Brf förvaltare i ${place.name}: ${t.listed + t.national} förvaltare verkar i ${place.name} eller hela landet. Jämför pris, kundnöjdhet och tjänster för ekonomisk och teknisk förvaltning.`.slice(0, 160),
     alternates: { canonical: `/forvaltare-i/${place.slug}` },
   };
 }
@@ -73,7 +73,7 @@ export default async function OrtPage({ params }: { params: Promise<Params> }) {
   return (
     <>
       <PageHead
-        title={`Förvaltare i ${place.name}`}
+        title={`Brf förvaltare i ${place.name}`}
         lead={`${t.listed} förvaltare nämner ${place.name} på sina egna webbplatser. ${t.national} anger att de verkar i hela landet och ${t.unknown} anger inget verksamhetsområde. Raderna står i namnordning och ingen har betalat för sin plats.`}
         crumbs={[
           { href: "/forvaltare", label: "Förvaltare" },

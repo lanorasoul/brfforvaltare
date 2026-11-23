@@ -105,7 +105,7 @@ export default function Home() {
             <span className="text-accent">för er brf</span>
           </h1>
           <p className="lead top-lead">
-            Pris, kundnöjdhet och villkor för {providers.length} förvaltare av ekonomisk och teknisk förvaltning. Med källa till varje uppgift.
+            Jämför {providers.length} brf förvaltare: pris, kundnöjdhet och villkor för ekonomisk och teknisk förvaltning. Med källa till varje uppgift.
           </p>
           <div className="hero-actions">
             <Link className="btn btn-accent btn-xl" href="/hitta-forvaltare">

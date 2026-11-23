@@ -2,8 +2,15 @@ import Link from "next/link";
 import { BrandMark } from "./icons";
 import { SITE } from "@/lib/site";
 import { dateLong } from "@/lib/format";
+import { getCompareData } from "@/lib/data";
+import { placeIndex, placePages } from "@/lib/places";
 
 export function Footer() {
+  // Orterna med flest förvaltare först. Länkarna gör ortssidorna lätta att hitta för både läsare och sökmotorer.
+  const data = getCompareData();
+  const places = placePages(placeIndex([...data.rows.ekonomisk, ...data.rows.teknisk]))
+    .sort((a, b) => b.providers.length - a.providers.length || a.name.localeCompare(b.name, "sv"))
+    .slice(0, 10);
   return (
     <footer className="foot band">
       <div className="container">
@@ -43,6 +50,16 @@ export function Footer() {
               <li>
                 <Link href="/kunskap">Kunskap</Link>
               </li>
+            </ul>
+          </nav>
+          <nav className="foot-col" aria-label="Brf förvaltare per ort">
+            <p className="foot-head">Förvaltare per ort</p>
+            <ul>
+              {places.map((pl) => (
+                <li key={pl.slug}>
+                  <Link href={`/forvaltare-i/${pl.slug}`}>Brf förvaltare {pl.name}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
           <nav className="foot-col" aria-label="Så arbetar vi">

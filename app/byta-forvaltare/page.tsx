@@ -19,7 +19,7 @@ import { ScrollRegion } from "@/components/ScrollRegion";
 export const metadata: Metadata = {
   title: { absolute: "Byta förvaltare i brf: steg, uppsägning och offertmall" },
   description:
-    "Fem steg för att byta förvaltare i en bostadsrättsförening: läs avtalet, räkna ut sista dagen för uppsägning, be om samma offert av alla, jämför och planera övergången.",
+    "Byta förvaltare i brf: fem steg från avtal och uppsägningstid till offert och övergång. Med uppsägningsräknare och offertmall att kopiera.",
   alternates: { canonical: "/byta-forvaltare" },
 };
 
@@ -58,7 +58,7 @@ export default function ByttaPage() {
   return (
     <>
       <PageHead
-        title="Så byter ni förvaltare"
+        title="Så byter ni förvaltare i en brf"
         lead="Ett byte styrs av datum. Här är fem steg, ett verktyg som räknar ut sista dagen för uppsägning och mallar att skicka till flera förvaltare, för ekonomisk och för teknisk förvaltning."
         crumbs={[{ href: "/byta-forvaltare", label: "Byta förvaltare" }]}
       />
