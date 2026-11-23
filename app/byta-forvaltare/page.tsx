@@ -17,7 +17,7 @@ import type { Category } from "@/lib/types";
 import { ScrollRegion } from "@/components/ScrollRegion";
 
 export const metadata: Metadata = {
-  title: "Så byter ni förvaltare",
+  title: { absolute: "Byta förvaltare i brf: steg, uppsägning och offertmall" },
   description:
     "Fem steg för att byta förvaltare i en bostadsrättsförening: läs avtalet, räkna ut sista dagen för uppsägning, be om samma offert av alla, jämför och planera övergången.",
   alternates: { canonical: "/byta-forvaltare" },

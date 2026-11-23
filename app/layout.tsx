@@ -24,8 +24,8 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Jämför förvaltare för brf: pris, kundnöjdhet och villkor",
-    template: `%s | ${SITE.name}`,
+    default: "Brf förvaltare: jämför förvaltare för er bostadsrättsförening",
+    template: "%s | Brf förvaltare",
   },
   description:
     "Jämför förvaltare av bostadsrättsföreningar: pris för er storlek, kundnöjdhet (NKI), omdömen, antal kunder och avtalsvillkor för ekonomisk och teknisk förvaltning. Gratis och oberoende, med källa till varje uppgift.",

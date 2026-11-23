@@ -10,7 +10,7 @@ import { CATEGORIES, DISCLOSURE_KEYS } from "@/lib/schema";
 import type { Provider, Service } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Förvaltare",
+  title: { absolute: `Brf förvaltare: ${getProviders().length} förvaltare jämförda med pris och NKI` },
   description:
     "Förvaltare av bostadsrättsföreningar, för både ekonomisk och teknisk förvaltning, med pris, uppsägningstid och vad som ingår, hämtat från deras egna webbplatser.",
   alternates: { canonical: "/forvaltare" },

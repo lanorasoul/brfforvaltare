@@ -17,7 +17,7 @@ import type { Provider, ServiceBlock } from "@/lib/types";
 import { ScrollRegion } from "@/components/ScrollRegion";
 
 export const metadata: Metadata = {
-  title: "Vad kostar ekonomisk förvaltning för en brf?",
+  title: { absolute: "Brf förvaltare pris: vad kostar ekonomisk förvaltning?" },
   description:
     "Priser för ekonomisk förvaltning av bostadsrättsföreningar för 20, 50 och 100 lägenheter, hämtade från förvaltarnas egna sidor. Med källa, datum och vad som skiljer.",
   alternates: { canonical: "/prisguide" },

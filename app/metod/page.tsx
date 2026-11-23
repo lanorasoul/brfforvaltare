@@ -11,7 +11,7 @@ import { CATEGORY, DISCLOSURE_KEYS, FEATURE_STATE, FEATURE_STATE_ORDER, FEATURES
 import { HSB_REGIONALS_TOTAL, isHsb, NKI_AVERAGE, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Så räknar vi",
+  title: { absolute: "Så jämför vi brf förvaltare: metod och källor" },
   description:
     "Vad vi läser, hur vi märker hur säkra siffrorna är, hur vi räknar priser, hur ordningen bestäms och hur annonser och rättelser hanteras.",
   alternates: { canonical: "/metod" },

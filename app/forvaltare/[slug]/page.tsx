@@ -37,9 +37,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     nki ? `NKI ${nki.value} (${nki.year}).` : "",
     "Pris, kundnöjdhet, omdömen och avtalsvillkor med källa.",
   ].filter(Boolean);
-  const title = `${p.name}: pris, omdömen och villkor för brf`;
+  // Sökordet "<namn> förvaltning brf" först. Namn som redan slutar på Förvaltning får inte ordet två gånger.
+  const base = /förvaltning$/i.test(p.name) ? p.name : `${p.name} förvaltning`;
+  const long = `${base} brf: pris, omdömen och villkor`;
+  const title = long.length <= 60 ? long : `${base} brf: pris och omdömen`;
   const description = bits.join(" ").replace(/\u00a0/g, " ");
-  return { title, description, alternates: { canonical: `/forvaltare/${p.slug}` }, openGraph: { title, description, url: `/forvaltare/${p.slug}` } };
+  return { title: { absolute: title }, description, alternates: { canonical: `/forvaltare/${p.slug}` }, openGraph: { title, description, url: `/forvaltare/${p.slug}` } };
 }
 
 const SERVICE_LABEL = { ekonomisk: "Ekonomisk förvaltning", teknisk: "Teknisk förvaltning", fastighetsskotsel: "Fastighetsskötsel" } as const;

@@ -8,7 +8,7 @@ import type { Need } from "@/lib/guide";
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
 
 export const metadata: Metadata = {
-  title: "Hitta förvaltare för er brf",
+  title: { absolute: "Hitta brf förvaltare: gratis förslag för er förening" },
   description: "Berätta vad er bostadsrättsförening behöver i tre korta steg, så matchar vi er med förvaltare som passar. Gratis och utan förpliktelser.",
   alternates: { canonical: "/hitta-forvaltare" },
 };

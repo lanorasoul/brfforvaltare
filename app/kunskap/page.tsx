@@ -11,10 +11,10 @@ const TITLE = "Kunskap om förvaltning för brf-styrelser";
 const DESCRIPTION = "Korta guider för brf-styrelser: vad förvaltning kostar och innehåller, uppsägningstid, K3, underhållsplan och bostadsrättsregistret. Med källa till allt.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: "Brf förvaltning: guider för styrelser om förvaltare" },
   description: DESCRIPTION,
   alternates: { canonical: "/kunskap" },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: "/kunskap" },
+  openGraph: { title: "Brf förvaltning: guider för styrelser om förvaltare", description: DESCRIPTION, url: "/kunskap" },
 };
 
 export default function KnowledgePage() {

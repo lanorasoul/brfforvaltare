@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!place) return {};
   const t = tally(Object.values(outcomesFor(place.name)));
   return {
-    title: `Förvaltare av bostadsrättsföreningar i ${place.name}`,
+    title: { absolute: `Brf förvaltare i ${place.name}: jämför förvaltare och pris` },
     description: `${t.listed} förvaltare nämner ${place.name} på sina egna webbplatser, ${t.national} anger hela landet och ${t.unknown} anger inget verksamhetsområde. Ekonomisk och teknisk förvaltning, med pris, uppsägningstid och källa.`,
     alternates: { canonical: `/forvaltare-i/${place.slug}` },
   };

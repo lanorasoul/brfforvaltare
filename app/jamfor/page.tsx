@@ -5,7 +5,7 @@ import { getCompareDetails } from "@/lib/data";
 import type { Category } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Jämför förvaltare sida vid sida",
+  title: { absolute: "Jämför brf förvaltare sida vid sida: pris och tjänster" },
   description:
     "Lägg upp till tre förvaltare bredvid varandra, för ekonomisk eller teknisk förvaltning: pris, villkor, tjänster, var de verkar och vad de berättar öppet.",
   alternates: { canonical: "/jamfor" },
