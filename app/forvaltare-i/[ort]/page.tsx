@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowIcon } from "@/components/icons";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHead } from "@/components/PageHead";
 import { ResultsTable } from "@/components/ResultsTable";
-import { getCompareData } from "@/lib/data";
+import { getCompareData, getProviders } from "@/lib/data";
+import { joinNames, placeFacts, type PlaceFacts } from "@/lib/place-facts";
+import { priceLabel, VAT_TEXT } from "@/lib/price-label";
 import { matchGuide, type GuideOutcome } from "@/lib/guide";
 import { GUIDE_LGH } from "@/lib/limits";
 import { findPlace, placeIndex, placePages } from "@/lib/places";
@@ -42,6 +45,53 @@ function tally(outcomes: GuideOutcome<CompareRow>[]) {
   return { listed: count("listed"), national: count("national"), unknown: count("unknown") };
 }
 
+function factsFor(name: string, outcomes: Record<Category, GuideOutcome<CompareRow>>): PlaceFacts {
+  const officeTexts = Object.fromEntries(
+    getProviders().map((p) => [p.slug, [p.facts.offices?.text, p.ekonomisk?.coverage.text, p.teknisk?.coverage.text].filter((t): t is string => Boolean(t))]),
+  );
+  return placeFacts(name, outcomes, officeTexts, GUIDE_LGH.default);
+}
+
+/** Frågor och svar för orten. Samma text visas på sidan och läggs i den strukturerade datan. */
+function faqFor(name: string, f: PlaceFacts, n: number): { q: string; a: string }[] {
+  const out: { q: string; a: string }[] = [];
+  const all = [...f.listed, ...f.national];
+  out.push({
+    q: `Vilka förvaltare finns för brf i ${name}?`,
+    a:
+      `${all.length} av förvaltarna i jämförelsen verkar i ${name} enligt sina egna sidor. ` +
+      (f.listed.length > 0 ? `${joinNames(f.listed)} nämner ${name} uttryckligen. ` : "") +
+      (f.national.length > 0 ? `${joinNames(f.national)} anger att de verkar i hela landet.` : ""),
+  });
+  out.push({
+    q: `Vad kostar en förvaltare för en brf i ${name}?`,
+    a:
+      f.prices.length > 0
+        ? `Bland förvaltarna som verkar i ${name} anger ${f.prices.length} ett pris för ekonomisk förvaltning. För ${n} lägenheter: ${f.prices
+            .map((x) => `${x.name} ${priceLabel(x.row, x.perYear, "year")} per år (${VAT_TEXT[x.row.vat]})`)
+            .join(", ")}. Övriga lämnar pris på offert.`
+        : `Ingen av förvaltarna som verkar i ${name} anger ett pris på sin webbplats. Be flera om offert på samma underlag.`,
+  });
+  if (f.nki.length > 0) {
+    out.push({
+      q: `Vilken förvaltare i ${name} har nöjdast kunder?`,
+      a: (() => {
+        const [top, ...rest] = f.nki.slice(0, 3);
+        const tail = rest.length > 0 ? `, följt av ${joinNames(rest.map((x) => `${x.name} (NKI ${x.value})`))}` : "";
+        return `Högst kundnöjdhet bland förvaltarna som verkar i ${name} har ${top.name} med NKI ${top.value}${top.year ? ` (${top.year})` : ""}${tail}, enligt Prognoscentrets mätning bland brf-styrelser. Mätningen gäller hela landet, inte bara ${name}.`;
+      })(),
+    });
+  }
+  out.push({
+    q: `Har förvaltarna kontor i ${name}?`,
+    a:
+      f.offices.length > 0
+        ? `${joinNames(f.offices)} anger på sina sidor att de har kontor i ${name}. Det går att få förvaltning utan lokalt kontor, men fråga hur ofta förvaltaren är på plats.`
+        : `Ingen av förvaltarna anger ett kontor i ${name} på sidorna vi läste. Fråga hur ofta förvaltaren är på plats och vem som är er kontaktperson.`,
+  });
+  return out;
+}
+
 function outcomesFor(name: string) {
   const { data } = pages();
   return Object.fromEntries(CATEGORIES.map((c) => [c, matchGuide(data, { need: c, ort: name })])) as Record<Category, GuideOutcome<CompareRow>>;
@@ -69,6 +119,8 @@ export default async function OrtPage({ params }: { params: Promise<Params> }) {
   const t = tally(Object.values(outcomes));
   const others = list.filter((p) => p.slug !== place.slug);
   const n = GUIDE_LGH.default;
+  const facts = factsFor(place.name, outcomes);
+  const faq = faqFor(place.name, facts, n);
 
   return (
     <>
@@ -81,8 +133,75 @@ export default async function OrtPage({ params }: { params: Promise<Params> }) {
         ]}
       />
 
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        }}
+      />
       <div className="page-body">
         <div className="container">
+          <section className="pl-section" aria-labelledby="pl-kort">
+            <h2 className="h3" id="pl-kort">
+              Brf förvaltare i {place.name} i korthet
+            </h2>
+            <dl className="cv-stats pl-stats">
+              <div className="cv-stat">
+                <dt>Nämner {place.name}</dt>
+                <dd>
+                  <strong>{facts.listed.length}</strong>
+                  <span>förvaltare på sina sidor</span>
+                </dd>
+              </div>
+              <div className="cv-stat">
+                <dt>Ekonomisk förvaltning</dt>
+                <dd>
+                  <strong>{facts.eko}</strong>
+                  <span>förvaltare verkar här</span>
+                </dd>
+              </div>
+              <div className="cv-stat">
+                <dt>Teknisk förvaltning</dt>
+                <dd>
+                  <strong>{facts.tek}</strong>
+                  <span>förvaltare verkar här</span>
+                </dd>
+              </div>
+              <div className="cv-stat">
+                <dt>Kontor i {place.name}</dt>
+                <dd>
+                  <strong>{facts.offices.length}</strong>
+                  <span>enligt förvaltarnas sidor</span>
+                </dd>
+              </div>
+            </dl>
+            <ul className="post-list pl-facts">
+              {facts.offices.length > 0 && (
+                <li>
+                  {joinNames(facts.offices)} anger kontor i {place.name}.
+                </li>
+              )}
+              {facts.prices.length > 0 ? (
+                <li>
+                  Lägst publicerat pris för ekonomisk förvaltning, {n} lägenheter: {facts.prices[0].name}, {priceLabel(facts.prices[0].row, facts.prices[0].perYear, "year")} per år.{" "}
+                  <Link className="link" href="/prisguide">
+                    Se alla priser
+                  </Link>
+                  .
+                </li>
+              ) : (
+                <li>Ingen av förvaltarna här anger ett pris på sin webbplats. Priset får ni genom offert.</li>
+              )}
+              {facts.nki.length > 0 && (
+                <li>
+                  Högst kundnöjdhet bland dem som verkar här: {facts.nki[0].name}, NKI {facts.nki[0].value}
+                  {facts.nki[0].year ? ` (${facts.nki[0].year})` : ""}.
+                </li>
+              )}
+            </ul>
+          </section>
+
           <p className="small muted list-note">
             Orterna är de som förvaltarens egen sida nämner. Att en ort saknas betyder inte att förvaltaren tackar nej, bara att den inte står på sidorna vi läste. Priset gäller {n} lägenheter.
           </p>
@@ -125,6 +244,20 @@ export default async function OrtPage({ params }: { params: Promise<Params> }) {
               </span>
             </Link>
           </div>
+
+          <section className="pl-section" aria-labelledby="pl-faq">
+            <h2 className="h3" id="pl-faq">
+              Vanliga frågor om förvaltare i {place.name}
+            </h2>
+            <dl className="post-faq pl-faq">
+              {faq.map((f) => (
+                <div key={f.q}>
+                  <dt>{f.q}</dt>
+                  <dd>{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
 
           {others.length > 0 && (
             <nav className="pl-others" aria-labelledby="pl-others-title">

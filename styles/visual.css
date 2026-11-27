@@ -562,3 +562,19 @@
 .rel-chips a:hover {
   border-color: var(--ink);
 }
+
+/* ---------- ortssidor ---------- */
+
+.pl-stats {
+  margin-top: 16px;
+}
+
+.pl-facts {
+  margin-top: 18px;
+  max-width: 70ch;
+}
+
+.pl-faq {
+  margin-top: 16px;
+  max-width: 70ch;
+}
