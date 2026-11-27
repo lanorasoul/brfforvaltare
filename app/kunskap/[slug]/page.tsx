@@ -149,6 +149,10 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
                   {post.next.label}
                 </Link>
               </div>
+              <p className="small post-cta-more">
+                Eller jämför själva: <Link className="link" href="/ekonomisk-forvaltning">ekonomisk förvaltning för brf</Link>,{" "}
+                <Link className="link" href="/teknisk-forvaltning">teknisk förvaltning för brf</Link> eller <Link className="link" href="/forvaltare">alla brf förvaltare</Link>.
+              </p>
             </section>
 
             <section className="post-sec" aria-labelledby="kallor">

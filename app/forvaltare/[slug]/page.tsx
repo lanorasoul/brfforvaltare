@@ -8,7 +8,10 @@ import { ProviderLogo } from "@/components/ProviderLogo";
 import { PageHead } from "@/components/PageHead";
 import { MissingSection, ServiceSection } from "@/components/ServiceSection";
 import { SourceLink } from "@/components/SourceLink";
-import { getProvider, getProviders, requireSource } from "@/lib/data";
+import { getCompareData, getProvider, getProviders, requireSource } from "@/lib/data";
+import { placeIndex, placePages, placeSlug } from "@/lib/places";
+import { getPost } from "@/lib/posts";
+import { plainText } from "@/lib/post-text";
 import { dateLong, shortUrl } from "@/lib/format";
 import { overviewRows } from "@/lib/overview";
 import { priceRow } from "@/lib/price";
@@ -290,6 +293,8 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
               </section>
             )}
 
+            <RelatedLinks p={p} />
+
             <section className="pcat" id="kallor" aria-labelledby="kallor-title">
               <h2 className="h2 pcat-title" id="kallor-title">
                 Källor
@@ -312,5 +317,64 @@ export default async function ProviderPage({ params }: { params: Promise<Params>
         </div>
       </div>
     </>
+  );
+}
+
+/** Vägar vidare från profilen: kategorisidorna, en jämförelse, orterna förvaltaren nämner och guider om att välja och byta. */
+function RelatedLinks({ p }: { p: Provider }) {
+  const data = getCompareData();
+  const own = CATEGORIES.flatMap((c) => data.rows[c].filter((r) => r.slug === p.slug));
+  const pageSlugs = new Set(placePages(placeIndex([...data.rows.ekonomisk, ...data.rows.teknisk])).map((x) => x.slug));
+  const places = [...new Map(own.flatMap((r) => r.coverage.places).map((name) => [placeSlug(name), name])).entries()].filter(([slug]) => pageSlugs.has(slug)).slice(0, 8);
+  const cat: Category = p.ekonomisk ? "ekonomisk" : "teknisk";
+  const peer = data.rows[cat].find((r) => r.slug !== p.slug && r.pricing.model !== "on_request") ?? data.rows[cat].find((r) => r.slug !== p.slug);
+  const guides = ["basta-forvaltaren-brf", "uppsagningstid-forvaltningsavtal", cat === "ekonomisk" ? "vad-ingar-i-ekonomisk-forvaltning" : "vad-ar-teknisk-forvaltning"].flatMap((s) => getPost(s) ?? []);
+
+  return (
+    <section className="pcat" id="jamfor-vidare" aria-labelledby="jamfor-vidare-title">
+      <h2 className="h2 pcat-title" id="jamfor-vidare-title">
+        Jämför {p.name} med andra förvaltare
+      </h2>
+      <ul className="rel-links">
+        {CATEGORIES.filter((c) => p[c]).map((c) => (
+          <li key={c}>
+            <Link className="link" href={CATEGORY[c].path}>
+              Alla förvaltare för {CATEGORY[c].label.toLowerCase()} i brf
+            </Link>
+          </li>
+        ))}
+        {peer && (
+          <li>
+            <Link className="link" href={`/jamfor?kategori=${cat}&forvaltare=${p.slug},${peer.slug}`}>
+              {p.name} och {peer.name} sida vid sida
+            </Link>
+          </li>
+        )}
+        <li>
+          <Link className="link" href="/prisguide">
+            Vad kostar en brf förvaltare?
+          </Link>
+        </li>
+        {guides.map((g) => (
+          <li key={g.slug}>
+            <Link className="link" href={`/kunskap/${g.slug}`}>
+              {plainText(g.title)}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {places.length > 0 && (
+        <>
+          <h3 className="h4 rel-sub">Orter som {p.name} nämner</h3>
+          <ul className="rel-chips">
+            {places.map(([slug, name]) => (
+              <li key={slug}>
+                <Link href={`/forvaltare-i/${slug}`}>Brf förvaltare i {name}</Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
   );
 }

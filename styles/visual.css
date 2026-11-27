@@ -529,3 +529,36 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+/* ---------- vägar vidare från en profil ---------- */
+
+.rel-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.rel-sub {
+  margin-top: 24px;
+}
+
+.rel-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.rel-chips a {
+  display: inline-block;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rel-chips a:hover {
+  border-color: var(--ink);
+}

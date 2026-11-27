@@ -447,3 +447,8 @@
     border-radius: 22px;
   }
 }
+
+.post-cta .post-cta-more {
+  margin-top: 0;
+  font-size: 14.5px;
+}
