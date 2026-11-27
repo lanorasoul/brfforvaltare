@@ -1,0 +1,172 @@
+{
+  "slug": "forvaltningsavtal-brf",
+  "title": "Förvaltningsavtal brf: det här ska stå i avtalet",
+  "metaTitle": "Förvaltningsavtal brf: checklista för styrelsen",
+  "description": "Förvaltningsavtal för brf: vad som ska stå om tjänster, tillägg, avtalstid, uppsägning och föreningens pengar. Checklista för styrelsen, med källor.",
+  "keyword": "förvaltningsavtal brf",
+  "keywords": [
+    "förvaltningsavtal bostadsrättsförening",
+    "avtal ekonomisk förvaltning brf",
+    "förvaltaravtal brf",
+    "granska förvaltningsavtal"
+  ],
+  "category": "Välja förvaltare",
+  "published": "2026-11-27",
+  "updated": "2026-11-27",
+  "answer": "Ett förvaltningsavtal ska tydligt visa vilka tjänster som ingår i det fasta priset, vad tilläggen kostar, avtalstid och uppsägningstid, hur avtalet förlängs och hur föreningens pengar hanteras. Uppsägningstiden regleras inte i lag utan står bara i avtalet, så läs den innan ni skriver under.",
+  "points": [
+    "Lista tjänsterna som ingår, punkt för punkt, och vad som debiteras per ärende.",
+    "Avtalstid och uppsägningstid varierar från tre till tolv månader. Många avtal förlängs automatiskt.",
+    "Kontrollera om pengarna ligger på klientmedelskonto eller föreningens egna konton.",
+    "Styrelsen har alltid kvar ansvaret, även när arbetet läggs på en förvaltare."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "tjanster",
+      "text": "Vilka tjänster som ingår"
+    },
+    {
+      "type": "p",
+      "text": "Avtalet ska räkna upp vad som ingår i grundpriset. [SBC](https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/) listar vad som vanligtvis ingår i ett grundavtal för ekonomisk förvaltning: löpande bokföring, leverantörsfakturor, avisering av avgifter, budget, bokslut och årsredovisning, deklaration, medlems- och lägenhetsförteckning samt ekonomisk rådgivning."
+    },
+    {
+      "type": "p",
+      "text": "Står en tjänst inte i avtalet ska ni utgå från att den kostar extra. Fråga särskilt om budgetmöte, bokslutsmöte och hjälp på föreningsstämman."
+    },
+    {
+      "type": "h2",
+      "id": "pris",
+      "text": "Pris, tillägg och prisändringar"
+    },
+    {
+      "type": "p",
+      "text": "Enligt [Nabo](https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/) består priset ofta av ett fast arvode plus rörliga avgifter, till exempel för överlåtelser och pantsättningar. Be därför om en prislista för tilläggen som en bilaga till avtalet, och om priset anges med eller utan moms."
+    },
+    {
+      "type": "p",
+      "text": "Kontrollera också hur och när priset får ändras under avtalstiden. Det är en av frågorna i vår [offertmall](/byta-forvaltare#offert)."
+    },
+    {
+      "type": "h2",
+      "id": "avtalstid",
+      "text": "Avtalstid, uppsägning och förlängning"
+    },
+    {
+      "type": "p",
+      "text": "Det finns ingen lag om uppsägningstid för förvaltningsavtal. [Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/) anger tre till tolv månader som vanligast, och att avtal ofta förlängs automatiskt med tolv månader om de inte sägs upp i tid. [Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare) anger sex till sju månader som vanligt för ekonomisk förvaltning."
+    },
+    {
+      "type": "p",
+      "text": "Så här skriver de förvaltare som anger sin uppsägningstid:"
+    },
+    {
+      "type": "data",
+      "key": "notice"
+    },
+    {
+      "type": "p",
+      "text": "Läs mer om hur ni räknar ut sista dagen i [Uppsägningstid för förvaltningsavtal](/kunskap/uppsagningstid-forvaltningsavtal)."
+    },
+    {
+      "type": "h2",
+      "id": "pengar",
+      "text": "Föreningens pengar och styrelsens ansvar"
+    },
+    {
+      "type": "p",
+      "text": "[Bostadsrätterna](https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare) råder styrelser att kontrollera hur förvaltaren hanterar föreningens pengar: på klientmedelskonton med insättningsgaranti eller med fullmakt på föreningens egna konton. Det bör framgå av avtalet."
+    },
+    {
+      "type": "p",
+      "text": "Ansvaret ligger kvar hos styrelsen. Enligt 7 kap. 4 § [lagen om ekonomiska föreningar](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018672-om-ekonomiska-foreningar_sfs-2018-672/) ska styrelsen se till att bokföringen och medelsförvaltningen kontrolleras på ett betryggande sätt. [Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/) skriver att attesten, att godkänna fakturor innan de betalas, inte går att lämna över till förvaltaren."
+    },
+    {
+      "type": "h2",
+      "id": "checklista",
+      "text": "Checklista innan ni skriver under"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Alla tjänster i grundpriset är uppräknade.",
+        "Det finns en prislista för tillägg, med eller utan moms angivet.",
+        "Avtalstid, uppsägningstid och eventuell automatisk förlängning står tydligt.",
+        "Det står hur och när priset får ändras.",
+        "Det framgår hur föreningens pengar hanteras och vem som attesterar.",
+        "Det står vem som är er kontaktperson och hur överlämningen går till vid byte."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hur lång är uppsägningstiden i ett förvaltningsavtal?",
+      "a": "Den står i avtalet. Tre till tolv månader är vanligast enligt Nabo, och Bostadsrätterna anger sex till sju månader som vanligt för ekonomisk förvaltning."
+    },
+    {
+      "q": "Vem i föreningen får skriva under avtalet?",
+      "a": "Enligt [Nabo](https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/) är det normalt styrelsen som beslutar, om inte stadgarna säger något annat. Skriv in beslutet i protokollet."
+    },
+    {
+      "q": "Kan vi byta paket under avtalstiden?",
+      "a": "Det beror på förvaltaren. Hos [HSB Stockholm](https://www.hsb.se/stockholm/forvaltningstjanster/ekonomisk-forvaltning/) kan föreningen byta paket uppåt eller nedåt under avtalstiden. Fråga innan ni skriver under."
+    },
+    {
+      "q": "Vad gör vi om avtalet redan har förlängts?",
+      "a": "Då gäller avtalet en period till. Lägg in en påminnelse inför nästa uppsägningsdatum och börja ta in offerter i god tid. Se [Så byter ni förvaltare](/byta-forvaltare)."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Ekonomisk förvaltning för brf",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Vad kostar ekonomisk förvaltning i en BRF?",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Byta förvaltare",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/byta-forvaltare/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för din BRF",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/vara-tjanster/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Dags att byta ekonomisk förvaltare",
+      "publisher": "Bostadsrätterna",
+      "url": "https://www.bostadsratterna.se/nyheter/guider/2025/dags-att-byta-ekonomisk-forvaltare",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Lag (2018:672) om ekonomiska föreningar",
+      "publisher": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018672-om-ekonomiska-foreningar_sfs-2018-672/",
+      "checked": "2026-11-10"
+    },
+    {
+      "title": "Ekonomisk förvaltning",
+      "publisher": "HSB Stockholm",
+      "url": "https://www.hsb.se/stockholm/forvaltningstjanster/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "uppsagningstid-forvaltningsavtal",
+    "vad-ingar-i-ekonomisk-forvaltning",
+    "billigaste-forvaltaren-brf"
+  ],
+  "next": {
+    "href": "/byta-forvaltare#offert",
+    "label": "Hämta offertmallen"
+  }
+}

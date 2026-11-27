@@ -216,6 +216,7 @@
 
 .post-table .num {
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .post-figure-note {

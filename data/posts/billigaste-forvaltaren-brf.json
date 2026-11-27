@@ -1,0 +1,141 @@
+{
+  "slug": "billigaste-forvaltaren-brf",
+  "title": "Billigaste förvaltaren för brf: priser som går att jämföra",
+  "metaTitle": "Billigaste förvaltaren för brf: publicerade priser 2026",
+  "description": "Vilken förvaltare är billigast för en brf? Bara 3 av 10 skriver ut pris. Se priserna för 20, 50 och 100 lägenheter och vad som kostar extra.",
+  "keyword": "billigaste förvaltare brf",
+  "keywords": [
+    "billig förvaltare brf",
+    "billig ekonomisk förvaltning brf",
+    "förvaltare pris brf",
+    "lägsta pris ekonomisk förvaltning"
+  ],
+  "category": "Vad förvaltning innehåller och kostar",
+  "published": "2026-11-27",
+  "updated": "2026-11-27",
+  "answer": "Bland förvaltarna som skriver ut pris har ERF lägst pris för ekonomisk förvaltning: 37 375 kr per år exklusive moms för 50 lägenheter. Fastum och SBC anger ungefär 50 000 och 55 000 kr. Sju av tio lämnar bara pris på offert, så den billigaste för er kan vara någon annan.",
+  "points": [
+    "Bara 3 av 10 förvaltare i jämförelsen anger ett pris för ekonomisk förvaltning.",
+    "ERF har en prislista, SBC prisexempel och Fastum en tumregel. De är inte lika säkra.",
+    "Jämför alltid med eller utan moms. ERF anger exklusive moms, de andra anger inte.",
+    "Tillägg som överlåtelser och pantnoteringar kan ändra vem som blir billigast."
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "id": "priser",
+      "text": "Publicerade priser för ekonomisk förvaltning"
+    },
+    {
+      "type": "p",
+      "text": "Tabellen räknas direkt ur jämförelsens data, så den visar alltid samma siffror som resten av sajten."
+    },
+    {
+      "type": "data",
+      "key": "ekonomisk-priser"
+    },
+    {
+      "type": "p",
+      "text": "[ERF](https://erf.se/ekonomisk-forvaltning/kostnad) har en prislista per föreningsstorlek för paketet Enkel. [SBC](https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/) ger exempel för tre storlekar och skriver att de inte är fasta prisnivåer. [Fastum](https://fastum.se/ekonomisk-forvaltning/) skriver en tumregel på runt 1 000 kr per lägenhet, utan att ange period eller moms. Vi räknar Fastums tumregel per år, men det är vårt antagande."
+    },
+    {
+      "type": "h2",
+      "id": "per-lagenhet",
+      "text": "Pris per lägenhet sjunker med storleken"
+    },
+    {
+      "type": "p",
+      "text": "En större förening betalar mer totalt men mindre per lägenhet. [Nabo](https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/) beskriver marknaden så här: en förening med 20 lägenheter betalar ungefär 26 000 till 30 500 kr per år exklusive moms, alltså 1 300 till 1 525 kr per lägenhet, medan 100 lägenheter kostar ungefär 64 000 till 77 000 kr, 640 till 770 kr per lägenhet. Det är Nabos bild av marknaden, inte Nabos egen prislista."
+    },
+    {
+      "type": "p",
+      "text": "[SBC](https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/) skriver att priset för mindre och medelstora föreningar vanligtvis ligger på 1 100 till 1 300 kr per lägenhet och år."
+    },
+    {
+      "type": "h2",
+      "id": "tillagg",
+      "text": "Tilläggen kan ändra vem som är billigast"
+    },
+    {
+      "type": "p",
+      "text": "Grundpriset är bara en del av kostnaden. [Nabo](https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/) beskriver att priset ofta består av ett fast arvode plus rörliga avgifter, till exempel för överlåtelser och pantsättningar. ERF är en av få som skriver ut tilläggen: en överlåtelse kostar 1 184 kr och en pantnotering 592 kr. Läs mer i [vad som ingår i ekonomisk förvaltning](/kunskap/vad-ingar-i-ekonomisk-forvaltning)."
+    },
+    {
+      "type": "p",
+      "text": "Har föreningen många överlåtelser, andrahandsuthyrningar eller parkeringar kan ett högre grundpris med fler poster inkluderade bli billigare totalt. Räkna på ett normalår för just er förening."
+    },
+    {
+      "type": "h2",
+      "id": "offert",
+      "text": "Så hittar ni den billigaste för er"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Räkna ut ert pris hos de förvaltare som publicerar pris i [prisguiden](/prisguide).",
+        "Be minst tre förvaltare om offert på samma underlag, även sådana som inte publicerar pris.",
+        "Be om priset både med och utan moms.",
+        "Lägg till kostnaden för tilläggen ni använder ett normalår.",
+        "Jämför kundnöjdheten också. Det billigaste avtalet blir dyrt om ni måste byta igen."
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Teknisk förvaltning",
+      "text": "Ingen av förvaltarna i jämförelsen skriver ut pris för teknisk förvaltning. Läs [vad teknisk förvaltning kostar](/kunskap/vad-kostar-teknisk-forvaltning)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Vilken förvaltare är billigast för en liten brf?",
+      "a": "Bland dem som skriver ut pris är ERF billigast för 20 lägenheter. Små föreningar betalar mer per lägenhet, så jämför även offerter från förvaltare som inte publicerar pris."
+    },
+    {
+      "q": "Varför skriver så få förvaltare ut pris?",
+      "a": "Förvaltarna skriver att priset beror på föreningens storlek, antal lokaler och parkeringar och vilka tillägg som behövs. De flesta lämnar därför pris på offert."
+    },
+    {
+      "q": "Ingår moms i priserna?",
+      "a": "ERF anger priser exklusive moms. SBC och Fastum anger inte om moms ingår. Fråga alltid, annars jämför ni olika saker."
+    },
+    {
+      "q": "Lönar det sig att byta till en billigare förvaltare?",
+      "a": "Det beror på vad som ingår och hur nöjda ni är i dag. Läs [Så byter ni förvaltare](/byta-forvaltare) och kontrollera uppsägningstiden i ert avtal först."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Ekonomisk förvaltning för BRF: pris och kostnad",
+      "publisher": "ERF",
+      "url": "https://erf.se/ekonomisk-forvaltning/kostnad",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för brf",
+      "publisher": "SBC",
+      "url": "https://www.sbc.se/fastighetsforvaltning/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Ekonomisk förvaltning för Brf",
+      "publisher": "Fastum",
+      "url": "https://fastum.se/ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    },
+    {
+      "title": "Vad kostar ekonomisk förvaltning i en BRF?",
+      "publisher": "Nabo",
+      "url": "https://nabo.se/kunskap/vad-kostar-ekonomisk-forvaltning/",
+      "checked": "2026-11-06"
+    }
+  ],
+  "related": [
+    "vad-ingar-i-ekonomisk-forvaltning",
+    "hsb-eller-riksbyggen",
+    "basta-forvaltaren-brf"
+  ],
+  "next": {
+    "href": "/prisguide",
+    "label": "Räkna på ert pris"
+  }
+}

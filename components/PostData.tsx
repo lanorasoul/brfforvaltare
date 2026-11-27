@@ -3,6 +3,8 @@ import { ScrollRegion } from "./ScrollRegion";
 import { SourceLink } from "./SourceLink";
 import { getProviders, requireSource } from "@/lib/data";
 import type { PostDataKey } from "@/lib/posts";
+import { priceRow } from "@/lib/price";
+import { priceLabel, VAT_TEXT } from "@/lib/price-label";
 import { CATEGORY, FEATURES, withBlock } from "@/lib/schema";
 import type { Category, Extra, Provider, Service } from "@/lib/types";
 
@@ -175,6 +177,41 @@ function PricedExtras({ categories, filter, caption, empty }: { categories: Cate
   );
 }
 
+/** Publicerade priser för ekonomisk förvaltning för tre storlekar, räknade på samma sätt som i jämförelsen. */
+function EkonomiskPriser() {
+  const sizes = [20, 50, 100];
+  const rows = withBlock(getProviders(), "ekonomisk")
+    .filter(({ block: b }) => b.pricing.model !== "on_request")
+    .map(({ provider: p, block: b }) => ({ p, rs: sizes.map((n) => priceRow({ slug: p.slug, name: p.name, pricing: b.pricing }, n)), s: requireSource(p, b.pricing.source) }))
+    .sort((a, b) => (a.rs[1].perYear ?? Infinity) - (b.rs[1].perYear ?? Infinity));
+  return (
+    <Table
+      caption="Publicerade priser för ekonomisk förvaltning per år, lägst först vid 50 lägenheter"
+      head={["Förvaltare", "20 lgh", "50 lgh", "100 lgh", "Underlag", "Källa"]}
+      note="Priserna räknas ur förvaltarnas egna prislistor, exempel och tumregler. Övriga förvaltare lämnar pris på offert."
+    >
+      {rows.map(({ p, rs, s }) => (
+        <tr key={p.slug}>
+          <th scope="row">
+            <ProviderLink p={p} />
+          </th>
+          {rs.map((r, i) => (
+            <td key={sizes[i]} className="num">
+              {r.perYear === null ? "Anges inte" : priceLabel(r, r.perYear, "year")}
+            </td>
+          ))}
+          <td>
+            {rs[1].basis}, {VAT_TEXT[rs[1].vat]}
+          </td>
+          <td>
+            <SourceLink url={s.url} checked={s.checked} />
+          </td>
+        </tr>
+      ))}
+    </Table>
+  );
+}
+
 export function PostData({ dataKey }: { dataKey: PostDataKey }) {
   switch (dataKey) {
     case "nki":
@@ -196,6 +233,8 @@ export function PostData({ dataKey }: { dataKey: PostDataKey }) {
           empty="Ingen förvaltare i jämförelsen skriver ut ett pris för någon tjänst inom teknisk förvaltning."
         />
       );
+    case "ekonomisk-priser":
+      return <EkonomiskPriser />;
     case "underhallsplan-priser":
       return (
         <PricedExtras

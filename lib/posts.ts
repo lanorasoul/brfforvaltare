@@ -9,7 +9,7 @@ import { SITE } from "./site";
 import type { Provider } from "./types";
 
 /** Tabeller som ritas ur förvaltardatan när sidan byggs, så att artikeln och jämförelsen alltid säger samma sak. */
-export type PostDataKey = "nki" | "features-ekonomisk" | "features-teknisk" | "services" | "notice" | "teknisk-priser" | "underhallsplan-priser";
+export type PostDataKey = "nki" | "features-ekonomisk" | "features-teknisk" | "services" | "notice" | "teknisk-priser" | "underhallsplan-priser" | "ekonomisk-priser";
 
 export type PostBlock =
   | { type: "h2"; id: string; text: string }

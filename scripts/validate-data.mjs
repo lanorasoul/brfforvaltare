@@ -292,7 +292,7 @@ const postDir = path.join(root, "data", "posts");
 const postFiles = fs.existsSync(postDir) ? fs.readdirSync(postDir).filter((f) => f.endsWith(".json")).sort() : [];
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const POST_TOKENS = ["providers", "eko.total", "tek.total", "eko.priced", "tek.priced", "eko.notice", "tek.notice", "both", "nki.count", "checked"];
-const POST_DATA = new Set(["nki", "features-ekonomisk", "features-teknisk", "services", "notice", "teknisk-priser", "underhallsplan-priser"]);
+const POST_DATA = new Set(["nki", "features-ekonomisk", "features-teknisk", "services", "notice", "teknisk-priser", "underhallsplan-priser", "ekonomisk-priser"]);
 const POST_BLOCKS = new Set(["h2", "h3", "p", "ul", "ol", "table", "note", "data"]);
 const RESERVED_IDS = new Set(["vanliga-fragor", "kallor", "las-ocksa", "main"]);
 const STATIC_ROUTES = new Set(["/", "/hitta-forvaltare", "/ekonomisk-forvaltning", "/teknisk-forvaltning", "/forvaltare", "/prisguide", "/byta-forvaltare", "/jamfor", "/metod", "/for-forvaltare", "/integritet", "/kunskap"]);
